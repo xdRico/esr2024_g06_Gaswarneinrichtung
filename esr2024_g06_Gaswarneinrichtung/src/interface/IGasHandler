@@ -1,0 +1,14 @@
+#ifndef _IGASHANDLER_H_
+#define _IGASHANDLER_H_
+
+void preInit();
+
+void init();
+
+void measure();
+
+boolean isValueCritical();
+
+setBurnerActive(boolean isActive);
+
+setCriticalValue(int criticalValue);
