@@ -164,7 +164,7 @@ uint16_t rxcounter = 0;         // used for debugging
 
 
 
-void main (void)
+void gy291_main (void)
 {
     // Stop WDT
     WDT_A_hold(WDT_A_BASE);     // stop watchdog
