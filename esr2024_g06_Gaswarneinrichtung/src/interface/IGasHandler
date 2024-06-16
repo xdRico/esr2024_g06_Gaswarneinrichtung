@@ -9,6 +9,6 @@ void measure();
 
 boolean isValueCritical();
 
-setBurnerActive(boolean isActive);
+void setBurnerActive(boolean isActive);
 
-setCriticalValue(int criticalValue);
+void setCriticalValue(int criticalValue);
