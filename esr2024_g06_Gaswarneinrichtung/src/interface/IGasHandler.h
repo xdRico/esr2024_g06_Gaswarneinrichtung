@@ -1,17 +1,58 @@
-#ifndef _IGASHANDLER_H_
-#define _IGASHANDLER_H_
-#include <stdbool.h>
+/*
+ * IGasHandler.h
+ *
+ *  Created on: 17.06.2024
+ *      Author: ricow
+ *
+ *  This header file is an interface for the use of the gas measuring sensor.
+ */
 
-void preInit();
+#ifndef SRC_INTERFACE_IGASHANDLER_H_
+#define SRC_INTERFACE_IGASHANDLER_H_
 
-void init();
+#include "IModule.h"
 
+
+/**
+ * measure():
+ *
+ * This method is used to get the current value of the gas sensor.
+ *
+ */
 void measure();
 
+
+/**
+ * isValueCritical():
+ *
+ * This method is used to define the maximum Time in Seconds that the AccelerationSensor has not to be moved to activate warning mode.
+ *
+ *  return:
+ *      bool: if the current value is critical and a warning has to be given
+ */
 bool isValueCritical();
 
+
+/**
+ * setBurnerActive(bool isActive):
+ *
+ * This method is used to define, if the burner of the gas sensor is activated.
+ *
+ *  param:
+ *      isActive: the bool that defines, if the burner is avtive
+ */
 void setBurnerActive(bool isActive);
 
+
+/**
+ * setCriticalValue(int criticalValue):
+ *
+ * This method is used to definethe critical Value for the gas sensor, at which a waning is given.
+ *
+ *  param:
+ *      criticalValue: the int that defines the critical Value, where a warning should be given
+ */
 void setCriticalValue(int criticalValue);
 
-#endif
+
+#endif /* SRC_INTERFACE_IGASHANDLER_H_ */
