@@ -57,3 +57,11 @@ void setWarningState(bool warning){
 void setAlarmState(bool alarm){
     alarmState = alarm;
 }
+
+
+/**
+ * Implementation of IOutputHandler.h
+ */
+void mainRoutine(){
+    int toImplement; //to Implement
+}
