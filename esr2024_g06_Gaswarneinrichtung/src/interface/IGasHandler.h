@@ -14,6 +14,22 @@
 
 
 /**
+ * preInitGasHandler():
+ *
+ * The preInit method is for setting up all Port/Pin register values and initializing all basic setups.
+ */
+void preInitGasHandler();
+
+
+/**
+ * initGasHandler():
+ *
+ * The init method is for setting up basic working requirements and startups.
+ */
+void initGasHandler();
+
+
+/**
  * measure():
  *
  * This method is used to get the current value of the gas sensor.

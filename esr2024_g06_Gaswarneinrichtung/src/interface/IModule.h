@@ -21,7 +21,7 @@
  *
  * The preInit method is for setting up all Port/Pin register values and initializing all basic setups.
  */
-void preinit();
+void preInit();
 
 
 /**
@@ -30,6 +30,14 @@ void preinit();
  * The init method is for setting up basic working requirements and startups.
  */
 void init();
+
+
+/**
+ * loop():
+ *
+ * The loop method gets called repeatedly while the device is on-stated
+ */
+void loop();
 
 
 /**

@@ -14,6 +14,22 @@
 
 
 /**
+ * preInitAccelerationHandler():
+ *
+ * The preInit method is for setting up all Port/Pin register values and initializing all basic setups.
+ */
+void preInitAccelerationHandler();
+
+
+/**
+ * initAccelerationHandler():
+ *
+ * The init method is for setting up basic working requirements and startups.
+ */
+void initAccelerationHandler();
+
+
+/**
  * setTimeUntilWarning(int time):
  *
  * This method is used to define the maximum Time in Seconds that the AccelerationSensor has not to be moved to activate warning mode.

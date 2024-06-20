@@ -14,6 +14,33 @@
 
 
 /**
+ * preInitOutputHandler():
+ *
+ * The preInit method is for setting up all Port/Pin register values and initializing all basic setups.
+ */
+void preInitOutputHandler();
+
+
+/**
+ * initOutputHandler():
+ *
+ * The init method is for setting up basic working requirements and startups.
+ */
+void initOutputHandler();
+
+
+/**
+ * getOnState():
+ *
+ * This method is used to get the state, if the device is switched on
+ *
+ *  return:
+ *      bool: if the device is switched on
+ */
+bool getOnState();
+
+
+/**
  * setOnState(bool isOn):
  *
  * This method is used to set the state, if the device is switched on

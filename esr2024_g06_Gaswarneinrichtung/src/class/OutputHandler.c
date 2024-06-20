@@ -11,7 +11,8 @@
 #include <IOutputHandler.h>
 
 
-bool isOn = false;
+bool onState = false;
+int timeWhenOnBtnPressed = 0;
 bool warningState = false;
 bool alarmState = false;
 
@@ -19,7 +20,7 @@ bool alarmState = false;
 /**
  * Implementation of IOutputHandler.h
  */
-void preinit(){
+void preInitOutputHandler(){
     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
     GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);
@@ -30,7 +31,7 @@ void preinit(){
 /**
  * Implementation of IOutputHandler.h
  */
-void init(){
+void initOutputHandler(){
     __no_operation();                   // For debug
 }
 
@@ -38,8 +39,16 @@ void init(){
 /**
  * Implementation of IOutputHandler.h
  */
+bool getOnState(){
+    return onState;
+}
+
+
+/**
+ * Implementation of IOutputHandler.h
+ */
 void setOnState(bool on){
-    isOn = on;
+    onState = on;
 }
 
 
@@ -63,5 +72,6 @@ void setAlarmState(bool alarm){
  * Implementation of IOutputHandler.h
  */
 void mainRoutine(){
+
     int toImplement; //to Implement
 }
