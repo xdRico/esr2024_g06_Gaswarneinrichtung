@@ -11,3 +11,11 @@
  */
 
 #include <IGasHandler.h>
+
+void preInitGasHandler(){
+
+}
+
+void initGasHandler(){
+
+}

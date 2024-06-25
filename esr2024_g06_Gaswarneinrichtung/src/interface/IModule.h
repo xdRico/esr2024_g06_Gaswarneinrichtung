@@ -33,6 +33,13 @@ void init();
 
 
 /**
+ * postInit():
+ *
+ * The postInit method is for setting up Interrupts.
+ */
+void postInit();
+
+/**
  * loop():
  *
  * The loop method gets called repeatedly while the device is on-stated

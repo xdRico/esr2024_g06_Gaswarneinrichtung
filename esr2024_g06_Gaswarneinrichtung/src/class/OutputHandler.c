@@ -24,7 +24,6 @@ void preInitOutputHandler(){
     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
     GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);
-
 }
 
 
@@ -51,12 +50,39 @@ void setOnState(bool on){
     onState = on;
 }
 
+/**
+ * Sets the State of the On-LED
+ *
+ *  args:
+ *      on: the state to set the On-LED
+ */
+void setOnLED(bool on){
+    if(on)
+        GPIO_setOutputHighOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
+    else
+        GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
+}
+
 
 /**
  * Implementation of IOutputHandler.h
  */
 void setWarningState(bool warning){
     warningState = warning;
+}
+
+
+/**
+ * Sets the State of the warning-LED
+ *
+ *  args:
+ *      on: the state to set the warning-LED
+ */
+void setAlertLED(bool alert){
+    if(alert)
+        GPIO_setOutputHighOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
+    else
+        GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
 }
 
 
@@ -71,7 +97,7 @@ void setAlarmState(bool alarm){
 /**
  * Implementation of IOutputHandler.h
  */
-void mainRoutine(){
+void mainRoutineOutputHandler(){
 
     int toImplement; //to Implement
 }

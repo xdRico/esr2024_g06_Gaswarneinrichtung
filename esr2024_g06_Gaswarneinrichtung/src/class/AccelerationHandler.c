@@ -10,3 +10,11 @@
  */
 
 #include <IAccelerationHandler.h>
+
+void preInitAccelerationHandler(){
+
+}
+
+void initAccelerationHandler(){
+
+}
