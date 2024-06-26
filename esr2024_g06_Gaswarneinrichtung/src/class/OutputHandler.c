@@ -11,12 +11,6 @@
 #include <IOutputHandler.h>
 
 
-bool onState = false;
-int timeWhenOnBtnPressed = 0;
-bool warningState = false;
-bool alarmState = false;
-
-
 /**
  * Implementation of IOutputHandler.h
  */
@@ -36,21 +30,6 @@ void initOutputHandler(){
 
 
 /**
- * Implementation of IOutputHandler.h
- */
-bool getOnState(){
-    return onState;
-}
-
-
-/**
- * Implementation of IOutputHandler.h
- */
-void setOnState(bool on){
-    onState = on;
-}
-
-/**
  * Sets the State of the On-LED
  *
  *  args:
@@ -61,14 +40,6 @@ void setOnLED(bool on){
         GPIO_setOutputHighOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
     else
         GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
-}
-
-
-/**
- * Implementation of IOutputHandler.h
- */
-void setWarningState(bool warning){
-    warningState = warning;
 }
 
 
@@ -89,15 +60,7 @@ void setAlertLED(bool alert){
 /**
  * Implementation of IOutputHandler.h
  */
-void setAlarmState(bool alarm){
-    alarmState = alarm;
-}
-
-
-/**
- * Implementation of IOutputHandler.h
- */
 void mainRoutineOutputHandler(){
 
-    int toImplement; //to Implement
+    //TODO Implement
 }

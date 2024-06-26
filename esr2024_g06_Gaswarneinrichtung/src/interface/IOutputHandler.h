@@ -30,47 +30,69 @@ void initOutputHandler();
 
 
 /**
- * getOnState():
+ * setAlertLED(bool alert):
  *
- * This method is used to get the state, if the device is switched on
+ * This method is used to de-/activate the alert LED, if the device is switched on
  *
- *  return:
- *      bool: if the device is switched on
+ *  param:
+ *      alert: the bool that defines, if the alert LED is on
  */
-bool getOnState();
+void setAlertLED(bool alert);
 
 
 /**
- * setOnState(bool isOn):
+ * setOnLED(bool on):
  *
- * This method is used to set the state, if the device is switched on
- *
- *  param:
- *      isOn: the bool that defines, if the device is switched on
- */
-void setOnState(bool isOn);
-
-
-/**
- * setWarningState(bool warningState):
- *
- * This method is used to set the state, if the device is warning for gas
+ * This method is used to de-/activate the On-state LED
  *
  *  param:
- *      warningState: the bool that defines, if the device is in warning-mode
+ *      on: the bool that defines, if the On-LED is on
  */
-void setWarningState(bool warningState);
+void setOnLED(bool on);
 
 
-/**
- * setAlertState(bool alertState):
- *
- * This method is used to set the state, if the device is alarming for non-movement
- *
- *  param:
- *      alertState: the bool that defines, if the device is in alert-mode
- */
-void setAlertState(bool alertState);
+///**
+// * getOnState():
+// *
+// * This method is used to get the state, if the device is switched on
+// *
+// *  return:
+// *      bool: if the device is switched on
+// */
+//bool getOnState();
+//
+//
+///**
+// * setOnState(bool isOn):
+// *
+// * This method is used to set the state, if the device is switched on
+// *
+// *  param:
+// *      isOn: the bool that defines, if the device is switched on
+// */
+//void setOnState(bool isOn);
+//
+//
+///**
+// * setWarningState(bool warningState):
+// *
+// * This method is used to set the state, if the device is warning for gas
+// *
+// *  param:
+// *      warningState: the bool that defines, if the device is in warning-mode
+// */
+//void setWarningState(bool warningState);
+//
+//
+///**
+// * setAlertState(bool alertState):
+// *
+// * This method is used to set the state, if the device is alarming for non-movement
+// *
+// *  param:
+// *      alertState: the bool that defines, if the device is in alert-mode
+// */
+//void setAlertState(bool alertState);
 
 
 #endif /* SRC_INTERFACE_IOUTPUTHANDLER_H_ */

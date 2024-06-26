@@ -50,14 +50,14 @@ bool isValueCritical();
 
 
 /**
- * setBurnerActive(bool isActive):
+ * setBurnerActive(bool active):
  *
  * This method is used to define, if the burner of the gas sensor is activated.
  *
  *  param:
- *      isActive: the bool that defines, if the burner is avtive
+ *      active: the bool that defines, if the burner is active
  */
-void setBurnerActive(bool isActive);
+void setBurnerActive(bool active);
 
 
 /**
