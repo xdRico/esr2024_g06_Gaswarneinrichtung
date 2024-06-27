@@ -160,7 +160,6 @@ void postInit(){
  * loop():
  *
  * The loop method gets called repeatedly, until the device gets turned off
- *  To time:
  *  On:
  *      Gasmessung
  *      LED On
@@ -217,7 +216,11 @@ void loop(){
 }
 
 
-// Ack-Btn
+/**
+ * interruptP2Handler():
+ *
+ * This method gets called in every loop and handles the interrupt for Port 2 (Acknowledge-Button)
+ */
 void interruptP2Handler(){
     if(!interruptP2)
         return;
@@ -229,7 +232,11 @@ void interruptP2Handler(){
 }
 
 
-// Acc-Mvmnt
+/**
+ * interruptP3Handler():
+ *
+ * This method gets called in every loop and handles the interrupt for Port 3 (Acceleration-Sensor Movement / Tap)
+ */
 void interruptP3Handler(){
     if(!warningState) return;
     if(interruptP3){
@@ -246,7 +253,11 @@ void interruptP3Handler(){
 }
 
 
-// On-Btn
+/**
+ * interruptP4Handler():
+ *
+ * This method gets called in every loop and handles the interrupt for Port 4 (On-Button)
+ */
 void interruptP4Handler(){
     if(!interruptP4){
         timeWhenOnBtnPressed = 0;
@@ -268,7 +279,11 @@ void interruptP4Handler(){
 }
 
 
-// Gas-Msrmnt
+/**
+ * gasMeasurementHandler():
+ *
+ * This method gets called in every loop and handles the measurements and usage of the Gas Sensor
+ */
 void gasMeasurementHandler(){
     measure();
     if(isValueCritical()){
