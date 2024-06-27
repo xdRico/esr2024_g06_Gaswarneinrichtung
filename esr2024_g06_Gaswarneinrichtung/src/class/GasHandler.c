@@ -5,8 +5,8 @@
  *      Author:
  *
  *  This Class implements the IGasHandler.h header file.
- *  It uses Pin 32 (P3.3) for activating the Gas Sensor,
- *  Pin 30 (P3.1) for the digital input value and
+ *  It uses Pin 32 (P3.7) for activating the Gas Sensor and
+ *  Pin 30 (P3.1) for the digital input value or
  *  Pin 25 (P5.1) for the analog input value.
  */
 
@@ -20,9 +20,9 @@ void preInitGasHandler(){
 
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3, GPIO_PIN1);
 
-    GPIO_setAsOutputPin(GPIO_PORT_P3, GPIO_PIN3);
+    GPIO_setAsOutputPin(GPIO_PORT_P3, GPIO_PIN7);
 
-    GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN3);
+    GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN7);
 }
 
 
@@ -33,6 +33,16 @@ void initGasHandler(){
     setBurnerActive(true);
 }
 
+
+/**
+ *
+ */
+void postInitGasHandler(){
+    GPIO_selectInterruptEdge(GPIO_PORT_P3, GPIO_PIN7, GPIO_HIGH_TO_LOW_TRANSITION);
+    GPIO_enableInterrupt(GPIO_PORT_P3, GPIO_PIN7);
+    GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN7);
+
+}
 
 /**
  * Implementation of IGasHandler.h
@@ -46,7 +56,7 @@ void measure(){
  */
 bool isValueCritical(){
     //TODO
-    return true;
+    return false;
 }
 
 /**
@@ -54,8 +64,8 @@ bool isValueCritical(){
  */
 void setBurnerActive(bool active){
     if(active)
-        GPIO_setOutputHighOnPin(GPIO_PORT_P3, GPIO_PIN3);
+        GPIO_setOutputHighOnPin(GPIO_PORT_P3, GPIO_PIN7);
     else
-        GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN3);
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN7);
 }
 

@@ -5,7 +5,8 @@
 #include "IGasHandler.h"
 
 bool interruptP2 = false;
-bool interruptP3 = false;
+bool interruptP3p5 = false;
+bool interruptP3p7 = false;
 bool interruptP4 = false;
 bool interruptRTC = false;
 bool onState = false;
@@ -17,6 +18,8 @@ const int intClockTime = 5; //in s/10
 const int timeRestingTillAlarm = 15 * 10; //in s/10
 int timeWhenOnBtnPressed = 0;
 int timeWhenLastMoved = 0;
+int timeWhenLastCriticalMeasurement = 0;
+const int timeWaitingAfterCriticalMeasurement = 10 * 10; // in s/10
 
 // in s/10
 int clkLEDAlert = 0;
@@ -52,8 +55,9 @@ int main(void){
 
     init();
 
+    postInit();
 
-    while(onState){
+    while(1){
         loop();
     }
     return 0;
@@ -83,7 +87,7 @@ void preInit(){
     //preInit Modules
 
     preInitOutputHandler();
-    preInitAccelerationHandler();
+    //preInitAccelerationHandler();
     preInitGasHandler();
 }
 
@@ -97,7 +101,7 @@ void init(){
     //init Modules
 
     initOutputHandler();
-    initAccelerationHandler();
+    //initAccelerationHandler();
     initGasHandler();
 }
 
@@ -142,16 +146,17 @@ void postInit(){
     //Set P2 interrupt medium priority
     ICC_setInterruptLevel(ICC_ILSR_P2, ICC_LEVEL_2);
     //Set P3, P4 interrupt higher priority
-    ICC_setInterruptLevel(ICC_ILSR_P3, ICC_LEVEL_3);
-    ICC_setInterruptLevel(ICC_ILSR_P4, ICC_LEVEL_3);
+    ICC_setInterruptLevel(ICC_ILSR_P3, ICC_LEVEL_1);
+    ICC_setInterruptLevel(ICC_ILSR_P4, ICC_LEVEL_1);
     //Set RTC interrupt lower priority
-    ICC_setInterruptLevel(ICC_ILSR_RTC_COUNTER, ICC_LEVEL_1);
+    ICC_setInterruptLevel(ICC_ILSR_RTC_COUNTER, ICC_LEVEL_3);
 
     //Enable ICC module
     ICC_enable();
 
 
     //postInit Modules
+    postInitGasHandler();
 
 }
 
@@ -170,6 +175,7 @@ void postInit(){
  */
 void loop(){
 
+
     //Enter LPM3 and global interrupt
     __bis_SR_register(LPM3_bits + GIE);
     clk += intClockTime;
@@ -178,10 +184,12 @@ void loop(){
 
     // On-Btn
     interruptP4Handler();
+    if(!onState)
+        return;
+    // Acc-Mvmnt + Gas-msrmnt interrupt
+    interruptP3Handler();
     // Gas-Msrmnt
     gasMeasurementHandler();
-    // Acc-Mvmnt
-    interruptP3Handler();
     // Ack-Btn
     interruptP2Handler();
 
@@ -235,15 +243,31 @@ void interruptP2Handler(){
 /**
  * interruptP3Handler():
  *
- * This method gets called in every loop and handles the interrupt for Port 3 (Acceleration-Sensor Movement / Tap)
+ * This method gets called in every loop and handles the interrupt for Port 3 (Gas- + Acceleration-Sensor Movement / Tap)
  */
 void interruptP3Handler(){
-    if(!warningState) return;
-    if(interruptP3){
-        timeWhenLastMoved = clk;
-        interruptP3 = false;
+    if(!warningState){
+        if(interruptP3p7){
+            timeWhenLastMoved = clk;
+            timeWhenLastCriticalMeasurement = clk;
+            interruptP3p7 = false;
+            warningState = true;
+            return;
+        }
         return;
     }
+    if(GPIO_getInputPinValue(GPIO_PORT_P3, GPIO_PIN7) == 0){
+        if(clk >= timeWhenLastCriticalMeasurement + timeWaitingAfterCriticalMeasurement
+                && !alarmState)
+            warningState = false;
+
+    }
+    if(interruptP3p5){
+        timeWhenLastMoved = clk;
+        interruptP3p5 = false;
+        return;
+    }
+
     if(timeWhenLastMoved == 0){
         timeWhenLastMoved = clk;
         return;
@@ -260,8 +284,7 @@ void interruptP3Handler(){
  */
 void interruptP4Handler(){
     if(!interruptP4){
-        timeWhenOnBtnPressed = 0;
-        GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
+//        GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
         return;
     }
 
@@ -269,12 +292,18 @@ void interruptP4Handler(){
         timeWhenOnBtnPressed = clk;
         return;
     }
+    if(GPIO_getInputPinValue(GPIO_PORT_S1, GPIO_PIN_S1) == 0){
+        interruptP4 = false;
+        return;
+    }
     if(clk < timeWhenOnBtnPressed + 25) return; //2.5s
 
 
     onState = !onState;
-    GPIO_disableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
+    setBurnerActive(onState);
+//    GPIO_disableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
     interruptP4 = false;
+    timeWhenOnBtnPressed = 0;
 
 }
 
@@ -285,20 +314,17 @@ void interruptP4Handler(){
  * This method gets called in every loop and handles the measurements and usage of the Gas Sensor
  */
 void gasMeasurementHandler(){
-    measure();
-    if(isValueCritical()){
-        if(!warningState){
-            timeWhenLastMoved = clk;
-            setAccelerationSensorActive(true);
+    if(!warningState){
+        if(timeWhenLastMoved != 0){
+            timeWhenLastMoved = 0;
+            clkLEDAlert = 0;
+            setAccelerationSensorActive(false);
         }
-        warningState = true;
-    }else{
-        if(!warningState)
-            return;
-        warningState = false;
-        clkLEDAlert = 0;
-        setAccelerationSensorActive(false);
-
+        return;
+    }
+    if(timeWhenLastMoved == 0){
+        timeWhenLastMoved = clk;
+        setAccelerationSensorActive(true);
     }
 }
 
@@ -343,10 +369,18 @@ void __attribute__ ((interrupt(PORT3_VECTOR))) Port_3 (void)
 #error Compiler not supported!
 #endif
 {
-    //Clear P3.5 IFG
-    GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);
-    if(!onState) return;
-    interruptP3 = true;
+    if(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN5) == 1){
+        //Clear P3.5 IFG
+        GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);
+        if(!onState) return;
+        interruptP3p5 = true;
+    }
+    if(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN7) == 1){
+        //Clear P3.5 IFG
+        GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN7);
+        if(!onState) return;
+        interruptP3p7 = true;
+    }
 }
 
 
