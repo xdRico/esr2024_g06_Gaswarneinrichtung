@@ -272,12 +272,18 @@ void interruptP4Handler(){
 void gasMeasurementHandler(){
     measure();
     if(isValueCritical()){
-        if(!warningState)
+        if(!warningState){
             timeWhenLastMoved = clk;
+            setAccelerationSensorActive(true);
+        }
         warningState = true;
     }else{
+        if(!warningState)
+            return;
         warningState = false;
         clkLEDAlert = 0;
+        setAccelerationSensorActive(false);
+
     }
 }
 

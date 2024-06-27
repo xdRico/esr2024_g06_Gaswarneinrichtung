@@ -30,14 +30,13 @@ void initAccelerationHandler();
 
 
 /**
- * setTimeUntilWarning(int time):
+ * setAccelerationSensorActive(bool active):
  *
- * This method is used to define the maximum Time in Seconds that the AccelerationSensor has not to be moved to activate warning mode.
- *
- *  param:
- *      time: the time to set as maximum - in Seconds
+ * This method activates or deactivates the accelerationSensor
+ *  args:
+ *      active: the bool that activates / deactivates the sensor
  */
-void setTimeUntilWarning(int time);
+void setAccelerationSensorActive(bool active);
 
 
 #endif /* SRC_INTERFACE_IACCELERATIONHANDLER_H_ */
