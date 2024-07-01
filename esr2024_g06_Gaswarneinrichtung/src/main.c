@@ -3,6 +3,7 @@
 #include "IOutputHandler.h"
 #include "IAccelerationHandler.h"
 #include "IGasHandler.h"
+#include "II2CHandler.h"
 
 bool interruptP2 = false;
 bool interruptP3p5 = false;
