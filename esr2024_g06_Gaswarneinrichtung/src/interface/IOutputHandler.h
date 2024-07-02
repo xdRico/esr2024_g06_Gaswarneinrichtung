@@ -7,7 +7,7 @@
 #ifndef SRC_INTERFACE_IOUTPUTHANDLER_H_
 #define SRC_INTERFACE_IOUTPUTHANDLER_H_
 
-#include "IModule.h"
+#include <IMain.h>
 
 
 /**

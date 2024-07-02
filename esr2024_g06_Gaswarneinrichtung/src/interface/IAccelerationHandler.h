@@ -10,7 +10,7 @@
 #ifndef SRC_INTERFACE_IACCELERATIONHANDLER_H_
 #define SRC_INTERFACE_IACCELERATIONHANDLER_H_
 
-#include "IModule.h"
+#include <IMain.h>
 
 
 /**

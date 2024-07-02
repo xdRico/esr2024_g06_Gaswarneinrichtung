@@ -5,8 +5,8 @@
  */
 
 
-#ifndef SRC_INTERFACE_IMODULE_H_
-#define SRC_INTERFACE_IMODULE_H_
+#ifndef SRC_INTERFACE_IMAIN_H_
+#define SRC_INTERFACE_IMAIN_H_
 
 #include <stdbool.h>
 #include <msp430.h>
@@ -45,12 +45,4 @@ void postInit();
 void loop();
 
 
-/**
- * mainRoutine():
- *
- * The mainRoutine method is for the main routine of the program, that gets called in the main loop
- */
-void mainRoutine();
-
-
-#endif /* SRC_INTERFACE_IMODULE_H_ */
+#endif /* SRC_INTERFACE_IMAIN_H_ */

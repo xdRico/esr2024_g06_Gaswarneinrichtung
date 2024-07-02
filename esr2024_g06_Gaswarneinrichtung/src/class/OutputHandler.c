@@ -53,11 +53,3 @@ void setAlertLED(bool alert){
         GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
 }
 
-
-/**
- * Implementation of IOutputHandler.h
- */
-void mainRoutineOutputHandler(){
-
-    //TODO Implement
-}

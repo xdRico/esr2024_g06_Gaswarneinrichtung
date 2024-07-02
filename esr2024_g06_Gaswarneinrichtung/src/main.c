@@ -1,5 +1,5 @@
+#include <IMain.h>
 #include <msp430.h> 
-#include <IModule.h>
 #include "IOutputHandler.h"
 #include "IAccelerationHandler.h"
 #include "IGasHandler.h"
