@@ -1,11 +1,9 @@
-/*
- * Module.h
- *
- *  Created on: 17.06.2024
- *      Author: ricow
- *
- *  This header file is an interface for use in all modules in the project.
+/** @file Module.h
+ *  @brief This header file is an interface for use in all modules in the project.
+ *  @author ricow
+ *  @date 2024-06-17
  */
+
 
 #ifndef SRC_INTERFACE_IMODULE_H_
 #define SRC_INTERFACE_IMODULE_H_
