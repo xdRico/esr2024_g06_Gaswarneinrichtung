@@ -11,11 +11,11 @@
 
 void i2c_init(void) {
     EUSCI_B_I2C_initMasterParam i2cParams = {
-        EUSCI_B_I2C_CLOCKSOURCE_SMCLK, // SMCLK Clock Source
-        12000000,                      // SMCLK = 12MHz
-        EUSCI_B_I2C_SET_DATA_RATE_400KBPS, // Desired I2C Clock of 400khz
-        1,                             // No byte counter threshold
-        EUSCI_B_I2C_NO_AUTO_STOP       // No Autostop
+        EUSCI_B_I2C_CLOCKSOURCE_SMCLK, /**< SMCLK Clock Source*/
+        12000000,                      /**< SMCLK = 12MHz*/
+        EUSCI_B_I2C_SET_DATA_RATE_400KBPS, /**< Desired I2C Clock of 400khz*/
+        1,                             /**< No byte counter threshold*/
+        EUSCI_B_I2C_NO_AUTO_STOP       /**< No Autostop*/
     };
     EUSCI_B_I2C_initMaster(EUSCI_B0_BASE, &i2cParams);
 
