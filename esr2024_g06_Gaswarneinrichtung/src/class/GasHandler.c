@@ -32,12 +32,12 @@ void initGasHandler(){
 
 
 /**
- *
+ *  Implementation of IGasHandler.h
  */
 void postInitGasHandler(){
-    GPIO_selectInterruptEdge(GPIO_PORT_P3, GPIO_PIN7, GPIO_HIGH_TO_LOW_TRANSITION);
-    GPIO_enableInterrupt(GPIO_PORT_P3, GPIO_PIN7);
-    GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN7);
+    GPIO_selectInterruptEdge(GPIO_PORT_P3, GPIO_PIN1, GPIO_HIGH_TO_LOW_TRANSITION);
+    GPIO_enableInterrupt(GPIO_PORT_P3, GPIO_PIN1);
+    GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN1);
 
 }
 

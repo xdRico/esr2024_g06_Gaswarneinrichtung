@@ -30,6 +30,14 @@ void initAccelerationHandler();
 
 
 /**
+ * postInitAccelerationHandler():
+ *
+ * The postInit method is for setting up Interrupts.
+ */
+void postInitAccelerationHandler();
+
+
+/**
  * setAccelerationSensorActive(bool active):
  *
  * This method activates or deactivates the accelerationSensor

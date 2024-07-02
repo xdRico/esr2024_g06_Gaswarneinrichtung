@@ -27,6 +27,13 @@ void initGasHandler();
 
 
 /**
+ * postInitGasHandler():
+ *
+ * The postInit method is for setting up Interrupts.
+ */
+void postInitGasHandler();
+
+/**
  * measure():
  *
  * This method is used to get the current value of the gas sensor.

@@ -6,28 +6,28 @@
 #include "II2CHandler.h"
 
 bool interruptP2 = false;
+bool interruptP3p1 = false;
 bool interruptP3p5 = false;
-bool interruptP3p7 = false;
 bool interruptP4 = false;
-bool interruptRTC = false;
 bool onState = false;
 bool warningState = false;
 bool alarmState = false;
 
 int clk = 0;
-const int intClockTime = 5; //in s/10
-const int timeRestingTillAlarm = 15 * 10; //in s/10
+const int intClockTime = 5; //< in s/10
+const int timeRestingTillAlarm = 15 * 10; //< in s/10
 int timeWhenOnBtnPressed = 0;
+const int timeToPressOnBtn = 25; //< 2.5s (in s/10)
 int timeWhenLastMoved = 0;
 int timeWhenLastCriticalMeasurement = 0;
-const int timeWaitingAfterCriticalMeasurement = 10 * 10; // in s/10
+const int timeWaitingAfterCriticalMeasurement = 10 * 10; //< in s/10
 
-// in s/10
+//< in s/10
 int clkLEDAlert = 0;
 const int timeToBlinkLEDWarning = 10;
-const int timeToWaitLEDWarning = 30;
-const int timeToBlinkLEDAlarm = 10;
-const int timeToWaitLEDAlarm = 10;
+const int timeToWaitLEDWarning = 20;
+const int timeToBlinkLEDAlarm = 5;
+const int timeToWaitLEDAlarm = 5;
 
 int clkLEDOn = 0;
 const int timeToBlinkLEDOn = 5;
@@ -61,7 +61,6 @@ int main(void){
     while(1){
         loop();
     }
-    return 0;
 }
 
 
@@ -69,26 +68,24 @@ int main(void){
  * Implementation of IModule.h
  */
 void preInit(){
-    //preInit device
+    //< preInit device
 
 
-    WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
+    WDTCTL = WDTPW | WDTHOLD;   //< stop watchdog timer
 
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_S1, GPIO_PIN_S1);
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_S2, GPIO_PIN_S2);
-    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3, GPIO_PIN5);
-
-    GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
-    GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
 
     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
 
+    GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
+    GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
 
-    //preInit Modules
+    //< preInit Modules
 
     preInitOutputHandler();
-    //preInitAccelerationHandler();
+    preInitAccelerationHandler();
     preInitGasHandler();
 }
 
@@ -97,13 +94,14 @@ void preInit(){
  * Implementation of IModule.h
  */
 void init(){
-    //init Device
+    //< init Device
 
-    //init Modules
+    //< init Modules
 
     initOutputHandler();
-    //initAccelerationHandler();
+    initAccelerationHandler();
     initGasHandler();
+    i2c_init();
 }
 
 
@@ -111,19 +109,17 @@ void init(){
  * Implementation of IModule.h
  */
 void postInit(){
-    //postInit Device
+    //< postInit Device
     GPIO_selectInterruptEdge(GPIO_PORT_S1, GPIO_PIN_S1, GPIO_HIGH_TO_LOW_TRANSITION);
     GPIO_selectInterruptEdge(GPIO_PORT_S2, GPIO_PIN_S2, GPIO_HIGH_TO_LOW_TRANSITION);
-    GPIO_selectInterruptEdge(GPIO_PORT_P3, GPIO_PIN5, GPIO_HIGH_TO_LOW_TRANSITION);
+
     GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
     GPIO_enableInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);
-    GPIO_enableInterrupt(GPIO_PORT_P3, GPIO_PIN5);
 
     PMM_unlockLPM5();
 
     GPIO_clearInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
     GPIO_clearInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);
-    GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);
 
 
 
@@ -140,24 +136,25 @@ void postInit(){
     /*
      * Initialize and enable ICC
      */
-    //Disable global interrupt during setup
+    //< Disable global interrupt during setup
     __bic_SR_register(GIE);
 
-    //NOTE: ICC_LEVEL_0 is the highest priority, ICC_LEVEL3 is the lowest priority
-    //Set P2 interrupt medium priority
+    //< NOTE: ICC_LEVEL_0 is the highest priority, ICC_LEVEL3 is the lowest priority
+    //< Set P2 interrupt medium priority
     ICC_setInterruptLevel(ICC_ILSR_P2, ICC_LEVEL_2);
-    //Set P3, P4 interrupt higher priority
+    //< Set P3, P4 interrupt higher priority
     ICC_setInterruptLevel(ICC_ILSR_P3, ICC_LEVEL_1);
     ICC_setInterruptLevel(ICC_ILSR_P4, ICC_LEVEL_1);
-    //Set RTC interrupt lower priority
+    //< Set RTC interrupt lower priority
     ICC_setInterruptLevel(ICC_ILSR_RTC_COUNTER, ICC_LEVEL_3);
 
-    //Enable ICC module
+    //< Enable ICC module
     ICC_enable();
 
 
-    //postInit Modules
+    //< postInit Modules
     postInitGasHandler();
+    postInitAccelerationHandler();
 
 }
 
@@ -177,21 +174,21 @@ void postInit(){
 void loop(){
 
 
-    //Enter LPM3 and global interrupt
+    //< Enter LPM3 and global interrupt
     __bis_SR_register(LPM3_bits + GIE);
     clk += intClockTime;
     clkLEDAlert += intClockTime;
     clkLEDOn += intClockTime;
 
-    // On-Btn
+    //< On-Btn
     interruptP4Handler();
     if(!onState)
         return;
-    // Acc-Mvmnt + Gas-msrmnt interrupt
+    //< Acc-Mvmnt + Gas-msrmnt interrupt
     interruptP3Handler();
-    // Gas-Msrmnt
+    //< Gas-Msrmnt
     gasMeasurementHandler();
-    // Ack-Btn
+    //< Ack-Btn
     interruptP2Handler();
 
     if(alarmState){
@@ -248,16 +245,16 @@ void interruptP2Handler(){
  */
 void interruptP3Handler(){
     if(!warningState){
-        if(interruptP3p7){
+        if(interruptP3p1){
             timeWhenLastMoved = clk;
             timeWhenLastCriticalMeasurement = clk;
-            interruptP3p7 = false;
+            interruptP3p1 = false;
             warningState = true;
             return;
         }
         return;
     }
-    if(GPIO_getInputPinValue(GPIO_PORT_P3, GPIO_PIN7) == 0){
+    if(GPIO_getInputPinValue(GPIO_PORT_P3, GPIO_PIN1) == GPIO_INPUT_PIN_HIGH){
         if(clk >= timeWhenLastCriticalMeasurement + timeWaitingAfterCriticalMeasurement
                 && !alarmState)
             warningState = false;
@@ -285,7 +282,7 @@ void interruptP3Handler(){
  */
 void interruptP4Handler(){
     if(!interruptP4){
-//        GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
+        GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
         return;
     }
 
@@ -293,16 +290,16 @@ void interruptP4Handler(){
         timeWhenOnBtnPressed = clk;
         return;
     }
-    if(GPIO_getInputPinValue(GPIO_PORT_S1, GPIO_PIN_S1) == 0){
+    if(GPIO_getInputPinValue(GPIO_PORT_S1, GPIO_PIN_S1) == GPIO_INPUT_PIN_HIGH){
         interruptP4 = false;
         return;
     }
-    if(clk < timeWhenOnBtnPressed + 25) return; //2.5s
+    if(clk < timeWhenOnBtnPressed + timeToPressOnBtn) return; //2.5s
 
 
     onState = !onState;
     setBurnerActive(onState);
-//    GPIO_disableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
+    GPIO_disableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
     interruptP4 = false;
     timeWhenOnBtnPressed = 0;
 
@@ -330,7 +327,7 @@ void gasMeasurementHandler(){
 }
 
 
-// Port 2 interrupt service routine
+//< Port 2 interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=PORT2_VECTOR
 __interrupt void Port_2(void)
@@ -340,27 +337,14 @@ void __attribute__ ((interrupt(PORT2_VECTOR))) Port_2 (void)
 #error Compiler not supported!
 #endif
 {
-    //Clear S2 IFG
+    //< Clear S2 IFG
     GPIO_clearInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);
     if(!onState) return;
     interruptP2 = true;
-    //__bic_SR_register_on_exit(LPM3_bits);   // Exit LPM3
-
-
-//    //Set LED2 to indicate port interrupt
-//    GPIO_setOutputHighOnPin(
-//            GPIO_PORT_LED2,
-//            GPIO_PIN_LED2);
-//    // Keep LED2 output high for 0.5 second
-//    __delay_cycles(500000);
-//    //Clear LED2 output
-//    GPIO_setOutputLowOnPin(
-//            GPIO_PORT_LED2,
-//            GPIO_PIN_LED2);
 }
 
 
-// Port 3 interrupt service routine
+//< Port 3 interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=PORT3_VECTOR
 __interrupt void Port_3(void)
@@ -370,22 +354,22 @@ void __attribute__ ((interrupt(PORT3_VECTOR))) Port_3 (void)
 #error Compiler not supported!
 #endif
 {
-    if(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN5) == 1){
-        //Clear P3.5 IFG
+    if(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN5) & GPIO_PIN5){
+        //< Clear P3.5 IFG
         GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);
         if(!onState) return;
         interruptP3p5 = true;
     }
-    if(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN7) == 1){
-        //Clear P3.5 IFG
-        GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN7);
+    if(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN1) & GPIO_PIN1){
+        //< Clear P3.1 IFG
+        GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN1);
         if(!onState) return;
-        interruptP3p7 = true;
+        interruptP3p1 = true;
     }
 }
 
 
-// Port 4 interrupt service routine
+//< Port 4 interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=PORT4_VECTOR
 __interrupt void Port_4(void)
@@ -396,15 +380,15 @@ void __attribute__ ((interrupt(PORT4_VECTOR))) Port_4 (void)
 #endif
 {
 
-    //Clear S1 IFG
+    //< Clear S1 IFG
     GPIO_clearInterrupt(GPIO_PORT_S1,GPIO_PIN_S1);
     interruptP4 = true;
-    __bic_SR_register_on_exit(LPM3_bits);   // Exit LPM3
+    __bic_SR_register_on_exit(LPM3_bits);   //< Exit LPM3
 
 }
 
 
-// RTC interrupt service routine
+//< RTC interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=RTC_VECTOR
 __interrupt void RTC_ISR(void)
@@ -417,20 +401,11 @@ void __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR (void)
     switch(__even_in_range(RTCIV,RTCIV_RTCIF))
     {
         case  RTCIV_NONE:
-            break;          // No interrupt
-        case  RTCIV_RTCIF:                  // RTC Overflow
-            //Enable global interrupt
+            break;          //< No interrupt
+        case  RTCIV_RTCIF:                  //< RTC Overflow
+            //< Enable global interrupt
             __bis_SR_register(GIE);
-            interruptRTC = true;
-            __bic_SR_register_on_exit(LPM3_bits);   // Exit LPM3
-
-//            //Set LED1 to indicate RTC interrupt
-//            GPIO_setOutputHighOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
-//            //Keep LED1 output high for 4 seconds
-//            __delay_cycles(4000000);
-//            //Clear LED1 output
-//            GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
-
+            __bic_SR_register_on_exit(LPM3_bits);   //<  Exit LPM3
             break;
         default:
             break;

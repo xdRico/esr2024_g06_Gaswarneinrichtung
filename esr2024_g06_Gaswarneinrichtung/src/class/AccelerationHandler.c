@@ -10,7 +10,6 @@
 #include <IAccelerationHandler.h>
 #include "II2CHandler.h"
 
-//#define INTERRUPT_PIN GPIO_PIN4 // P?? as interrupt pin
 
 /**
  * Implementation of IAccelerationHandler
@@ -19,30 +18,12 @@ void preInitAccelerationHandler(){
 
     /**< Configure P?? as output*/
 
-   GPIO_setAsOutputPin(GPIO_PORT_P3, GPIO_PIN2);
+    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3, GPIO_PIN5);
 
-   GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN2);
+    GPIO_setAsOutputPin(GPIO_PORT_P3, GPIO_PIN2);
 
-    /**< Configure P?? as input with pull-up resistor and interrupt*/
-//    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3, INTERRUPT_PIN);
-
-    GPIO_selectInterruptEdge(GPIO_PORT_P3, INTERRUPT_PIN, GPIO_LOW_TO_HIGH_TRANSITION);
-
-    GPIO_clearInterrupt(GPIO_PORT_P3, INTERRUPT_PIN);
-
-    GPIO_enableInterrupt(GPIO_PORT_P3, INTERRUPT_PIN);
-
+    GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN2);
 }
-
-//// Port 3 interrupt service routine
-//#pragma vector=PORT3_VECTOR
-//__interrupt void Port_3(void) {
-//    if (GPIO_getInterruptStatus(GPIO_PORT_P3, INTERRUPT_PIN) & INTERRUPT_PIN) {
-//        GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN2); // Toggle LED on P??
-//        i2c_read_byte(0x30); /**< Read the INT_SOURCE register to clear interrupt*/
-//        GPIO_clearInterrupt(GPIO_PORT_P1, INTERRUPT_PIN);
-//    }
-//}
 
 
 /**
@@ -63,12 +44,25 @@ void initAccelerationHandler(){
 /**
  * Implementation of IAccelerationHandler
  */
+void postInitAccelerationHandler(){
+    GPIO_selectInterruptEdge(GPIO_PORT_P3, GPIO_PIN5, GPIO_HIGH_TO_LOW_TRANSITION);
+
+    GPIO_enableInterrupt(GPIO_PORT_P3, GPIO_PIN5);
+
+    GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);
+}
+
+
+/**
+ * Implementation of IAccelerationHandler
+ */
 void setAccelerationSensorActive(bool active){
-    if(active)
+    if(active){
         GPIO_setOutputHighOnPin(GPIO_PORT_P3, GPIO_PIN2);
-    /**< reInit??*/
-    else
+        preInitAccelerationHandler();
+        initAccelerationHandler();
+        postInitAccelerationHandler();
+    /* reInit??*/
+    }else
         GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN2);
-
-
 }
