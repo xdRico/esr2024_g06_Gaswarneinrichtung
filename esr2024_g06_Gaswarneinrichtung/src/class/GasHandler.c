@@ -1,13 +1,10 @@
-/*
- * GasHandler.c
- *
- *  Created on: 17.06.2024
- *      Author:
- *
- *  This Class implements the IGasHandler.h header file.
- *  It uses Pin 32 (P3.7) for activating the Gas Sensor and
- *  Pin 30 (P3.1) for the digital input value or
- *  Pin 25 (P5.1) for the analog input value.
+/** @file GasHandler.c
+ *  @brief  This Class implements the IGasHandler.h header file.
+ *          It uses Pin 32 (P3.7) for activating the Gas Sensor and
+ *          Pin 30 (P3.1) for the digital input value or
+ *          Pin 25 (P5.1) for the analog input value.
+ *  @author ricow
+ *  @date 2024-06-17
  */
 
 #include <IGasHandler.h>

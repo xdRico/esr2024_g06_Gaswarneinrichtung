@@ -1,10 +1,7 @@
-/*
- * IOutputHandler.h
- *
- *  Created on: 16 Jun 2024
- *      Author: Olawale
- *
- *  This header file is an interface for outputting Data.
+/** @file IOutputHandler.h
+ *  @brief This header file is an interface for outputting Data.
+ *  @author Olawale
+ *  @date 2024-06-16
  */
 
 #ifndef SRC_INTERFACE_IOUTPUTHANDLER_H_

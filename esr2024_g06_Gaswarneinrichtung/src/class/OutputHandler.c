@@ -1,13 +1,10 @@
-/*
- * OutputHandler.c
- *
- *  Created on: 17 Jun 2024
- *      Author: ricow
- *
- *  This Class implements the IOutputHandler.h header file.
- *  It uses the two onboard LEDs of the MSP430FR2355 as well as a Piezo speaker on Pin 19 (P2.0).
- *
- * */
+/** @file OutputHandler.c
+ *  @brief This Class implements the IOutputHandler.h header file.
+ *         It uses the two onboard LEDs of the MSP430FR2355 as well as a Piezo speaker on Pin 19 (P2.0).
+ *  @author ricow
+ *  @date 2024-06-17
+ */
+
 #include <IOutputHandler.h>
 
 
