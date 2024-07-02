@@ -1,10 +1,7 @@
-/*
- * IGasHandler.h
- *
- *  Created on: 17.06.2024
- *      Author: ricow
- *
- *  This header file is an interface for the use of the gas measuring sensor.
+/** @file IGasHandler.h
+ *  @brief This header file is an interface for the use of the gas measuring sensor.
+ *  @author ricow
+ *  @date 2024-06-17
  */
 
 #ifndef SRC_INTERFACE_IGASHANDLER_H_
