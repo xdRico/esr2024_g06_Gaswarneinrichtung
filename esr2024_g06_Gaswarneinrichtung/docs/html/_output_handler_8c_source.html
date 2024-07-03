@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gaswarneinrichtung: OutputHandler.c Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gaswarneinrichtung<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Programm mit Gaswarneinrichtung über das MSP430 launchpad</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Suchen',false);
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6ddc554cda5704a54b4cf197aaaaa198.html">class</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">OutputHandler.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_output_handler_8c.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="_i_output_handler_8h.html">IOutputHandler.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_output_handler_8c.html#adffdef9f71f7b987e91e48161aca2b46">   15</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_output_handler_8c.html#adffdef9f71f7b987e91e48161aca2b46">preInitOutputHandler</a>(){</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_output_handler_8c.html#a1694689b08a219d34981b65ee5b27fe9">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_output_handler_8c.html#a1694689b08a219d34981b65ee5b27fe9">initOutputHandler</a>(){</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    __no_operation();                   <span class="comment">// For debug</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//********************************************************************************************************/</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_output_handler_8c.html#a1af05c20400d456c966d5e3c779b7e5d">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_output_handler_8c.html#a1af05c20400d456c966d5e3c779b7e5d">setOnLED</a>(<span class="keywordtype">bool</span> on){</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span>(on)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        GPIO_setOutputHighOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_output_handler_8c.html#abbfff07775a6e46b7e6fdf66b613ebc2">   54</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_output_handler_8c.html#abbfff07775a6e46b7e6fdf66b613ebc2">setAlertLED</a>(<span class="keywordtype">bool</span> alert){</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span>(alert)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        GPIO_setOutputHighOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="_output_handler_8c.html#a04fbb6af823aec2deab7d45c1373a23b">   61</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_output_handler_8c.html#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> frequency) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> delayTime = 500000 / frequency; <span class="comment">// Calculate half period for given frequency in microseconds</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    P3OUT ^= PIEZO_PIN;   <span class="comment">// Toggle Piezo pin</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    delayMicroseconds(delayTime); <span class="comment">// Half period delay</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="_output_handler_8c.html#a568f5134e5553d9e0712220e0f55f552">   74</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_output_handler_8c.html#a568f5134e5553d9e0712220e0f55f552">activateAlertPiezo</a>(<span class="keywordtype">bool</span> accelerationAlert){</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (accelerationAlert){</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="ttc" id="a_i_output_handler_8h_html"><div class="ttname"><a href="_i_output_handler_8h.html">IOutputHandler.h</a></div><div class="ttdoc">This header file is an interface for outputting Data.</div></div>
+<div class="ttc" id="a_output_handler_8c_html_a04fbb6af823aec2deab7d45c1373a23b"><div class="ttname"><a href="_output_handler_8c.html#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo</a></div><div class="ttdeci">void togglePiezo(unsigned int frequency)</div><div class="ttdef"><b>Definition</b> <a href="#l00061">OutputHandler.c:61</a></div></div>
+<div class="ttc" id="a_output_handler_8c_html_a1694689b08a219d34981b65ee5b27fe9"><div class="ttname"><a href="_output_handler_8c.html#a1694689b08a219d34981b65ee5b27fe9">initOutputHandler</a></div><div class="ttdeci">void initOutputHandler()</div><div class="ttdef"><b>Definition</b> <a href="#l00028">OutputHandler.c:28</a></div></div>
+<div class="ttc" id="a_output_handler_8c_html_a1af05c20400d456c966d5e3c779b7e5d"><div class="ttname"><a href="_output_handler_8c.html#a1af05c20400d456c966d5e3c779b7e5d">setOnLED</a></div><div class="ttdeci">void setOnLED(bool on)</div><div class="ttdoc">Sets the State of the On-LED.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">OutputHandler.c:40</a></div></div>
+<div class="ttc" id="a_output_handler_8c_html_a568f5134e5553d9e0712220e0f55f552"><div class="ttname"><a href="_output_handler_8c.html#a568f5134e5553d9e0712220e0f55f552">activateAlertPiezo</a></div><div class="ttdeci">void activateAlertPiezo(bool accelerationAlert)</div><div class="ttdef"><b>Definition</b> <a href="#l00074">OutputHandler.c:74</a></div></div>
+<div class="ttc" id="a_output_handler_8c_html_abbfff07775a6e46b7e6fdf66b613ebc2"><div class="ttname"><a href="_output_handler_8c.html#abbfff07775a6e46b7e6fdf66b613ebc2">setAlertLED</a></div><div class="ttdeci">void setAlertLED(bool alert)</div><div class="ttdef"><b>Definition</b> <a href="#l00054">OutputHandler.c:54</a></div></div>
+<div class="ttc" id="a_output_handler_8c_html_adffdef9f71f7b987e91e48161aca2b46"><div class="ttname"><a href="_output_handler_8c.html#adffdef9f71f7b987e91e48161aca2b46">preInitOutputHandler</a></div><div class="ttdeci">void preInitOutputHandler()</div><div class="ttdef"><b>Definition</b> <a href="#l00015">OutputHandler.c:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

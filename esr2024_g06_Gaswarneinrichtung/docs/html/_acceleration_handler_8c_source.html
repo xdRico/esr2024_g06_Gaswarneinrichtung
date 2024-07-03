@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gaswarneinrichtung: AccelerationHandler.c Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Gaswarneinrichtung<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Programm mit Gaswarneinrichtung über das MSP430 launchpad</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Suchen',false);
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6ddc554cda5704a54b4cf197aaaaa198.html">class</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">AccelerationHandler.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_acceleration_handler_8c.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="_i_acceleration_handler_8h.html">IAccelerationHandler.h</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_i_i2_c_handler_8h.html">II2CHandler.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_acceleration_handler_8c.html#a3f6fc223092b05e0368498abae7f0be5">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_acceleration_handler_8c.html#a3f6fc223092b05e0368498abae7f0be5">preInitAccelerationHandler</a>(){</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3, GPIO_PIN5);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    GPIO_setAsOutputPin(GPIO_PORT_P3, GPIO_PIN2);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN2);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_acceleration_handler_8c.html#abe507c29e0f99c3a8602f2fcd1e80fd6">   32</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_acceleration_handler_8c.html#abe507c29e0f99c3a8602f2fcd1e80fd6">initAccelerationHandler</a>(){</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x2D, 0x00);  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x2D, 0x08);  </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x2E, 0x40);  </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x1D, 0x30);  </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x21, 0x10);  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x22, 0x10);  </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x23, 0x30);  </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a>(0x2A, 0x40);  </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_acceleration_handler_8c.html#a43300758feb7a49fda6627c644eaf532">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_acceleration_handler_8c.html#a43300758feb7a49fda6627c644eaf532">postInitAccelerationHandler</a>(){</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    GPIO_selectInterruptEdge(GPIO_PORT_P3, GPIO_PIN5, GPIO_HIGH_TO_LOW_TRANSITION);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    GPIO_enableInterrupt(GPIO_PORT_P3, GPIO_PIN5);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_acceleration_handler_8c.html#a54de704941eda6143cc8f89a889af65c">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_acceleration_handler_8c.html#a54de704941eda6143cc8f89a889af65c">setAccelerationSensorActive</a>(<span class="keywordtype">bool</span> active){</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span>(active){</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        GPIO_setOutputHighOnPin(GPIO_PORT_P3, GPIO_PIN2);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="_acceleration_handler_8c.html#a3f6fc223092b05e0368498abae7f0be5">preInitAccelerationHandler</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="_acceleration_handler_8c.html#abe507c29e0f99c3a8602f2fcd1e80fd6">initAccelerationHandler</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="_acceleration_handler_8c.html#a43300758feb7a49fda6627c644eaf532">postInitAccelerationHandler</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">/* reInit??*/</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }<span class="keywordflow">else</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        GPIO_setOutputLowOnPin(GPIO_PORT_P3, GPIO_PIN2);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+</div>
+<div class="ttc" id="a_acceleration_handler_8c_html_a3f6fc223092b05e0368498abae7f0be5"><div class="ttname"><a href="_acceleration_handler_8c.html#a3f6fc223092b05e0368498abae7f0be5">preInitAccelerationHandler</a></div><div class="ttdeci">void preInitAccelerationHandler()</div><div class="ttdef"><b>Definition</b> <a href="#l00017">AccelerationHandler.c:17</a></div></div>
+<div class="ttc" id="a_acceleration_handler_8c_html_a43300758feb7a49fda6627c644eaf532"><div class="ttname"><a href="_acceleration_handler_8c.html#a43300758feb7a49fda6627c644eaf532">postInitAccelerationHandler</a></div><div class="ttdeci">void postInitAccelerationHandler()</div><div class="ttdef"><b>Definition</b> <a href="#l00047">AccelerationHandler.c:47</a></div></div>
+<div class="ttc" id="a_acceleration_handler_8c_html_a54de704941eda6143cc8f89a889af65c"><div class="ttname"><a href="_acceleration_handler_8c.html#a54de704941eda6143cc8f89a889af65c">setAccelerationSensorActive</a></div><div class="ttdeci">void setAccelerationSensorActive(bool active)</div><div class="ttdef"><b>Definition</b> <a href="#l00059">AccelerationHandler.c:59</a></div></div>
+<div class="ttc" id="a_acceleration_handler_8c_html_abe507c29e0f99c3a8602f2fcd1e80fd6"><div class="ttname"><a href="_acceleration_handler_8c.html#abe507c29e0f99c3a8602f2fcd1e80fd6">initAccelerationHandler</a></div><div class="ttdeci">void initAccelerationHandler()</div><div class="ttdef"><b>Definition</b> <a href="#l00032">AccelerationHandler.c:32</a></div></div>
+<div class="ttc" id="a_i2_c_handler_8c_html_a830ef6add11132904f6d0fb98831c8d7"><div class="ttname"><a href="_i2_c_handler_8c.html#a830ef6add11132904f6d0fb98831c8d7">i2c_write_byte</a></div><div class="ttdeci">void i2c_write_byte(uint8_t reg, uint8_t data)</div><div class="ttdef"><b>Definition</b> <a href="_i2_c_handler_8c_source.html#l00028">I2CHandler.c:28</a></div></div>
+<div class="ttc" id="a_i_acceleration_handler_8h_html"><div class="ttname"><a href="_i_acceleration_handler_8h.html">IAccelerationHandler.h</a></div><div class="ttdoc">This header file is an interface for the use of the acceleration sensor.</div></div>
+<div class="ttc" id="a_i_i2_c_handler_8h_html"><div class="ttname"><a href="_i_i2_c_handler_8h.html">II2CHandler.h</a></div><div class="ttdoc">This Headerfile is an Interace for die I2C communikation.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt von&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
