@@ -1,10 +1,17 @@
 var searchData=
 [
-  ['postinit_0',['postInit',['../main_8c.html#a46b7f5d7468c90b73f8a829f09e9b415',1,'main.c']]],
-  ['postinitaccelerationhandler_1',['postInitAccelerationHandler',['../_acceleration_handler_8c.html#a43300758feb7a49fda6627c644eaf532',1,'postInitAccelerationHandler():&#160;AccelerationHandler.c'],['../_i_acceleration_handler_8h.html#a43300758feb7a49fda6627c644eaf532',1,'postInitAccelerationHandler():&#160;AccelerationHandler.c']]],
-  ['postinitgashandler_2',['postInitGasHandler',['../_gas_handler_8c.html#aadc8f7a3abb1dbe39fc210a371b78519',1,'postInitGasHandler():&#160;GasHandler.c'],['../_i_gas_handler_8h.html#aadc8f7a3abb1dbe39fc210a371b78519',1,'postInitGasHandler():&#160;GasHandler.c']]],
-  ['preinit_3',['preInit',['../main_8c.html#ac42b10502d0162eff3a08a1be748f6c0',1,'main.c']]],
-  ['preinitaccelerationhandler_4',['preInitAccelerationHandler',['../_acceleration_handler_8c.html#a3f6fc223092b05e0368498abae7f0be5',1,'preInitAccelerationHandler():&#160;AccelerationHandler.c'],['../_i_acceleration_handler_8h.html#a3f6fc223092b05e0368498abae7f0be5',1,'preInitAccelerationHandler():&#160;AccelerationHandler.c']]],
-  ['preinitgashandler_5',['preInitGasHandler',['../_gas_handler_8c.html#a1437cb7d4d094f4648cc68c3379cc041',1,'preInitGasHandler():&#160;GasHandler.c'],['../_i_gas_handler_8h.html#a1437cb7d4d094f4648cc68c3379cc041',1,'preInitGasHandler():&#160;GasHandler.c']]],
-  ['preinitoutputhandler_6',['preInitOutputHandler',['../_output_handler_8c.html#adffdef9f71f7b987e91e48161aca2b46',1,'preInitOutputHandler():&#160;OutputHandler.c'],['../_i_output_handler_8h.html#adffdef9f71f7b987e91e48161aca2b46',1,'preInitOutputHandler():&#160;OutputHandler.c']]]
+  ['i2c_5fread_5fbyte_0',['i2c_read_byte',['../_i2_c_handler_8c.html#a1740c448a825bd1f12069062164d8595',1,'i2c_read_byte(uint8_t reg):&#160;I2CHandler.c'],['../_i_i2_c_handler_8h.html#a1740c448a825bd1f12069062164d8595',1,'i2c_read_byte(uint8_t reg):&#160;I2CHandler.c']]],
+  ['i2chandler_2ec_1',['I2CHandler.c',['../_i2_c_handler_8c.html',1,'']]],
+  ['iaccelerationhandler_2eh_2',['IAccelerationHandler.h',['../_i_acceleration_handler_8h.html',1,'']]],
+  ['igashandler_2eh_3',['IGasHandler.h',['../_i_gas_handler_8h.html',1,'']]],
+  ['ii2chandler_2eh_4',['II2CHandler.h',['../_i_i2_c_handler_8h.html',1,'']]],
+  ['init_5',['init',['../main_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'main.c']]],
+  ['initaccelerationhandler_6',['initAccelerationHandler',['../_acceleration_handler_8c.html#abe507c29e0f99c3a8602f2fcd1e80fd6',1,'initAccelerationHandler():&#160;AccelerationHandler.c'],['../_i_acceleration_handler_8h.html#abe507c29e0f99c3a8602f2fcd1e80fd6',1,'initAccelerationHandler():&#160;AccelerationHandler.c']]],
+  ['initgashandler_7',['initGasHandler',['../_gas_handler_8c.html#a640fb673d8128daf4c90603567f4aa22',1,'initGasHandler():&#160;GasHandler.c'],['../_i_gas_handler_8h.html#a640fb673d8128daf4c90603567f4aa22',1,'initGasHandler():&#160;GasHandler.c']]],
+  ['initoutputhandler_8',['initOutputHandler',['../_output_handler_8c.html#a1694689b08a219d34981b65ee5b27fe9',1,'initOutputHandler():&#160;OutputHandler.c'],['../_i_output_handler_8h.html#a1694689b08a219d34981b65ee5b27fe9',1,'initOutputHandler():&#160;OutputHandler.c']]],
+  ['interruptp2handler_9',['interruptP2Handler',['../main_8c.html#a0bd6ee090ea43c90ff186fca55f77205',1,'main.c']]],
+  ['interruptp3handler_10',['interruptP3Handler',['../main_8c.html#a44ca05bc8cd60f76b1f35d94eb1da506',1,'main.c']]],
+  ['interruptp4handler_11',['interruptP4Handler',['../main_8c.html#adb4906eada6f2d04ad43eb93d01394f9',1,'main.c']]],
+  ['ioutputhandler_2eh_12',['IOutputHandler.h',['../_i_output_handler_8h.html',1,'']]],
+  ['isvaluecritical_13',['isValueCritical',['../_gas_handler_8c.html#aebd6fc9037d415e445382dd983b47854',1,'isValueCritical():&#160;GasHandler.c'],['../_i_gas_handler_8h.html#aebd6fc9037d415e445382dd983b47854',1,'isValueCritical():&#160;GasHandler.c']]]
 ];

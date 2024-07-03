@@ -172,6 +172,345 @@ Version \par\page\page\vertalt
 
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Gaswarneinrichtung\par \pard\plain 
+{\tc\tcl1 \v Gaswarneinrichtung}
+{\xe \v Gaswarneinrichtung}
+{\bkmkstart AAAAAAAAEO}
+{\bkmkend AAAAAAAAEO}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+}}
+\par \pard\plain 
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Styleguide\par \pard\plain 
+{\tc\tcl1 \v Styleguide}
+{\xe \v Styleguide}
+{\bkmkstart AAAAAAAADY}
+{\bkmkend AAAAAAAADY}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs16\cgrid 
+Author\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+Sven Steddin \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs16\cgrid 
+Version\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+0.2 \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs16\cgrid 
+Date\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+2019-06-03\par
+}}{\bkmkstart AAAAAAAADZ}
+{\bkmkend AAAAAAAADZ}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Vorwort
+\par}
+{\tc\tcl2 \v Vorwort}
+Der hier vorliegende Styleguide ist noch im Entwurfsstudium!\par
+Die in diesem Styleguide enthaltenen Vorgaben sind kein allgemeing\'FCltiger Standard sondern eine f\'FCr einen bestimmten Gesch\'E4ftsbereich definierte Vorschrift zur Formatierung von Source Code Dateien. Diese Vorschriften k\'F6nnen von jeder Organisation eigenst\'E4ndig festgelegt werden und individuelle Unterschiede aufweisen. Der hier vorliegende Styleguide soll dieses Konzept beispielhaft verdeutlichen.\par
+Unabh\'E4ngig von den hier gezeigten Vorgaben gelten nat\'FCrlich die als good style akzeptierten Vorgaben, wie sie z.B. von xxx beschrieben wurden.\par}
+{\bkmkstart AAAAAAAAEA}
+{\bkmkend AAAAAAAAEA}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Deklaration von Variablen
+\par}
+{\tc\tcl2 \v Deklaration von Variablen}
+Zur Beschreibung der Basistypen von Variablen werden die in <inttypes.h> vorgegebenen Definitionen verwendet. Es ergeben sich folgende Vorteile:{
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+k\'FCrzere Typbezeichner --> weniger Schreibarbeit\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+maschinenunabh\'E4ngige Datentypen\par}
+\par
+Die Definition von Variablennamen erfolgt vorzugsweise in der Kamelh\'F6ckerschreibweise.\par
+Variablennamen beginnen mit einem kleinen Buchstaben.\par}
+{\bkmkstart AAAAAAAAEB}
+{\bkmkend AAAAAAAAEB}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Pr\'E4fixe f\'FCr Variablennamen
+\par}
+{\tc\tcl2 \v Pr\'E4fixe f\'FCr Variablennamen}
+Es sollen die nachfolgend gelisteten Pr\'E4fixe bei der Definition von Variablennamen verwendet werden. Es ergeben sich folgende Vorteile:{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+es kann direkt im Sourcecode erkannt werden, ...{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+welchen Datentyp eine Variable besitzt\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+welchen Sichtbarkeit eine Variable besitzt\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u9702\tab}\ilvl1\ls1 \li0\ri0\lin0\rin0\fi-360\tx720\li720\ri0\lin720\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+wie der Zugriff auf die Variable zu erfolgen hat\par}
+}
+\par
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clcbpat16\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clcbpat16\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clcbpat16\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{Pr\'E4fix   \cell }{Bedeutung   \cell }{Beispiel    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{p_   \cell }{Variable ist ein Zeiger   \cell }{p_uiEvent    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{gp_   \cell }{Variable ist ein global verf\'FCgbarer Pointer f\'FCr Schreib- und Lesezugriffe   \cell }{gp_uiStatus    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{gcp_   \cell }{Variable ist ein global verf\'FCgbarer Konstantenpointer f\'FCr Lesezugriffe. Der Inhalt der Variable, auf die der Pointer zeigt, kann \'FCber den Pointer nicht ver\'E4ndert werden.   \cell }{gcp_uiTime_ms    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{m_   \cell }{Variable ist modulglobal, d.h. nur innerhalb des Moduls sichtbar, in dem sie als static deklariert wird.   \cell }{m_uiWinkelgrad_deg    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{kein x_ - Pr\'E4fix   \cell }{Varaible ist nur lokal innerhalb des aktuellen Blocks verf\'FCgbar   \cell }{uiZaehler   \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\pard\plain
+\par
+{\b Abk\'FCrzungen f\'FCr bestimmte Datentypen:}  \par
+(diese sind maschinenabh\'E4ngig und beziehen sich hier auf den MSP430)\par
+Die Typabk\'FCrzungen werden ohne Trennzeichen direkt dem Variablennamen vorangestellt. Der Variablennamen beginnt dann mit einem Gro\'DFbuchstaben. \par
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clcbpat16\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clcbpat16\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clcbpat16\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{Pr\'E4fix   \cell }{Bedeutung   \cell }{Beispiel    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{uc   \cell }{uint8_t   \cell }{ucData    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{c   \cell }{int8_t   \cell }{cDifference    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{ui   \cell }{uint16_t   \cell }{uiFrequenz    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{i   \cell }{int16_t   \cell }{iDistance    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{ul   \cell }{uint32_t   \cell }{ulCount    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{l   \cell }{int32_t   \cell }{lValue    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{f   \cell }{float   \cell }{fGewicht    \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\trowd \trgaph108\trleft-108\trbrdrt\brdrs\brdrw10 \trbrdrl\brdrs\brdrw10 \trbrdrb\brdrs\brdrw10 \trbrdrr\brdrs\brdrw10 \trbrdrh\brdrs\brdrw10 \trbrdrv\brdrs\brdrw10 
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx2916
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx5832
+\clvertalt\clbrdrt\brdrs\brdrw10 \clbrdrl\brdrs\brdrw10 \clbrdrb\brdrs\brdrw10 \clbrdrr \brdrs\brdrw10 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{d   \cell }{double   \cell }{dToleranz   \cell }
+\pard \widctlpar\intbl\adjustright
+{\row }
+\pard\plain
+\par
+\par
+\par
+ \par}
+{\bkmkstart AAAAAAAAEC}
+{\bkmkend AAAAAAAAEC}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Zugriff auf externe Sensoren / Aktoren
+\par}
+{\tc\tcl2 \v Zugriff auf externe Sensoren / Aktoren}
+Der Zugriff auf Aktoren oder Sensoren erfolgt \'FCber einen standardisierten Satz von Funktionen (API):\par
+{\b XY-Init()} {
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Anlegen der f\'FCr den Datenaustausch erforderlichen Datenstrukturen\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Konfiguration der MC-Register der f\'FCr den Zugriff auf die Hardware erforderlichen Peripherals des MC\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Definition der Registerinhalte der externen Hardware, die ggf. zu Beginn auf die Hardeware \'FCbertragen werden m\'FCssen\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Aktivieren der f\'FCr den Datenaustausch mit der externen Hardware ben\'F6tigten Peripherals des MC\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Reset der Hardware\par}
+\par
+{\b XY-Start()} {
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+\'DCbertragen der Konfigurationsregister auf die Hardware\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Start der Funktion der externen Hardware\par}
+\par
+{\b XY-Write()} {
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Schreiben von Daten oder Kommandos auf die Hardware\par}
+\par
+{\b XY-Read()} {
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Lesen von Daten von der Hardware\par}
+\par
+{\b XY-Stop()} {
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Einfrieren des Zustandes der Hardware \par
+ \par
+Es gelten folgende Anforderungen an das API:\par}
+\par
+Sofern bestimmte Funktionen f\'FCr den Betrieb der Hardware nicht erforderlich sind, k\'F6nnen diese weggelassen werden{
+\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Die Funktionen d\'FCrfen das Programm nicht blockieren bzw. m\'FCssen abbrechbar sein\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Die I/O-Funktionen sollen dazu geeignet sein, in Interrupt-Serviceroutinen aufgerufen zu werden\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Die Funktionen liefern einen R\'FCckgabewert, der den Erfolgsstatus des Funktionsaufrufs kennzeichnet\par
+\pard\plain {\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\nowidctlpar\cf0\hich\af0\langfe2052\dbch\af0\afs24\lang1081\loch\f0\fs24\lang1033{\listtext\pard\plain \hich\af3\dbch\af3\loch\f8 \'01\u8226\tab}\ilvl0\ls1 \li0\ri0\lin0\rin0\fi-360\tx360\li360\ri0\lin360\rin0\fi-360\kerning1\hich\af4\dbch\af5\rtlch \ltrch\loch\fs20
+Die Werte\'FCbergabe erfolgt \'FCber Zeiger auf Datenstrukturen, die f\'FCr die Nutzung der Funktionen definiert werden m\'FCssen \par
+\par
+}
+\par
+\par}
+{\bkmkstart AAAAAAAAED}
+{\bkmkend AAAAAAAAED}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Erstellung von doxygen Kommentaren
+\par}
+{\tc\tcl2 \v Erstellung von doxygen Kommentaren}
+{\bkmkstart AAAAAAAAEE}
+{\bkmkend AAAAAAAAEE}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Erstellen von File Headers
+\par}
+{\tc\tcl3 \v Erstellen von File Headers}
+Zu Beginn jeder Sourcedatei soll ein Header \'FCber die Bedeutung der Sourcedatei informieren. Der hier enthaltene Text soll als Vorlage verwendet werden. Die enthaltenen Beispieltexte m\'FCssen ersetzt werden. Die Bedeutung der doxygen tags ist der doxygen Dokumentation zu entnehmen: \par
+ [doxygen Handbuch] ({\f2 http://www.stack.nl/~dimitri/doxygen/manual/markdown.html})\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \par
+\par
+}
+\par
+{\bkmkstart AAAAAAAAEF}
+{\bkmkend AAAAAAAAEF}
+{{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Erstellen von Function Headers
+\par}
+{\tc\tcl4 \v Erstellen von Function Headers}
+Zu Beginn jeder Funktion soll ein Header \'FCber die Bedeutung der Funktion informieren. Der hier enthaltene Text soll als Vorlage verwendet werden. Die enthaltenen Beispieltexte m\'FCssen ersetzt werden. Die Bedeutung der doxygen tags ist der doxygen Dokumentation zu entnehmen: \par
+ [doxygen Handbuch] ({\f2 http://www.stack.nl/~dimitri/doxygen/manual/markdown.html})\par
+{\b Wichtig:}  \par
+Nicht verwendete tags sollen entfernt werden, damit die erzeugte Dokumentation m\'F6glichst kurz und \'FCbersichtlich bleibt. Die tags sind dann bei Bedarf in der vorgesehenen Reihenfolge wieder einzuf\'FCgen.\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid {\cf20 //********************************************************************************************************/}\par
+\par
+}
+\par
+Das tag {\i riskman}  geh\'F6ren nicht zu den doxygen Standardtags sondern ist eine benutzerabh\'E4ngige Erweiterungen, die im doxygen Konfigurationsfile unter ALIASES definiert werden muss.\par}
+\par}
+{\bkmkstart AAAAAAAAEG}
+{\bkmkend AAAAAAAAEG}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Einsatz von graphviz.dot
+\par}
+{\tc\tcl3 \v Einsatz von graphviz.dot}
+Doxygen kann Grafiken zu den Abh\'E4ngigkeiten der Source-Dateien erstellen, wenn das Tool graphviz-dot auf dem Rechner installiert ist. Der bin-Pfad der Installation muss im doxygen-File hinterlegt sein.\par}
+{\bkmkstart AAAAAAAAEH}
+{\bkmkend AAAAAAAAEH}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Verwendung von Templates zur Neuanlage von Dateien
+\par}
+{\tc\tcl3 \v Verwendung von Templates zur Neuanlage von Dateien}
+Die CCS-IDE ist von Eclipse abgeleitet. Es gibt daher die in Eclipse definierte Vorgehensweise, bei der Neuanlage von Dateien vorkonfigurierte Templates zu erstellen. Die Einstellung der Template erfolgt unter dem Men\'FCpunkt /Window/Preferences/Code Style/Code Templates/Files \par}
+\par}
+}}
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Todo List\par \pard\plain 
+{\tc\tcl1 \v Todo List}
+{\xe \v Todo List}
+{\bkmkstart AAAAAAAAEI}
+{\bkmkend AAAAAAAAEI}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs16\cgrid 
+page {\b Main Page}  \par
+}
+{\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\bkmkstart AAAAAAAAEJ}
+{\bkmkend AAAAAAAAEJ}
+{
+\par
+\pard\plain \s141\fi-360\li720\widctlpar\fs20\cgrid 
+1.\tab Implementierung ein Auschalten des Gassensors via Transistor\par
+\pard\plain \s141\fi-360\li720\widctlpar\fs20\cgrid 
+2.\tab Verbesserung der Dokumentation\par}
+\par}
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
 Data Structure Index\par \pard\plain 
 {\tc \v Data Structure Index}
 \pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
@@ -181,7 +520,7 @@ Data Structures\par \pard\plain
 {
 \par
 \pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
-{\b {\b sensorData_t} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAADX \\*MERGEFORMAT}{\fldrslt pagenum}}
+{\b {\b sensorData_t} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEK \\*MERGEFORMAT}{\fldrslt pagenum}}
 \par
 \par}
 \pard\plain \sect\sbkpage
@@ -236,8 +575,8 @@ Data Structure Documentation{\tc \v Data Structure Documentation}
 sensorData_t Struct Reference\par \pard\plain 
 {\tc\tcl2 \v sensorData_t}
 {\xe \v sensorData_t}
-{\bkmkstart AAAAAAAADX}
-{\bkmkend AAAAAAAADX}
+{\bkmkstart AAAAAAAAEK}
+{\bkmkend AAAAAAAAEK}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Data Fields\par
 \pard\plain 
@@ -245,18 +584,18 @@ Data Fields\par
 {
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-int16_t {\b xAxis}{\bkmkstart AAAAAAAADY}
-{\bkmkend AAAAAAAADY}
+int16_t {\b xAxis}{\bkmkstart AAAAAAAAEL}
+{\bkmkend AAAAAAAAEL}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-int16_t {\b yAxis}{\bkmkstart AAAAAAAADZ}
-{\bkmkend AAAAAAAADZ}
+int16_t {\b yAxis}{\bkmkstart AAAAAAAAEM}
+{\bkmkend AAAAAAAAEM}
 \par
 \pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-int16_t {\b zAxis}{\bkmkstart AAAAAAAAEA}
-{\bkmkend AAAAAAAAEA}
+int16_t {\b zAxis}{\bkmkstart AAAAAAAAEN}
+{\bkmkend AAAAAAAAEN}
 \par
 }
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
@@ -1934,6 +2273,16 @@ void preInit ()}}
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 Implementation of {\b IMain.h} \par
 }}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/Styleguide.dox File Reference\par \pard\plain 
+{\tc\tcl2 \v C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/Styleguide.dox}
+{\xe \v C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/Styleguide.dox}
+{\bkmkstart AAAAAAAADX}
+{\bkmkend AAAAAAAADX}
 
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 

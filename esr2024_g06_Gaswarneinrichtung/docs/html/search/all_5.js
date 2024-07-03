@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['main_2ec_0',['main.c',['../main_8c.html',1,'']]],
-  ['measure_1',['measure',['../_gas_handler_8c.html#a9819f5969402ace9a8362a92e666a859',1,'measure():&#160;GasHandler.c'],['../_i_gas_handler_8h.html#a9819f5969402ace9a8362a92e666a859',1,'measure():&#160;GasHandler.c']]]
+  ['gashandler_2ec_0',['GasHandler.c',['../_gas_handler_8c.html',1,'']]],
+  ['gasmeasurementhandler_1',['gasMeasurementHandler',['../main_8c.html#aa98b7b186c4bbf632b698dc43726137e',1,'main.c']]],
+  ['gaswarneinrichtung_2',['Gaswarneinrichtung',['../index.html',1,'']]],
+  ['gebrauch_3a_3',['Funktionsbeschreibung / bestimmungsgem‰ﬂer Gebrauch:',['../C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/mainpage.dox#autotoc_md1',1,'']]],
+  ['graphviz_20dot_4',['Einsatz von graphviz.dot',['../page__style_guide.html#autotoc_md12',1,'']]]
 ];

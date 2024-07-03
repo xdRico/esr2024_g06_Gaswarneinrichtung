@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rtc_0',['rtc',['../group__rtc__api.html',1,'']]]
+  ['outputhandler_2ec_0',['OutputHandler.c',['../_output_handler_8c.html',1,'']]]
 ];
