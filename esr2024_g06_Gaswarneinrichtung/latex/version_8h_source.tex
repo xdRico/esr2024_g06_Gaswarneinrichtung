@@ -1,0 +1,17 @@
+\doxysection{version.\+h}
+\hypertarget{version_8h_source}{}\label{version_8h_source}\index{driverlib/MSP430FR2xx\_4xx/inc/version.h@{driverlib/MSP430FR2xx\_4xx/inc/version.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_DRIVERLIB\_VERSION\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\ \ \ \ \#define\ DRIVERLIB\_VER\_MAJOR\ 2}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\ \ \ \ \#define\ DRIVERLIB\_VER\_MINOR\ 91}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\ \ \ \ \#define\ DRIVERLIB\_VER\_PATCH\ 13}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\ \ \ \ \#define\ DRIVERLIB\_VER\_BUILD\ 01}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ getVersion()\ ((uint32\_t)DRIVERLIB\_VER\_MAJOR<<24\ |\ \(\backslash\)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)DRIVERLIB\_VER\_MINOR<<16\ |\ \(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)DRIVERLIB\_VER\_PATCH<<8\ |\ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)DRIVERLIB\_VER\_BUILD)}}
+
+\end{DoxyCode}

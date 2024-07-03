@@ -1,0 +1,476 @@
+\doxysection{eusci\+\_\+b\+\_\+i2c.\+h}
+\hypertarget{eusci__b__i2c_8h_source}{}\label{eusci__b__i2c_8h_source}\index{driverlib/MSP430FR2xx\_4xx/eusci\_b\_i2c.h@{driverlib/MSP430FR2xx\_4xx/eusci\_b\_i2c.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ eusci\_b\_i2c.h\ -\/\ Driver\ for\ the\ EUSCI\_B\_I2C\ Module.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_MSP430WARE\_EUSCI\_B\_I2C\_H\_\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_MSP430WARE\_EUSCI\_B\_I2C\_H\_\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430\_HAS\_EUSCI\_Bx\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ If\ building\ with\ a\ C++\ compiler,\ make\ all\ of\ the\ definitions\ in\ this\ header}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ have\ a\ C\ binding.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }EUSCI\_B\_I2C\_initMasterParam\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ uint8\_t\ selectClockSource;}
+\DoxyCodeLine{00043\ \ \ \ \ uint32\_t\ i2cClk;}
+\DoxyCodeLine{00048\ \ \ \ \ uint32\_t\ dataRate;}
+\DoxyCodeLine{00050\ \ \ \ \ uint8\_t\ byteCounterThreshold;}
+\DoxyCodeLine{00056\ \ \ \ \ uint8\_t\ autoSTOPGeneration;}
+\DoxyCodeLine{00057\ \}\ EUSCI\_B\_I2C\_initMasterParam;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }EUSCI\_B\_I2C\_initSlaveParam\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ uint8\_t\ slaveAddress;}
+\DoxyCodeLine{00073\ \ \ \ \ uint8\_t\ slaveAddressOffset;}
+\DoxyCodeLine{00078\ \ \ \ \ uint32\_t\ slaveOwnAddressEnable;}
+\DoxyCodeLine{00079\ \}\ EUSCI\_B\_I2C\_initSlaveParam;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_initMaster().}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_NO\_AUTO\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCASTP\_0}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_SET\_BYTECOUNT\_THRESHOLD\_FLAG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCASTP\_1}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_SEND\_STOP\_AUTOMATICALLY\_ON\_BYTECOUNT\_THRESHOLD\ \ \ \ \ UCASTP\_2}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_initMaster().}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_SET\_DATA\_RATE\_400KBPS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 400000}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_SET\_DATA\_RATE\_100KBPS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 100000}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_initMaster().}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_CLOCKSOURCE\_UCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCSSEL\_\_UCLK}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_CLOCKSOURCE\_ACLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_CLOCKSOURCE\_MODCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_CLOCKSOURCE\_SMCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCSSEL\_\_SMCLK}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_initSlave().}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_OWN\_ADDRESS\_OFFSET0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_OWN\_ADDRESS\_OFFSET1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_OWN\_ADDRESS\_OFFSET2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_OWN\_ADDRESS\_OFFSET3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_initSlave().}}
+\DoxyCodeLine{00127\ \textcolor{comment}{//}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_OWN\_ADDRESS\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_OWN\_ADDRESS\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCOAEN}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ mode\ parameter\ for}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_setMode()\ as\ well\ as\ returned\ by\ the}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ EUSCI\_B\_I2C\_getMode()\ function.}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TRANSMIT\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTR}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_RECEIVE\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ mask\ parameter\ for}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_enableInterrupt(),\ EUSCI\_B\_I2C\_disableInterrupt(),}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ EUSCI\_B\_I2C\_clearInterrupt(),\ and\ EUSCI\_B\_I2C\_getInterruptStatus()\ as\ well}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ as\ returned\ by\ the\ EUSCI\_B\_I2C\_getInterruptStatus()\ function.}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_NAK\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCNACKIE}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_ARBITRATIONLOST\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCALIE}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_STOP\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCSTPIE}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_START\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCSTTIE}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TRANSMIT\_INTERRUPT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTXIE0}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TRANSMIT\_INTERRUPT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTXIE1}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TRANSMIT\_INTERRUPT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTXIE2}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TRANSMIT\_INTERRUPT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTXIE3}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_RECEIVE\_INTERRUPT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCRXIE0}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_RECEIVE\_INTERRUPT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCRXIE1}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_RECEIVE\_INTERRUPT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCRXIE2}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_RECEIVE\_INTERRUPT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCRXIE3}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_BIT9\_POSITION\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCBIT9IE}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_CLOCK\_LOW\_TIMEOUT\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCCLTOIE}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_BYTE\_COUNTER\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCBCNTIE}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ toThe\ following\ are\ values\ that}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ can\ be\ returned\ by\ the\ EUSCI\_B\_I2C\_isBusBusy()\ function.}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_BUS\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCBBUSY}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_BUS\_NOT\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//}}
+\DoxyCodeLine{00177\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ toThe\ following\ are\ values\ that}}
+\DoxyCodeLine{00178\ \textcolor{comment}{//\ can\ be\ returned\ by\ the\ EUSCI\_B\_I2C\_masterIsStopSent()\ function.}}
+\DoxyCodeLine{00179\ \textcolor{comment}{//}}
+\DoxyCodeLine{00180\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_STOP\_SEND\_COMPLETE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_SENDING\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTXSTP}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00185\ \textcolor{comment}{//}}
+\DoxyCodeLine{00186\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ toThe\ following\ are\ values\ that}}
+\DoxyCodeLine{00187\ \textcolor{comment}{//\ can\ be\ returned\ by\ the\ EUSCI\_B\_I2C\_masterIsStartSent()\ function.}}
+\DoxyCodeLine{00188\ \textcolor{comment}{//}}
+\DoxyCodeLine{00189\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_START\_SEND\_COMPLETE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_SENDING\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTXSTT}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//}}
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ pinsSelect\ parameter\ for}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_remapPins().}}
+\DoxyCodeLine{00197\ \textcolor{comment}{//}}
+\DoxyCodeLine{00198\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_REMAP\_PINS\_FALSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0000)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_REMAP\_PINS\_TRUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0001)}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//}}
+\DoxyCodeLine{00204\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ timeout\ parameter\ for}}
+\DoxyCodeLine{00205\ \textcolor{comment}{//\ functions:\ EUSCI\_B\_I2C\_setTimeout().}}
+\DoxyCodeLine{00206\ \textcolor{comment}{//}}
+\DoxyCodeLine{00207\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TIMEOUT\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCCLTO\_0}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TIMEOUT\_28\_MS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCCLTO\_1}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TIMEOUT\_31\_MS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCCLTO\_2}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_TIMEOUT\_34\_MS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCCLTO\_3}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00214\ \textcolor{comment}{//}}
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ Prototypes\ for\ the\ APIs.}}
+\DoxyCodeLine{00216\ \textcolor{comment}{//}}
+\DoxyCodeLine{00217\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00220\ \textcolor{comment}{//}}
+\DoxyCodeLine{00232\ \textcolor{comment}{//}}
+\DoxyCodeLine{00233\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00234\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_initMaster(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_I2C\_initMasterParam\ *param);}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00238\ \textcolor{comment}{//}}
+\DoxyCodeLine{00250\ \textcolor{comment}{//}}
+\DoxyCodeLine{00251\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00252\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_initSlave(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_I2C\_initSlaveParam\ *param);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//}}
+\DoxyCodeLine{00266\ \textcolor{comment}{//}}
+\DoxyCodeLine{00267\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00268\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_enable(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00271\ \textcolor{comment}{//}}
+\DoxyCodeLine{00281\ \textcolor{comment}{//}}
+\DoxyCodeLine{00282\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00283\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_disable(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00286\ \textcolor{comment}{//}}
+\DoxyCodeLine{00298\ \textcolor{comment}{//}}
+\DoxyCodeLine{00299\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00300\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_setSlaveAddress(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ slaveAddress);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00304\ \textcolor{comment}{//}}
+\DoxyCodeLine{00320\ \textcolor{comment}{//}}
+\DoxyCodeLine{00321\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00322\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_setMode(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mode);}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00326\ \textcolor{comment}{//}}
+\DoxyCodeLine{00339\ \textcolor{comment}{//}}
+\DoxyCodeLine{00340\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00341\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_B\_I2C\_getMode(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00344\ \textcolor{comment}{//}}
+\DoxyCodeLine{00356\ \textcolor{comment}{//}}
+\DoxyCodeLine{00357\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00358\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_slavePutData(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ transmitData);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00362\ \textcolor{comment}{//}}
+\DoxyCodeLine{00371\ \textcolor{comment}{//}}
+\DoxyCodeLine{00372\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00373\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_B\_I2C\_slaveGetData(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00376\ \textcolor{comment}{//}}
+\DoxyCodeLine{00389\ \textcolor{comment}{//}}
+\DoxyCodeLine{00390\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00391\ \textcolor{keyword}{extern}\ uint16\_t\ EUSCI\_B\_I2C\_isBusBusy(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00394\ \textcolor{comment}{//}}
+\DoxyCodeLine{00406\ \textcolor{comment}{//}}
+\DoxyCodeLine{00407\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00408\ \textcolor{keyword}{extern}\ uint16\_t\ EUSCI\_B\_I2C\_masterIsStopSent(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00411\ \textcolor{comment}{//}}
+\DoxyCodeLine{00423\ \textcolor{comment}{//}}
+\DoxyCodeLine{00424\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00425\ \textcolor{keyword}{extern}\ uint16\_t\ EUSCI\_B\_I2C\_masterIsStartSent(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00428\ \textcolor{comment}{//}}
+\DoxyCodeLine{00460\ \textcolor{comment}{//}}
+\DoxyCodeLine{00461\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00462\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_enableInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00466\ \textcolor{comment}{//}}
+\DoxyCodeLine{00498\ \textcolor{comment}{//}}
+\DoxyCodeLine{00499\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00500\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_disableInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00504\ \textcolor{comment}{//}}
+\DoxyCodeLine{00536\ \textcolor{comment}{//}}
+\DoxyCodeLine{00537\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00538\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_clearInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00542\ \textcolor{comment}{//}}
+\DoxyCodeLine{00590\ \textcolor{comment}{//}}
+\DoxyCodeLine{00591\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00592\ \textcolor{keyword}{extern}\ uint16\_t\ EUSCI\_B\_I2C\_getInterruptStatus(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00596\ \textcolor{comment}{//}}
+\DoxyCodeLine{00610\ \textcolor{comment}{//}}
+\DoxyCodeLine{00611\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00612\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterSendSingleByte(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData);}
+\DoxyCodeLine{00614\ }
+\DoxyCodeLine{00615\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00616\ \textcolor{comment}{//}}
+\DoxyCodeLine{00629\ \textcolor{comment}{//}}
+\DoxyCodeLine{00630\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00631\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_B\_I2C\_masterReceiveSingleByte(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00634\ \textcolor{comment}{//}}
+\DoxyCodeLine{00649\ \textcolor{comment}{//}}
+\DoxyCodeLine{00650\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00651\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ EUSCI\_B\_I2C\_masterSendSingleByteWithTimeout(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout);}
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00655\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00656\ \textcolor{comment}{//}}
+\DoxyCodeLine{00669\ \textcolor{comment}{//}}
+\DoxyCodeLine{00670\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00671\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterSendMultiByteStart(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData);}
+\DoxyCodeLine{00673\ }
+\DoxyCodeLine{00674\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00675\ \textcolor{comment}{//}}
+\DoxyCodeLine{00689\ \textcolor{comment}{//}}
+\DoxyCodeLine{00690\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00691\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ EUSCI\_B\_I2C\_masterSendMultiByteStartWithTimeout(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout);}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00696\ \textcolor{comment}{//}}
+\DoxyCodeLine{00709\ \textcolor{comment}{//}}
+\DoxyCodeLine{00710\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00711\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterSendMultiByteNext(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData);}
+\DoxyCodeLine{00713\ }
+\DoxyCodeLine{00714\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00715\ \textcolor{comment}{//}}
+\DoxyCodeLine{00729\ \textcolor{comment}{//}}
+\DoxyCodeLine{00730\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00731\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ EUSCI\_B\_I2C\_masterSendMultiByteNextWithTimeout(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout);}
+\DoxyCodeLine{00734\ }
+\DoxyCodeLine{00735\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00736\ \textcolor{comment}{//}}
+\DoxyCodeLine{00750\ \textcolor{comment}{//}}
+\DoxyCodeLine{00751\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00752\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterSendMultiByteFinish(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData);}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00756\ \textcolor{comment}{//}}
+\DoxyCodeLine{00771\ \textcolor{comment}{//}}
+\DoxyCodeLine{00772\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00773\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ EUSCI\_B\_I2C\_masterSendMultiByteFinishWithTimeout(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout);}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00778\ \textcolor{comment}{//}}
+\DoxyCodeLine{00788\ \textcolor{comment}{//}}
+\DoxyCodeLine{00789\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00790\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterSendStart(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00791\ }
+\DoxyCodeLine{00792\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00793\ \textcolor{comment}{//}}
+\DoxyCodeLine{00806\ \textcolor{comment}{//}}
+\DoxyCodeLine{00807\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00808\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterSendMultiByteStop(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00811\ \textcolor{comment}{//}}
+\DoxyCodeLine{00825\ \textcolor{comment}{//}}
+\DoxyCodeLine{00826\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00827\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ EUSCI\_B\_I2C\_masterSendMultiByteStopWithTimeout(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout);}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00831\ \textcolor{comment}{//}}
+\DoxyCodeLine{00842\ \textcolor{comment}{//}}
+\DoxyCodeLine{00843\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00844\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterReceiveStart(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00845\ }
+\DoxyCodeLine{00846\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00847\ \textcolor{comment}{//}}
+\DoxyCodeLine{00856\ \textcolor{comment}{//}}
+\DoxyCodeLine{00857\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00858\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_B\_I2C\_masterReceiveMultiByteNext(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00860\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00861\ \textcolor{comment}{//}}
+\DoxyCodeLine{00873\ \textcolor{comment}{//}}
+\DoxyCodeLine{00874\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00875\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_B\_I2C\_masterReceiveMultiByteFinish(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00876\ }
+\DoxyCodeLine{00877\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00878\ \textcolor{comment}{//}}
+\DoxyCodeLine{00893\ \textcolor{comment}{//}}
+\DoxyCodeLine{00894\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00895\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ EUSCI\_B\_I2C\_masterReceiveMultiByteFinishWithTimeout(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *txData,}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout);}
+\DoxyCodeLine{00898\ }
+\DoxyCodeLine{00899\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00900\ \textcolor{comment}{//}}
+\DoxyCodeLine{00911\ \textcolor{comment}{//}}
+\DoxyCodeLine{00912\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00913\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_masterReceiveMultiByteStop(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00914\ }
+\DoxyCodeLine{00915\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00916\ \textcolor{comment}{//}}
+\DoxyCodeLine{00927\ \textcolor{comment}{//}}
+\DoxyCodeLine{00928\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00929\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_enableMultiMasterMode(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00930\ }
+\DoxyCodeLine{00931\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00932\ \textcolor{comment}{//}}
+\DoxyCodeLine{00943\ \textcolor{comment}{//}}
+\DoxyCodeLine{00944\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00945\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_disableMultiMasterMode(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00946\ }
+\DoxyCodeLine{00947\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00948\ \textcolor{comment}{//}}
+\DoxyCodeLine{00957\ \textcolor{comment}{//}}
+\DoxyCodeLine{00958\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00959\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_B\_I2C\_masterReceiveSingle(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00960\ }
+\DoxyCodeLine{00961\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00962\ \textcolor{comment}{//}}
+\DoxyCodeLine{00971\ \textcolor{comment}{//}}
+\DoxyCodeLine{00972\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00973\ \textcolor{keyword}{extern}\ uint32\_t\ EUSCI\_B\_I2C\_getReceiveBufferAddress(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00974\ }
+\DoxyCodeLine{00975\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00976\ \textcolor{comment}{//}}
+\DoxyCodeLine{00985\ \textcolor{comment}{//}}
+\DoxyCodeLine{00986\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00987\ \textcolor{keyword}{extern}\ uint32\_t\ EUSCI\_B\_I2C\_getTransmitBufferAddress(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00988\ }
+\DoxyCodeLine{00989\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00990\ \textcolor{comment}{//}}
+\DoxyCodeLine{01007\ \textcolor{comment}{//}}
+\DoxyCodeLine{01008\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01009\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_remapPins(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pinsSelect);}
+\DoxyCodeLine{01011\ }
+\DoxyCodeLine{01012\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01013\ \textcolor{comment}{//}}
+\DoxyCodeLine{01037\ \textcolor{comment}{//}}
+\DoxyCodeLine{01038\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01039\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_B\_I2C\_setTimeout(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ timeout);}
+\DoxyCodeLine{01041\ }
+\DoxyCodeLine{01042\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01043\ \textcolor{comment}{//}}
+\DoxyCodeLine{01044\ \textcolor{comment}{//\ The\ following\ are\ deprecated\ \#defines.}}
+\DoxyCodeLine{01045\ \textcolor{comment}{//}}
+\DoxyCodeLine{01046\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01047\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_REMAP\_PINS\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_I2C\_REMAP\_PINS\_FALSE}}
+\DoxyCodeLine{01048\ \textcolor{preprocessor}{\#define\ EUSCI\_B\_I2C\_REMAP\_PINS\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_I2C\_REMAP\_PINS\_TRUE}}
+\DoxyCodeLine{01049\ }
+\DoxyCodeLine{01050\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01051\ \textcolor{comment}{//}}
+\DoxyCodeLine{01052\ \textcolor{comment}{//\ Mark\ the\ end\ of\ the\ C\ bindings\ section\ for\ C++\ compilers.}}
+\DoxyCodeLine{01053\ \textcolor{comment}{//}}
+\DoxyCodeLine{01054\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01055\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01056\ \}}
+\DoxyCodeLine{01057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01058\ }
+\DoxyCodeLine{01059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430WARE\_EUSCI\_B\_I2C\_H\_\_}}
+
+\end{DoxyCode}

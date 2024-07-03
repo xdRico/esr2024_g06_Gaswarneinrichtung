@@ -15,6 +15,7 @@ void preInitOutputHandler(){
     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
     GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);
+    GPIO_setAsOutputPin(GPIO_PORT_1, GPIO_PIN1);
 }
 
 
@@ -53,3 +54,17 @@ void setAlertLED(bool alert){
         GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
 }
 
+
+/**
+ * Activates the Piezo for beeping
+ *
+ *  args:
+ *
+ */
+void activateAlertPiezo(bool accelerationAlert){
+    if (accelerationAlert){
+        WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+
+    }
+
+}

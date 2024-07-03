@@ -38,17 +38,14 @@ void interruptP3Handler();
 void interruptP4Handler();
 void gasMeasurementHandler();
 
-
-/**
- * main.c
+/** @file main.c
+ *  @brief  The main method gets called at start of the device
+ *          interrupts:
+ *              P2: Acknowledge-Button
+ *              P3: Movement/Tap from Acc-Sensor
+ *               P4: On/Off-Button
  *
- * The main method gets called at start of the device
- * interrupts:
- *      P2: Acknowledge-Button
- *      P3: Movement/Tap from Acc-Sensor
- *      P4: On/Off-Button
- *
- *      RTC: Timing and LPM
+ *              RTC: Timing and LPM
  */
 int main(void){
 

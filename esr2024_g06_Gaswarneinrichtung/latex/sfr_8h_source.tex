@@ -1,0 +1,133 @@
+\doxysection{sfr.\+h}
+\hypertarget{sfr_8h_source}{}\label{sfr_8h_source}\index{driverlib/MSP430FR2xx\_4xx/sfr.h@{driverlib/MSP430FR2xx\_4xx/sfr.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ sfr.h\ -\/\ Driver\ for\ the\ SFR\ Module.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_MSP430WARE\_SFR\_H\_\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_MSP430WARE\_SFR\_H\_\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430\_HAS\_SFR\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ If\ building\ with\ a\ C++\ compiler,\ make\ all\ of\ the\ definitions\ in\ this\ header}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ have\ a\ C\ binding.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ interruptMask\ parameter}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ for\ functions:\ SFR\_enableInterrupt(),\ and\ SFR\_disableInterrupt();\ the}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ interruptFlagMask\ parameter\ for\ functions:\ SFR\_getInterruptStatus(),\ and}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ SFR\_clearInterrupt()\ as\ well\ as\ returned\ by\ the\ SFR\_getInterruptStatus()}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ function.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SFR\_JTAG\_OUTBOX\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JMBOUTIE}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ SFR\_JTAG\_INBOX\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JMBINIE}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ SFR\_NMI\_PIN\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NMIIE}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SFR\_VACANT\_MEMORY\_ACCESS\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VMAIE}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SFR\_OSCILLATOR\_FAULT\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OFIE}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SFR\_WATCHDOG\_INTERVAL\_TIMER\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WDTIE}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ pullResistorSetup}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ parameter\ for\ functions:\ SFR\_setResetPinPullResistor().}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ SFR\_RESISTORDISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (!(SYSRSTRE\ +\ SYSRSTUP))}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ SFR\_RESISTORENABLE\_PULLUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (SYSRSTRE\ +\ SYSRSTUP)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SFR\_RESISTORENABLE\_PULLDOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (SYSRSTRE)}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ edgeDirection\ parameter}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ for\ functions:\ SFR\_setNMIEdge().}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SFR\_NMI\_RISINGEDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (!(SYSNMIIES))}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SFR\_NMI\_FALLINGEDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (SYSNMIIES)}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ resetPinFunction}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ parameter\ for\ functions:\ SFR\_setResetNMIPinFunction().}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ SFR\_RESETPINFUNC\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (!(SYSNMI))}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ SFR\_RESETPINFUNC\_NMI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (SYSNMI)}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ Prototypes\ for\ the\ APIs.}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ SFR\_enableInterrupt(uint8\_t\ interruptMask);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ SFR\_disableInterrupt(uint8\_t\ interruptMask);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00159\ \textcolor{keyword}{extern}\ uint8\_t\ SFR\_getInterruptStatus(uint8\_t\ interruptFlagMask);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//}}
+\DoxyCodeLine{00181\ \textcolor{comment}{//}}
+\DoxyCodeLine{00182\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00183\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ SFR\_clearInterrupt(uint8\_t\ interruptFlagMask);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00186\ \textcolor{comment}{//}}
+\DoxyCodeLine{00202\ \textcolor{comment}{//}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00204\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ SFR\_setResetPinPullResistor(uint16\_t\ pullResistorSetup);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00207\ \textcolor{comment}{//}}
+\DoxyCodeLine{00224\ \textcolor{comment}{//}}
+\DoxyCodeLine{00225\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00226\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ SFR\_setNMIEdge(uint16\_t\ edgeDirection);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00229\ \textcolor{comment}{//}}
+\DoxyCodeLine{00245\ \textcolor{comment}{//}}
+\DoxyCodeLine{00246\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00247\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ SFR\_setResetNMIPinFunction(uint8\_t\ resetPinFunction);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00250\ \textcolor{comment}{//}}
+\DoxyCodeLine{00251\ \textcolor{comment}{//\ Mark\ the\ end\ of\ the\ C\ bindings\ section\ for\ C++\ compilers.}}
+\DoxyCodeLine{00252\ \textcolor{comment}{//}}
+\DoxyCodeLine{00253\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00255\ \}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430WARE\_SFR\_H\_\_}}
+
+\end{DoxyCode}

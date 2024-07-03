@@ -1,0 +1,177 @@
+\doxysection{icc.\+h}
+\hypertarget{icc_8h_source}{}\label{icc_8h_source}\index{driverlib/MSP430FR2xx\_4xx/icc.h@{driverlib/MSP430FR2xx\_4xx/icc.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ icc.h\ -\/\ Driver\ for\ the\ ICC\ Module.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_MSP430WARE\_ICC\_H\_\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_MSP430WARE\_ICC\_H\_\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430\_HAS\_ICC\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ If\ building\ with\ a\ C++\ compiler,\ make\ all\ of\ the\ definitions\ in\ this\ header}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ have\ a\ C\ binding.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ ILSRmask\ parameter\ for}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ functions:\ ICC\_setInterruptLevel();\ the\ interruptSource\ parameter\ for}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ functions:\ ICC\_getInterruptLevel().}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_P4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_P3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_P2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_P1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_SAC3DAC\_SAC1DAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_SAC2DAC\_SAC0DAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_ECOMP1\_ECOMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_ADC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_EUSCI\_B1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_EUSCI\_B0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x200}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_EUSCI\_A1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_EUSCI\_A0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_WDT\_INT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_RTC\_COUNTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER3\_B1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER3\_B0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER2\_B1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER2\_B0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20000}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER1\_B1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40000}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER1\_B0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80000}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER0\_B1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100000}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ ICC\_ILSR\_TIMER0\_B0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x200000}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ interruptLevel\ parameter}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ for\ functions:\ ICC\_setInterruptLevel()\ as\ well\ as\ returned\ by\ the}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ ICC\_getInterruptLevel()\ function,\ the\ ICC\_getCurrentICM()\ function,\ the}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ ICC\_getICM3()\ function,\ the\ ICC\_getICM2()\ function,\ the\ ICC\_getICM1()}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ function\ and\ the\ ICC\_getICM0()\ function.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ ICC\_LEVEL\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ ICC\_LEVEL\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ ICC\_LEVEL\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ ICC\_LEVEL\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ ICC\_LEVEL\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ toThe\ following\ are\ values\ that}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ can\ be\ returned\ by\ the\ ICC\_getMVSStackPointer()\ function.}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ ICC\_MVS\_STACK\_EMPTY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ ICC\_MVS\_STACK\_ICM0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ ICC\_MVS\_STACK\_ICM0\_ICM1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ ICC\_MVS\_STACK\_ICM0\_ICM1\_ICM2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ICC\_MVS\_STACK\_FULL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ Prototypes\ for\ the\ APIs.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ICC\_enable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00110\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ICC\_disable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00154\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ ICC\_setInterruptLevel(uint32\_t\ ILSRmask,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ interruptLevel);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//}}
+\DoxyCodeLine{00197\ \textcolor{comment}{//}}
+\DoxyCodeLine{00198\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00199\ \textcolor{keyword}{extern}\ uint8\_t\ ICC\_getInterruptLevel(uint32\_t\ interruptSource);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00202\ \textcolor{comment}{//}}
+\DoxyCodeLine{00209\ \textcolor{comment}{//}}
+\DoxyCodeLine{00210\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00211\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ ICC\_isVirtualStackEmpty(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00214\ \textcolor{comment}{//}}
+\DoxyCodeLine{00221\ \textcolor{comment}{//}}
+\DoxyCodeLine{00222\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00223\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ ICC\_isVirtualStackFull(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00226\ \textcolor{comment}{//}}
+\DoxyCodeLine{00244\ \textcolor{comment}{//}}
+\DoxyCodeLine{00245\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00246\ \textcolor{keyword}{extern}\ uint8\_t\ ICC\_getCurrentICM(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00249\ \textcolor{comment}{//}}
+\DoxyCodeLine{00264\ \textcolor{comment}{//}}
+\DoxyCodeLine{00265\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00266\ \textcolor{keyword}{extern}\ uint8\_t\ ICC\_getMVSStackPointer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00269\ \textcolor{comment}{//}}
+\DoxyCodeLine{00285\ \textcolor{comment}{//}}
+\DoxyCodeLine{00286\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00287\ \textcolor{keyword}{extern}\ uint8\_t\ ICC\_getICM3(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00290\ \textcolor{comment}{//}}
+\DoxyCodeLine{00306\ \textcolor{comment}{//}}
+\DoxyCodeLine{00307\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00308\ \textcolor{keyword}{extern}\ uint8\_t\ ICC\_getICM2(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00311\ \textcolor{comment}{//}}
+\DoxyCodeLine{00327\ \textcolor{comment}{//}}
+\DoxyCodeLine{00328\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00329\ \textcolor{keyword}{extern}\ uint8\_t\ ICC\_getICM1(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00332\ \textcolor{comment}{//}}
+\DoxyCodeLine{00348\ \textcolor{comment}{//}}
+\DoxyCodeLine{00349\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00350\ \textcolor{keyword}{extern}\ uint8\_t\ ICC\_getICM0(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00353\ \textcolor{comment}{//}}
+\DoxyCodeLine{00354\ \textcolor{comment}{//\ Mark\ the\ end\ of\ the\ C\ bindings\ section\ for\ C++\ compilers.}}
+\DoxyCodeLine{00355\ \textcolor{comment}{//}}
+\DoxyCodeLine{00356\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00358\ \}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430WARE\_ICC\_H\_\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,114 @@
+\doxysection{src/interface/\+IGas\+Handler.h File Reference}
+\hypertarget{_i_gas_handler_8h}{}\label{_i_gas_handler_8h}\index{src/interface/IGasHandler.h@{src/interface/IGasHandler.h}}
+
+
+This header file is an interface for the use of the gas measuring sensor.  
+
+
+{\ttfamily \#include $<$IMain.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_gas_handler_8h_a1437cb7d4d094f4648cc68c3379cc041}{pre\+Init\+Gas\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_i_gas_handler_8h_a640fb673d8128daf4c90603567f4aa22}{init\+Gas\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_i_gas_handler_8h_aadc8f7a3abb1dbe39fc210a371b78519}{post\+Init\+Gas\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_i_gas_handler_8h_a9819f5969402ace9a8362a92e666a859}{measure}} ()
+\item 
+bool \mbox{\hyperlink{_i_gas_handler_8h_aebd6fc9037d415e445382dd983b47854}{is\+Value\+Critical}} ()
+\item 
+void \mbox{\hyperlink{_i_gas_handler_8h_afd3ac014b25bf26bce7b89344a297432}{set\+Burner\+Active}} (bool active)
+\item 
+void \mbox{\hyperlink{_i_gas_handler_8h_a88600705def1304eb70d0dae4d10b0a8}{set\+Critical\+Value}} (int critical\+Value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header file is an interface for the use of the gas measuring sensor. 
+
+\begin{DoxyAuthor}{Author}
+ricow 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024-\/06-\/17 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_gas_handler_8h_a640fb673d8128daf4c90603567f4aa22}\index{IGasHandler.h@{IGasHandler.h}!initGasHandler@{initGasHandler}}
+\index{initGasHandler@{initGasHandler}!IGasHandler.h@{IGasHandler.h}}
+\doxysubsubsection{\texorpdfstring{initGasHandler()}{initGasHandler()}}
+{\footnotesize\ttfamily \label{_i_gas_handler_8h_a640fb673d8128daf4c90603567f4aa22} 
+void init\+Gas\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{_gas_handler_8c_a640fb673d8128daf4c90603567f4aa22}{init\+Gas\+Handler()}\+:
+
+The init method is for setting up basic working requirements and startups.
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_i_gas_handler_8h_aebd6fc9037d415e445382dd983b47854}\index{IGasHandler.h@{IGasHandler.h}!isValueCritical@{isValueCritical}}
+\index{isValueCritical@{isValueCritical}!IGasHandler.h@{IGasHandler.h}}
+\doxysubsubsection{\texorpdfstring{isValueCritical()}{isValueCritical()}}
+{\footnotesize\ttfamily \label{_i_gas_handler_8h_aebd6fc9037d415e445382dd983b47854} 
+bool is\+Value\+Critical (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{_gas_handler_8c_aebd6fc9037d415e445382dd983b47854}{is\+Value\+Critical()}\+:
+
+This method is used to define the maximum Time in Seconds that the Acceleration\+Sensor has not to be moved to activate warning mode.
+
+return\+: bool\+: if the current value is critical and a warning has to be given
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_i_gas_handler_8h_a9819f5969402ace9a8362a92e666a859}\index{IGasHandler.h@{IGasHandler.h}!measure@{measure}}
+\index{measure@{measure}!IGasHandler.h@{IGasHandler.h}}
+\doxysubsubsection{\texorpdfstring{measure()}{measure()}}
+{\footnotesize\ttfamily \label{_i_gas_handler_8h_a9819f5969402ace9a8362a92e666a859} 
+void measure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{_gas_handler_8c_a9819f5969402ace9a8362a92e666a859}{measure()}\+:
+
+This method is used to get the current value of the gas sensor.
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_i_gas_handler_8h_aadc8f7a3abb1dbe39fc210a371b78519}\index{IGasHandler.h@{IGasHandler.h}!postInitGasHandler@{postInitGasHandler}}
+\index{postInitGasHandler@{postInitGasHandler}!IGasHandler.h@{IGasHandler.h}}
+\doxysubsubsection{\texorpdfstring{postInitGasHandler()}{postInitGasHandler()}}
+{\footnotesize\ttfamily \label{_i_gas_handler_8h_aadc8f7a3abb1dbe39fc210a371b78519} 
+void post\+Init\+Gas\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{_gas_handler_8c_aadc8f7a3abb1dbe39fc210a371b78519}{post\+Init\+Gas\+Handler()}\+:
+
+The post\+Init method is for setting up Interrupts.
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_i_gas_handler_8h_a1437cb7d4d094f4648cc68c3379cc041}\index{IGasHandler.h@{IGasHandler.h}!preInitGasHandler@{preInitGasHandler}}
+\index{preInitGasHandler@{preInitGasHandler}!IGasHandler.h@{IGasHandler.h}}
+\doxysubsubsection{\texorpdfstring{preInitGasHandler()}{preInitGasHandler()}}
+{\footnotesize\ttfamily \label{_i_gas_handler_8h_a1437cb7d4d094f4648cc68c3379cc041} 
+void pre\+Init\+Gas\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{_gas_handler_8c_a1437cb7d4d094f4648cc68c3379cc041}{pre\+Init\+Gas\+Handler()}\+:
+
+The pre\+Init method is for setting up all Port/\+Pin register values and initializing all basic setups.
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_i_gas_handler_8h_afd3ac014b25bf26bce7b89344a297432}\index{IGasHandler.h@{IGasHandler.h}!setBurnerActive@{setBurnerActive}}
+\index{setBurnerActive@{setBurnerActive}!IGasHandler.h@{IGasHandler.h}}
+\doxysubsubsection{\texorpdfstring{setBurnerActive()}{setBurnerActive()}}
+{\footnotesize\ttfamily \label{_i_gas_handler_8h_afd3ac014b25bf26bce7b89344a297432} 
+void set\+Burner\+Active (\begin{DoxyParamCaption}\item[{bool}]{active}{}\end{DoxyParamCaption})}
+
+\doxylink{_gas_handler_8c_afd3ac014b25bf26bce7b89344a297432}{set\+Burner\+Active(bool active)}\+:
+
+This method is used to define, if the burner of the gas sensor is activated.
+
+param\+: active\+: the bool that defines, if the burner is active
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_i_gas_handler_8h_a88600705def1304eb70d0dae4d10b0a8}\index{IGasHandler.h@{IGasHandler.h}!setCriticalValue@{setCriticalValue}}
+\index{setCriticalValue@{setCriticalValue}!IGasHandler.h@{IGasHandler.h}}
+\doxysubsubsection{\texorpdfstring{setCriticalValue()}{setCriticalValue()}}
+{\footnotesize\ttfamily \label{_i_gas_handler_8h_a88600705def1304eb70d0dae4d10b0a8} 
+void set\+Critical\+Value (\begin{DoxyParamCaption}\item[{int}]{critical\+Value}{}\end{DoxyParamCaption})}
+
+\doxylink{_i_gas_handler_8h_a88600705def1304eb70d0dae4d10b0a8}{set\+Critical\+Value(int critical\+Value)}\+:
+
+This method is used to definethe critical Value for the gas sensor, at which a waning is given.
+
+param\+: critical\+Value\+: the int that defines the critical Value, where a warning should be given 

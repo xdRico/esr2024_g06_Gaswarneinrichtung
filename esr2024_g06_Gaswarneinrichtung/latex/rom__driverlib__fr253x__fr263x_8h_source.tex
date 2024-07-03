@@ -1,0 +1,297 @@
+\doxysection{rom\+\_\+driverlib\+\_\+fr253x\+\_\+fr263x.\+h}
+\hypertarget{rom__driverlib__fr253x__fr263x_8h_source}{}\label{rom__driverlib__fr253x__fr263x_8h_source}\index{driverlib/MSP430FR2xx\_4xx/rom\_headers/rom\_driverlib\_fr253x\_fr263x.h@{driverlib/MSP430FR2xx\_4xx/rom\_headers/rom\_driverlib\_fr253x\_fr263x.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ rom\_driverlib\_fr253x\_fr263x.h\ -\/\ Macros\ to\ facilitate\ calling\ functions\ in\ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ ROM\ for\ MSP430FR2532,\ FR2533,\ FR2632,\ FR2633}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ Copyright\ (c)\ 2014-\/2017\ Texas\ Instruments\ Incorporated.\ \ All\ rights\ reserved.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ TI\ Information\ -\/\ Selective\ Disclosure}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ \_\_ROM\_DRIVERLIB\_H\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_\_ROM\_DRIVERLIB\_H\_\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#if\ (defined(\_\_TI\_COMPILER\_VERSION\_\_)\ \&\&\ !defined(\_\_LARGE\_CODE\_MODEL\_\_))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ (defined(\_\_IAR\_SYSTEMS\_ICC\_\_)\ \&\&\ (\_\_CODE\_MODEL\_\_==\_\_CODE\_MODEL\_SMALL\_\_))}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Pointers\ to\ the\ main\ API\ tables.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ ROM\_DRIVERLIB\_APITABLE\ \ \ \ \ \ \ \ \ ((uint16\_t\ *)0x67E0)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ ROM\_DRIVERLIB\_VERSIONL\ \ \ \ \ \ \ \ \ (ROM\_DRIVERLIB\_APITABLE[0])}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ ROM\_DRIVERLIB\_VERSIONH\ \ \ \ \ \ \ \ \ (ROM\_DRIVERLIB\_APITABLE[1])}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ ROM\_EUSCIASPITABLE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t\ *)(ROM\_DRIVERLIB\_APITABLE[2]))}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ ROM\_EUSCIAUARTTABLE\ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t\ *)(ROM\_DRIVERLIB\_APITABLE[3]))}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ ROM\_EUSCIBI2CTABLE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t\ *)(ROM\_DRIVERLIB\_APITABLE[4]))}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ROM\_EUSCIBSPITABLE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t\ *)(ROM\_DRIVERLIB\_APITABLE[5]))}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ ROM\_DRIVERLIB\_getVersion()\ \ \ \ \ ((uint32\_t)ROM\_DRIVERLIB\_VERSIONH<<16|\(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ROM\_DRIVERLIB\_VERSIONL)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Macros\ for\ calling\ ROM\ functions\ in\ the\ EUSCIASPI\ API.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_disableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIASPITABLE[0])}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_disable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIASPITABLE[1])}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_isBusy\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint16\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIASPITABLE[2])}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_getReceiveBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIASPITABLE[3])}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_enableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIASPITABLE[4])}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_transmitData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ transmitData))ROM\_EUSCIASPITABLE[5])}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_changeMasterClock\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_changeMasterClockParam\ *param))ROM\_EUSCIASPITABLE[6])}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_initMaster\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_initMasterParam\ *param))ROM\_EUSCIASPITABLE[7])}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_changeClockPhasePolarity\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockPhase,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockPolarity))ROM\_EUSCIASPITABLE[8])}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_getInterruptStatus\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIASPITABLE[9])}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_select4PinFunctionality\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ select4PinFunctionality))ROM\_EUSCIASPITABLE[10])}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_initSlave\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_initSlaveParam\ *param))ROM\_EUSCIASPITABLE[11])}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_enable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIASPITABLE[12])}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_getTransmitBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIASPITABLE[13])}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_clearInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIASPITABLE[14])}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_SPI\_receiveData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIASPITABLE[15])}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ Macros\ for\ calling\ ROM\ functions\ in\ the\ EUSCIAUART\ API.}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_setDormant\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[0])}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_getTransmitBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[1])}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_disableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIAUARTTABLE[2])}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_enable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[3])}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_transmitData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ transmitData))ROM\_EUSCIAUARTTABLE[4])}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_transmitBreak\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[5])}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_resetDormant\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[6])}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_init\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((bool\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_UART\_initParam\ *param))ROM\_EUSCIAUARTTABLE[7])}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_clearInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIAUARTTABLE[8])}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_transmitAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ transmitAddress))ROM\_EUSCIAUARTTABLE[9])}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_receiveData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[10])}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_enableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIAUARTTABLE[11])}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_queryStatusFlags\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIAUARTTABLE[12])}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_getReceiveBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[13])}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_getInterruptStatus\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIAUARTTABLE[14])}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_selectDeglitchTime\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ deglitchTime))ROM\_EUSCIAUARTTABLE[15])}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_A\_UART\_disable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIAUARTTABLE[16])}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ Macros\ for\ calling\ ROM\ functions\ in\ the\ EUSCIBI2C\ API.}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_initSlave\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_I2C\_initSlaveParam\ *param))ROM\_EUSCIBI2CTABLE[0])}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteStop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[1])}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_isBusBusy\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint16\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[2])}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterReceiveMultiByteNext\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[3])}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteStartWithTimeout\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((bool\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout))ROM\_EUSCIBI2CTABLE[4])}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendStart\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[5])}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_disableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask))ROM\_EUSCIBI2CTABLE[6])}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_initMaster\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_I2C\_initMasterParam\ *param))ROM\_EUSCIBI2CTABLE[7])}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_clearInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask))ROM\_EUSCIBI2CTABLE[8])}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_getTransmitBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[9])}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterReceiveMultiByteFinishWithTimeout\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((bool\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *txData,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout))ROM\_EUSCIBI2CTABLE[10])}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterReceiveSingleByte\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[11])}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_setSlaveAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ slaveAddress))ROM\_EUSCIBI2CTABLE[12])}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_slaveGetData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[13])}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendSingleByte\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData))ROM\_EUSCIBI2CTABLE[14])}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteFinish\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData))ROM\_EUSCIBI2CTABLE[15])}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_setMode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mode))ROM\_EUSCIBI2CTABLE[16])}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_enable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[17])}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteNext\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData))ROM\_EUSCIBI2CTABLE[18])}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_getMode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[19])}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterReceiveSingle\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[20])}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_disable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[21])}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_enableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask))ROM\_EUSCIBI2CTABLE[22])}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteNextWithTimeout\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((bool\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout))ROM\_EUSCIBI2CTABLE[23])}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendSingleByteWithTimeout\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((bool\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout))ROM\_EUSCIBI2CTABLE[24])}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_slavePutData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ transmitData))ROM\_EUSCIBI2CTABLE[25])}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterReceiveStart\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[26])}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_getReceiveBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[27])}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_disableMultiMasterMode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[28])}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterReceiveMultiByteFinish\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[29])}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterIsStartSent\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint16\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[30])}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_enableMultiMasterMode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[31])}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteStart\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData))ROM\_EUSCIBI2CTABLE[32])}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteStopWithTimeout\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((bool\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout))ROM\_EUSCIBI2CTABLE[33])}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterSendMultiByteFinishWithTimeout\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((bool\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ txData,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout))ROM\_EUSCIBI2CTABLE[34])}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterIsStopSent\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint16\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[35])}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_masterReceiveMultiByteStop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBI2CTABLE[36])}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_I2C\_getInterruptStatus\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint16\_t\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask))ROM\_EUSCIBI2CTABLE[37])}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00239\ \textcolor{comment}{//}}
+\DoxyCodeLine{00240\ \textcolor{comment}{//\ Macros\ for\ calling\ ROM\ functions\ in\ the\ EUSCIBSPI\ API.}}
+\DoxyCodeLine{00241\ \textcolor{comment}{//}}
+\DoxyCodeLine{00242\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_enableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIBSPITABLE[0])}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_disable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBSPITABLE[1])}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_clearInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIBSPITABLE[2])}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_isBusy\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint16\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBSPITABLE[3])}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_getReceiveBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBSPITABLE[4])}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_changeMasterClock\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_SPI\_changeMasterClockParam\ *param))ROM\_EUSCIBSPITABLE[5])}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_transmitData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ transmitData))ROM\_EUSCIBSPITABLE[6])}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_select4PinFunctionality\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ select4PinFunctionality))ROM\_EUSCIBSPITABLE[7])}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_initSlave\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_SPI\_initSlaveParam\ *param))ROM\_EUSCIBSPITABLE[8])}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_disableInterrupt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIBSPITABLE[9])}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_getTransmitBufferAddress\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint32\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBSPITABLE[10])}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_changeClockPhasePolarity\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockPhase,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockPolarity))ROM\_EUSCIBSPITABLE[11])}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_receiveData\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBSPITABLE[12])}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_getInterruptStatus\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((uint8\_t\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask))ROM\_EUSCIBSPITABLE[13])}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_initMaster\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_B\_SPI\_initMasterParam\ *param))ROM\_EUSCIBSPITABLE[14])}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ ROM\_EUSCI\_B\_SPI\_enable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ ((void\ (*)(uint16\_t\ baseAddress))ROM\_EUSCIBSPITABLE[15])}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#error\ "{}Large\ code\ model\ is\ not\ supported"{}}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_ROM\_DRIVERLIB\_H\_\_}}
+
+\end{DoxyCode}

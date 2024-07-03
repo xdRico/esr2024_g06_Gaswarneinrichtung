@@ -1,0 +1,294 @@
+\doxysection{eusci\+\_\+a\+\_\+spi.\+h}
+\hypertarget{eusci__a__spi_8h_source}{}\label{eusci__a__spi_8h_source}\index{driverlib/MSP430FR2xx\_4xx/eusci\_a\_spi.h@{driverlib/MSP430FR2xx\_4xx/eusci\_a\_spi.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ eusci\_a\_spi.h\ -\/\ Driver\ for\ the\ EUSCI\_A\_SPI\ Module.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_MSP430WARE\_EUSCI\_A\_SPI\_H\_\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_MSP430WARE\_EUSCI\_A\_SPI\_H\_\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430\_HAS\_EUSCI\_Ax\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ If\ building\ with\ a\ C++\ compiler,\ make\ all\ of\ the\ definitions\ in\ this\ header}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ have\ a\ C\ binding.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }EUSCI\_A\_SPI\_changeMasterClockParam\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ uint32\_t\ clockSourceFrequency;}
+\DoxyCodeLine{00036\ \ \ \ \ uint32\_t\ desiredSpiClock;}
+\DoxyCodeLine{00037\ \}\ EUSCI\_A\_SPI\_changeMasterClockParam;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }EUSCI\_A\_SPI\_initSlaveParam\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ uint16\_t\ msbFirst;}
+\DoxyCodeLine{00054\ \ \ \ \ uint16\_t\ clockPhase;}
+\DoxyCodeLine{00059\ \ \ \ \ uint16\_t\ clockPolarity;}
+\DoxyCodeLine{00065\ \ \ \ \ uint16\_t\ spiMode;}
+\DoxyCodeLine{00066\ \}\ EUSCI\_A\_SPI\_initSlaveParam;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }EUSCI\_A\_SPI\_initMasterParam\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ uint8\_t\ selectClockSource;}
+\DoxyCodeLine{00084\ \ \ \ \ uint32\_t\ clockSourceFrequency;}
+\DoxyCodeLine{00086\ \ \ \ \ uint32\_t\ desiredSpiClock;}
+\DoxyCodeLine{00091\ \ \ \ \ uint16\_t\ msbFirst;}
+\DoxyCodeLine{00096\ \ \ \ \ uint16\_t\ clockPhase;}
+\DoxyCodeLine{00101\ \ \ \ \ uint16\_t\ clockPolarity;}
+\DoxyCodeLine{00107\ \ \ \ \ uint16\_t\ spiMode;}
+\DoxyCodeLine{00108\ \}\ EUSCI\_A\_SPI\_initMasterParam;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ clockPhase\ parameter\ for}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_changeClockPhasePolarity();\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_initMaster(),\ and\ EUSCI\_A\_SPI\_initSlave().}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_PHASE\_DATA\_CHANGED\_ONFIRST\_CAPTURED\_ON\_NEXT\ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_PHASE\_DATA\_CAPTURED\_ONFIRST\_CHANGED\_ON\_NEXT\ \ \ \ \ \ \ \ \ \ UCCKPH}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_initMaster(),\ and\ EUSCI\_A\_SPI\_initSlave().}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_MSB\_FIRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCMSB}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_LSB\_FIRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00131\ \textcolor{comment}{//}}
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_initMaster(),\ and\ EUSCI\_A\_SPI\_initSlave();\ the}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ clockPolarity\ parameter\ for\ functions:}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ EUSCI\_A\_SPI\_changeClockPhasePolarity().}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_CLOCKPOLARITY\_INACTIVITY\_HIGH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCCKPL}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_CLOCKPOLARITY\_INACTIVITY\_LOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_initMaster().}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_CLOCKSOURCE\_UCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCSSEL\_\_UCLK}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_CLOCKSOURCE\_ACLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_CLOCKSOURCE\_MODCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_CLOCKSOURCE\_SMCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCSSEL\_\_SMCLK}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ param\ parameter\ for}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_initMaster(),\ and\ EUSCI\_A\_SPI\_initSlave().}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_3PIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCMODE\_0}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_4PIN\_UCxSTE\_ACTIVE\_HIGH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCMODE\_1}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_4PIN\_UCxSTE\_ACTIVE\_LOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCMODE\_2}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ select4PinFunctionality}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ parameter\ for\ functions:\ EUSCI\_A\_SPI\_select4PinFunctionality().}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_PREVENT\_CONFLICTS\_WITH\_OTHER\_MASTERS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_ENABLE\_SIGNAL\_FOR\_4WIRE\_SLAVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCSTEM}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ mask\ parameter\ for}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_enableInterrupt(),\ EUSCI\_A\_SPI\_disableInterrupt(),}}
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ EUSCI\_A\_SPI\_getInterruptStatus(),\ and\ EUSCI\_A\_SPI\_clearInterrupt()\ as\ well}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//\ as\ returned\ by\ the\ EUSCI\_A\_SPI\_getInterruptStatus()\ function.}}
+\DoxyCodeLine{00177\ \textcolor{comment}{//}}
+\DoxyCodeLine{00178\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_TRANSMIT\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCTXIE}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_RECEIVE\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCRXIE}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00183\ \textcolor{comment}{//}}
+\DoxyCodeLine{00184\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ toThe\ following\ are\ values\ that}}
+\DoxyCodeLine{00185\ \textcolor{comment}{//\ can\ be\ returned\ by\ the\ EUSCI\_A\_SPI\_isBusy()\ function.}}
+\DoxyCodeLine{00186\ \textcolor{comment}{//}}
+\DoxyCodeLine{00187\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UCBUSY}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_NOT\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00192\ \textcolor{comment}{//}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ pinsSelect\ parameter\ for}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ functions:\ EUSCI\_A\_SPI\_remapPins().}}
+\DoxyCodeLine{00195\ \textcolor{comment}{//}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_REMAP\_PINS\_FALSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0000)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_REMAP\_PINS\_TRUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (USCIARMP)}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00201\ \textcolor{comment}{//}}
+\DoxyCodeLine{00202\ \textcolor{comment}{//\ Prototypes\ for\ the\ APIs.}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//}}
+\DoxyCodeLine{00204\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00207\ \textcolor{comment}{//}}
+\DoxyCodeLine{00221\ \textcolor{comment}{//}}
+\DoxyCodeLine{00222\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00223\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_initMaster(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_initMasterParam\ *param);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00227\ \textcolor{comment}{//}}
+\DoxyCodeLine{00242\ \textcolor{comment}{//}}
+\DoxyCodeLine{00243\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00244\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_select4PinFunctionality(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ select4PinFunctionality);}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00248\ \textcolor{comment}{//}}
+\DoxyCodeLine{00258\ \textcolor{comment}{//}}
+\DoxyCodeLine{00259\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00260\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_changeMasterClock(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_changeMasterClockParam\ *param);}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00264\ \textcolor{comment}{//}}
+\DoxyCodeLine{00278\ \textcolor{comment}{//}}
+\DoxyCodeLine{00279\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00280\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_initSlave(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_initSlaveParam\ *param);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00284\ \textcolor{comment}{//}}
+\DoxyCodeLine{00303\ \textcolor{comment}{//}}
+\DoxyCodeLine{00304\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00305\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_changeClockPhasePolarity(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockPhase,}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockPolarity);}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00310\ \textcolor{comment}{//}}
+\DoxyCodeLine{00320\ \textcolor{comment}{//}}
+\DoxyCodeLine{00321\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00322\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_transmitData(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ transmitData);}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00326\ \textcolor{comment}{//}}
+\DoxyCodeLine{00335\ \textcolor{comment}{//}}
+\DoxyCodeLine{00336\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00337\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_A\_SPI\_receiveData(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00340\ \textcolor{comment}{//}}
+\DoxyCodeLine{00356\ \textcolor{comment}{//}}
+\DoxyCodeLine{00357\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00358\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_enableInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00362\ \textcolor{comment}{//}}
+\DoxyCodeLine{00378\ \textcolor{comment}{//}}
+\DoxyCodeLine{00379\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00380\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_disableInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00384\ \textcolor{comment}{//}}
+\DoxyCodeLine{00400\ \textcolor{comment}{//}}
+\DoxyCodeLine{00401\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00402\ \textcolor{keyword}{extern}\ uint8\_t\ EUSCI\_A\_SPI\_getInterruptStatus(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00406\ \textcolor{comment}{//}}
+\DoxyCodeLine{00418\ \textcolor{comment}{//}}
+\DoxyCodeLine{00419\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00420\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_clearInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00424\ \textcolor{comment}{//}}
+\DoxyCodeLine{00434\ \textcolor{comment}{//}}
+\DoxyCodeLine{00435\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00436\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_enable(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00439\ \textcolor{comment}{//}}
+\DoxyCodeLine{00449\ \textcolor{comment}{//}}
+\DoxyCodeLine{00450\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00451\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_disable(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00454\ \textcolor{comment}{//}}
+\DoxyCodeLine{00463\ \textcolor{comment}{//}}
+\DoxyCodeLine{00464\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00465\ \textcolor{keyword}{extern}\ uint32\_t\ EUSCI\_A\_SPI\_getReceiveBufferAddress(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00468\ \textcolor{comment}{//}}
+\DoxyCodeLine{00477\ \textcolor{comment}{//}}
+\DoxyCodeLine{00478\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00479\ \textcolor{keyword}{extern}\ uint32\_t\ EUSCI\_A\_SPI\_getTransmitBufferAddress(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00482\ \textcolor{comment}{//}}
+\DoxyCodeLine{00494\ \textcolor{comment}{//}}
+\DoxyCodeLine{00495\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00496\ \textcolor{keyword}{extern}\ uint16\_t\ EUSCI\_A\_SPI\_isBusy(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00499\ \textcolor{comment}{//}}
+\DoxyCodeLine{00516\ \textcolor{comment}{//}}
+\DoxyCodeLine{00517\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00518\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ EUSCI\_A\_SPI\_remapPins(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pinsSelect);}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00522\ \textcolor{comment}{//}}
+\DoxyCodeLine{00523\ \textcolor{comment}{//\ The\ following\ are\ deprecated\ \#defines.}}
+\DoxyCodeLine{00524\ \textcolor{comment}{//}}
+\DoxyCodeLine{00525\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_REMAP\_PINS\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_REMAP\_PINS\_FALSE}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ EUSCI\_A\_SPI\_REMAP\_PINS\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EUSCI\_A\_SPI\_REMAP\_PINS\_TRUE}}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00530\ \textcolor{comment}{//}}
+\DoxyCodeLine{00531\ \textcolor{comment}{//\ Mark\ the\ end\ of\ the\ C\ bindings\ section\ for\ C++\ compilers.}}
+\DoxyCodeLine{00532\ \textcolor{comment}{//}}
+\DoxyCodeLine{00533\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00535\ \}}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430WARE\_EUSCI\_A\_SPI\_H\_\_}}
+
+\end{DoxyCode}

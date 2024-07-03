@@ -1,0 +1,391 @@
+\doxysection{cs.\+h}
+\hypertarget{cs_8h_source}{}\label{cs_8h_source}\index{driverlib/MSP430FR2xx\_4xx/cs.h@{driverlib/MSP430FR2xx\_4xx/cs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ cs.h\ -\/\ Driver\ for\ the\ CS\ Module.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_MSP430WARE\_CS\_H\_\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_MSP430WARE\_CS\_H\_\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430\_HAS\_CS\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ If\ building\ with\ a\ C++\ compiler,\ make\ all\ of\ the\ definitions\ in\ this\ header}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ have\ a\ C\ binding.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }CS\_initFLLParam\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ uint16\_t\ csCtl0;}
+\DoxyCodeLine{00036\ \ \ \ \ uint16\_t\ csCtl1;}
+\DoxyCodeLine{00038\ \ \ \ \ uint16\_t\ fsystem;}
+\DoxyCodeLine{00039\ \}\ CS\_initFLLParam;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ clockSourceDivider}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ parameter\ for\ functions:\ CS\_initClockSignal().}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_1}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_2}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_4}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_8}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_16}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_32}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_64\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_64}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DIVM\_\_128}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xA}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xB}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_1024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xC}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ CS\_CLOCK\_DIVIDER\_640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ selectClock\ parameter\ for}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ functions:\ CS\_enableClockRequest(),\ and\ CS\_disableClockRequest();\ the}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ selectedClockSignal\ parameter\ for\ functions:\ CS\_initClockSignal().}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ CS\_ACLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ CS\_MCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ CS\_SMCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ selectedClockSignal}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ parameter\ for\ functions:\ CS\_initClockSignal().}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ CS\_FLLREF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ selectClock\ parameter\ for}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ functions:\ CS\_enableClockRequest(),\ and\ CS\_disableClockRequest().}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ CS\_MODOSC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MODCLKREQEN}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ clockSource\ parameter\ for}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ functions:\ CS\_initClockSignal().}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ CS\_XT1CLK\_SELECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELMS\_\_XT1CLK}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ CS\_VLOCLK\_SELECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELMS\_\_VLOCLK}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ CS\_REFOCLK\_SELECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELMS\_\_REFOCLK}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ CS\_DCOCLKDIV\_SELECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELMS\_\_DCOCLKDIV}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ xt1Drive\ parameter\ for}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ functions:\ CS\_turnOnXT1LF(),\ CS\_turnOnXT1LFWithTimeout(),\ CS\_turnOnXT1HF(),}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ and\ CS\_turnOnXT1HFWithTimeout().}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ CS\_XT1\_DRIVE\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1DRIVE\_0}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ CS\_XT1\_DRIVE\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1DRIVE\_1}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ CS\_XT1\_DRIVE\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1DRIVE\_2}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ CS\_XT1\_DRIVE\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1DRIVE\_3}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ xt1HFFreq\ parameter\ for}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ functions:\ CS\_turnOnXT1HF(),\ and\ CS\_turnOnXT1HFWithTimeout().}}
+\DoxyCodeLine{00120\ \textcolor{comment}{//}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ CS\_XT1\_HFFREQ\_1MHZ\_4MHZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1HFFREQ\_0}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ CS\_XT1\_HFFREQ\_4MHZ\_6MHZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1HFFREQ\_1}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ CS\_XT1\_HFFREQ\_6MHZ\_16MHZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1HFFREQ\_2}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ CS\_XT1\_HFFREQ\_16MHZ\_24MHZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1HFFREQ\_3}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//}}
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ mask\ parameter\ for}}
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ functions:\ CS\_getFaultFlagStatus(),\ and\ CS\_clearFaultFlag()\ as\ well\ as}}
+\DoxyCodeLine{00131\ \textcolor{comment}{//\ returned\ by\ the\ CS\_clearAllOscFlagsWithTimeout()\ function.}}
+\DoxyCodeLine{00132\ \textcolor{comment}{//}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ CS\_XT1OFFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ XT1OFFG}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ CS\_DCOFFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DCOFFG}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ CS\_FLLULIFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLLULIFG}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00139\ \textcolor{comment}{//}}
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ Prototypes\ for\ the\ APIs.}}
+\DoxyCodeLine{00141\ \textcolor{comment}{//}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00158\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_setExternalClockSource(uint32\_t\ XT1CLK\_frequency);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//}}
+\DoxyCodeLine{00216\ \textcolor{comment}{//}}
+\DoxyCodeLine{00217\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00218\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_initClockSignal(uint8\_t\ selectedClockSignal,}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockSource,}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockSourceDivider);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00223\ \textcolor{comment}{//}}
+\DoxyCodeLine{00240\ \textcolor{comment}{//}}
+\DoxyCodeLine{00241\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00242\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_turnOnXT1LF(uint16\_t\ xt1Drive);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00245\ \textcolor{comment}{//}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//}}
+\DoxyCodeLine{00257\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00258\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_bypassXT1(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00261\ \textcolor{comment}{//}}
+\DoxyCodeLine{00284\ \textcolor{comment}{//}}
+\DoxyCodeLine{00285\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00286\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_turnOnXT1LFWithTimeout(uint16\_t\ xt1Drive,}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ timeout);}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00290\ \textcolor{comment}{//}}
+\DoxyCodeLine{00304\ \textcolor{comment}{//}}
+\DoxyCodeLine{00305\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00306\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_bypassXT1WithTimeout(uint16\_t\ timeout);}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00309\ \textcolor{comment}{//}}
+\DoxyCodeLine{00316\ \textcolor{comment}{//}}
+\DoxyCodeLine{00317\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00318\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_turnOffXT1(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00321\ \textcolor{comment}{//}}
+\DoxyCodeLine{00345\ \textcolor{comment}{//}}
+\DoxyCodeLine{00346\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00347\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_turnOnXT1HF(uint16\_t\ xt1Drive,}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ xt1HFFreq);}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00351\ \textcolor{comment}{//}}
+\DoxyCodeLine{00381\ \textcolor{comment}{//}}
+\DoxyCodeLine{00382\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00383\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_turnOnXT1HFWithTimeout(uint16\_t\ xt1Drive,}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ xt1HFFreq,}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ timeout);}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00388\ \textcolor{comment}{//}}
+\DoxyCodeLine{00393\ \textcolor{comment}{//}}
+\DoxyCodeLine{00394\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00395\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_turnOnSMCLK(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00398\ \textcolor{comment}{//}}
+\DoxyCodeLine{00403\ \textcolor{comment}{//}}
+\DoxyCodeLine{00404\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00405\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_turnOffSMCLK(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00408\ \textcolor{comment}{//}}
+\DoxyCodeLine{00413\ \textcolor{comment}{//}}
+\DoxyCodeLine{00414\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00415\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_enableVLOAutoOff(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00418\ \textcolor{comment}{//}}
+\DoxyCodeLine{00423\ \textcolor{comment}{//}}
+\DoxyCodeLine{00424\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00425\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_disableVLOAutoOff(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00428\ \textcolor{comment}{//}}
+\DoxyCodeLine{00451\ \textcolor{comment}{//}}
+\DoxyCodeLine{00452\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00453\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_initFLLSettle(uint16\_t\ fsystem,}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ ratio);}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00457\ \textcolor{comment}{//}}
+\DoxyCodeLine{00478\ \textcolor{comment}{//}}
+\DoxyCodeLine{00479\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00480\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_initFLL(uint16\_t\ fsystem,}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ ratio);}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00484\ \textcolor{comment}{//}}
+\DoxyCodeLine{00510\ \textcolor{comment}{//}}
+\DoxyCodeLine{00511\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00512\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_initFLLCalculateTrim(uint16\_t\ fsystem,}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ ratio,}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CS\_initFLLParam\ *param);}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00517\ \textcolor{comment}{//}}
+\DoxyCodeLine{00543\ \textcolor{comment}{//}}
+\DoxyCodeLine{00544\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00545\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_initFLLLoadTrim(uint16\_t\ fsystem,}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ ratio,}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CS\_initFLLParam\ *param);}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00550\ \textcolor{comment}{//}}
+\DoxyCodeLine{00563\ \textcolor{comment}{//}}
+\DoxyCodeLine{00564\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00565\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_enableClockRequest(uint8\_t\ selectClock);}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00567\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00568\ \textcolor{comment}{//}}
+\DoxyCodeLine{00581\ \textcolor{comment}{//}}
+\DoxyCodeLine{00582\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00583\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_disableClockRequest(uint8\_t\ selectClock);}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00585\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00586\ \textcolor{comment}{//}}
+\DoxyCodeLine{00599\ \textcolor{comment}{//}}
+\DoxyCodeLine{00600\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00601\ \textcolor{keyword}{extern}\ uint8\_t\ CS\_getFaultFlagStatus(uint8\_t\ mask);}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00604\ \textcolor{comment}{//}}
+\DoxyCodeLine{00617\ \textcolor{comment}{//}}
+\DoxyCodeLine{00618\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00619\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_clearFaultFlag(uint8\_t\ mask);}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00621\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00622\ \textcolor{comment}{//}}
+\DoxyCodeLine{00630\ \textcolor{comment}{//}}
+\DoxyCodeLine{00631\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00632\ \textcolor{keyword}{extern}\ uint32\_t\ CS\_getACLK(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00635\ \textcolor{comment}{//}}
+\DoxyCodeLine{00643\ \textcolor{comment}{//}}
+\DoxyCodeLine{00644\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00645\ \textcolor{keyword}{extern}\ uint32\_t\ CS\_getSMCLK(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00648\ \textcolor{comment}{//}}
+\DoxyCodeLine{00656\ \textcolor{comment}{//}}
+\DoxyCodeLine{00657\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00658\ \textcolor{keyword}{extern}\ uint32\_t\ CS\_getMCLK(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00659\ }
+\DoxyCodeLine{00660\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00661\ \textcolor{comment}{//}}
+\DoxyCodeLine{00673\ \textcolor{comment}{//}}
+\DoxyCodeLine{00674\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00675\ \textcolor{keyword}{extern}\ uint16\_t\ CS\_clearAllOscFlagsWithTimeout(uint16\_t\ timeout);}
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00677\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00678\ \textcolor{comment}{//}}
+\DoxyCodeLine{00685\ \textcolor{comment}{//}}
+\DoxyCodeLine{00686\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00687\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_enableXT1AutomaticGainControl(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00689\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00690\ \textcolor{comment}{//}}
+\DoxyCodeLine{00697\ \textcolor{comment}{//}}
+\DoxyCodeLine{00698\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00699\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_disableXT1AutomaticGainControl(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00702\ \textcolor{comment}{//}}
+\DoxyCodeLine{00709\ \textcolor{comment}{//}}
+\DoxyCodeLine{00710\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00711\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_enableFLLUnlock(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00712\ }
+\DoxyCodeLine{00713\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00714\ \textcolor{comment}{//}}
+\DoxyCodeLine{00721\ \textcolor{comment}{//}}
+\DoxyCodeLine{00722\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00723\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_disableFLLUnlock(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00725\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00726\ \textcolor{comment}{//}}
+\DoxyCodeLine{00733\ \textcolor{comment}{//}}
+\DoxyCodeLine{00734\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00735\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_enableREFOLP(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00738\ \textcolor{comment}{//}}
+\DoxyCodeLine{00745\ \textcolor{comment}{//}}
+\DoxyCodeLine{00746\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00747\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_disableREFOLP(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00748\ }
+\DoxyCodeLine{00749\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00750\ \textcolor{comment}{//}}
+\DoxyCodeLine{00755\ \textcolor{comment}{//}}
+\DoxyCodeLine{00756\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00757\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_getREFOLP(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00759\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00760\ \textcolor{comment}{//}}
+\DoxyCodeLine{00767\ \textcolor{comment}{//}}
+\DoxyCodeLine{00768\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00769\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_enableXT1FaultOff(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00770\ }
+\DoxyCodeLine{00771\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00772\ \textcolor{comment}{//}}
+\DoxyCodeLine{00779\ \textcolor{comment}{//}}
+\DoxyCodeLine{00780\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00781\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ CS\_disableXT1FaultOff(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00784\ \textcolor{comment}{//}}
+\DoxyCodeLine{00789\ \textcolor{comment}{//}}
+\DoxyCodeLine{00790\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00791\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_getXT1FaultOff(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00792\ }
+\DoxyCodeLine{00793\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00794\ \textcolor{comment}{//}}
+\DoxyCodeLine{00799\ \textcolor{comment}{//}}
+\DoxyCodeLine{00800\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00801\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ CS\_getREFOReady(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00802\ }
+\DoxyCodeLine{00803\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00804\ \textcolor{comment}{//}}
+\DoxyCodeLine{00805\ \textcolor{comment}{//\ The\ following\ are\ deprecated\ APIs.}}
+\DoxyCodeLine{00806\ \textcolor{comment}{//}}
+\DoxyCodeLine{00807\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00808\ \textcolor{preprocessor}{\#define\ CS\_turnOnXT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CS\_turnOnXT1LF}}
+\DoxyCodeLine{00809\ \textcolor{preprocessor}{\#define\ CS\_turnOnXT1WithTimeout\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CS\_turnOnXT1LFWithTimeout}}
+\DoxyCodeLine{00810\ }
+\DoxyCodeLine{00811\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00812\ \textcolor{comment}{//}}
+\DoxyCodeLine{00813\ \textcolor{comment}{//\ Mark\ the\ end\ of\ the\ C\ bindings\ section\ for\ C++\ compilers.}}
+\DoxyCodeLine{00814\ \textcolor{comment}{//}}
+\DoxyCodeLine{00815\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00816\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00817\ \}}
+\DoxyCodeLine{00818\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00821\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430WARE\_CS\_H\_\_}}
+
+\end{DoxyCode}

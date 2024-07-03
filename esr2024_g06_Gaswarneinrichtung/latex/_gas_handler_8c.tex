@@ -1,0 +1,74 @@
+\doxysection{src/class/\+Gas\+Handler.c File Reference}
+\hypertarget{_gas_handler_8c}{}\label{_gas_handler_8c}\index{src/class/GasHandler.c@{src/class/GasHandler.c}}
+
+
+This Class implements the \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} header file. It uses Pin 32 (P3.\+7) for activating the Gas Sensor and Pin 30 (P3.\+1) for the digital input value or Pin 25 (P5.\+1) for the analog input value.  
+
+
+{\ttfamily \#include $<$IGas\+Handler.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_gas_handler_8c_a1437cb7d4d094f4648cc68c3379cc041}{pre\+Init\+Gas\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_gas_handler_8c_a640fb673d8128daf4c90603567f4aa22}{init\+Gas\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_gas_handler_8c_aadc8f7a3abb1dbe39fc210a371b78519}{post\+Init\+Gas\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_gas_handler_8c_a9819f5969402ace9a8362a92e666a859}{measure}} ()
+\item 
+bool \mbox{\hyperlink{_gas_handler_8c_aebd6fc9037d415e445382dd983b47854}{is\+Value\+Critical}} ()
+\item 
+void \mbox{\hyperlink{_gas_handler_8c_afd3ac014b25bf26bce7b89344a297432}{set\+Burner\+Active}} (bool active)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This Class implements the \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} header file. It uses Pin 32 (P3.\+7) for activating the Gas Sensor and Pin 30 (P3.\+1) for the digital input value or Pin 25 (P5.\+1) for the analog input value. 
+
+\begin{DoxyAuthor}{Author}
+ricow 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024-\/06-\/17 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_gas_handler_8c_a640fb673d8128daf4c90603567f4aa22}\index{GasHandler.c@{GasHandler.c}!initGasHandler@{initGasHandler}}
+\index{initGasHandler@{initGasHandler}!GasHandler.c@{GasHandler.c}}
+\doxysubsubsection{\texorpdfstring{initGasHandler()}{initGasHandler()}}
+{\footnotesize\ttfamily \label{_gas_handler_8c_a640fb673d8128daf4c90603567f4aa22} 
+void init\+Gas\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_gas_handler_8c_aebd6fc9037d415e445382dd983b47854}\index{GasHandler.c@{GasHandler.c}!isValueCritical@{isValueCritical}}
+\index{isValueCritical@{isValueCritical}!GasHandler.c@{GasHandler.c}}
+\doxysubsubsection{\texorpdfstring{isValueCritical()}{isValueCritical()}}
+{\footnotesize\ttfamily \label{_gas_handler_8c_aebd6fc9037d415e445382dd983b47854} 
+bool is\+Value\+Critical (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_gas_handler_8c_a9819f5969402ace9a8362a92e666a859}\index{GasHandler.c@{GasHandler.c}!measure@{measure}}
+\index{measure@{measure}!GasHandler.c@{GasHandler.c}}
+\doxysubsubsection{\texorpdfstring{measure()}{measure()}}
+{\footnotesize\ttfamily \label{_gas_handler_8c_a9819f5969402ace9a8362a92e666a859} 
+void measure (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_gas_handler_8c_aadc8f7a3abb1dbe39fc210a371b78519}\index{GasHandler.c@{GasHandler.c}!postInitGasHandler@{postInitGasHandler}}
+\index{postInitGasHandler@{postInitGasHandler}!GasHandler.c@{GasHandler.c}}
+\doxysubsubsection{\texorpdfstring{postInitGasHandler()}{postInitGasHandler()}}
+{\footnotesize\ttfamily \label{_gas_handler_8c_aadc8f7a3abb1dbe39fc210a371b78519} 
+void post\+Init\+Gas\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_gas_handler_8c_a1437cb7d4d094f4648cc68c3379cc041}\index{GasHandler.c@{GasHandler.c}!preInitGasHandler@{preInitGasHandler}}
+\index{preInitGasHandler@{preInitGasHandler}!GasHandler.c@{GasHandler.c}}
+\doxysubsubsection{\texorpdfstring{preInitGasHandler()}{preInitGasHandler()}}
+{\footnotesize\ttfamily \label{_gas_handler_8c_a1437cb7d4d094f4648cc68c3379cc041} 
+void pre\+Init\+Gas\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} \Hypertarget{_gas_handler_8c_afd3ac014b25bf26bce7b89344a297432}\index{GasHandler.c@{GasHandler.c}!setBurnerActive@{setBurnerActive}}
+\index{setBurnerActive@{setBurnerActive}!GasHandler.c@{GasHandler.c}}
+\doxysubsubsection{\texorpdfstring{setBurnerActive()}{setBurnerActive()}}
+{\footnotesize\ttfamily \label{_gas_handler_8c_afd3ac014b25bf26bce7b89344a297432} 
+void set\+Burner\+Active (\begin{DoxyParamCaption}\item[{bool}]{active}{}\end{DoxyParamCaption})}
+
+Implementation of \doxylink{_i_gas_handler_8h}{IGas\+Handler.\+h} 

@@ -1,0 +1,82 @@
+\doxysection{src/interface/\+IOutput\+Handler.h File Reference}
+\hypertarget{_i_output_handler_8h}{}\label{_i_output_handler_8h}\index{src/interface/IOutputHandler.h@{src/interface/IOutputHandler.h}}
+
+
+This header file is an interface for outputting Data.  
+
+
+{\ttfamily \#include $<$IMain.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_output_handler_8h_adffdef9f71f7b987e91e48161aca2b46}{pre\+Init\+Output\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_i_output_handler_8h_a1694689b08a219d34981b65ee5b27fe9}{init\+Output\+Handler}} ()
+\item 
+void \mbox{\hyperlink{_i_output_handler_8h_abbfff07775a6e46b7e6fdf66b613ebc2}{set\+Alert\+LED}} (bool alert)
+\item 
+void \mbox{\hyperlink{_i_output_handler_8h_a1af05c20400d456c966d5e3c779b7e5d}{set\+On\+LED}} (bool on)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header file is an interface for outputting Data. 
+
+\begin{DoxyAuthor}{Author}
+Olawale 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024-\/06-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_output_handler_8h_a1694689b08a219d34981b65ee5b27fe9}\index{IOutputHandler.h@{IOutputHandler.h}!initOutputHandler@{initOutputHandler}}
+\index{initOutputHandler@{initOutputHandler}!IOutputHandler.h@{IOutputHandler.h}}
+\doxysubsubsection{\texorpdfstring{initOutputHandler()}{initOutputHandler()}}
+{\footnotesize\ttfamily \label{_i_output_handler_8h_a1694689b08a219d34981b65ee5b27fe9} 
+void init\+Output\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{_output_handler_8c_a1694689b08a219d34981b65ee5b27fe9}{init\+Output\+Handler()}\+:
+
+The init method is for setting up basic working requirements and startups.
+
+Implementation of \doxylink{_i_output_handler_8h}{IOutput\+Handler.\+h} \Hypertarget{_i_output_handler_8h_adffdef9f71f7b987e91e48161aca2b46}\index{IOutputHandler.h@{IOutputHandler.h}!preInitOutputHandler@{preInitOutputHandler}}
+\index{preInitOutputHandler@{preInitOutputHandler}!IOutputHandler.h@{IOutputHandler.h}}
+\doxysubsubsection{\texorpdfstring{preInitOutputHandler()}{preInitOutputHandler()}}
+{\footnotesize\ttfamily \label{_i_output_handler_8h_adffdef9f71f7b987e91e48161aca2b46} 
+void pre\+Init\+Output\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{_output_handler_8c_adffdef9f71f7b987e91e48161aca2b46}{pre\+Init\+Output\+Handler()}\+:
+
+The pre\+Init method is for setting up all Port/\+Pin register values and initializing all basic setups.
+
+Implementation of \doxylink{_i_output_handler_8h}{IOutput\+Handler.\+h} \Hypertarget{_i_output_handler_8h_abbfff07775a6e46b7e6fdf66b613ebc2}\index{IOutputHandler.h@{IOutputHandler.h}!setAlertLED@{setAlertLED}}
+\index{setAlertLED@{setAlertLED}!IOutputHandler.h@{IOutputHandler.h}}
+\doxysubsubsection{\texorpdfstring{setAlertLED()}{setAlertLED()}}
+{\footnotesize\ttfamily \label{_i_output_handler_8h_abbfff07775a6e46b7e6fdf66b613ebc2} 
+void set\+Alert\+LED (\begin{DoxyParamCaption}\item[{bool}]{alert}{}\end{DoxyParamCaption})}
+
+\doxylink{_output_handler_8c_abbfff07775a6e46b7e6fdf66b613ebc2}{set\+Alert\+LED(bool alert)}\+:
+
+This method is used to de-\//activate the alert LED, if the device is switched on
+
+param\+: alert\+: the bool that defines, if the alert LED is on
+
+Sets the State of the warning-\/\+LED
+
+args\+: on\+: the state to set the warning-\/\+LED \Hypertarget{_i_output_handler_8h_a1af05c20400d456c966d5e3c779b7e5d}\index{IOutputHandler.h@{IOutputHandler.h}!setOnLED@{setOnLED}}
+\index{setOnLED@{setOnLED}!IOutputHandler.h@{IOutputHandler.h}}
+\doxysubsubsection{\texorpdfstring{setOnLED()}{setOnLED()}}
+{\footnotesize\ttfamily \label{_i_output_handler_8h_a1af05c20400d456c966d5e3c779b7e5d} 
+void set\+On\+LED (\begin{DoxyParamCaption}\item[{bool}]{on}{}\end{DoxyParamCaption})}
+
+\doxylink{_output_handler_8c_a1af05c20400d456c966d5e3c779b7e5d}{set\+On\+LED(bool on)}\+:
+
+This method is used to de-\//activate the On-\/state LED
+
+param\+: on\+: the bool that defines, if the On-\/\+LED is on
+
+Sets the State of the On-\/\+LED
+
+args\+: on\+: the state to set the On-\/\+LED 

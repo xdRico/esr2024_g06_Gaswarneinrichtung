@@ -1,0 +1,33 @@
+\doxysection{rom\+\_\+driverlib.\+h}
+\hypertarget{rom__driverlib_8h_source}{}\label{rom__driverlib_8h_source}\index{driverlib/MSP430FR2xx\_4xx/rom\_driverlib.h@{driverlib/MSP430FR2xx\_4xx/rom\_driverlib.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ This\ file\ is\ a\ generic\ ROM\ include\ file,\ that\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ helps\ find\ the\ appropriate\ ROM\ device\ header\ file\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*******************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_\_MSP430\_ROM\_DRIVERLIB\_H\_\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_\_MSP430\_ROM\_DRIVERLIB\_H\_\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#if\ defined(\_\_MSP430FR2532\_\_)\ ||\ defined\ (\_\_MSP430FR2533\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ ||\ defined\ (\_\_MSP430FR2632\_\_)\ ||\ defined\ (\_\_MSP430FR2633\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ ||\ defined\ (\_\_MSP430FR2433\_\_)\ ||\ defined\ (\_\_MSP430FR2522\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ ||\ defined\ (\_\_MSP430FR2422\_\_)\ ||\ defined\ (\_\_MSP430FR2512\_\_)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}rom\_headers/rom\_driverlib\_fr253x\_fr263x.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#elif\ defined\ (\_\_MSP430FR2355\_\_)\ ||\ defined\ (\_\_MSP430FR2353\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ ||\ defined\ (\_\_MSP430FR2155\_\_)\ ||\ defined\ (\_\_MSP430FR2153\_\_)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}rom\_headers/rom\_driverlib\_fr235x.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#elif\ defined\ (\_\_MSP430FR2676\_\_)\ ||\ defined\ (\_\_MSP430FR2675\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ ||\ defined\ (\_\_MSP430FR2673\_\_)\ ||\ defined\ (\_\_MSP430FR2672\_\_)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}rom\_headers/rom\_driverlib\_fr2676.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \#ifndef\ \_\_MSP430\_ROM\_DRIVERLIB\_H\_\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

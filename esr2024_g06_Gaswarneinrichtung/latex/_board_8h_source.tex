@@ -1,0 +1,232 @@
+\doxysection{Board.\+h}
+\hypertarget{_board_8h_source}{}\label{_board_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ -\/-\/COPYRIGHT-\/-\/,BSD}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2017,\ Texas\ Instruments\ Incorporated}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ are\ met:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ *\ \ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ *\ \ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ \ \ \ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ *\ \ Neither\ the\ name\ of\ Texas\ Instruments\ Incorporated\ nor\ the\ names\ of}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ \ \ \ its\ contributors\ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ \ \ \ from\ this\ software\ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ OWNER\ OR}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ -\/-\//COPYRIGHT-\/-\/*/}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ \_\_BOARD\_H\_\_}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ \_\_BOARD\_H\_\_}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430FR4133\_\_}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED1\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED1\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED2\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P4}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED2\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_S1\ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_S1\ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ADC7\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ADC7\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ADC7\ \ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_MCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_MCLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN4}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_MCLK\ \ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SMCLK\ \ \ \ \ \ \ \ \ GPIO\_PORT\_P8}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SMCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SMCLK\ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ACLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P8}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ACLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ACLK\ \ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0TXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0TXD\ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0TXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0RXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0RXD\ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0RXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SCL\ \ \ \ \ \ \ GPIO\_PORT\_P5}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SCL\ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SCL\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SDA\ \ \ \ \ \ \ GPIO\_PORT\_P5}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SDA\ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SDA\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430FR4133\_\_}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430FR2311\_\_}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED1\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED1\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED2\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED2\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_S1\ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_S1\ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ADC7\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ADC7\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ADC7\ \ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_MCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_MCLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN6}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_MCLK\ \ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SMCLK\ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SMCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SMCLK\ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ACLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ACLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ACLK\ \ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0TXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0TXD\ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0TXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0RXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0RXD\ \ \ \ \ \ \ \ GPIO\_PIN6}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0RXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SCL\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SCL\ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SCL\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SDA\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SDA\ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SDA\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430FR2311\_\_}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430FR2433\_\_}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED1\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED1\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED2\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED2\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_S1\ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_S1\ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_S2\ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_S2\ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ADC7\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ADC7\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ADC7\ \ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_MCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_MCLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_MCLK\ \ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SMCLK\ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SMCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SMCLK\ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ACLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ACLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ACLK\ \ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0TXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0TXD\ \ \ \ \ \ \ \ GPIO\_PIN4}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0TXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0RXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0RXD\ \ \ \ \ \ \ \ GPIO\_PIN5}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0RXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SCL\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SCL\ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SCL\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SDA\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SDA\ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SDA\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430FR2433\_\_}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430FR2355\_\_}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED1\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED1\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_LED2\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P6}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_LED2\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN6}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_S1\ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P4}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_S1\ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_S2\ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_S2\ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ADC7\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ADC7\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ADC7\ \ \ \ \ \ GPIO\_TERNARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_XIN\ \ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_XIN\ \ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN\_P7}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_XIN\ \ \ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_XOUT\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_XOUT\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN\_P6}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_XOUT\ \ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_MCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P3}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_MCLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_MCLK\ \ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SMCLK\ \ \ \ \ \ \ \ \ GPIO\_PORT\_P3}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SMCLK\ \ \ \ \ \ \ \ \ \ GPIO\_PIN4}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SMCLK\ \ \ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_ACLK\ \ \ \ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_ACLK\ \ \ \ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_ACLK\ \ \ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0TXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0TXD\ \ \ \ \ \ \ \ GPIO\_PIN7}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0TXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCA0RXD\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCA0RXD\ \ \ \ \ \ \ \ GPIO\_PIN6}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCA0RXD\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SCL\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SCL\ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SCL\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_UCB0SDA\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_UCB0SDA\ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_UCB0SDA\ \ \ GPIO\_PRIMARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SACOA0O\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SACOA0O\ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SACOA0O\ \ \ GPIO\_TERNARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SACOA0N\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SACOA0N\ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SACOA0N\ \ \ GPIO\_TERNARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SACOA0P\ \ \ \ \ \ \ GPIO\_PORT\_P1}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SACOA0P\ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SACOA0P\ \ \ GPIO\_TERNARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SACOA2O\ \ \ \ \ \ \ GPIO\_PORT\_P3}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SACOA2O\ \ \ \ \ \ \ \ GPIO\_PIN1}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SACOA2O\ \ \ GPIO\_TERNARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SACOA2N\ \ \ \ \ \ \ GPIO\_PORT\_P3}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SACOA2N\ \ \ \ \ \ \ \ GPIO\_PIN2}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SACOA2N\ \ \ GPIO\_TERNARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_SACOA2P\ \ \ \ \ \ \ GPIO\_PORT\_P3}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_SACOA2P\ \ \ \ \ \ \ \ GPIO\_PIN3}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_SACOA2P\ \ \ GPIO\_TERNARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ GPIO\_PORT\_COMP0O\ \ \ \ \ \ \ \ GPIO\_PORT\_P2}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ GPIO\_PIN\_COMP0O\ \ \ \ \ \ \ \ \ GPIO\_PIN0}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ GPIO\_FUNCTION\_COMP0O\ \ \ \ GPIO\_SECONDARY\_MODULE\_FUNCTION}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430FR2355\_\_}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_BOARD\_H\_\_}}
+\DoxyCodeLine{00248\ }
+
+\end{DoxyCode}

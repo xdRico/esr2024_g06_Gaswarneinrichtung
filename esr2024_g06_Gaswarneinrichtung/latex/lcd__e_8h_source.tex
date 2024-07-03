@@ -1,0 +1,605 @@
+\doxysection{lcd\+\_\+e.\+h}
+\hypertarget{lcd__e_8h_source}{}\label{lcd__e_8h_source}\index{driverlib/MSP430FR2xx\_4xx/lcd\_e.h@{driverlib/MSP430FR2xx\_4xx/lcd\_e.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ lcd\_e.h\ -\/\ Driver\ for\ the\ LCD\_E\ Module.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ \_\_MSP430WARE\_LCD\_E\_H\_\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_\_MSP430WARE\_LCD\_E\_H\_\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \_\_MSP430\_HAS\_LCD\_E\_\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ If\ building\ with\ a\ C++\ compiler,\ make\ all\ of\ the\ definitions\ in\ this\ header}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ have\ a\ C\ binding.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}inc/hw\_memmap.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }LCD\_E\_initParam\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ uint16\_t\ clockSource;}
+\DoxyCodeLine{00072\ \ \ \ \ uint16\_t\ clockDivider;}
+\DoxyCodeLine{00083\ \ \ \ \ uint16\_t\ muxRate;}
+\DoxyCodeLine{00088\ \ \ \ \ uint16\_t\ waveforms;}
+\DoxyCodeLine{00093\ \ \ \ \ uint16\_t\ segments;}
+\DoxyCodeLine{00094\ \}\ LCD\_E\_initParam;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ LCD\_E\_initParam\ LCD\_E\_INIT\_PARAM;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ initParams\ parameter\ for}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ functions:\ LCD\_E\_init().}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKSOURCE\_XTCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDSSEL\_0)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKSOURCE\_ACLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDSSEL\_1)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKSOURCE\_VLOCLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDSSEL\_2)}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ initParams\ parameter\ for}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ functions:\ LCD\_E\_init().}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_0)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_1)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_2)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_3)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_4)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_5)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_6)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_7)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_8)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_9)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_10)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_11)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_12)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_13)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_14)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_15)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_16)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_17)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_18)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_19)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_20)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_21)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_22)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_23)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_24)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_25)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_26)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_27)}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_29\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_28)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_29)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_30)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ LCD\_E\_CLOCKDIVIDER\_32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDIV\_31)}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ initParams\ parameter\ for}}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ functions:\ LCD\_E\_init().}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ LCD\_E\_STATIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ LCD\_E\_2\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDMX0)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ LCD\_E\_3\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDMX1)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ LCD\_E\_4\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDMX1\ |\ LCDMX0)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ LCD\_E\_5\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDMX2)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ LCD\_E\_6\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDMX2\ |\ LCDMX0)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ LCD\_E\_7\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDMX2\ |\ LCDMX1)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ LCD\_E\_8\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDMX2\ |\ LCDMX1\ |\ LCDMX0)}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ initParams\ parameter\ for}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ functions:\ LCD\_E\_init().}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ LCD\_E\_STANDARD\_WAVEFORMS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ LCD\_E\_LOW\_POWER\_WAVEFORMS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDLP)}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ initParams\ parameter\ for}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ functions:\ LCD\_E\_init().}}
+\DoxyCodeLine{00175\ \textcolor{comment}{//}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENTS\_DISABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENTS\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDSON)}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00181\ \textcolor{comment}{//}}
+\DoxyCodeLine{00182\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ mask\ parameter\ for}}
+\DoxyCodeLine{00183\ \textcolor{comment}{//\ functions:\ LCD\_E\_clearInterrupt(),\ LCD\_E\_getInterruptStatus(),}}
+\DoxyCodeLine{00184\ \textcolor{comment}{//\ LCD\_E\_enableInterrupt(),\ and\ LCD\_E\_disableInterrupt()\ as\ well\ as\ returned\ by}}
+\DoxyCodeLine{00185\ \textcolor{comment}{//\ the\ LCD\_E\_getInterruptStatus()\ function.}}
+\DoxyCodeLine{00186\ \textcolor{comment}{//}}
+\DoxyCodeLine{00187\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINKING\_SEGMENTS\_ON\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKONIE)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINKING\_SEGMENTS\_OFF\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKOFFIE)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ LCD\_E\_FRAME\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDFRMIE)}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ displayMemory\ parameter}}
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ for\ functions:\ LCD\_E\_selectDisplayMemory().}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//}}
+\DoxyCodeLine{00197\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ LCD\_E\_DISPLAYSOURCE\_MEMORY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ LCD\_E\_DISPLAYSOURCE\_BLINKINGMEMORY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDDISP)}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00202\ \textcolor{comment}{//}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ clockPrescalar\ parameter}}
+\DoxyCodeLine{00204\ \textcolor{comment}{//\ for\ functions:\ LCD\_E\_setBlinkingControl().}}
+\DoxyCodeLine{00205\ \textcolor{comment}{//}}
+\DoxyCodeLine{00206\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKPRE0)}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKPRE1)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_32\ \ \ \ \ \ \ \ \ \ \ (LCDBLKPRE1\ |\ LCDBLKPRE0)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_64\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKPRE2)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_128\ \ \ \ \ \ \ \ \ \ (LCDBLKPRE2\ |\ LCDBLKPRE0)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_256\ \ \ \ \ \ \ \ \ \ (LCDBLKPRE2\ |\ LCDBLKPRE1)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_FREQ\_CLOCK\_PRESCALAR\_512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKPRE2\ |\ LCDBLKPRE1\ |\ LCDBLKPRE0)}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00218\ \textcolor{comment}{//}}
+\DoxyCodeLine{00219\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ mode\ parameter\ for}}
+\DoxyCodeLine{00220\ \textcolor{comment}{//\ functions:\ LCD\_E\_setBlinkingControl().}}
+\DoxyCodeLine{00221\ \textcolor{comment}{//}}
+\DoxyCodeLine{00222\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_MODE\_DISABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKMOD\_0)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_MODE\_INDIVIDUAL\_SEGMENTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKMOD\_1)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_MODE\_ALL\_SEGMENTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDBLKMOD\_2)}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ LCD\_E\_BLINK\_MODE\_SWITCHING\_BETWEEN\_DISPLAY\_CONTENTS\ \ \ \ \ \ \ (LCDBLKMOD\_3)}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00229\ \textcolor{comment}{//}}
+\DoxyCodeLine{00230\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ r13Source\ parameter\ for}}
+\DoxyCodeLine{00231\ \textcolor{comment}{//\ functions:\ LCD\_E\_setVLCDSource().}}
+\DoxyCodeLine{00232\ \textcolor{comment}{//}}
+\DoxyCodeLine{00233\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ LCD\_E\_NON\_INTERNAL\_REFERENCE\_VOLTAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ LCD\_E\_INTERNAL\_REFERENCE\_VOLTAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDREFEN)}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00238\ \textcolor{comment}{//}}
+\DoxyCodeLine{00239\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ r33Source\ parameter\ for}}
+\DoxyCodeLine{00240\ \textcolor{comment}{//\ functions:\ LCD\_E\_setVLCDSource().}}
+\DoxyCodeLine{00241\ \textcolor{comment}{//}}
+\DoxyCodeLine{00242\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ LCD\_E\_EXTERNAL\_SUPPLY\_VOLTAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ LCD\_E\_INTERNAL\_SUPPLY\_VOLTAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDSELVDD)}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00247\ \textcolor{comment}{//}}
+\DoxyCodeLine{00248\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ voltage\ parameter\ for}}
+\DoxyCodeLine{00249\ \textcolor{comment}{//\ functions:\ LCD\_E\_setVLCDVoltage().}}
+\DoxyCodeLine{00250\ \textcolor{comment}{//}}
+\DoxyCodeLine{00251\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_2\_60V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_2\_66V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD0)}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_2\_72V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD1)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_2\_78V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD1\ |\ VLCD0)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_2\_84V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD2)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_2\_90V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD2\ |\ VLCD0)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_2\_96V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD2\ |\ VLCD1)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_02V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD2\ |\ VLCD1\ |\ VLCD0)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_08V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD3)}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_14V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD3\ |\ VLCD0)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_20V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD3\ |\ VLCD1)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_26V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD3\ |\ VLCD1\ |\ VLCD0)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_32V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD3\ |\ VLCD2)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_38V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD3\ |\ VLCD2\ |\ VLCD0)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_44V\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (VLCD3\ |\ VLCD2\ |\ VLCD1)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_VOLTAGE\_3\_50V\ \ \ \ \ \ \ \ \ \ \ (VLCD3\ |\ VLCD2\ |\ VLCD1\ |\ VLCD0)}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00270\ \textcolor{comment}{//}}
+\DoxyCodeLine{00271\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ startPin\ parameter\ for}}
+\DoxyCodeLine{00272\ \textcolor{comment}{//\ functions:\ LCD\_E\_setPinAsLCDFunctionEx();\ the\ endPin\ parameter\ for}}
+\DoxyCodeLine{00273\ \textcolor{comment}{//\ functions:\ LCD\_E\_setPinAsLCDFunctionEx();\ the\ pin\ parameter\ for\ functions:}}
+\DoxyCodeLine{00274\ \textcolor{comment}{//\ LCD\_E\_setPinAsLCDFunction(),\ LCD\_E\_setPinAsPortFunction(),}}
+\DoxyCodeLine{00275\ \textcolor{comment}{//\ LCD\_E\_setPinAsCOM(),\ and\ LCD\_E\_setPinAsSEG().}}
+\DoxyCodeLine{00276\ \textcolor{comment}{//}}
+\DoxyCodeLine{00277\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (6)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (7)}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (9)}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (10)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (11)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (12)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (13)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (14)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (15)}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16)}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (17)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (18)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (19)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (20)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (21)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (22)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (23)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (24)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (25)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (26)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (27)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (28)}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_29\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (29)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (30)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (31)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_33\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (33)}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_34\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (34)}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_35\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (35)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_36\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (36)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_37\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (37)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_38\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (38)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_39\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (39)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_40\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (40)}}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_41\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (41)}}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_42\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (42)}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_43\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (43)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_44\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (44)}}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_45\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (45)}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_46\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (46)}}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ LCD\_E\_SEGMENT\_LINE\_47\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (47)}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00328\ \textcolor{comment}{//}}
+\DoxyCodeLine{00329\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ memory\ parameter\ for}}
+\DoxyCodeLine{00330\ \textcolor{comment}{//\ functions:\ LCD\_E\_setMemory(),\ LCD\_E\_updateMemory(),\ LCD\_E\_toggleMemory(),}}
+\DoxyCodeLine{00331\ \textcolor{comment}{//\ LCD\_E\_clearMemory(),\ LCD\_E\_setBlinkingMemory(),}}
+\DoxyCodeLine{00332\ \textcolor{comment}{//\ LCD\_E\_updateBlinkingMemory(),\ LCD\_E\_toggleBlinkingMemory(),\ and}}
+\DoxyCodeLine{00333\ \textcolor{comment}{//\ LCD\_E\_clearBlinkingMemory().}}
+\DoxyCodeLine{00334\ \textcolor{comment}{//}}
+\DoxyCodeLine{00335\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (6)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (7)}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (9)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (10)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (11)}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (12)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (13)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (14)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (15)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (17)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (18)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (19)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (20)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (21)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (22)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (23)}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (24)}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (25)}}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (26)}}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (27)}}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (28)}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_29\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (29)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (30)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (31)}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)}}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_33\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (33)}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_34\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (34)}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_35\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (35)}}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_36\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (36)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_37\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (37)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_38\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (38)}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_BLINKINGMEMORY\_39\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (39)}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00378\ \textcolor{comment}{//}}
+\DoxyCodeLine{00379\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ com\ parameter\ for}}
+\DoxyCodeLine{00380\ \textcolor{comment}{//\ functions:\ LCD\_E\_setPinAsCOM().}}
+\DoxyCodeLine{00381\ \textcolor{comment}{//}}
+\DoxyCodeLine{00382\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x02)}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x04)}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x08)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x10)}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x20)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x40)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ LCD\_E\_MEMORY\_COM7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x80)}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00393\ \textcolor{comment}{//}}
+\DoxyCodeLine{00394\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ freq\ parameter\ for}}
+\DoxyCodeLine{00395\ \textcolor{comment}{//\ functions:\ LCD\_E\_setChargePumpFreq().}}
+\DoxyCodeLine{00396\ \textcolor{comment}{//}}
+\DoxyCodeLine{00397\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0000)}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL0)}}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL1)}}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL1\ |\ LCDCPFSEL0)}}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL2)}}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL2\ |\ LCDCPFSEL0)}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL2\ |\ LCDCPFSEL1)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_8\ \ \ \ \ \ \ \ \ \ (LCDCPFSEL2\ |\ LCDCPFSEL1\ |\ LCDCPFSEL0)}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL3)}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL3\ |\ LCDCPFSEL0)}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL3\ |\ LCDCPFSEL1)}}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_12\ \ \ \ \ \ \ \ \ (LCDCPFSEL3\ |\ LCDCPFSEL1\ |\ LCDCPFSEL0)}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL3\ |\ LCDCPFSEL2)}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_14\ \ \ \ \ \ \ \ \ (LCDCPFSEL3\ |\ LCDCPFSEL2\ |\ LCDCPFSEL0)}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_15\ \ \ \ \ \ \ \ \ (LCDCPFSEL3\ |\ LCDCPFSEL2\ |\ LCDCPFSEL1)}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ LCD\_E\_CHARGEPUMP\_FREQ\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDCPFSEL3\ |\ LCDCPFSEL2\ |\ LCDCPFSEL1\ |\ LCDCPFSEL0)}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00417\ \textcolor{comment}{//}}
+\DoxyCodeLine{00418\ \textcolor{comment}{//\ The\ following\ are\ values\ that\ can\ be\ passed\ to\ the\ mode\ parameter\ for}}
+\DoxyCodeLine{00419\ \textcolor{comment}{//\ functions:\ LCD\_E\_setReferenceMode().}}
+\DoxyCodeLine{00420\ \textcolor{comment}{//}}
+\DoxyCodeLine{00421\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_MODE\_STATIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0)}}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ LCD\_E\_REFERENCE\_MODE\_SWITCHED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LCDREFMODE)}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00426\ \textcolor{comment}{//}}
+\DoxyCodeLine{00427\ \textcolor{comment}{//\ Prototypes\ for\ the\ APIs.}}
+\DoxyCodeLine{00428\ \textcolor{comment}{//}}
+\DoxyCodeLine{00429\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00432\ \textcolor{comment}{//}}
+\DoxyCodeLine{00445\ \textcolor{comment}{//}}
+\DoxyCodeLine{00446\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00447\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_init(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LCD\_E\_initParam\ *initParams);}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00451\ \textcolor{comment}{//}}
+\DoxyCodeLine{00462\ \textcolor{comment}{//}}
+\DoxyCodeLine{00463\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00464\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_on(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00467\ \textcolor{comment}{//}}
+\DoxyCodeLine{00478\ \textcolor{comment}{//}}
+\DoxyCodeLine{00479\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00480\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_off(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00483\ \textcolor{comment}{//}}
+\DoxyCodeLine{00498\ \textcolor{comment}{//}}
+\DoxyCodeLine{00499\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00500\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_clearInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00504\ \textcolor{comment}{//}}
+\DoxyCodeLine{00522\ \textcolor{comment}{//}}
+\DoxyCodeLine{00523\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00524\ \textcolor{keyword}{extern}\ uint16\_t\ LCD\_E\_getInterruptStatus(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00528\ \textcolor{comment}{//}}
+\DoxyCodeLine{00543\ \textcolor{comment}{//}}
+\DoxyCodeLine{00544\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00545\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_enableInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00549\ \textcolor{comment}{//}}
+\DoxyCodeLine{00564\ \textcolor{comment}{//}}
+\DoxyCodeLine{00565\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00566\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_disableInterrupt(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mask);}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00570\ \textcolor{comment}{//}}
+\DoxyCodeLine{00580\ \textcolor{comment}{//}}
+\DoxyCodeLine{00581\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00582\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_clearAllMemory(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00584\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00585\ \textcolor{comment}{//}}
+\DoxyCodeLine{00595\ \textcolor{comment}{//}}
+\DoxyCodeLine{00596\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00597\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_clearAllBlinkingMemory(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00600\ \textcolor{comment}{//}}
+\DoxyCodeLine{00618\ \textcolor{comment}{//}}
+\DoxyCodeLine{00619\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00620\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_selectDisplayMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ displayMemory);}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00624\ \textcolor{comment}{//}}
+\DoxyCodeLine{00651\ \textcolor{comment}{//}}
+\DoxyCodeLine{00652\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00653\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setBlinkingControl(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ clockPrescalar,}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mode);}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00657\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00658\ \textcolor{comment}{//}}
+\DoxyCodeLine{00668\ \textcolor{comment}{//}}
+\DoxyCodeLine{00669\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00670\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_enableChargePump(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00672\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00673\ \textcolor{comment}{//}}
+\DoxyCodeLine{00683\ \textcolor{comment}{//}}
+\DoxyCodeLine{00684\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00685\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_disableChargePump(uint16\_t\ baseAddress);}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00687\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00688\ \textcolor{comment}{//}}
+\DoxyCodeLine{00716\ \textcolor{comment}{//}}
+\DoxyCodeLine{00717\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00718\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setChargePumpFreq(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ freq);}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00721\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00722\ \textcolor{comment}{//}}
+\DoxyCodeLine{00743\ \textcolor{comment}{//}}
+\DoxyCodeLine{00744\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00745\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setVLCDSource(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ r13Source,}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ r33Source);}
+\DoxyCodeLine{00748\ }
+\DoxyCodeLine{00749\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00750\ \textcolor{comment}{//}}
+\DoxyCodeLine{00779\ \textcolor{comment}{//}}
+\DoxyCodeLine{00780\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00781\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setVLCDVoltage(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ voltage);}
+\DoxyCodeLine{00783\ }
+\DoxyCodeLine{00784\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00785\ \textcolor{comment}{//}}
+\DoxyCodeLine{00801\ \textcolor{comment}{//}}
+\DoxyCodeLine{00802\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00803\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setReferenceMode(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ mode);}
+\DoxyCodeLine{00805\ }
+\DoxyCodeLine{00806\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00807\ \textcolor{comment}{//}}
+\DoxyCodeLine{00867\ \textcolor{comment}{//}}
+\DoxyCodeLine{00868\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00869\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setPinAsLCDFunction(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pin);}
+\DoxyCodeLine{00871\ }
+\DoxyCodeLine{00872\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00873\ \textcolor{comment}{//}}
+\DoxyCodeLine{00933\ \textcolor{comment}{//}}
+\DoxyCodeLine{00934\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00935\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setPinAsPortFunction(uint16\_t\ baseAddress,}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pin);}
+\DoxyCodeLine{00937\ }
+\DoxyCodeLine{00938\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{00939\ \textcolor{comment}{//}}
+\DoxyCodeLine{01050\ \textcolor{comment}{//}}
+\DoxyCodeLine{01051\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01052\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setPinAsLCDFunctionEx(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ startPin,}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ endPin);}
+\DoxyCodeLine{01055\ }
+\DoxyCodeLine{01056\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01057\ \textcolor{comment}{//}}
+\DoxyCodeLine{01129\ \textcolor{comment}{//}}
+\DoxyCodeLine{01130\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01131\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setPinAsCOM(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pin,}
+\DoxyCodeLine{01133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ com);}
+\DoxyCodeLine{01134\ }
+\DoxyCodeLine{01135\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01136\ \textcolor{comment}{//}}
+\DoxyCodeLine{01196\ \textcolor{comment}{//}}
+\DoxyCodeLine{01197\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01198\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setPinAsSEG(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pin);}
+\DoxyCodeLine{01200\ }
+\DoxyCodeLine{01201\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01202\ \textcolor{comment}{//}}
+\DoxyCodeLine{01255\ \textcolor{comment}{//}}
+\DoxyCodeLine{01256\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01257\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01260\ }
+\DoxyCodeLine{01261\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01262\ \textcolor{comment}{//}}
+\DoxyCodeLine{01316\ \textcolor{comment}{//}}
+\DoxyCodeLine{01317\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01318\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_updateMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01321\ }
+\DoxyCodeLine{01322\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01323\ \textcolor{comment}{//}}
+\DoxyCodeLine{01377\ \textcolor{comment}{//}}
+\DoxyCodeLine{01378\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01379\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_toggleMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01382\ }
+\DoxyCodeLine{01383\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01384\ \textcolor{comment}{//}}
+\DoxyCodeLine{01438\ \textcolor{comment}{//}}
+\DoxyCodeLine{01439\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01440\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_clearMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01443\ }
+\DoxyCodeLine{01444\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01445\ \textcolor{comment}{//}}
+\DoxyCodeLine{01498\ \textcolor{comment}{//}}
+\DoxyCodeLine{01499\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01500\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_setBlinkingMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01503\ }
+\DoxyCodeLine{01504\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01505\ \textcolor{comment}{//}}
+\DoxyCodeLine{01559\ \textcolor{comment}{//}}
+\DoxyCodeLine{01560\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01561\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_updateBlinkingMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01564\ }
+\DoxyCodeLine{01565\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01566\ \textcolor{comment}{//}}
+\DoxyCodeLine{01620\ \textcolor{comment}{//}}
+\DoxyCodeLine{01621\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01622\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_toggleBlinkingMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01625\ }
+\DoxyCodeLine{01626\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01627\ \textcolor{comment}{//}}
+\DoxyCodeLine{01681\ \textcolor{comment}{//}}
+\DoxyCodeLine{01682\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01683\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ LCD\_E\_clearBlinkingMemory(uint16\_t\ baseAddress,}
+\DoxyCodeLine{01684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ memory,}
+\DoxyCodeLine{01685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ mask);}
+\DoxyCodeLine{01686\ }
+\DoxyCodeLine{01687\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01688\ \textcolor{comment}{//}}
+\DoxyCodeLine{01689\ \textcolor{comment}{//\ Mark\ the\ end\ of\ the\ C\ bindings\ section\ for\ C++\ compilers.}}
+\DoxyCodeLine{01690\ \textcolor{comment}{//}}
+\DoxyCodeLine{01691\ \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{01692\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01693\ \}}
+\DoxyCodeLine{01694\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01695\ }
+\DoxyCodeLine{01696\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01697\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MSP430WARE\_LCD\_E\_H\_\_}}
+
+\end{DoxyCode}
