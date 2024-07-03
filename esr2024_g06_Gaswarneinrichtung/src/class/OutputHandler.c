@@ -20,6 +20,8 @@ void preInitOutputHandler(){
 }
 
 
+
+
 /**
  * Implementation of IOutputHandler.h
  */
@@ -27,13 +29,14 @@ void initOutputHandler(){
     __no_operation();                   // For debug
 }
 
+//********************************************************************************************************/
+/*! @fn             void setOnLED(bool on)
+ *  @brief          Sets the State of the On-LED
 
-/**
- * Sets the State of the On-LED
+ *  @param [on]     the state to set the On-LED
  *
- *  args:
- *      on: the state to set the On-LED
- */
+ ************************************************************************************************************/
+
 void setOnLED(bool on){
     if(on)
         GPIO_setOutputHighOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
