@@ -45,7 +45,7 @@ Beschreibung der Hardware:
 - DEBO GAS2 MQ135
 - Piezo
  
-
+// Noch anpassen
 @code
                                MSP430FR2355
                  Vcc Vcc     -----------------

@@ -43,7 +43,7 @@ void gasMeasurementHandler();
  *          interrupts:
  *              P2: Acknowledge-Button
  *              P3: Movement/Tap from Acc-Sensor
- *               P4: On/Off-Button
+ *              P4: On/Off-Button
  *
  *              RTC: Timing and LPM
  */
@@ -62,7 +62,7 @@ int main(void){
 
 
 /**
- * Implementation of IModule.h
+ * Implementation of IMain.h
  */
 void preInit(){
     //< preInit device
@@ -88,7 +88,7 @@ void preInit(){
 
 
 /**
- * Implementation of IModule.h
+ * Implementation of IMain.h
  */
 void init(){
     //< init Device
@@ -103,7 +103,7 @@ void init(){
 
 
 /**
- * Implementation of IModule.h
+ * Implementation of IMain.h
  */
 void postInit(){
     //< postInit Device
