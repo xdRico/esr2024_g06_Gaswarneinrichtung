@@ -79,6 +79,8 @@ void preInit(){
     GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
     GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
 
+    GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P1, GPIO_PIN1, GPIO_PRIMARY_MODULE_FUNCTION);
+
     //< preInit Modules
 
     preInitOutputHandler();

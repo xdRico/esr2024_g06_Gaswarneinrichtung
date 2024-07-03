@@ -48,5 +48,16 @@ void setAlertLED(bool alert);
 void setOnLED(bool on);
 
 
+/**
+ * activateAlertPiezo(bool accelerationAlert):
+ *
+ * This method is used to de-/activate the the Piezeo Speaker
+ *
+ *  param:
+ *      on: the bool that defines, if the Piezo is beeping
+ */
+
+void activateAlertPiezo(bool accelerationAlert);
+
 
 #endif /* SRC_INTERFACE_IOUTPUTHANDLER_H_ */

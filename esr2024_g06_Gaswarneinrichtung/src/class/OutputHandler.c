@@ -63,7 +63,7 @@ void setAlertLED(bool alert){
  */
 void activateAlertPiezo(bool accelerationAlert){
     if (accelerationAlert){
-        WDTCTL = WDTPW | WDTHOLD; // Stop WDT
+
 
     }
 
