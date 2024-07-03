@@ -1,21 +1,27 @@
 var indexSectionsWithContent =
 {
-  0: "agilmops",
-  1: "agimo",
-  2: "agilmps"
+  0: "aegilmopst",
+  1: "s",
+  2: "aegimo",
+  3: "agilmpst",
+  4: "s"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "files",
-  2: "functions"
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "defines"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Files",
-  2: "Functions"
+  1: "Data Structures",
+  2: "Files",
+  3: "Functions",
+  4: "Macros"
 };
 

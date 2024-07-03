@@ -47,6 +47,16 @@ void setAlertLED(bool alert);
  */
 void setOnLED(bool on);
 
+/**
+ * void togglePiezo(unsigned int frequency):
+ *
+ * This method is used to Togle the Piezo
+ *
+ *  param:
+ *      frequency: the value which defines the frequenz of thepiezo output
+ */
+void togglePiezo(unsigned int frequency);
+
 
 /**
  * activateAlertPiezo(bool accelerationAlert):
@@ -56,7 +66,6 @@ void setOnLED(bool on);
  *  param:
  *      on: the bool that defines, if the Piezo is beeping
  */
-
 void activateAlertPiezo(bool accelerationAlert);
 
 

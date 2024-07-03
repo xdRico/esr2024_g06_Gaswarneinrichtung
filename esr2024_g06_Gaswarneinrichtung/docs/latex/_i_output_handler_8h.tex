@@ -1,5 +1,5 @@
-\doxysection{src/interface/\+IOutput\+Handler.h File Reference}
-\hypertarget{_i_output_handler_8h}{}\label{_i_output_handler_8h}\index{src/interface/IOutputHandler.h@{src/interface/IOutputHandler.h}}
+\doxysection{C\+:/\+Users/\+Fabian/\+One\+Drive/\+Dokumente/4. Semester/\+Embedded Systems/\+Projekt/esr2024\+\_\+g06\+\_\+\+Gaswarneinrichtung/esr2024\+\_\+g06\+\_\+\+Gaswarneinrichtung/src/interface/\+IOutput\+Handler.h File Reference}
+\hypertarget{_i_output_handler_8h}{}\label{_i_output_handler_8h}\index{C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024\_g06\_Gaswarneinrichtung/esr2024\_g06\_Gaswarneinrichtung/src/interface/IOutputHandler.h@{C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024\_g06\_Gaswarneinrichtung/esr2024\_g06\_Gaswarneinrichtung/src/interface/IOutputHandler.h}}
 
 
 This header file is an interface for outputting Data.  
@@ -16,6 +16,10 @@ void \mbox{\hyperlink{_i_output_handler_8h_a1694689b08a219d34981b65ee5b27fe9}{in
 void \mbox{\hyperlink{_i_output_handler_8h_abbfff07775a6e46b7e6fdf66b613ebc2}{set\+Alert\+LED}} (bool alert)
 \item 
 void \mbox{\hyperlink{_i_output_handler_8h_a1af05c20400d456c966d5e3c779b7e5d}{set\+On\+LED}} (bool on)
+\item 
+void \mbox{\hyperlink{_i_output_handler_8h_a04fbb6af823aec2deab7d45c1373a23b}{toggle\+Piezo}} (unsigned int frequency)
+\item 
+void \mbox{\hyperlink{_i_output_handler_8h_a568f5134e5553d9e0712220e0f55f552}{activate\+Alert\+Piezo}} (bool acceleration\+Alert)
 \end{DoxyCompactItemize}
 
 
@@ -31,7 +35,21 @@ Olawale
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{_i_output_handler_8h_a1694689b08a219d34981b65ee5b27fe9}\index{IOutputHandler.h@{IOutputHandler.h}!initOutputHandler@{initOutputHandler}}
+\Hypertarget{_i_output_handler_8h_a568f5134e5553d9e0712220e0f55f552}\index{IOutputHandler.h@{IOutputHandler.h}!activateAlertPiezo@{activateAlertPiezo}}
+\index{activateAlertPiezo@{activateAlertPiezo}!IOutputHandler.h@{IOutputHandler.h}}
+\doxysubsubsection{\texorpdfstring{activateAlertPiezo()}{activateAlertPiezo()}}
+{\footnotesize\ttfamily \label{_i_output_handler_8h_a568f5134e5553d9e0712220e0f55f552} 
+void activate\+Alert\+Piezo (\begin{DoxyParamCaption}\item[{bool}]{acceleration\+Alert}{}\end{DoxyParamCaption})}
+
+\doxylink{_output_handler_8c_a568f5134e5553d9e0712220e0f55f552}{activate\+Alert\+Piezo(bool acceleration\+Alert)}\+:
+
+This method is used to de-\//activate the the Piezeo Speaker
+
+param\+: on\+: the bool that defines, if the Piezo is beeping
+
+Activates the Piezo for beeping
+
+args\+: \Hypertarget{_i_output_handler_8h_a1694689b08a219d34981b65ee5b27fe9}\index{IOutputHandler.h@{IOutputHandler.h}!initOutputHandler@{initOutputHandler}}
 \index{initOutputHandler@{initOutputHandler}!IOutputHandler.h@{IOutputHandler.h}}
 \doxysubsubsection{\texorpdfstring{initOutputHandler()}{initOutputHandler()}}
 {\footnotesize\ttfamily \label{_i_output_handler_8h_a1694689b08a219d34981b65ee5b27fe9} 
@@ -79,4 +97,14 @@ param\+: on\+: the bool that defines, if the On-\/\+LED is on
 
 Sets the State of the On-\/\+LED
 
-args\+: on\+: the state to set the On-\/\+LED 
+args\+: on\+: the state to set the On-\/\+LED \Hypertarget{_i_output_handler_8h_a04fbb6af823aec2deab7d45c1373a23b}\index{IOutputHandler.h@{IOutputHandler.h}!togglePiezo@{togglePiezo}}
+\index{togglePiezo@{togglePiezo}!IOutputHandler.h@{IOutputHandler.h}}
+\doxysubsubsection{\texorpdfstring{togglePiezo()}{togglePiezo()}}
+{\footnotesize\ttfamily \label{_i_output_handler_8h_a04fbb6af823aec2deab7d45c1373a23b} 
+void toggle\+Piezo (\begin{DoxyParamCaption}\item[{unsigned int}]{frequency}{}\end{DoxyParamCaption})}
+
+void \doxylink{_i_output_handler_8h_a04fbb6af823aec2deab7d45c1373a23b}{toggle\+Piezo(unsigned int frequency)}\+:
+
+This method is used to Togle the Piezo
+
+param\+: frequency\+: the value which defines the frequenz of thepiezo output 

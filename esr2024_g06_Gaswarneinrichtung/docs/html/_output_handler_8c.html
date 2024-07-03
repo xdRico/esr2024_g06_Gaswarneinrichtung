@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gaswarneinrichtung: src/class/OutputHandler.c File Reference</title>
+<title>Gaswarneinrichtung: C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/class/OutputHandler.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,12 +108,14 @@ Functions</h2></td></tr>
 <tr class="separator:a1af05c20400d456c966d5e3c779b7e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbfff07775a6e46b7e6fdf66b613ebc2" id="r_abbfff07775a6e46b7e6fdf66b613ebc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbfff07775a6e46b7e6fdf66b613ebc2">setAlertLED</a> (bool alert)</td></tr>
 <tr class="separator:abbfff07775a6e46b7e6fdf66b613ebc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04fbb6af823aec2deab7d45c1373a23b" id="r_a04fbb6af823aec2deab7d45c1373a23b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo</a> (unsigned int frequency)</td></tr>
+<tr class="separator:a04fbb6af823aec2deab7d45c1373a23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a568f5134e5553d9e0712220e0f55f552" id="r_a568f5134e5553d9e0712220e0f55f552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a568f5134e5553d9e0712220e0f55f552">activateAlertPiezo</a> (bool accelerationAlert)</td></tr>
 <tr class="separator:a568f5134e5553d9e0712220e0f55f552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This Class implements the <a class="el" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data.">IOutputHandler.h</a> header file. It uses the two onboard LEDs of the MSP430FR2355 as well as a Piezo speaker on Pin 19 (P2.0). </p>
-<dl class="section author"><dt>Author</dt><dd>ricow </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gruppe 6 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-06-17 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a568f5134e5553d9e0712220e0f55f552" name="a568f5134e5553d9e0712220e0f55f552"></a>
@@ -206,6 +208,26 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets the State of the On-LED</p>
 <p>args: on: the state to set the On-LED </p>
+
+</div>
+</div>
+<a id="a04fbb6af823aec2deab7d45c1373a23b" name="a04fbb6af823aec2deab7d45c1373a23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04fbb6af823aec2deab7d45c1373a23b">&#9670;&#160;</a></span>togglePiezo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void togglePiezo </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>frequency</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>void <a class="el" href="_i_output_handler_8h.html#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo(unsigned int frequency)</a>:</p>
+<p>This method is used to Togle the Piezo</p>
+<p>param: frequency: the value which defines the frequenz of thepiezo output </p>
 
 </div>
 </div>

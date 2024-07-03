@@ -1,6 +1,6 @@
-/** @file Module.h
+/** @file Main.h
  *  @brief This header file is an interface for use in all modules in the project.
- *  @author ricow
+ *  @author Gruppe
  *  @date 2024-06-17
  */
 

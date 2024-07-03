@@ -1,0 +1,54 @@
+\doxysection{C\+:/\+Users/\+Fabian/\+One\+Drive/\+Dokumente/4. Semester/\+Embedded Systems/\+Projekt/esr2024\+\_\+g06\+\_\+\+Gaswarneinrichtung/esr2024\+\_\+g06\+\_\+\+Gaswarneinrichtung/src/interface/\+II2\+CHandler.h File Reference}
+\hypertarget{_i_i2_c_handler_8h}{}\label{_i_i2_c_handler_8h}\index{C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024\_g06\_Gaswarneinrichtung/esr2024\_g06\_Gaswarneinrichtung/src/interface/II2CHandler.h@{C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024\_g06\_Gaswarneinrichtung/esr2024\_g06\_Gaswarneinrichtung/src/interface/II2CHandler.h}}
+
+
+This Headerfile is an Interace for die I2C communikation.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_i_i2_c_handler_8h_ae2f0ff6faf548539a21b93a034e278e8}{SLAVE\+\_\+\+ADDRESS}}~0x53
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_i_i2_c_handler_8h_a5730d9445429351b9f750084c5cb5aae}\label{_i_i2_c_handler_8h_a5730d9445429351b9f750084c5cb5aae} 
+void {\bfseries i2c\+\_\+init} (void)
+\item 
+\Hypertarget{_i_i2_c_handler_8h_a830ef6add11132904f6d0fb98831c8d7}\label{_i_i2_c_handler_8h_a830ef6add11132904f6d0fb98831c8d7} 
+void {\bfseries i2c\+\_\+write\+\_\+byte} (uint8\+\_\+t reg, uint8\+\_\+t data)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_i_i2_c_handler_8h_a1740c448a825bd1f12069062164d8595}{i2c\+\_\+read\+\_\+byte}} (uint8\+\_\+t reg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This Headerfile is an Interace for die I2C communikation. 
+
+\begin{DoxyAuthor}{Author}
+Gruppe 6 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024-\/06-\/17 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_i_i2_c_handler_8h_ae2f0ff6faf548539a21b93a034e278e8}\index{II2CHandler.h@{II2CHandler.h}!SLAVE\_ADDRESS@{SLAVE\_ADDRESS}}
+\index{SLAVE\_ADDRESS@{SLAVE\_ADDRESS}!II2CHandler.h@{II2CHandler.h}}
+\doxysubsubsection{\texorpdfstring{SLAVE\_ADDRESS}{SLAVE\_ADDRESS}}
+{\footnotesize\ttfamily \label{_i_i2_c_handler_8h_ae2f0ff6faf548539a21b93a034e278e8} 
+\#define SLAVE\+\_\+\+ADDRESS~0x53}
+
+ADXL345 I2C address 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_i2_c_handler_8h_a1740c448a825bd1f12069062164d8595}\index{II2CHandler.h@{II2CHandler.h}!i2c\_read\_byte@{i2c\_read\_byte}}
+\index{i2c\_read\_byte@{i2c\_read\_byte}!II2CHandler.h@{II2CHandler.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_read\_byte()}{i2c\_read\_byte()}}
+{\footnotesize\ttfamily \label{_i_i2_c_handler_8h_a1740c448a825bd1f12069062164d8595} 
+uint8\+\_\+t i2c\+\_\+read\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg}{}\end{DoxyParamCaption})}
+
+SRC\+\_\+\+INTERFACE\+\_\+\+II2\+CHANDLER\+\_\+\+H\+\_\+ 

@@ -1,5 +1,5 @@
-\doxysection{src/main.c File Reference}
-\hypertarget{main_8c}{}\label{main_8c}\index{src/main.c@{src/main.c}}
+\doxysection{C\+:/\+Users/\+Fabian/\+One\+Drive/\+Dokumente/4. Semester/\+Embedded Systems/\+Projekt/esr2024\+\_\+g06\+\_\+\+Gaswarneinrichtung/esr2024\+\_\+g06\+\_\+\+Gaswarneinrichtung/src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024\_g06\_Gaswarneinrichtung/esr2024\_g06\_Gaswarneinrichtung/src/main.c@{C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024\_g06\_Gaswarneinrichtung/esr2024\_g06\_Gaswarneinrichtung/src/main.c}}
 
 
 The main method gets called at start of the device interrupts\+: P2\+: Acknowledge-\/\+Button P3\+: Movement/\+Tap from Acc-\/\+Sensor P4\+: On/\+Off-\/\+Button.  
@@ -63,17 +63,14 @@ bool {\bfseries alarm\+State} = false
 \Hypertarget{main_8c_a78f7c3cc11ce30f992647a9dd42d96eb}\label{main_8c_a78f7c3cc11ce30f992647a9dd42d96eb} 
 int {\bfseries clk} = 0
 \item 
-\Hypertarget{main_8c_a748557551bf70d926df4837125d78467}\label{main_8c_a748557551bf70d926df4837125d78467} 
-const int {\bfseries int\+Clock\+Time} = 5
+\Hypertarget{main_8c_a67defbed3bb26df0ca86df04c02a7770}\label{main_8c_a67defbed3bb26df0ca86df04c02a7770} 
+int {\bfseries clk\+LEDAlert} = 0
 \item 
-\Hypertarget{main_8c_a554ab07cf012cf345acd99bd243cc169}\label{main_8c_a554ab07cf012cf345acd99bd243cc169} 
-const int {\bfseries time\+Resting\+Till\+Alarm} = 15 \texorpdfstring{$\ast$}{*} 10
+\Hypertarget{main_8c_ac2a137087bc1815b6303f63c2b372766}\label{main_8c_ac2a137087bc1815b6303f63c2b372766} 
+int {\bfseries clk\+LEDOn} = 0
 \item 
 \Hypertarget{main_8c_a4273fa60473657b31b9b5a099c55d3c3}\label{main_8c_a4273fa60473657b31b9b5a099c55d3c3} 
 int {\bfseries time\+When\+On\+Btn\+Pressed} = 0
-\item 
-\Hypertarget{main_8c_a4f38caea116a3666ddef5927a491411e}\label{main_8c_a4f38caea116a3666ddef5927a491411e} 
-const int {\bfseries time\+To\+Press\+On\+Btn} = 25
 \item 
 \Hypertarget{main_8c_ad6ce2f923868e336d8d358b06dc5c4e2}\label{main_8c_ad6ce2f923868e336d8d358b06dc5c4e2} 
 int {\bfseries time\+When\+Last\+Moved} = 0
@@ -81,11 +78,8 @@ int {\bfseries time\+When\+Last\+Moved} = 0
 \Hypertarget{main_8c_a500b9b3aad0a639452087f35a95bdd51}\label{main_8c_a500b9b3aad0a639452087f35a95bdd51} 
 int {\bfseries time\+When\+Last\+Critical\+Measurement} = 0
 \item 
-\Hypertarget{main_8c_aae238263a2746f04814b8a8aea06fa13}\label{main_8c_aae238263a2746f04814b8a8aea06fa13} 
-const int {\bfseries time\+Waiting\+After\+Critical\+Measurement} = 10 \texorpdfstring{$\ast$}{*} 10
-\item 
-\Hypertarget{main_8c_a67defbed3bb26df0ca86df04c02a7770}\label{main_8c_a67defbed3bb26df0ca86df04c02a7770} 
-int {\bfseries clk\+LEDAlert} = 0
+\Hypertarget{main_8c_a748557551bf70d926df4837125d78467}\label{main_8c_a748557551bf70d926df4837125d78467} 
+const int {\bfseries int\+Clock\+Time} = 5
 \item 
 \Hypertarget{main_8c_a49e9c2b49b2c0d265441f7c5d5baff56}\label{main_8c_a49e9c2b49b2c0d265441f7c5d5baff56} 
 const int {\bfseries time\+To\+Blink\+LEDWarning} = 10
@@ -99,8 +93,14 @@ const int {\bfseries time\+To\+Blink\+LEDAlarm} = 5
 \Hypertarget{main_8c_a0a0dcf204f2e24854290a872515b0822}\label{main_8c_a0a0dcf204f2e24854290a872515b0822} 
 const int {\bfseries time\+To\+Wait\+LEDAlarm} = 5
 \item 
-\Hypertarget{main_8c_ac2a137087bc1815b6303f63c2b372766}\label{main_8c_ac2a137087bc1815b6303f63c2b372766} 
-int {\bfseries clk\+LEDOn} = 0
+\Hypertarget{main_8c_a4f38caea116a3666ddef5927a491411e}\label{main_8c_a4f38caea116a3666ddef5927a491411e} 
+const int {\bfseries time\+To\+Press\+On\+Btn} = 25
+\item 
+\Hypertarget{main_8c_aae238263a2746f04814b8a8aea06fa13}\label{main_8c_aae238263a2746f04814b8a8aea06fa13} 
+const int {\bfseries time\+Waiting\+After\+Critical\+Measurement} = 10 \texorpdfstring{$\ast$}{*} 10
+\item 
+\Hypertarget{main_8c_a554ab07cf012cf345acd99bd243cc169}\label{main_8c_a554ab07cf012cf345acd99bd243cc169} 
+const int {\bfseries time\+Resting\+Till\+Alarm} = 15 \texorpdfstring{$\ast$}{*} 10
 \item 
 \Hypertarget{main_8c_a7e996dccd2f43b477ba1a5b5a73e239f}\label{main_8c_a7e996dccd2f43b477ba1a5b5a73e239f} 
 const int {\bfseries time\+To\+Blink\+LEDOn} = 5
@@ -130,7 +130,7 @@ This method gets called in every loop and handles the measurements and usage of 
 {\footnotesize\ttfamily \label{main_8c_a02fd73d861ef2e4aabb38c0c9ff82947} 
 void init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Implementation of IModule.\+h \Hypertarget{main_8c_a0bd6ee090ea43c90ff186fca55f77205}\index{main.c@{main.c}!interruptP2Handler@{interruptP2Handler}}
+Implementation of \doxylink{_i_main_8h_source}{IMain.\+h} \Hypertarget{main_8c_a0bd6ee090ea43c90ff186fca55f77205}\index{main.c@{main.c}!interruptP2Handler@{interruptP2Handler}}
 \index{interruptP2Handler@{interruptP2Handler}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{interruptP2Handler()}{interruptP2Handler()}}
 {\footnotesize\ttfamily \label{main_8c_a0bd6ee090ea43c90ff186fca55f77205} 
@@ -168,10 +168,10 @@ The loop method gets called repeatedly, until the device gets turned off On\+: G
 {\footnotesize\ttfamily \label{main_8c_a46b7f5d7468c90b73f8a829f09e9b415} 
 void post\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Implementation of IModule.\+h \Hypertarget{main_8c_ac42b10502d0162eff3a08a1be748f6c0}\index{main.c@{main.c}!preInit@{preInit}}
+Implementation of \doxylink{_i_main_8h_source}{IMain.\+h} \Hypertarget{main_8c_ac42b10502d0162eff3a08a1be748f6c0}\index{main.c@{main.c}!preInit@{preInit}}
 \index{preInit@{preInit}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{preInit()}{preInit()}}
 {\footnotesize\ttfamily \label{main_8c_ac42b10502d0162eff3a08a1be748f6c0} 
 void pre\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Implementation of IModule.\+h 
+Implementation of \doxylink{_i_main_8h_source}{IMain.\+h} 

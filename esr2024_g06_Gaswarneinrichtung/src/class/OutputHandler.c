@@ -2,7 +2,7 @@
  *  @brief This Class implements the IOutputHandler.h header file.
  *         It uses the two onboard LEDs of the MSP430FR2355
  *         as well as a Piezo speaker on Pin 19 (P2.0).
- *  @author ricow
+ *  @author Gruppe 6
  *  @date 2024-06-17
  */
 
@@ -53,6 +53,12 @@ void setAlertLED(bool alert){
         GPIO_setOutputHighOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
     else
         GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
+}
+
+void togglePiezo(unsigned int frequency) {
+    unsigned int delayTime = 500000 / frequency; // Calculate half period for given frequency in microseconds
+    P3OUT ^= PIEZO_PIN;   // Toggle Piezo pin
+    delayMicroseconds(delayTime); // Half period delay
 }
 
 

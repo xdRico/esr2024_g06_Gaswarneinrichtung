@@ -1,0 +1,212 @@
+/**
+@file Styleguide.dox
+@page page_StyleGuide Styleguide 
+@author Sven Steddin
+@version 0.2
+@date 2019-06-03
+
+Vorwort
+=======
+Der hier vorliegende Styleguide ist noch im Entwurfsstudium!
+
+Die in diesem Styleguide enthaltenen Vorgaben sind kein allgemeingültiger Standard 
+sondern eine für einen bestimmten Geschäftsbereich definierte Vorschrift zur 
+Formatierung von Source Code Dateien. Diese Vorschriften können von jeder Organisation
+eigenständig festgelegt werden und individuelle Unterschiede aufweisen. Der hier 
+vorliegende Styleguide soll dieses Konzept beispielhaft verdeutlichen.
+
+Unabhängig von den hier gezeigten Vorgaben gelten natürlich die als good style akzeptierten
+Vorgaben, wie sie z.B. von xxx beschrieben wurden.
+
+
+Deklaration von Variablen
+=========================
+
+Zur Beschreibung der Basistypen von Variablen werden die in <inttypes.h> vorgegebenen Definitionen verwendet. 
+Es ergeben sich folgende Vorteile:
+- kürzere Typbezeichner --> weniger Schreibarbeit
+- maschinenunabhängige Datentypen
+
+Die Definition von Variablennamen erfolgt vorzugsweise in der Kamelhöckerschreibweise.
+
+Variablennamen beginnen mit einem kleinen Buchstaben.
+
+
+
+Präfixe für Variablennamen
+==========================
+
+Es sollen die nachfolgend gelisteten Präfixe bei der Definition von Variablennamen verwendet werden. 
+Es ergeben sich folgende Vorteile:
+- es kann direkt im Sourcecode erkannt werden, ... 
+  - welchen Datentyp eine Variable besitzt
+  - welchen Sichtbarkeit eine Variable besitzt
+  - wie der Zugriff auf die Variable zu erfolgen hat
+
+| Präfix | Bedeutung | Beispiel |
+| :----- | :-------- | :------- | 
+| p_ | Variable ist ein Zeiger | p_uiEvent |
+| gp_ | Variable ist ein global verfügbarer Pointer für Schreib- und Lesezugriffe | gp_uiStatus |
+| gcp_ | Variable ist ein global verfügbarer Konstantenpointer für Lesezugriffe. Der Inhalt der Variable, auf die der Pointer zeigt, kann über den Pointer nicht verändert werden. | gcp_uiTime_ms |
+| m_ | Variable ist modulglobal, d.h. nur innerhalb des Moduls sichtbar, in dem sie als static deklariert wird. | m_uiWinkelgrad_deg |
+| kein x_ - Präfix | Varaible ist nur lokal innerhalb des aktuellen Blocks verfügbar | uiZaehler |
+
+__Abkürzungen für bestimmte Datentypen:__ \n
+(diese sind maschinenabhängig und beziehen sich hier auf den MSP430)\n
+Die Typabkürzungen werden ohne Trennzeichen direkt dem Variablennamen vorangestellt. Der Variablennamen beginnt dann mit einem Großbuchstaben.  
+
+| Präfix | Bedeutung | Beispiel |
+| :----- | :-------- | :------- | 
+| uc     | uint8_t   | ucData   |
+| c		 | int8_t	 | cDifference |
+| ui     | uint16_t  | uiFrequenz |
+| i      | int16_t   | iDistance|
+| ul     | uint32_t  | ulCount |
+| l      | int32_t   | lValue |
+| f      | float     | fGewicht |
+| d      | double    | dToleranz |
+
+\n\n
+
+Zugriff auf externe Sensoren / Aktoren
+======================================
+Der Zugriff auf Aktoren oder Sensoren erfolgt über einen standardisierten Satz von Funktionen (API):
+
+__XY-Init()__
+  - Anlegen der für den Datenaustausch erforderlichen Datenstrukturen
+  - Konfiguration der MC-Register der für den Zugriff auf die Hardware erforderlichen Peripherals des MC
+  - Definition der Registerinhalte der externen Hardware, die ggf. zu Beginn auf die Hardeware übertragen werden müssen
+  - Aktivieren der für den Datenaustausch mit der externen Hardware benötigten Peripherals des MC 
+  - Reset der Hardware 
+
+__XY-Start()__
+  - Übertragen der Konfigurationsregister auf die Hardware
+  - Start der Funktion der externen Hardware
+
+__XY-Write()__
+  - Schreiben von Daten oder Kommandos auf die Hardware
+
+__XY-Read()__
+  - Lesen von Daten von der Hardware
+
+__XY-Stop()__
+  - Einfrieren des Zustandes der Hardware  
+\n
+Es gelten folgende Anforderungen an das API:
+- Sofern bestimmte Funktionen für den Betrieb der Hardware nicht erforderlich sind, können diese weggelassen werden
+- Die Funktionen dürfen das Programm nicht blockieren bzw. müssen abbrechbar sein
+- Die I/O-Funktionen sollen dazu geeignet sein, in Interrupt-Serviceroutinen aufgerufen zu werden
+- Die Funktionen liefern einen Rückgabewert, der den Erfolgsstatus des Funktionsaufrufs kennzeichnet
+- Die Werteübergabe erfolgt über Zeiger auf Datenstrukturen, die für die Nutzung der Funktionen definiert werden müssen
+\n\n 
+  
+
+Erstellung von doxygen Kommentaren
+==================================
+Erstellen von File Headers
+--------------------------
+
+Zu Beginn jeder Sourcedatei soll ein Header über die Bedeutung der Sourcedatei informieren. 
+Der hier enthaltene Text soll als Vorlage verwendet werden. Die enthaltenen Beispieltexte 
+müssen ersetzt werden. Die Bedeutung der doxygen tags ist der doxygen Dokumentation zu entnehmen:  
+[doxygen Handbuch] (http://www.stack.nl/~dimitri/doxygen/manual/markdown.html) 
+
+@code
+
+/** @file mainSM.c
+ *  @brief Modul beinhaltet die state machine, die das Verhalten des Hauptprogrammes umsetzt.
+ *  @author Sven Steddin
+ *  @date 2015-05-25
+ */
+
+@endcode
+
+### Erstellen von Function Headers ###
+Zu Beginn jeder Funktion soll ein Header über die Bedeutung der Funktion informieren. 
+Der hier enthaltene Text soll als Vorlage verwendet werden. Die enthaltenen Beispieltexte 
+müssen ersetzt werden. Die Bedeutung der doxygen tags ist der doxygen Dokumentation zu entnehmen:  
+[doxygen Handbuch] (http://www.stack.nl/~dimitri/doxygen/manual/markdown.html) 
+
+__Wichtig:__ \n
+Nicht verwendete tags sollen entfernt werden, damit die erzeugte Dokumentation möglichst kurz und 
+übersichtlich bleibt. Die tags sind dann bei Bedarf in der vorgesehenen Reihenfolge wieder 
+einzufügen.
+
+@code 
+
+//********************************************************************************************************/
+/*! @fn             void i2cSM_Reset(void)
+ *  @brief          Initialisierung der I²C Protokoll state machine
+ *  @author         Sven Steddin
+ *  @version        2
+ *
+ *  @date           __Version 2 (ab 25.05.2015)__
+ *                  - geändert: 2015-05-25 (Steddin)
+ *                    - Kommentierung der Quelldatei
+ *                  - Test und Freigabe: 2015-05-25 (Steddin)
+ *                    - Doxygen-generierte Dateien vollständig
+ *
+ *  @date           __Version 1 (ab 2015-05-17)__
+ *                  - erstellt: 2015-05-17 (Steddin)
+ *                    - Erstausgabe der Funktion
+ *                  - Test und Freigabe: 2015-05-17 (Steddin)
+ *                    - Alle states werden fehlerfrei durchlaufen
+
+ *  @param [in]     void
+ *  @param [out]    void
+ *  @param [in,out] void
+ *  @return         void
+ *
+ *  Zweck:
+ *  ======
+ *  -# Verwaltung der Kommunikation mit dem MMA7660 Beschleunigungssensors
+ *  -# Benutzung des USC-Moduls des MSP430 zur Abwicklung der I²C-Kommunikation
+ *     (keine I²C Software Emulation, wie in vielen Arduino Beispielprogrammen).
+ *
+ *  Umsetzung:
+ *  ==========
+ *  - Über die von TI Grace angelegten Funktionen wird die I²C Schnittstelle
+ *    initialisiert.
+ *  - Die I²C Protokoll state machine wird auf ihren Anfangsstatus zurückgesetzt.
+ *  - Die modulglobalen Variablen werden zurückgesetzt.
+ *
+ *  @sa				USCI_B0_graceInit()
+ *  @sa				System_graceInit()
+ *
+ *  Initialisierung:
+ *  ----------------			
+ *  nicht erforderlich
+ *
+ *  @test           Prüfen, ob nach dem Aufruf:
+ *  				- die modulglobalen Variablen den gewünschten Wert aufweisen
+ *  				- der Anfangsstate der state machine gesetzt ist
+ *
+ *  @_code
+ *                  kein Beispielcode ( _-Zeichen entfernen, famit Tag funktioniert!)
+ *  @_endcode
+ *
+ *  @warning        nicht belegt
+ *
+ *  @riskman        keine Hinweise zum Risikomanagement
+ *
+ *  @todo
+ *
+ ************************************************************************************************************/
+
+@endcode
+
+Das tag _riskman_ gehören nicht zu den doxygen Standardtags sondern ist eine benutzerabhängige 
+Erweiterungen, die im doxygen Konfigurationsfile unter ALIASES definiert werden muss. 
+
+Einsatz von graphviz.dot
+------------------------
+Doxygen kann Grafiken zu den Abhängigkeiten der Source-Dateien erstellen, wenn das Tool graphviz-dot
+auf dem Rechner installiert ist. Der bin-Pfad der Installation muss im doxygen-File hinterlegt sein.
+
+Verwendung von Templates zur Neuanlage von Dateien
+--------------------------------------------------
+Die CCS-IDE ist von Eclipse abgeleitet. Es gibt daher die in Eclipse definierte Vorgehensweise,
+bei der Neuanlage von Dateien vorkonfigurierte Templates zu erstellen. Die Einstellung der 
+Template erfolgt unter dem Menüpunkt /Window/Preferences/Code Style/Code Templates/Files 
+
+*/

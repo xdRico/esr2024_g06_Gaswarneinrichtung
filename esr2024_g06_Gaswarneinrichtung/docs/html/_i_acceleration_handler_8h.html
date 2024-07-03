@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gaswarneinrichtung: C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/class/AccelerationHandler.c File Reference</title>
+<title>Gaswarneinrichtung: C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/interface/IAccelerationHandler.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,22 +83,23 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6ddc554cda5704a54b4cf197aaaaa198.html">class</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_650ee533936399e683a30afb9473a469.html">interface</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">AccelerationHandler.c File Reference</div></div>
+  <div class="headertitle"><div class="title">IAccelerationHandler.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This Class implements the <a class="el" href="_i_acceleration_handler_8h.html" title="This header file is an interface for the use of the acceleration sensor.">IAccelerationHandler.h</a> header file. It uses Pin 9 (P1.3) and 10 (P1.2) for the I2C connection, Pin 31 (P3.2) for activating/deactivating the sensor and Pin 29 (P3.5) for the digital value input.  
+<p>This header file is an interface for the use of the acceleration sensor.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="_i_acceleration_handler_8h_source.html">IAccelerationHandler.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="_i_i2_c_handler_8h_source.html">II2CHandler.h</a>&quot;</code><br />
-</div><table class="memberdecls">
+<div class="textblock"><code>#include &lt;IMain.h&gt;</code><br />
+</div>
+<p><a href="_i_acceleration_handler_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3f6fc223092b05e0368498abae7f0be5" id="r_a3f6fc223092b05e0368498abae7f0be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f6fc223092b05e0368498abae7f0be5">preInitAccelerationHandler</a> ()</td></tr>
@@ -111,7 +112,7 @@ Functions</h2></td></tr>
 <tr class="separator:a54de704941eda6143cc8f89a889af65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This Class implements the <a class="el" href="_i_acceleration_handler_8h.html" title="This header file is an interface for the use of the acceleration sensor.">IAccelerationHandler.h</a> header file. It uses Pin 9 (P1.3) and 10 (P1.2) for the I2C connection, Pin 31 (P3.2) for activating/deactivating the sensor and Pin 29 (P3.5) for the digital value input. </p>
+<div class="textblock"><p>This header file is an interface for the use of the acceleration sensor. </p>
 <dl class="section author"><dt>Author</dt><dd>Gruppe 6 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-06-17 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -129,6 +130,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="_acceleration_handler_8c.html#abe507c29e0f99c3a8602f2fcd1e80fd6">initAccelerationHandler()</a>:</p>
+<p>The init method is for setting up basic working requirements and startups.</p>
 <p>Implementation of IAccelerationHandler </p>
 <p>&lt; Power control: reset all bits</p>
 <p>&lt; Power control: measure mode</p>
@@ -155,6 +158,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="_acceleration_handler_8c.html#a43300758feb7a49fda6627c644eaf532">postInitAccelerationHandler()</a>:</p>
+<p>The postInit method is for setting up Interrupts.</p>
 <p>Implementation of IAccelerationHandler </p>
 
 </div>
@@ -173,6 +178,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="_acceleration_handler_8c.html#a3f6fc223092b05e0368498abae7f0be5">preInitAccelerationHandler()</a>:</p>
+<p>The preInit method is for setting up all Port/Pin register values and initializing all basic setups.</p>
 <p>Implementation of IAccelerationHandler </p>
 <p>&lt; Configure P?? as output</p>
 
@@ -192,6 +199,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="_acceleration_handler_8c.html#a54de704941eda6143cc8f89a889af65c">setAccelerationSensorActive(bool active)</a>:</p>
+<p>This method activates or deactivates the accelerationSensor args: active: the bool that activates / deactivates the sensor</p>
 <p>Implementation of IAccelerationHandler </p>
 
 </div>

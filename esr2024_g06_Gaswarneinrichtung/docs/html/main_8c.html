@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gaswarneinrichtung: src/main.c File Reference</title>
+<title>Gaswarneinrichtung: C:/Users/Fabian/OneDrive/Dokumente/4. Semester/Embedded Systems/Projekt/esr2024_g06_Gaswarneinrichtung/esr2024_g06_Gaswarneinrichtung/src/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,9 +100,9 @@ $(function(){ initResizable(false); });
 <div class="textblock"><code>#include &lt;IMain.h&gt;</code><br />
 <code>#include &lt;msp430.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_i_output_handler_8h_source.html">IOutputHandler.h</a>&quot;</code><br />
-<code>#include &quot;IAccelerationHandler.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_i_acceleration_handler_8h_source.html">IAccelerationHandler.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_i_gas_handler_8h_source.html">IGasHandler.h</a>&quot;</code><br />
-<code>#include &quot;II2CHandler.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_i_i2_c_handler_8h_source.html">II2CHandler.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -155,30 +155,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>alarmState</b> = fals
 <tr class="memitem:a78f7c3cc11ce30f992647a9dd42d96eb" id="r_a78f7c3cc11ce30f992647a9dd42d96eb"><td class="memItemLeft" align="right" valign="top"><a id="a78f7c3cc11ce30f992647a9dd42d96eb" name="a78f7c3cc11ce30f992647a9dd42d96eb"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>clk</b> = 0</td></tr>
 <tr class="separator:a78f7c3cc11ce30f992647a9dd42d96eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a748557551bf70d926df4837125d78467" id="r_a748557551bf70d926df4837125d78467"><td class="memItemLeft" align="right" valign="top"><a id="a748557551bf70d926df4837125d78467" name="a748557551bf70d926df4837125d78467"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>intClockTime</b> = 5</td></tr>
-<tr class="separator:a748557551bf70d926df4837125d78467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a554ab07cf012cf345acd99bd243cc169" id="r_a554ab07cf012cf345acd99bd243cc169"><td class="memItemLeft" align="right" valign="top"><a id="a554ab07cf012cf345acd99bd243cc169" name="a554ab07cf012cf345acd99bd243cc169"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeRestingTillAlarm</b> = 15 * 10</td></tr>
-<tr class="separator:a554ab07cf012cf345acd99bd243cc169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67defbed3bb26df0ca86df04c02a7770" id="r_a67defbed3bb26df0ca86df04c02a7770"><td class="memItemLeft" align="right" valign="top"><a id="a67defbed3bb26df0ca86df04c02a7770" name="a67defbed3bb26df0ca86df04c02a7770"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>clkLEDAlert</b> = 0</td></tr>
+<tr class="separator:a67defbed3bb26df0ca86df04c02a7770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2a137087bc1815b6303f63c2b372766" id="r_ac2a137087bc1815b6303f63c2b372766"><td class="memItemLeft" align="right" valign="top"><a id="ac2a137087bc1815b6303f63c2b372766" name="ac2a137087bc1815b6303f63c2b372766"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>clkLEDOn</b> = 0</td></tr>
+<tr class="separator:ac2a137087bc1815b6303f63c2b372766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4273fa60473657b31b9b5a099c55d3c3" id="r_a4273fa60473657b31b9b5a099c55d3c3"><td class="memItemLeft" align="right" valign="top"><a id="a4273fa60473657b31b9b5a099c55d3c3" name="a4273fa60473657b31b9b5a099c55d3c3"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>timeWhenOnBtnPressed</b> = 0</td></tr>
 <tr class="separator:a4273fa60473657b31b9b5a099c55d3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f38caea116a3666ddef5927a491411e" id="r_a4f38caea116a3666ddef5927a491411e"><td class="memItemLeft" align="right" valign="top"><a id="a4f38caea116a3666ddef5927a491411e" name="a4f38caea116a3666ddef5927a491411e"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToPressOnBtn</b> = 25</td></tr>
-<tr class="separator:a4f38caea116a3666ddef5927a491411e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ce2f923868e336d8d358b06dc5c4e2" id="r_ad6ce2f923868e336d8d358b06dc5c4e2"><td class="memItemLeft" align="right" valign="top"><a id="ad6ce2f923868e336d8d358b06dc5c4e2" name="ad6ce2f923868e336d8d358b06dc5c4e2"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>timeWhenLastMoved</b> = 0</td></tr>
 <tr class="separator:ad6ce2f923868e336d8d358b06dc5c4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a500b9b3aad0a639452087f35a95bdd51" id="r_a500b9b3aad0a639452087f35a95bdd51"><td class="memItemLeft" align="right" valign="top"><a id="a500b9b3aad0a639452087f35a95bdd51" name="a500b9b3aad0a639452087f35a95bdd51"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>timeWhenLastCriticalMeasurement</b> = 0</td></tr>
 <tr class="separator:a500b9b3aad0a639452087f35a95bdd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae238263a2746f04814b8a8aea06fa13" id="r_aae238263a2746f04814b8a8aea06fa13"><td class="memItemLeft" align="right" valign="top"><a id="aae238263a2746f04814b8a8aea06fa13" name="aae238263a2746f04814b8a8aea06fa13"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeWaitingAfterCriticalMeasurement</b> = 10 * 10</td></tr>
-<tr class="separator:aae238263a2746f04814b8a8aea06fa13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67defbed3bb26df0ca86df04c02a7770" id="r_a67defbed3bb26df0ca86df04c02a7770"><td class="memItemLeft" align="right" valign="top"><a id="a67defbed3bb26df0ca86df04c02a7770" name="a67defbed3bb26df0ca86df04c02a7770"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>clkLEDAlert</b> = 0</td></tr>
-<tr class="separator:a67defbed3bb26df0ca86df04c02a7770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748557551bf70d926df4837125d78467" id="r_a748557551bf70d926df4837125d78467"><td class="memItemLeft" align="right" valign="top"><a id="a748557551bf70d926df4837125d78467" name="a748557551bf70d926df4837125d78467"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>intClockTime</b> = 5</td></tr>
+<tr class="separator:a748557551bf70d926df4837125d78467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49e9c2b49b2c0d265441f7c5d5baff56" id="r_a49e9c2b49b2c0d265441f7c5d5baff56"><td class="memItemLeft" align="right" valign="top"><a id="a49e9c2b49b2c0d265441f7c5d5baff56" name="a49e9c2b49b2c0d265441f7c5d5baff56"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToBlinkLEDWarning</b> = 10</td></tr>
 <tr class="separator:a49e9c2b49b2c0d265441f7c5d5baff56"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,9 +185,15 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToBlinkLEDAl
 <tr class="memitem:a0a0dcf204f2e24854290a872515b0822" id="r_a0a0dcf204f2e24854290a872515b0822"><td class="memItemLeft" align="right" valign="top"><a id="a0a0dcf204f2e24854290a872515b0822" name="a0a0dcf204f2e24854290a872515b0822"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToWaitLEDAlarm</b> = 5</td></tr>
 <tr class="separator:a0a0dcf204f2e24854290a872515b0822"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2a137087bc1815b6303f63c2b372766" id="r_ac2a137087bc1815b6303f63c2b372766"><td class="memItemLeft" align="right" valign="top"><a id="ac2a137087bc1815b6303f63c2b372766" name="ac2a137087bc1815b6303f63c2b372766"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>clkLEDOn</b> = 0</td></tr>
-<tr class="separator:ac2a137087bc1815b6303f63c2b372766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f38caea116a3666ddef5927a491411e" id="r_a4f38caea116a3666ddef5927a491411e"><td class="memItemLeft" align="right" valign="top"><a id="a4f38caea116a3666ddef5927a491411e" name="a4f38caea116a3666ddef5927a491411e"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToPressOnBtn</b> = 25</td></tr>
+<tr class="separator:a4f38caea116a3666ddef5927a491411e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae238263a2746f04814b8a8aea06fa13" id="r_aae238263a2746f04814b8a8aea06fa13"><td class="memItemLeft" align="right" valign="top"><a id="aae238263a2746f04814b8a8aea06fa13" name="aae238263a2746f04814b8a8aea06fa13"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeWaitingAfterCriticalMeasurement</b> = 10 * 10</td></tr>
+<tr class="separator:aae238263a2746f04814b8a8aea06fa13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554ab07cf012cf345acd99bd243cc169" id="r_a554ab07cf012cf345acd99bd243cc169"><td class="memItemLeft" align="right" valign="top"><a id="a554ab07cf012cf345acd99bd243cc169" name="a554ab07cf012cf345acd99bd243cc169"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeRestingTillAlarm</b> = 15 * 10</td></tr>
+<tr class="separator:a554ab07cf012cf345acd99bd243cc169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e996dccd2f43b477ba1a5b5a73e239f" id="r_a7e996dccd2f43b477ba1a5b5a73e239f"><td class="memItemLeft" align="right" valign="top"><a id="a7e996dccd2f43b477ba1a5b5a73e239f" name="a7e996dccd2f43b477ba1a5b5a73e239f"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToBlinkLEDOn</b> = 5</td></tr>
 <tr class="separator:a7e996dccd2f43b477ba1a5b5a73e239f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,7 +238,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToWaitLEDOn<
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Implementation of IModule.h </p>
+<p>Implementation of <a class="el" href="_i_main_8h_source.html">IMain.h</a> </p>
 
 </div>
 </div>
@@ -332,7 +332,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToWaitLEDOn<
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Implementation of IModule.h </p>
+<p>Implementation of <a class="el" href="_i_main_8h_source.html">IMain.h</a> </p>
 
 </div>
 </div>
@@ -350,7 +350,7 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>timeToWaitLEDOn<
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Implementation of IModule.h </p>
+<p>Implementation of <a class="el" href="_i_main_8h_source.html">IMain.h</a> </p>
 
 </div>
 </div>

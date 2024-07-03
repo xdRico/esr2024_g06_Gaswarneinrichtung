@@ -1,10 +1,7 @@
-/*
- * IAccelerationHandler.h
- *
- *  Created on: 17.06.2024
- *      Author: ricow
- *
- *  This header file is an interface for the use of the acceleration sensor.
+/** @file IAccelerationHandler.h
+ *  @brief This header file is an interface for the use of the acceleration sensor.
+ *  @author Gruppe 6
+ *  @date 2024-06-17
  */
 
 #ifndef SRC_INTERFACE_IACCELERATIONHANDLER_H_
