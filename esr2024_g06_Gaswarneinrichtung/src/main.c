@@ -14,22 +14,23 @@ bool warningState = false;
 bool alarmState = false;
 
 int clk = 0;
-const int intClockTime = 5; //< in s/10
-const int timeRestingTillAlarm = 15 * 10; //< in s/10
+int clkLEDAlert = 0;
+int clkLEDOn = 0;
+
 int timeWhenOnBtnPressed = 0;
-const int timeToPressOnBtn = 25; //< 2.5s (in s/10)
 int timeWhenLastMoved = 0;
 int timeWhenLastCriticalMeasurement = 0;
-const int timeWaitingAfterCriticalMeasurement = 10 * 10; //< in s/10
 
 //< in s/10
-int clkLEDAlert = 0;
+const int intClockTime = 5;
+
 const int timeToBlinkLEDWarning = 10;
 const int timeToWaitLEDWarning = 20;
 const int timeToBlinkLEDAlarm = 5;
 const int timeToWaitLEDAlarm = 5;
-
-int clkLEDOn = 0;
+const int timeToPressOnBtn = 25; //< 2.5s
+const int timeWaitingAfterCriticalMeasurement = 10 * 10;
+const int timeRestingTillAlarm = 15 * 10;
 const int timeToBlinkLEDOn = 5;
 const int timeToWaitLEDOn = 50;
 

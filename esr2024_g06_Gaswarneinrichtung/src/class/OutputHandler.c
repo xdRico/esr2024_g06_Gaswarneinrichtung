@@ -1,6 +1,7 @@
 /** @file OutputHandler.c
  *  @brief This Class implements the IOutputHandler.h header file.
- *         It uses the two onboard LEDs of the MSP430FR2355 as well as a Piezo speaker on Pin 19 (P2.0).
+ *         It uses the two onboard LEDs of the MSP430FR2355
+ *         as well as a Piezo speaker on Pin 19 (P2.0).
  *  @author ricow
  *  @date 2024-06-17
  */
@@ -15,7 +16,7 @@ void preInitOutputHandler(){
     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);
     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);
     GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);
-    GPIO_setAsOutputPin(GPIO_PORT_1, GPIO_PIN1);
+    GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);
 }
 
 
