@@ -1,10 +1,9 @@
-/*
- * II2CHandler.h
- *
- *  Created on: 30 Jun 2024
- *      Author: Olawale
- *
+/** @file II2CHandler.h
+ *  @brief  This Headerfile is an Interace for die I2C communikation
+ *  @author Gruppe 6
+ *  @date 2024-06-17
  */
+
 
 #include <stdint.h>
 #ifndef SRC_INTERFACE_II2CHANDLER_H_

@@ -1,0 +1,127 @@
+/**
+@mainpage
+@author esr2024_Gruppe6
+@version 1.0
+@date 2024-07-03
+
+
+Zweckbestimmung:
+----------------
+Das Programm stellt eine Gaswarneinrichtung mit Totmannmelder dar und detektiert daher unetrschiedliche Arten von Gasen.
+
+Die Beschreibung des Kommunikationsprotokolls des Beschleunigungssensors und des Gassensors ist aus den
+Datenblättrn zu entnehmen.
+
+Zugriff auf Internetseiten am 2015-05-25
+
+@see https://cdn-reichelt.de/documents/datenblatt/A300/SNS-MQ135.pdf
+
+\n
+
+Funktionsbeschreibung / bestimmungsgemäßer Gebrauch:
+----------------------------------------------------
+Über den Taster S1? lässt sich das Gerät nach 2.5 Sekunden gedrückt halten einschalten
+Der Gassensor ist über DI/O angebunden und ung gibt einen Interupt an de MC wenn er gas detektiert.
+Anschließend geht die Rote LED auf dem in den Warning Modus und blinkt. Sollte sich die Person nicht mehr bewegen dektetiert dies der über I2C angebundene Beschleunigungssensor
+und der MC gibt über den Piezolautsprecher einen Signalton aus. Zudem geht die LED in den Alarm mode und blinkt schneller.
+
+
+\n
+
+Zugesicherte Leistungen:
+------------------------
+- Die Luftzusammensetzung wird spätestens alle 6 Sekunden neu ausgewertet
+- Betrieb bei normalen Raumumgebungsbedingungen sowie höheren und tieferen Temperaturen möglich: 
+	-Temperatur: 20°C +/-20°C
+  	-Feuchte: 60% +/- 20%
+
+
+
+Beschreibung der Hardware:
+--------------------------
+- TI Launchpad MSP430
+- MSP430FR2355
+- GY-291 ADXL345 3-Achsen Gyroskop Beschleunigungssensor
+- DEBO GAS2 MQ135
+- Piezo
+ 
+
+@code
+                               MSP430FR2355
+                 Vcc Vcc     -----------------
+                 /|\ /|\    |                 |
+                4.7k 4.7k   |           P1.0  |----> RED LED
+      MMA7660FC   |   |     |                 |
+      ---------   |   |     |                 |
+     |      SDA|<-|---+---->|P1.7/UCB0SDA     |
+     |         |  |         |                 |
+     |         |  |         |                 |
+     |      SCL|<-+---------|P1.6/UCB0SCL     |
+     |         |            |                 |
+     |         |            |                 |
+  +--|         |--+         |                 |
+  |  |         |  |         |                 |
+ \|/             \|/
+ Vcc				Gnd
+
+@endcode
+
+\n\n
+
+@image html hwsetup.jpg "Prototypaufbau mit 10k Pullup Widerständen"
+@image rtf hwsetup.jpg width=10cm
+
+\n\n
+
+Beschreibung der Software
+-------------------------
+__Werkzeuge__
+- Die Entwicklung erfolgte unter TI CCS Ver. 12.6.0.00008 
+- UML Diagramme wurden mit UMLet Version 15.1 erstellt
+- Die Dokumentation wurde mit doxygen Version 1.11.0 erstellt
+- Das Konfigurationsmanagement erfolgt über Git
+
+__Aufbau__ // Noch anzupassen
+
+Das Programm Design beruht auf Event-gesteuerten State Machines für:
+- Festlegung des Programmverhaltens: mainSM
+- Festlegung der I2C Kommunikation mit dem MMA7660: i2cSM
+
+Die Funktionsweise der state machines ist im Modul mainSM.c beschrieben.
+Dies ist eine einfache state machine Realisierung, mit einem simplen
+Event Mechanismus, der bei höheren Anforderungen Probleme im Timing
+und in der Festlegung der Abfolge der Eventbearbeitung verursachen kann.
+In diesen Fällen müssen die state machines durch ein passendes
+Multitasking Betriebssystem (z.B. qp nano) ersetzt werden.
+
+Das Grundkonzept des Programmes ist im nachfolgenden Aktivitätsdiagramm
+abgebildet:
+
+@image html activity_main.png "Programmaufbau"
+@image rtf activity_main.png width=8cm
+\n
+
+Die Interrupt Service Routinen beenden immer dann den low power mode, wenn
+entweder ein Timer Event oder ein I²C Event ausgelöst wird. Dies führt im
+Anschluss zum einmaligen Durchlauf der main loop, bevor das System wieder
+in den low power sleep mode versetzt wird.
+
+\n\n\n
+
+@warning
+- Beim Debugging vor dem Start der Debug Session unbedingt die Versorgungsspannung
+  zum I2C-Modul unterbrechen, damit der Sensor neu gestartet wird. Andernfalls kann
+  es passieren, dass sich der Sensor nicht ansprechen lässt und das Programm somit
+  keine Reaktion zeigt.
+
+
+@todo
+-# Implementierung ein Auschalten des Gassensors via Transistor
+-# Verbesserung der Dokumentation
+
+
+
+*/
+
+
+

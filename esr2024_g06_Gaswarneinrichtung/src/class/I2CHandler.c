@@ -1,8 +1,7 @@
-/*
- * I2CHandler.c
- *
- *  Created on: 30 Jun 2024
- *      Author: Olawale
+/** @file I2CHandler.c
+ *  @brief  This Class implements the I2CHandler.h header file.
+ *  @author Gruppe 6
+ *  @date 2024-06-17
  */
 
 #include <II2CHandler.h>
