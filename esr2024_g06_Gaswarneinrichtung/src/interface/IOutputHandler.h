@@ -27,6 +27,14 @@ void initOutputHandler();
 
 
 /**
+ * postInitOutputHandler():
+ *
+ * The postInit method is for setting up Interrupts.
+ */
+void postInitOutputHandler();
+
+
+/**
  * setAlertLED(bool alert):
  *
  * This method is used to de-/activate the alert LED, if the device is switched on
@@ -48,25 +56,14 @@ void setAlertLED(bool alert);
 void setOnLED(bool on);
 
 /**
- * void togglePiezo(unsigned int frequency):
+ * void togglePiezo(bool alert):
  *
  * This method is used to Togle the Piezo
  *
  *  param:
- *      frequency: the value which defines the frequenz of thepiezo output
+ *      bool: the bool that defines if the piezo is enabled
  */
-void togglePiezo(unsigned int frequency);
-
-
-/**
- * activateAlertPiezo(bool accelerationAlert):
- *
- * This method is used to de-/activate the the Piezeo Speaker
- *
- *  param:
- *      on: the bool that defines, if the Piezo is beeping
- */
-void activateAlertPiezo(bool accelerationAlert);
+void togglePiezo(bool alert);
 
 
 #endif /* SRC_INTERFACE_IOUTPUTHANDLER_H_ */

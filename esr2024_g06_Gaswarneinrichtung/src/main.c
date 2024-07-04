@@ -24,6 +24,8 @@ int timeWhenLastCriticalMeasurement = 0;
 //< in s/10
 const int intClockTime = 5;
 
+const int piezoPeriodLow = 620;
+const int piezoPeriodHigh = 440;
 const int timeToBlinkLEDWarning = 10;
 const int timeToWaitLEDWarning = 20;
 const int timeToBlinkLEDAlarm = 5;
@@ -38,6 +40,7 @@ void interruptP2Handler();
 void interruptP3Handler();
 void interruptP4Handler();
 void gasMeasurementHandler();
+
 
 /** @file main.c
  *  @brief  The main method gets called at start of the device
@@ -82,6 +85,10 @@ void preInit(){
 
     GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P1, GPIO_PIN1, GPIO_PRIMARY_MODULE_FUNCTION);
 
+
+
+
+
     //< preInit Modules
 
     preInitOutputHandler();
@@ -109,6 +116,9 @@ void init(){
  * Implementation of IMain.h
  */
 void postInit(){
+    //< Disable global interrupt during setup
+    __bic_SR_register(GIE);
+
     //< postInit Device
     GPIO_selectInterruptEdge(GPIO_PORT_S1, GPIO_PIN_S1, GPIO_HIGH_TO_LOW_TRANSITION);
     GPIO_selectInterruptEdge(GPIO_PORT_S2, GPIO_PIN_S2, GPIO_HIGH_TO_LOW_TRANSITION);
@@ -133,12 +143,10 @@ void postInit(){
     RTC_enableInterrupt(RTC_BASE, RTC_OVERFLOW_INTERRUPT);
     RTC_start(RTC_BASE, RTC_CLOCKSOURCE_XT1CLK);
 
+
     /*
      * Initialize and enable ICC
      */
-    //< Disable global interrupt during setup
-    __bic_SR_register(GIE);
-
     //< NOTE: ICC_LEVEL_0 is the highest priority, ICC_LEVEL3 is the lowest priority
     //< Set P2 interrupt medium priority
     ICC_setInterruptLevel(ICC_ILSR_P2, ICC_LEVEL_2);
@@ -147,15 +155,16 @@ void postInit(){
     ICC_setInterruptLevel(ICC_ILSR_P4, ICC_LEVEL_1);
     //< Set RTC interrupt lower priority
     ICC_setInterruptLevel(ICC_ILSR_RTC_COUNTER, ICC_LEVEL_3);
+    ICC_setInterruptLevel(TIMERB0_VECTOR, ICC_LEVEL_3);
 
     //< Enable ICC module
     ICC_enable();
 
 
     //< postInit Modules
+    postInitOutputHandler();
     postInitGasHandler();
     postInitAccelerationHandler();
-
 }
 
 
