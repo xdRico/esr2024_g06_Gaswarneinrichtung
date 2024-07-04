@@ -29,7 +29,7 @@ void initOutputHandler();
 /**
  * postInitOutputHandler():
  *
- * The postInit method is for setting up Interrupts.
+ * The postInit method is for setting up interrupts.
  */
 void postInitOutputHandler();
 
@@ -56,14 +56,13 @@ void setAlertLED(bool alert);
 void setOnLED(bool on);
 
 /**
- * void togglePiezo(bool alert):
+ * void setPiezoActive(bool alert):
  *
- * This method is used to Togle the Piezo
+ * This method is used to Toggle the Piezo
  *
  *  param:
- *      bool: the bool that defines if the piezo is enabled
+ *      alert: the bool which defines if the piezo is on
  */
-void togglePiezo(bool alert);
-
+void setPiezoActive(bool alert);
 
 #endif /* SRC_INTERFACE_IOUTPUTHANDLER_H_ */

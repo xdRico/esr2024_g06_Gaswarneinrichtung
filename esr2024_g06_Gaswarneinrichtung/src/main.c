@@ -18,19 +18,19 @@ int clkLEDAlert = 0;
 int clkLEDOn = 0;
 
 int timeWhenOnBtnPressed = 0;
+int timeWhenAckBtnPressed = 0;
 int timeWhenLastMoved = 0;
 int timeWhenLastCriticalMeasurement = 0;
 
 //< in s/10
 const int intClockTime = 5;
 
-const int piezoPeriodLow = 620;
-const int piezoPeriodHigh = 440;
 const int timeToBlinkLEDWarning = 10;
 const int timeToWaitLEDWarning = 20;
 const int timeToBlinkLEDAlarm = 5;
 const int timeToWaitLEDAlarm = 5;
 const int timeToPressOnBtn = 25; //< 2.5s
+const int timeToPressAckBtn = 25; // 2.5s
 const int timeWaitingAfterCriticalMeasurement = 10 * 10;
 const int timeRestingTillAlarm = 15 * 10;
 const int timeToBlinkLEDOn = 5;
@@ -40,7 +40,6 @@ void interruptP2Handler();
 void interruptP3Handler();
 void interruptP4Handler();
 void gasMeasurementHandler();
-
 
 /** @file main.c
  *  @brief  The main method gets called at start of the device
@@ -85,10 +84,6 @@ void preInit(){
 
     GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P1, GPIO_PIN1, GPIO_PRIMARY_MODULE_FUNCTION);
 
-
-
-
-
     //< preInit Modules
 
     preInitOutputHandler();
@@ -116,7 +111,8 @@ void init(){
  * Implementation of IMain.h
  */
 void postInit(){
-    //< Disable global interrupt during setup
+
+	//< Disable global interrupt during setup
     __bic_SR_register(GIE);
 
     //< postInit Device
@@ -131,8 +127,6 @@ void postInit(){
     GPIO_clearInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
     GPIO_clearInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);
 
-
-
     /*
      * Initialize RTC
      * RTC count reload compare value at 256.
@@ -142,7 +136,6 @@ void postInit(){
     RTC_init(RTC_BASE, 16-1, RTC_CLOCKPREDIVIDER_1024);
     RTC_enableInterrupt(RTC_BASE, RTC_OVERFLOW_INTERRUPT);
     RTC_start(RTC_BASE, RTC_CLOCKSOURCE_XT1CLK);
-
 
     /*
      * Initialize and enable ICC
@@ -155,11 +148,9 @@ void postInit(){
     ICC_setInterruptLevel(ICC_ILSR_P4, ICC_LEVEL_1);
     //< Set RTC interrupt lower priority
     ICC_setInterruptLevel(ICC_ILSR_RTC_COUNTER, ICC_LEVEL_3);
-    ICC_setInterruptLevel(TIMERB0_VECTOR, ICC_LEVEL_3);
 
     //< Enable ICC module
     ICC_enable();
-
 
     //< postInit Modules
     postInitOutputHandler();
@@ -181,7 +172,6 @@ void postInit(){
  *          Accelerator Sensor
  */
 void loop(){
-
 
     //< Enter LPM3 and global interrupt
     __bis_SR_register(LPM3_bits + GIE);
@@ -237,13 +227,32 @@ void loop(){
  * This method gets called in every loop and handles the interrupt for Port 2 (Acknowledge-Button)
  */
 void interruptP2Handler(){
-    if(!interruptP2)
+    if(!alarmState)
         return;
-    if(alarmState){
+
+    if(!interruptP2){
+            GPIO_enableInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);
+            return;
+        }
+
+        if(timeWhenAckBtnPressed == 0){
+            timeWhenAckBtnPressed = clk;
+            return;
+        }
+        if(GPIO_getInputPinValue(GPIO_PORT_S2, GPIO_PIN_S2) == GPIO_INPUT_PIN_HIGH){
+            interruptP2 = false;
+            timeWhenAckBtnPressed = 0;
+            return;
+        }
+        if(clk < timeWhenAckBtnPressed + timeToPressAckBtn) return; //2.5s
+
+
         alarmState = false;
+        setPiezoActive(false);
         timeWhenLastMoved = clk;
-    }
-    interruptP2 = false;
+        GPIO_disableInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);
+        interruptP2 = false;
+        timeWhenAckBtnPressed = 0;
 }
 
 
@@ -279,8 +288,10 @@ void interruptP3Handler(){
         timeWhenLastMoved = clk;
         return;
     }
-    if(clk > timeWhenLastMoved + timeRestingTillAlarm)
+    if(clk > timeWhenLastMoved + timeRestingTillAlarm){
         alarmState = true;
+        setPiezoActive(true);
+    }
 }
 
 
@@ -301,17 +312,16 @@ void interruptP4Handler(){
     }
     if(GPIO_getInputPinValue(GPIO_PORT_S1, GPIO_PIN_S1) == GPIO_INPUT_PIN_HIGH){
         interruptP4 = false;
+        timeWhenOnBtnPressed = 0;
         return;
     }
     if(clk < timeWhenOnBtnPressed + timeToPressOnBtn) return; //2.5s
-
 
     onState = !onState;
     setBurnerActive(onState);
     GPIO_disableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);
     interruptP4 = false;
     timeWhenOnBtnPressed = 0;
-
 }
 
 

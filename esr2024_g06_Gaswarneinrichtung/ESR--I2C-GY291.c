@@ -335,7 +335,7 @@ void InitMSP430Peripherals(void) {
         SLAVE_ADDRESS
         );
 
-    __bis_SR_register(GIE);
+    //__bis_SR_register(GIE);
 }
 
 void EUSCI_B_I2C_masterSetByteCnt(uint16_t baseAddress, uint16_t cnt) {
