@@ -1,0 +1,7 @@
+<map id="IGasHandler.h" name="IGasHandler.h">
+<area shape="rect" id="Node000001" title="This header file is an interface for the use of the gas measuring sensor." alt="" coords="56,5,159,32"/>
+<area shape="rect" id="Node000002" href="$_gas_handler_8c.html" title="This Class implements the IGasHandler.h header file. It uses Pin 32 (P3.7) for activating the Gas Sen..." alt="" coords="5,80,106,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,46,67,81,62,78,87,43"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="The main method gets called at start of the device interrupts: P2: Acknowledge&#45;Button P3: Movement/Ta..." alt="" coords="129,80,190,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,43,153,78,148,81,123,46"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="II2CHandler.h" name="II2CHandler.h">
+<area shape="rect" id="Node000001" title="This Headerfile is an Interace for die I2C communikation." alt="" coords="176,5,274,32"/>
+<area shape="rect" id="Node000002" href="$_acceleration_handler_8c.html" title="This Class implements the IAccelerationHandler.h header file. It uses Pin 9 (P1.3) and 10 (P1...." alt="" coords="5,80,154,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,42,106,82,104,77,185,37"/>
+<area shape="rect" id="Node000003" href="$_i2_c_handler_8c.html" title="This Class implements the I2CHandler.h header file." alt="" coords="177,80,273,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,48,228,80,222,80,222,48"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title="The main method gets called at start of the device interrupts: P2: Acknowledge&#45;Button P3: Movement/Ta..." alt="" coords="296,80,356,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="256,39,310,77,307,82,253,44"/>
+</map>

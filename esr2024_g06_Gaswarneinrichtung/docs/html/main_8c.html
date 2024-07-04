@@ -77,6 +77,33 @@ $(function(){ initResizable(false); });
 Include-Abhängigkeitsdiagramm für main.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c__incl.png" border="0" usemap="#amain_8c" alt=""/></div>
+<map name="amain_8c" id="amain_8c">
+<area shape="rect" title="The main method gets called at start of the device interrupts: P2: Acknowledge&#45;Button P3: Movement/Ta..." alt="" coords="291,5,352,32"/>
+<area shape="rect" href="_i_main_8h.html" title=" " alt="" coords="214,155,277,181"/>
+<area shape="poly" title=" " alt="" coords="291,24,224,29,141,39,65,56,36,68,18,82,9,102,14,118,31,131,58,142,129,156,199,162,198,168,128,161,57,147,29,135,9,121,3,101,14,78,34,63,63,51,140,34,223,23,291,19"/>
+<area shape="rect" title=" " alt="" coords="422,229,501,256"/>
+<area shape="poly" title=" " alt="" coords="353,21,381,27,412,38,441,54,464,79,478,113,482,149,479,185,473,215,467,214,474,184,476,149,473,114,459,81,437,59,409,42,379,32,352,26"/>
+<area shape="rect" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data." alt="" coords="28,80,146,107"/>
+<area shape="poly" title=" " alt="" coords="292,32,143,78,141,72,290,27"/>
+<area shape="rect" href="_i_acceleration_handler_8h.html" title="This header file is an interface for the use of the acceleration sensor." alt="" coords="170,80,321,107"/>
+<area shape="poly" title=" " alt="" coords="310,34,271,71,268,67,307,31"/>
+<area shape="rect" href="_i_gas_handler_8h.html" title="This header file is an interface for the use of the gas measuring sensor." alt="" coords="346,80,449,107"/>
+<area shape="poly" title=" " alt="" coords="337,31,375,67,372,71,333,34"/>
+<area shape="rect" href="_i_i2_c_handler_8h.html" title="This Headerfile is an Interace for die I2C communikation." alt="" coords="524,80,623,107"/>
+<area shape="poly" title=" " alt="" coords="353,26,516,73,514,78,351,31"/>
+<area shape="rect" title=" " alt="" coords="110,229,184,256"/>
+<area shape="poly" title=" " alt="" coords="230,184,178,222,174,218,227,180"/>
+<area shape="poly" title=" " alt="" coords="278,177,410,221,408,226,277,182"/>
+<area shape="rect" title=" " alt="" coords="208,229,283,256"/>
+<area shape="poly" title=" " alt="" coords="248,182,248,214,243,214,243,182"/>
+<area shape="rect" title=" " alt="" coords="307,229,373,256"/>
+<area shape="poly" title=" " alt="" coords="264,180,313,218,310,222,260,184"/>
+<area shape="poly" title=" " alt="" coords="116,105,205,145,203,150,113,110"/>
+<area shape="poly" title=" " alt="" coords="248,107,248,139,243,139,243,107"/>
+<area shape="poly" title=" " alt="" coords="372,110,287,150,285,145,370,105"/>
+<area shape="rect" title=" " alt="" coords="541,155,606,181"/>
+<area shape="poly" title=" " alt="" coords="576,107,576,139,571,139,571,107"/>
+</map>
 </div>
 </div>
 <p><a href="main_8c_source.html">gehe zum Quellcode dieser Datei</a></p>
@@ -134,6 +161,10 @@ Variablen</h2></td></tr>
 <tr class="separator:a500b9b3aad0a639452087f35a95bdd51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a748557551bf70d926df4837125d78467" id="r_a748557551bf70d926df4837125d78467"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a748557551bf70d926df4837125d78467">intClockTime</a> = 5</td></tr>
 <tr class="separator:a748557551bf70d926df4837125d78467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06c016e0ad870769e836aa760e56450" id="r_ac06c016e0ad870769e836aa760e56450"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06c016e0ad870769e836aa760e56450">piezoPeriodLow</a> = 620</td></tr>
+<tr class="separator:ac06c016e0ad870769e836aa760e56450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a469743100fa1c4874e871ffd8f833b6f" id="r_a469743100fa1c4874e871ffd8f833b6f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a469743100fa1c4874e871ffd8f833b6f">piezoPeriodHigh</a> = 440</td></tr>
+<tr class="separator:a469743100fa1c4874e871ffd8f833b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49e9c2b49b2c0d265441f7c5d5baff56" id="r_a49e9c2b49b2c0d265441f7c5d5baff56"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49e9c2b49b2c0d265441f7c5d5baff56">timeToBlinkLEDWarning</a> = 10</td></tr>
 <tr class="separator:a49e9c2b49b2c0d265441f7c5d5baff56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67e4396b648d2bddd76583fedc1a08f8" id="r_a67e4396b648d2bddd76583fedc1a08f8"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67e4396b648d2bddd76583fedc1a08f8">timeToWaitLEDWarning</a> = 20</td></tr>
@@ -175,7 +206,7 @@ Variablen</h2></td></tr>
 <p><a class="el" href="#a0bd6ee090ea43c90ff186fca55f77205">interruptP2Handler()</a>:</p>
 <p>This method gets called in every loop and handles the interrupt for Port 2 (Acknowledge-Button) </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00230">230</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00239">239</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -196,7 +227,7 @@ Variablen</h2></td></tr>
 <p><a class="el" href="#a44ca05bc8cd60f76b1f35d94eb1da506">interruptP3Handler()</a>:</p>
 <p>This method gets called in every loop and handles the interrupt for Port 3 (Gas- + Acceleration-Sensor Movement / Tap) </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00246">246</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00255">255</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -217,7 +248,7 @@ Variablen</h2></td></tr>
 <p><a class="el" href="#adb4906eada6f2d04ad43eb93d01394f9">interruptP4Handler()</a>:</p>
 <p>This method gets called in every loop and handles the interrupt for Port 4 (On-Button) </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00283">283</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00292">292</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -238,7 +269,7 @@ Variablen</h2></td></tr>
 <p><a class="el" href="#aa98b7b186c4bbf632b698dc43726137e">gasMeasurementHandler()</a>:</p>
 <p>This method gets called in every loop and handles the measurements and usage of the Gas Sensor </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00314">314</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00323">323</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -257,7 +288,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00051">51</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00054">54</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -277,7 +308,7 @@ Variablen</h2></td></tr>
 </div><div class="memdoc">
 <p>Implementation of <a class="el" href="_i_main_8h.html">IMain.h</a> </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00068">68</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00071">71</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -297,7 +328,7 @@ Variablen</h2></td></tr>
 </div><div class="memdoc">
 <p>Implementation of <a class="el" href="_i_main_8h.html">IMain.h</a> </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00096">96</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00103">103</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -317,7 +348,7 @@ Variablen</h2></td></tr>
 </div><div class="memdoc">
 <p>Implementation of <a class="el" href="_i_main_8h.html">IMain.h</a> </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00111">111</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00118">118</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -338,7 +369,7 @@ Variablen</h2></td></tr>
 <p><a class="el" href="#afe461d27b9c48d5921c00d521181f12f">loop()</a>:</p>
 <p>The loop method gets called repeatedly, until the device gets turned off On: Gasmessung LED On on Warning: LED Alarm Speaker Alarm Accelerator Sensor </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00174">174</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00183">183</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -584,6 +615,38 @@ Variablen</h2></td></tr>
 
 </div>
 </div>
+<a id="ac06c016e0ad870769e836aa760e56450" name="ac06c016e0ad870769e836aa760e56450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06c016e0ad870769e836aa760e56450">&#9670;&#160;</a></span>piezoPeriodLow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int piezoPeriodLow = 620</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00027">27</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a469743100fa1c4874e871ffd8f833b6f" name="a469743100fa1c4874e871ffd8f833b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469743100fa1c4874e871ffd8f833b6f">&#9670;&#160;</a></span>piezoPeriodHigh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int piezoPeriodHigh = 440</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00028">28</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
 <a id="a49e9c2b49b2c0d265441f7c5d5baff56" name="a49e9c2b49b2c0d265441f7c5d5baff56"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49e9c2b49b2c0d265441f7c5d5baff56">&#9670;&#160;</a></span>timeToBlinkLEDWarning</h2>
 
@@ -596,7 +659,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00027">27</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00029">29</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -612,7 +675,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00028">28</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00030">30</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -628,7 +691,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00029">29</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00031">31</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -644,7 +707,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00030">30</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00032">32</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -660,7 +723,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00031">31</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00033">33</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -676,7 +739,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00032">32</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00034">34</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -692,7 +755,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00033">33</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00035">35</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -708,7 +771,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00034">34</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00036">36</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -724,7 +787,7 @@ Variablen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00035">35</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="main_8c_source.html#l00037">37</a> der Datei <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,13 @@
+<map id="IGasHandler.h" name="IGasHandler.h">
+<area shape="rect" id="Node000001" title="This header file is an interface for the use of the gas measuring sensor." alt="" coords="142,5,245,32"/>
+<area shape="rect" id="Node000002" href="$_i_main_8h.html" title=" " alt="" coords="162,80,225,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,33,196,64,191,64,191,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,80,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="168,110,84,150,81,145,166,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="103,155,182,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="187,109,162,144,158,141,182,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="206,155,282,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="204,106,229,141,224,144,200,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="305,155,372,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="220,105,301,145,298,150,217,110"/>
+</map>

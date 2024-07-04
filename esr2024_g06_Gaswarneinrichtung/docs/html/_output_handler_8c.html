@@ -59,7 +59,9 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Funktionen</a>  </div>
+<a href="#define-members">Makrodefinitionen</a> &#124;
+<a href="#func-members">Funktionen</a> &#124;
+<a href="#var-members">Variablen</a>  </div>
   <div class="headertitle"><div class="title">OutputHandler.c-Dateireferenz</div></div>
 </div><!--header-->
 <div class="contents">
@@ -71,32 +73,246 @@ $(function(){ initResizable(false); });
 Include-Abhängigkeitsdiagramm für OutputHandler.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="_output_handler_8c__incl.png" border="0" usemap="#a_output_handler_8c" alt=""/></div>
+<map name="a_output_handler_8c" id="a_output_handler_8c">
+<area shape="rect" title="This Class implements the IOutputHandler.h header file. It uses the two onboard LEDs of the MSP430FR2..." alt="" coords="136,5,251,32"/>
+<area shape="rect" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data." alt="" coords="134,80,252,107"/>
+<area shape="poly" title=" " alt="" coords="196,33,196,64,191,64,191,33"/>
+<area shape="rect" href="_i_main_8h.html" title=" " alt="" coords="162,155,225,181"/>
+<area shape="poly" title=" " alt="" coords="196,107,196,139,191,139,191,107"/>
+<area shape="rect" title=" " alt="" coords="5,229,80,256"/>
+<area shape="poly" title=" " alt="" coords="168,184,84,225,81,220,166,179"/>
+<area shape="rect" title=" " alt="" coords="103,229,182,256"/>
+<area shape="poly" title=" " alt="" coords="187,183,162,218,158,215,182,180"/>
+<area shape="rect" title=" " alt="" coords="206,229,282,256"/>
+<area shape="poly" title=" " alt="" coords="204,180,229,215,224,218,200,183"/>
+<area shape="rect" title=" " alt="" coords="305,229,372,256"/>
+<area shape="poly" title=" " alt="" coords="220,179,301,220,298,224,217,184"/>
+</map>
 </div>
 </div>
 <p><a href="_output_handler_8c_source.html">gehe zum Quellcode dieser Datei</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Makrodefinitionen</h2></td></tr>
+<tr class="memitem:acdfb211f64d3654282f2ab3cfb8f7814" id="r_acdfb211f64d3654282f2ab3cfb8f7814"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(wert)&#160;&#160;&#160;(unsigned int)((wert*69432L)&gt;&gt;16)</td></tr>
+<tr class="separator:acdfb211f64d3654282f2ab3cfb8f7814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4ceb72665ef27e7c0ae7a7630b4120" id="r_acc4ceb72665ef27e7c0ae7a7630b4120"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc4ceb72665ef27e7c0ae7a7630b4120">HALBTON_HOEHER</a>(wert)&#160;&#160;&#160;(unsigned int)((wert*61858L)&gt;&gt;16)</td></tr>
+<tr class="separator:acc4ceb72665ef27e7c0ae7a7630b4120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab89a77e63a7226fffaecb2e2c2ab5219" id="r_ab89a77e63a7226fffaecb2e2c2ab5219"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab89a77e63a7226fffaecb2e2c2ab5219">a1</a>&#160;&#160;&#160;2400</td></tr>
+<tr class="separator:ab89a77e63a7226fffaecb2e2c2ab5219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bd4da2277810e189c88ac94210a055e" id="r_a4bd4da2277810e189c88ac94210a055e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bd4da2277810e189c88ac94210a055e">h1</a>&#160;&#160;&#160;<a class="el" href="#acc4ceb72665ef27e7c0ae7a7630b4120">HALBTON_HOEHER</a>(<a class="el" href="#acc4ceb72665ef27e7c0ae7a7630b4120">HALBTON_HOEHER</a>(<a class="el" href="#ab89a77e63a7226fffaecb2e2c2ab5219">a1</a>))</td></tr>
+<tr class="separator:a4bd4da2277810e189c88ac94210a055e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029b8c811cc05eaa3f86df139d8fe4e5" id="r_a029b8c811cc05eaa3f86df139d8fe4e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a029b8c811cc05eaa3f86df139d8fe4e5">c2</a>&#160;&#160;&#160;<a class="el" href="#acc4ceb72665ef27e7c0ae7a7630b4120">HALBTON_HOEHER</a>(<a class="el" href="#a4bd4da2277810e189c88ac94210a055e">h1</a>)</td></tr>
+<tr class="separator:a029b8c811cc05eaa3f86df139d8fe4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258be166505e0c982a4e405b4e466569" id="r_a258be166505e0c982a4e405b4e466569"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a258be166505e0c982a4e405b4e466569">g1</a>&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#ab89a77e63a7226fffaecb2e2c2ab5219">a1</a>))</td></tr>
+<tr class="separator:a258be166505e0c982a4e405b4e466569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4289393b4b3bec62db2a7bef147e6622" id="r_a4289393b4b3bec62db2a7bef147e6622"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4289393b4b3bec62db2a7bef147e6622">f1</a>&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a258be166505e0c982a4e405b4e466569">g1</a>))</td></tr>
+<tr class="separator:a4289393b4b3bec62db2a7bef147e6622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54066849b19dfd8c8c8d136545e6a5a7" id="r_a54066849b19dfd8c8c8d136545e6a5a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54066849b19dfd8c8c8d136545e6a5a7">e1</a>&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a4289393b4b3bec62db2a7bef147e6622">f1</a>)</td></tr>
+<tr class="separator:a54066849b19dfd8c8c8d136545e6a5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe17aa2ff1722c937379044a27da68a" id="r_a1fe17aa2ff1722c937379044a27da68a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fe17aa2ff1722c937379044a27da68a">d1</a>&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a54066849b19dfd8c8c8d136545e6a5a7">e1</a>))</td></tr>
+<tr class="separator:a1fe17aa2ff1722c937379044a27da68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9aca421a560153a31ebb326da34216" id="r_a8f9aca421a560153a31ebb326da34216"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f9aca421a560153a31ebb326da34216">c1</a>&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a1fe17aa2ff1722c937379044a27da68a">d1</a>))</td></tr>
+<tr class="separator:a8f9aca421a560153a31ebb326da34216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funktionen</h2></td></tr>
 <tr class="memitem:adffdef9f71f7b987e91e48161aca2b46" id="r_adffdef9f71f7b987e91e48161aca2b46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adffdef9f71f7b987e91e48161aca2b46">preInitOutputHandler</a> ()</td></tr>
 <tr class="separator:adffdef9f71f7b987e91e48161aca2b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1694689b08a219d34981b65ee5b27fe9" id="r_a1694689b08a219d34981b65ee5b27fe9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1694689b08a219d34981b65ee5b27fe9">initOutputHandler</a> ()</td></tr>
 <tr class="separator:a1694689b08a219d34981b65ee5b27fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1a6c522254a7e598e61ef042cc6010" id="r_acc1a6c522254a7e598e61ef042cc6010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc1a6c522254a7e598e61ef042cc6010">postInitOutputHandler</a> ()</td></tr>
+<tr class="separator:acc1a6c522254a7e598e61ef042cc6010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1af05c20400d456c966d5e3c779b7e5d" id="r_a1af05c20400d456c966d5e3c779b7e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af05c20400d456c966d5e3c779b7e5d">setOnLED</a> (bool on)</td></tr>
 <tr class="memdesc:a1af05c20400d456c966d5e3c779b7e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the State of the On-LED.  <br /></td></tr>
 <tr class="separator:a1af05c20400d456c966d5e3c779b7e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbfff07775a6e46b7e6fdf66b613ebc2" id="r_abbfff07775a6e46b7e6fdf66b613ebc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbfff07775a6e46b7e6fdf66b613ebc2">setAlertLED</a> (bool alert)</td></tr>
 <tr class="separator:abbfff07775a6e46b7e6fdf66b613ebc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04fbb6af823aec2deab7d45c1373a23b" id="r_a04fbb6af823aec2deab7d45c1373a23b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo</a> (unsigned int frequency)</td></tr>
-<tr class="separator:a04fbb6af823aec2deab7d45c1373a23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a568f5134e5553d9e0712220e0f55f552" id="r_a568f5134e5553d9e0712220e0f55f552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a568f5134e5553d9e0712220e0f55f552">activateAlertPiezo</a> (bool accelerationAlert)</td></tr>
-<tr class="separator:a568f5134e5553d9e0712220e0f55f552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52d29d4b8fd21faef1f6f07b68376a2" id="r_af52d29d4b8fd21faef1f6f07b68376a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af52d29d4b8fd21faef1f6f07b68376a2">togglePiezo</a> (bool alert)</td></tr>
+<tr class="separator:af52d29d4b8fd21faef1f6f07b68376a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce8928bee59cbf022bdf75f3dfa64bf" id="r_a7ce8928bee59cbf022bdf75f3dfa64bf"><td class="memItemLeft" align="right" valign="top">__interrupt void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ce8928bee59cbf022bdf75f3dfa64bf">WDT_A_ISR</a> (void)</td></tr>
+<tr class="separator:a7ce8928bee59cbf022bdf75f3dfa64bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variablen</h2></td></tr>
+<tr class="memitem:a909eb30377ad7fa91df9eaa93a6d9be7" id="r_a909eb30377ad7fa91df9eaa93a6d9be7"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a909eb30377ad7fa91df9eaa93a6d9be7">cTonleiter</a> [] = {<a class="el" href="#a1fe17aa2ff1722c937379044a27da68a">d1</a>, <a class="el" href="#a4289393b4b3bec62db2a7bef147e6622">f1</a>}</td></tr>
+<tr class="separator:a909eb30377ad7fa91df9eaa93a6d9be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9657edb0f84e2254025aecf781d166" id="r_aad9657edb0f84e2254025aecf781d166"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad9657edb0f84e2254025aecf781d166">idx</a> = 0</td></tr>
+<tr class="separator:aad9657edb0f84e2254025aecf781d166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><dl class="section author"><dt>Autor</dt><dd>Gruppe 6 </dd></dl>
 <dl class="section date"><dt>Datum</dt><dd>2024-06-17 </dd></dl>
 
 <p class="definition">Definiert in Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
-</div><h2 class="groupheader">Dokumentation der Funktionen</h2>
+</div><h2 class="groupheader">Makro-Dokumentation</h2>
+<a id="acdfb211f64d3654282f2ab3cfb8f7814" name="acdfb211f64d3654282f2ab3cfb8f7814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdfb211f64d3654282f2ab3cfb8f7814">&#9670;&#160;</a></span>HALBTON_TIEFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HALBTON_TIEFER</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>wert</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;(unsigned int)((wert*69432L)&gt;&gt;16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00026">26</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="acc4ceb72665ef27e7c0ae7a7630b4120" name="acc4ceb72665ef27e7c0ae7a7630b4120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4ceb72665ef27e7c0ae7a7630b4120">&#9670;&#160;</a></span>HALBTON_HOEHER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HALBTON_HOEHER</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>wert</em></span></td><td>)</td>
+          <td>&#160;&#160;&#160;(unsigned int)((wert*61858L)&gt;&gt;16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00027">27</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="ab89a77e63a7226fffaecb2e2c2ab5219" name="ab89a77e63a7226fffaecb2e2c2ab5219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89a77e63a7226fffaecb2e2c2ab5219">&#9670;&#160;</a></span>a1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define a1&#160;&#160;&#160;2400</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00029">29</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="a4bd4da2277810e189c88ac94210a055e" name="a4bd4da2277810e189c88ac94210a055e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bd4da2277810e189c88ac94210a055e">&#9670;&#160;</a></span>h1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define h1&#160;&#160;&#160;<a class="el" href="#acc4ceb72665ef27e7c0ae7a7630b4120">HALBTON_HOEHER</a>(<a class="el" href="#acc4ceb72665ef27e7c0ae7a7630b4120">HALBTON_HOEHER</a>(<a class="el" href="#ab89a77e63a7226fffaecb2e2c2ab5219">a1</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00031">31</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="a029b8c811cc05eaa3f86df139d8fe4e5" name="a029b8c811cc05eaa3f86df139d8fe4e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a029b8c811cc05eaa3f86df139d8fe4e5">&#9670;&#160;</a></span>c2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define c2&#160;&#160;&#160;<a class="el" href="#acc4ceb72665ef27e7c0ae7a7630b4120">HALBTON_HOEHER</a>(<a class="el" href="#a4bd4da2277810e189c88ac94210a055e">h1</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00032">32</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="a258be166505e0c982a4e405b4e466569" name="a258be166505e0c982a4e405b4e466569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a258be166505e0c982a4e405b4e466569">&#9670;&#160;</a></span>g1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define g1&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#ab89a77e63a7226fffaecb2e2c2ab5219">a1</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00034">34</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="a4289393b4b3bec62db2a7bef147e6622" name="a4289393b4b3bec62db2a7bef147e6622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4289393b4b3bec62db2a7bef147e6622">&#9670;&#160;</a></span>f1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define f1&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a258be166505e0c982a4e405b4e466569">g1</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00035">35</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="a54066849b19dfd8c8c8d136545e6a5a7" name="a54066849b19dfd8c8c8d136545e6a5a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54066849b19dfd8c8c8d136545e6a5a7">&#9670;&#160;</a></span>e1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define e1&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a4289393b4b3bec62db2a7bef147e6622">f1</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00036">36</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="a1fe17aa2ff1722c937379044a27da68a" name="a1fe17aa2ff1722c937379044a27da68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fe17aa2ff1722c937379044a27da68a">&#9670;&#160;</a></span>d1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define d1&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a54066849b19dfd8c8c8d136545e6a5a7">e1</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00037">37</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="a8f9aca421a560153a31ebb326da34216" name="a8f9aca421a560153a31ebb326da34216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f9aca421a560153a31ebb326da34216">&#9670;&#160;</a></span>c1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define c1&#160;&#160;&#160;<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#acdfb211f64d3654282f2ab3cfb8f7814">HALBTON_TIEFER</a>(<a class="el" href="#a1fe17aa2ff1722c937379044a27da68a">d1</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00038">38</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Funktionen</h2>
 <a id="adffdef9f71f7b987e91e48161aca2b46" name="adffdef9f71f7b987e91e48161aca2b46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adffdef9f71f7b987e91e48161aca2b46">&#9670;&#160;</a></span>preInitOutputHandler()</h2>
 
@@ -113,7 +329,7 @@ Funktionen</h2></td></tr>
 </div><div class="memdoc">
 <p>Implementation of <a class="el" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data.">IOutputHandler.h</a> </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00015">15</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00049">49</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
@@ -133,7 +349,27 @@ Funktionen</h2></td></tr>
 </div><div class="memdoc">
 <p>Implementation of <a class="el" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data.">IOutputHandler.h</a> </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00028">28</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00061">61</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="acc1a6c522254a7e598e61ef042cc6010" name="acc1a6c522254a7e598e61ef042cc6010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1a6c522254a7e598e61ef042cc6010">&#9670;&#160;</a></span>postInitOutputHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void postInitOutputHandler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Implementation of <a class="el" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data.">IOutputHandler.h</a> </p>
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00068">68</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
@@ -158,7 +394,7 @@ Funktionen</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00040">40</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00130">130</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
@@ -179,12 +415,12 @@ Funktionen</h2></td></tr>
 <p>Sets the State of the warning-LED</p>
 <p>args: on: the state to set the warning-LED </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00054">54</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00144">144</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
-<a id="a04fbb6af823aec2deab7d45c1373a23b" name="a04fbb6af823aec2deab7d45c1373a23b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04fbb6af823aec2deab7d45c1373a23b">&#9670;&#160;</a></span>togglePiezo()</h2>
+<a id="af52d29d4b8fd21faef1f6f07b68376a2" name="af52d29d4b8fd21faef1f6f07b68376a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52d29d4b8fd21faef1f6f07b68376a2">&#9670;&#160;</a></span>togglePiezo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,37 +428,66 @@ Funktionen</h2></td></tr>
         <tr>
           <td class="memname">void togglePiezo </td>
           <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>frequency</em></span></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>alert</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>void <a class="el" href="_i_output_handler_8h.html#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo(unsigned int frequency)</a>:</p>
-<p>This method is used to Togle the Piezo</p>
-<p>param: frequency: the value which defines the frequenz of thepiezo output </p>
+<p>Implementation of IOutputHandler </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00061">61</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00158">158</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
-<a id="a568f5134e5553d9e0712220e0f55f552" name="a568f5134e5553d9e0712220e0f55f552"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a568f5134e5553d9e0712220e0f55f552">&#9670;&#160;</a></span>activateAlertPiezo()</h2>
+<a id="a7ce8928bee59cbf022bdf75f3dfa64bf" name="a7ce8928bee59cbf022bdf75f3dfa64bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce8928bee59cbf022bdf75f3dfa64bf">&#9670;&#160;</a></span>WDT_A_ISR()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void activateAlertPiezo </td>
+          <td class="memname">__interrupt void WDT_A_ISR </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>accelerationAlert</em></span></td><td>)</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Activates the Piezo for beeping</p>
-<p>args: </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00074">74</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00194">194</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variablen-Dokumentation</h2>
+<a id="a909eb30377ad7fa91df9eaa93a6d9be7" name="a909eb30377ad7fa91df9eaa93a6d9be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a909eb30377ad7fa91df9eaa93a6d9be7">&#9670;&#160;</a></span>cTonleiter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int cTonleiter[] = {<a class="el" href="#a1fe17aa2ff1722c937379044a27da68a">d1</a>, <a class="el" href="#a4289393b4b3bec62db2a7bef147e6622">f1</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00041">41</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="aad9657edb0f84e2254025aecf781d166" name="aad9657edb0f84e2254025aecf781d166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9657edb0f84e2254025aecf781d166">&#9670;&#160;</a></span>idx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int idx = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00042">42</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>

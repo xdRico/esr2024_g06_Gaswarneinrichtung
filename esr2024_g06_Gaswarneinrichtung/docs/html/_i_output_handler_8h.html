@@ -71,11 +71,31 @@ $(function(){ initResizable(false); });
 Include-Abhängigkeitsdiagramm für IOutputHandler.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_i_output_handler_8h__incl.png" border="0" usemap="#a_i_output_handler_8h" alt=""/></div>
+<map name="a_i_output_handler_8h" id="a_i_output_handler_8h">
+<area shape="rect" title="This header file is an interface for outputting Data." alt="" coords="134,5,252,32"/>
+<area shape="rect" href="_i_main_8h.html" title=" " alt="" coords="162,80,225,107"/>
+<area shape="poly" title=" " alt="" coords="196,33,196,64,191,64,191,33"/>
+<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
+<area shape="poly" title=" " alt="" coords="168,110,84,150,81,145,166,105"/>
+<area shape="rect" title=" " alt="" coords="103,155,182,181"/>
+<area shape="poly" title=" " alt="" coords="187,109,162,144,158,141,182,106"/>
+<area shape="rect" title=" " alt="" coords="206,155,282,181"/>
+<area shape="poly" title=" " alt="" coords="204,106,229,141,224,144,200,109"/>
+<area shape="rect" title=" " alt="" coords="305,155,372,181"/>
+<area shape="poly" title=" " alt="" coords="220,105,301,145,298,150,217,110"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
 <div class="dyncontent">
 <div class="center"><img src="_i_output_handler_8h__dep__incl.png" border="0" usemap="#a_i_output_handler_8hdep" alt=""/></div>
+<map name="a_i_output_handler_8hdep" id="a_i_output_handler_8hdep">
+<area shape="rect" title="This header file is an interface for outputting Data." alt="" coords="60,5,178,32"/>
+<area shape="rect" href="_output_handler_8c.html" title="This Class implements the IOutputHandler.h header file. It uses the two onboard LEDs of the MSP430FR2..." alt="" coords="5,80,121,107"/>
+<area shape="poly" title=" " alt="" coords="102,46,75,81,71,78,98,43"/>
+<area shape="rect" href="main_8c.html" title="The main method gets called at start of the device interrupts: P2: Acknowledge&#45;Button P3: Movement/Ta..." alt="" coords="145,80,205,107"/>
+<area shape="poly" title=" " alt="" coords="140,43,167,78,163,81,136,46"/>
+</map>
 </div>
 </div>
 <p><a href="_i_output_handler_8h_source.html">gehe zum Quellcode dieser Datei</a></p>
@@ -86,15 +106,15 @@ Funktionen</h2></td></tr>
 <tr class="separator:adffdef9f71f7b987e91e48161aca2b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1694689b08a219d34981b65ee5b27fe9" id="r_a1694689b08a219d34981b65ee5b27fe9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1694689b08a219d34981b65ee5b27fe9">initOutputHandler</a> ()</td></tr>
 <tr class="separator:a1694689b08a219d34981b65ee5b27fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1a6c522254a7e598e61ef042cc6010" id="r_acc1a6c522254a7e598e61ef042cc6010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc1a6c522254a7e598e61ef042cc6010">postInitOutputHandler</a> ()</td></tr>
+<tr class="separator:acc1a6c522254a7e598e61ef042cc6010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbfff07775a6e46b7e6fdf66b613ebc2" id="r_abbfff07775a6e46b7e6fdf66b613ebc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbfff07775a6e46b7e6fdf66b613ebc2">setAlertLED</a> (bool alert)</td></tr>
 <tr class="separator:abbfff07775a6e46b7e6fdf66b613ebc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1af05c20400d456c966d5e3c779b7e5d" id="r_a1af05c20400d456c966d5e3c779b7e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af05c20400d456c966d5e3c779b7e5d">setOnLED</a> (bool on)</td></tr>
 <tr class="memdesc:a1af05c20400d456c966d5e3c779b7e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the State of the On-LED.  <br /></td></tr>
 <tr class="separator:a1af05c20400d456c966d5e3c779b7e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04fbb6af823aec2deab7d45c1373a23b" id="r_a04fbb6af823aec2deab7d45c1373a23b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo</a> (unsigned int frequency)</td></tr>
-<tr class="separator:a04fbb6af823aec2deab7d45c1373a23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a568f5134e5553d9e0712220e0f55f552" id="r_a568f5134e5553d9e0712220e0f55f552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a568f5134e5553d9e0712220e0f55f552">activateAlertPiezo</a> (bool accelerationAlert)</td></tr>
-<tr class="separator:a568f5134e5553d9e0712220e0f55f552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52d29d4b8fd21faef1f6f07b68376a2" id="r_af52d29d4b8fd21faef1f6f07b68376a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af52d29d4b8fd21faef1f6f07b68376a2">togglePiezo</a> (bool alert)</td></tr>
+<tr class="separator:af52d29d4b8fd21faef1f6f07b68376a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
 <div class="textblock"><dl class="section author"><dt>Autor</dt><dd>Olawale </dd></dl>
@@ -120,7 +140,7 @@ Funktionen</h2></td></tr>
 <p>The preInit method is for setting up all Port/Pin register values and initializing all basic setups.</p>
 <p>Implementation of <a class="el" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data.">IOutputHandler.h</a> </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00015">15</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00049">49</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
@@ -142,7 +162,29 @@ Funktionen</h2></td></tr>
 <p>The init method is for setting up basic working requirements and startups.</p>
 <p>Implementation of <a class="el" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data.">IOutputHandler.h</a> </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00028">28</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00061">61</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+
+</div>
+</div>
+<a id="acc1a6c522254a7e598e61ef042cc6010" name="acc1a6c522254a7e598e61ef042cc6010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1a6c522254a7e598e61ef042cc6010">&#9670;&#160;</a></span>postInitOutputHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void postInitOutputHandler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="_output_handler_8c.html#acc1a6c522254a7e598e61ef042cc6010">postInitOutputHandler()</a>:</p>
+<p>The postInit method is for setting up Interrupts.</p>
+<p>Implementation of <a class="el" href="_i_output_handler_8h.html" title="This header file is an interface for outputting Data.">IOutputHandler.h</a> </p>
+
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00068">68</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
@@ -166,7 +208,7 @@ Funktionen</h2></td></tr>
 <p>Sets the State of the warning-LED</p>
 <p>args: on: the state to set the warning-LED </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00054">54</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00144">144</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
@@ -194,12 +236,12 @@ Funktionen</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00040">40</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00130">130</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>
-<a id="a04fbb6af823aec2deab7d45c1373a23b" name="a04fbb6af823aec2deab7d45c1373a23b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04fbb6af823aec2deab7d45c1373a23b">&#9670;&#160;</a></span>togglePiezo()</h2>
+<a id="af52d29d4b8fd21faef1f6f07b68376a2" name="af52d29d4b8fd21faef1f6f07b68376a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52d29d4b8fd21faef1f6f07b68376a2">&#9670;&#160;</a></span>togglePiezo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,40 +249,17 @@ Funktionen</h2></td></tr>
         <tr>
           <td class="memname">void togglePiezo </td>
           <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>frequency</em></span></td><td>)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>alert</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>void <a class="el" href="#a04fbb6af823aec2deab7d45c1373a23b">togglePiezo(unsigned int frequency)</a>:</p>
+<p>void <a class="el" href="_output_handler_8c.html#af52d29d4b8fd21faef1f6f07b68376a2">togglePiezo(bool alert)</a>:</p>
 <p>This method is used to Togle the Piezo</p>
-<p>param: frequency: the value which defines the frequenz of thepiezo output </p>
+<p>param: bool: the bool that defines if the piezo is enabled</p>
+<p>Implementation of IOutputHandler </p>
 
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00061">61</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
-
-</div>
-</div>
-<a id="a568f5134e5553d9e0712220e0f55f552" name="a568f5134e5553d9e0712220e0f55f552"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a568f5134e5553d9e0712220e0f55f552">&#9670;&#160;</a></span>activateAlertPiezo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void activateAlertPiezo </td>
-          <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>accelerationAlert</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="_output_handler_8c.html#a568f5134e5553d9e0712220e0f55f552">activateAlertPiezo(bool accelerationAlert)</a>:</p>
-<p>This method is used to de-/activate the the Piezeo Speaker</p>
-<p>param: on: the bool that defines, if the Piezo is beeping</p>
-<p>Activates the Piezo for beeping</p>
-<p>args: </p>
-
-<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00074">74</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
+<p class="definition">Definiert in Zeile <a class="el" href="_output_handler_8c_source.html#l00158">158</a> der Datei <a class="el" href="_output_handler_8c_source.html">OutputHandler.c</a>.</p>
 
 </div>
 </div>

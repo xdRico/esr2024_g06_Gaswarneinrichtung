@@ -166,104 +166,380 @@ OutputHandler.c\par \pard\plain
 {\bkmkstart AAAAAAAAGJ}{\bkmkend AAAAAAAAGJ}
 00011 \par
 {\bkmkstart AAAAAAAAGK}{\bkmkend AAAAAAAAGK}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGL" }{}}{\fldrslt {\cs37\ul\cf2 00015}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGL" }{}}{\fldrslt {\cs37\ul\cf2 preInitOutputHandler}}}
-()\{\par
+00012 {\cf20 // Timer Cnt für 440Hz @ 1,048 MHz Takt cnt = 1,048*10^6/440 = 2381}\par
+{\bkmkstart AAAAAAAAGL}{\bkmkend AAAAAAAAGL}
+00013 {\cf20 // Kalibrierung mit Osci ergab jedoch, dass beim Zählerwert 2400}\par
 {\bkmkstart AAAAAAAAGM}{\bkmkend AAAAAAAAGM}
-00016     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
+00014 {\cf20 // exakt 440Hz ausgegeben werden; dies gilt aber nur für das Exemplar}\par
 {\bkmkstart AAAAAAAAGN}{\bkmkend AAAAAAAAGN}
-00017     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
+00015 {\cf20 // des Launchpads, auf dem die Kalibrierung durchgeführt wurde. Bei}\par
 {\bkmkstart AAAAAAAAGO}{\bkmkend AAAAAAAAGO}
-00018     GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);\par
+00016 {\cf20 // anderen Exemplaren kann ein anderer Wert erforderlich sein.}\par
 {\bkmkstart AAAAAAAAGP}{\bkmkend AAAAAAAAGP}
-00019     GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);\par
+00017 {\cf20 // Mit dem hier experimentell ermittelten Zählerwert lässt sich}\par
 {\bkmkstart AAAAAAAAGQ}{\bkmkend AAAAAAAAGQ}
-00020 \}\par
+00018 {\cf20 // errechnen, welche Frequenz der DCO auf diesem Board tatsächlich liefert:}\par
 {\bkmkstart AAAAAAAAGR}{\bkmkend AAAAAAAAGR}
-00021 \par
+00019 {\cf20 // fDCO = 440 Hz * 2400 = 1,056 MHz statt der erwarteten 1,048 MHz}\par
 {\bkmkstart AAAAAAAAGS}{\bkmkend AAAAAAAAGS}
-00022 \par
+00020 {\cf20 // Dies erklärt sich dadurch, dass die FLL-Referenz des DCOs (REFO)}\par
 {\bkmkstart AAAAAAAAGT}{\bkmkend AAAAAAAAGT}
-00023 \par
+00021 {\cf20 // nicht exakt die erwarteten 32768 Hz zur Verfügung stellt.}\par
 {\bkmkstart AAAAAAAAGU}{\bkmkend AAAAAAAAGU}
-00024 \par
+00022 \par
 {\bkmkstart AAAAAAAAGV}{\bkmkend AAAAAAAAGV}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGW" }{}}{\fldrslt {\cs37\ul\cf2 00028}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGW" }{}}{\fldrslt {\cs37\ul\cf2 initOutputHandler}}}
-()\{\par
+00023 {\cf20 // Halbton tiefer: Faktor 2^(1/12) * 2^16 = 69433}\par
+{\bkmkstart AAAAAAAAGW}{\bkmkend AAAAAAAAGW}
+00024 {\cf20 // Halbton höher: Faktor 1/ 2^(1/12) * 2^16 = 61858}\par
 {\bkmkstart AAAAAAAAGX}{\bkmkend AAAAAAAAGX}
-00029     __no_operation();                   {\cf20 // For debug}\par
+00025 \par
 {\bkmkstart AAAAAAAAGY}{\bkmkend AAAAAAAAGY}
-00030 \}\par
-{\bkmkstart AAAAAAAAGZ}{\bkmkend AAAAAAAAGZ}
-00031 \par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGZ" }{}}{\fldrslt {\cs37\ul\cf2 00026}}}
+ {\cf21 #define HALBTON_TIEFER(wert) (unsigned int)((wert*69432L)>>16)}\par
 {\bkmkstart AAAAAAAAHA}{\bkmkend AAAAAAAAHA}
-00032 {\cf20 //********************************************************************************************************/}\par
-{\bkmkstart AAAAAAAAHB}{\bkmkend AAAAAAAAHB}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHC" }{}}{\fldrslt {\cs37\ul\cf2 00040}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHC" }{}}{\fldrslt {\cs37\ul\cf2 setOnLED}}}
-({\cf18 bool} on)\{\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHB" }{}}{\fldrslt {\cs37\ul\cf2 00027}}}
+ {\cf21 #define HALBTON_HOEHER(wert) (unsigned int)((wert*61858L)>>16)}\par
+{\bkmkstart AAAAAAAAHC}{\bkmkend AAAAAAAAHC}
+00028 \par
 {\bkmkstart AAAAAAAAHD}{\bkmkend AAAAAAAAHD}
-00041     {\cf19 if}(on)\par
-{\bkmkstart AAAAAAAAHE}{\bkmkend AAAAAAAAHE}
-00042         GPIO_setOutputHighOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHE" }{}}{\fldrslt {\cs37\ul\cf2 00029}}}
+ {\cf21 #define a1 2400}\par
 {\bkmkstart AAAAAAAAHF}{\bkmkend AAAAAAAAHF}
-00043     {\cf19 else}\par
+00030 \par
 {\bkmkstart AAAAAAAAHG}{\bkmkend AAAAAAAAHG}
-00044         GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
-{\bkmkstart AAAAAAAAHH}{\bkmkend AAAAAAAAHH}
-00045 \}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHH" }{}}{\fldrslt {\cs37\ul\cf2 00031}}}
+ {\cf21 #define h1 HALBTON_HOEHER(HALBTON_HOEHER(a1))}\par
 {\bkmkstart AAAAAAAAHI}{\bkmkend AAAAAAAAHI}
-00046 \par
-{\bkmkstart AAAAAAAAHJ}{\bkmkend AAAAAAAAHJ}
-00047 \par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHJ" }{}}{\fldrslt {\cs37\ul\cf2 00032}}}
+ {\cf21 #define c2 HALBTON_HOEHER(h1)}\par
 {\bkmkstart AAAAAAAAHK}{\bkmkend AAAAAAAAHK}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHL" }{}}{\fldrslt {\cs37\ul\cf2 00054}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHL" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
-({\cf18 bool} alert)\{\par
-{\bkmkstart AAAAAAAAHM}{\bkmkend AAAAAAAAHM}
-00055     {\cf19 if}(alert)\par
+00033 \par
+{\bkmkstart AAAAAAAAHL}{\bkmkend AAAAAAAAHL}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHM" }{}}{\fldrslt {\cs37\ul\cf2 00034}}}
+ {\cf21 #define g1 HALBTON_TIEFER(HALBTON_TIEFER(a1))}\par
 {\bkmkstart AAAAAAAAHN}{\bkmkend AAAAAAAAHN}
-00056         GPIO_setOutputHighOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
-{\bkmkstart AAAAAAAAHO}{\bkmkend AAAAAAAAHO}
-00057     {\cf19 else}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHO" }{}}{\fldrslt {\cs37\ul\cf2 00035}}}
+ {\cf21 #define f1 HALBTON_TIEFER(HALBTON_TIEFER(g1))}\par
 {\bkmkstart AAAAAAAAHP}{\bkmkend AAAAAAAAHP}
-00058         GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
-{\bkmkstart AAAAAAAAHQ}{\bkmkend AAAAAAAAHQ}
-00059 \}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHQ" }{}}{\fldrslt {\cs37\ul\cf2 00036}}}
+ {\cf21 #define e1 HALBTON_TIEFER(f1)}\par
 {\bkmkstart AAAAAAAAHR}{\bkmkend AAAAAAAAHR}
-00060 \par
-{\bkmkstart AAAAAAAAHS}{\bkmkend AAAAAAAAHS}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHT" }{}}{\fldrslt {\cs37\ul\cf2 00061}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHT" }{}}{\fldrslt {\cs37\ul\cf2 togglePiezo}}}
-({\cf18 unsigned} {\cf18 int} frequency) \{\par
-{\bkmkstart AAAAAAAAHU}{\bkmkend AAAAAAAAHU}
-00062     {\cf18 unsigned} {\cf18 int} delayTime = 500000 / frequency; {\cf20 // Calculate half period for given frequency in microseconds}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHS" }{}}{\fldrslt {\cs37\ul\cf2 00037}}}
+ {\cf21 #define d1 HALBTON_TIEFER(HALBTON_TIEFER(e1))}\par
+{\bkmkstart AAAAAAAAHT}{\bkmkend AAAAAAAAHT}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHU" }{}}{\fldrslt {\cs37\ul\cf2 00038}}}
+ {\cf21 #define c1 HALBTON_TIEFER(HALBTON_TIEFER(d1))}\par
 {\bkmkstart AAAAAAAAHV}{\bkmkend AAAAAAAAHV}
-00063     P3OUT ^= PIEZO_PIN;   {\cf20 // Toggle Piezo pin}\par
+00039 \par
 {\bkmkstart AAAAAAAAHW}{\bkmkend AAAAAAAAHW}
-00064     delayMicroseconds(delayTime); {\cf20 // Half period delay}\par
+00040 \par
 {\bkmkstart AAAAAAAAHX}{\bkmkend AAAAAAAAHX}
-00065 \}\par
-{\bkmkstart AAAAAAAAHY}{\bkmkend AAAAAAAAHY}
-00066 \par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHY" }{}}{\fldrslt {\cs37\ul\cf2 00041}}}
+ {\cf17 const} {\cf18 unsigned} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHY" }{}}{\fldrslt {\cs37\ul\cf2 cTonleiter}}}
+[] = \{{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHS" }{}}{\fldrslt {\cs37\ul\cf2 d1}}}
+, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHO" }{}}{\fldrslt {\cs37\ul\cf2 f1}}}
+\};\par
 {\bkmkstart AAAAAAAAHZ}{\bkmkend AAAAAAAAHZ}
-00067 \par
-{\bkmkstart AAAAAAAAIA}{\bkmkend AAAAAAAAIA}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIB" }{}}{\fldrslt {\cs37\ul\cf2 00074}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIB" }{}}{\fldrslt {\cs37\ul\cf2 activateAlertPiezo}}}
-({\cf18 bool} accelerationAlert)\{\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIA" }{}}{\fldrslt {\cs37\ul\cf2 00042}}}
+ {\cf18 unsigned} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIA" }{}}{\fldrslt {\cs37\ul\cf2 idx}}}
+ = 0;\par
+{\bkmkstart AAAAAAAAIB}{\bkmkend AAAAAAAAIB}
+00043 \par
 {\bkmkstart AAAAAAAAIC}{\bkmkend AAAAAAAAIC}
-00075     {\cf19 if} (accelerationAlert)\{\par
+00044 \par
 {\bkmkstart AAAAAAAAID}{\bkmkend AAAAAAAAID}
-00076 \par
+00045 \par
 {\bkmkstart AAAAAAAAIE}{\bkmkend AAAAAAAAIE}
-00077 \par
-{\bkmkstart AAAAAAAAIF}{\bkmkend AAAAAAAAIF}
-00078     \}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIF" }{}}{\fldrslt {\cs37\ul\cf2 00049}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIF" }{}}{\fldrslt {\cs37\ul\cf2 preInitOutputHandler}}}
+()\{\par
 {\bkmkstart AAAAAAAAIG}{\bkmkend AAAAAAAAIG}
-00079 \par
+00050     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
 {\bkmkstart AAAAAAAAIH}{\bkmkend AAAAAAAAIH}
-00080 \}\par
+00051     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
+{\bkmkstart AAAAAAAAII}{\bkmkend AAAAAAAAII}
+00052     {\cf20 //GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN0);}\par
+{\bkmkstart AAAAAAAAIJ}{\bkmkend AAAAAAAAIJ}
+00053 \}\par
+{\bkmkstart AAAAAAAAIK}{\bkmkend AAAAAAAAIK}
+00054 \par
+{\bkmkstart AAAAAAAAIL}{\bkmkend AAAAAAAAIL}
+00055 \par
+{\bkmkstart AAAAAAAAIM}{\bkmkend AAAAAAAAIM}
+00056 \par
+{\bkmkstart AAAAAAAAIN}{\bkmkend AAAAAAAAIN}
+00057 \par
+{\bkmkstart AAAAAAAAIO}{\bkmkend AAAAAAAAIO}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIP" }{}}{\fldrslt {\cs37\ul\cf2 00061}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIP" }{}}{\fldrslt {\cs37\ul\cf2 initOutputHandler}}}
+()\{\par
+{\bkmkstart AAAAAAAAIQ}{\bkmkend AAAAAAAAIQ}
+00062     __no_operation();                   {\cf20 // For debug}\par
+{\bkmkstart AAAAAAAAIR}{\bkmkend AAAAAAAAIR}
+00063 \}\par
+{\bkmkstart AAAAAAAAIS}{\bkmkend AAAAAAAAIS}
+00064 \par
+{\bkmkstart AAAAAAAAIT}{\bkmkend AAAAAAAAIT}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIU" }{}}{\fldrslt {\cs37\ul\cf2 00068}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIU" }{}}{\fldrslt {\cs37\ul\cf2 postInitOutputHandler}}}
+()\{\par
+{\bkmkstart AAAAAAAAIV}{\bkmkend AAAAAAAAIV}
+00069 \par
+{\bkmkstart AAAAAAAAIW}{\bkmkend AAAAAAAAIW}
+00070     {\cf20 //Für das Clock-System werden die Default-Einstellungen übernommen.}\par
+{\bkmkstart AAAAAAAAIX}{\bkmkend AAAAAAAAIX}
+00071         {\cf20 //D.h., das SMClk = MClk = 1,048 MHz, FLL aktiviert mit REFO als Taktgeber}\par
+{\bkmkstart AAAAAAAAIY}{\bkmkend AAAAAAAAIY}
+00072         {\cf20 //Es müssen also keine Einstellungen am CS vorgenommen werden.}\par
+{\bkmkstart AAAAAAAAIZ}{\bkmkend AAAAAAAAIZ}
+00073 \par
+{\bkmkstart AAAAAAAAJA}{\bkmkend AAAAAAAAJA}
+00074         {\cf20 //Entriegeln der GPIOs, damit AClk bereits starten kann}\par
+{\bkmkstart AAAAAAAAJB}{\bkmkend AAAAAAAAJB}
+00075         PMM_unlockLPM5();\par
+{\bkmkstart AAAAAAAAJC}{\bkmkend AAAAAAAAJC}
+00076 \par
+{\bkmkstart AAAAAAAAJD}{\bkmkend AAAAAAAAJD}
+00077         {\cf20 //Grundperiode von Timer0_B3 im Up-Mode festlegen: CCR0 einstellen}\par
+{\bkmkstart AAAAAAAAJE}{\bkmkend AAAAAAAAJE}
+00078         {\cf20 //Beachte: Wenn Zähler im Up-Mode betrieben wird, so kann CCR0 nicht für die}\par
+{\bkmkstart AAAAAAAAJF}{\bkmkend AAAAAAAAJF}
+00079         {\cf20 //Ausgabe eines Digitalsignals verwendet werden (also auf ein Outputpin gelegt}\par
+{\bkmkstart AAAAAAAAJG}{\bkmkend AAAAAAAAJG}
+00080         {\cf20 //werden, sondern definiert die Grundperiode.}\par
+{\bkmkstart AAAAAAAAJH}{\bkmkend AAAAAAAAJH}
+00081         {\cf20 //Das Ausgabesignal wird stattdessen mit den Output-Units von CCR1 oder CCR2 erzeugt,}\par
+{\bkmkstart AAAAAAAAJI}{\bkmkend AAAAAAAAJI}
+00082         {\cf20 //deren Zählerwert beim SET-RESET Mode das PWM-Tastverhältnis festlegt.}\par
+{\bkmkstart AAAAAAAAJJ}{\bkmkend AAAAAAAAJJ}
+00083 \par
+{\bkmkstart AAAAAAAAJK}{\bkmkend AAAAAAAAJK}
+00084         {\cf20 //Einstellungen für die Grundperiode über CCR0:}\par
+{\bkmkstart AAAAAAAAJL}{\bkmkend AAAAAAAAJL}
+00085         Timer_B_initUpModeParam param = \{0\};\par
+{\bkmkstart AAAAAAAAJM}{\bkmkend AAAAAAAAJM}
+00086         param.clockSource = TIMER_B_CLOCKSOURCE_SMCLK;\par
+{\bkmkstart AAAAAAAAJN}{\bkmkend AAAAAAAAJN}
+00087         param.clockSourceDivider = TIMER_B_CLOCKSOURCE_DIVIDER_1;\par
+{\bkmkstart AAAAAAAAJO}{\bkmkend AAAAAAAAJO}
+00088         param.timerPeriod = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHS" }{}}{\fldrslt {\cs37\ul\cf2 d1}}}
+;\par
+{\bkmkstart AAAAAAAAJP}{\bkmkend AAAAAAAAJP}
+00089         param.timerInterruptEnable_TBIE = TIMER_B_TBIE_INTERRUPT_DISABLE;\par
+{\bkmkstart AAAAAAAAJQ}{\bkmkend AAAAAAAAJQ}
+00090         param.captureCompareInterruptEnable_CCR0_CCIE =\par
+{\bkmkstart AAAAAAAAJR}{\bkmkend AAAAAAAAJR}
+00091             TIMER_B_CCIE_CCR0_INTERRUPT_DISABLE;\par
+{\bkmkstart AAAAAAAAJS}{\bkmkend AAAAAAAAJS}
+00092         param.timerClear = TIMER_B_DO_CLEAR;\par
+{\bkmkstart AAAAAAAAJT}{\bkmkend AAAAAAAAJT}
+00093         param.startTimer = {\cf17 true};\par
+{\bkmkstart AAAAAAAAJU}{\bkmkend AAAAAAAAJU}
+00094         Timer_B_initUpMode(TIMER_B0_BASE, &param);\par
+{\bkmkstart AAAAAAAAJV}{\bkmkend AAAAAAAAJV}
+00095 \par
+{\bkmkstart AAAAAAAAJW}{\bkmkend AAAAAAAAJW}
+00096         {\cf20 //Einstellungen für das 50%-PWM Lautsprechersignal am Ausgang, der CCR1}\par
+{\bkmkstart AAAAAAAAJX}{\bkmkend AAAAAAAAJX}
+00097         {\cf20 //zugeordnet ist:}\par
+{\bkmkstart AAAAAAAAJY}{\bkmkend AAAAAAAAJY}
+00098         Timer_B_initCompareModeParam param1 = \{0\};\par
+{\bkmkstart AAAAAAAAJZ}{\bkmkend AAAAAAAAJZ}
+00099         param1.compareRegister = TIMER_B_CAPTURECOMPARE_REGISTER_1;\par
+{\bkmkstart AAAAAAAAKA}{\bkmkend AAAAAAAAKA}
+00100         param1.compareInterruptEnable = TIMER_B_CAPTURECOMPARE_INTERRUPT_DISABLE;\par
+{\bkmkstart AAAAAAAAKB}{\bkmkend AAAAAAAAKB}
+00101         param1.compareOutputMode = TIMER_B_OUTPUTMODE_RESET_SET;\par
+{\bkmkstart AAAAAAAAKC}{\bkmkend AAAAAAAAKC}
+00102         param1.compareValue = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHU" }{}}{\fldrslt {\cs37\ul\cf2 c1}}}
+>>1;\par
+{\bkmkstart AAAAAAAAKD}{\bkmkend AAAAAAAAKD}
+00103         Timer_B_initCompareMode(TIMER_B0_BASE, &param1);\par
+{\bkmkstart AAAAAAAAKE}{\bkmkend AAAAAAAAKE}
+00104 \par
+{\bkmkstart AAAAAAAAKF}{\bkmkend AAAAAAAAKF}
+00105 \par
+{\bkmkstart AAAAAAAAKG}{\bkmkend AAAAAAAAKG}
+00106 \par
+{\bkmkstart AAAAAAAAKH}{\bkmkend AAAAAAAAKH}
+00107         {\cf20 //Initialize WDT module in timer interval mode,}\par
+{\bkmkstart AAAAAAAAKI}{\bkmkend AAAAAAAAKI}
+00108         {\cf20 //with ACLK as source at an interval of 500 ms.}\par
+{\bkmkstart AAAAAAAAKJ}{\bkmkend AAAAAAAAKJ}
+00109         WDT_A_initIntervalTimer(WDT_A_BASE,\par
+{\bkmkstart AAAAAAAAKK}{\bkmkend AAAAAAAAKK}
+00110             WDT_A_CLOCKSOURCE_ACLK,\par
+{\bkmkstart AAAAAAAAKL}{\bkmkend AAAAAAAAKL}
+00111             WDT_A_CLOCKDIVIDER_32K);\par
+{\bkmkstart AAAAAAAAKM}{\bkmkend AAAAAAAAKM}
+00112 \par
+{\bkmkstart AAAAAAAAKN}{\bkmkend AAAAAAAAKN}
+00113         WDT_A_start(WDT_A_BASE);\par
+{\bkmkstart AAAAAAAAKO}{\bkmkend AAAAAAAAKO}
+00114 \par
+{\bkmkstart AAAAAAAAKP}{\bkmkend AAAAAAAAKP}
+00115         {\cf20 //Enable Watchdog Interupt}\par
+{\bkmkstart AAAAAAAAKQ}{\bkmkend AAAAAAAAKQ}
+00116         SFR_clearInterrupt(SFR_WATCHDOG_INTERVAL_TIMER_INTERRUPT);\par
+{\bkmkstart AAAAAAAAKR}{\bkmkend AAAAAAAAKR}
+00117         SFR_enableInterrupt(SFR_WATCHDOG_INTERVAL_TIMER_INTERRUPT);\par
+{\bkmkstart AAAAAAAAKS}{\bkmkend AAAAAAAAKS}
+00118 \par
+{\bkmkstart AAAAAAAAKT}{\bkmkend AAAAAAAAKT}
+00119 \par
+{\bkmkstart AAAAAAAAKU}{\bkmkend AAAAAAAAKU}
+00120 \}\par
+{\bkmkstart AAAAAAAAKV}{\bkmkend AAAAAAAAKV}
+00121 \par
+{\bkmkstart AAAAAAAAKW}{\bkmkend AAAAAAAAKW}
+00122 {\cf20 //********************************************************************************************************/}\par
+{\bkmkstart AAAAAAAAKX}{\bkmkend AAAAAAAAKX}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKY" }{}}{\fldrslt {\cs37\ul\cf2 00130}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKY" }{}}{\fldrslt {\cs37\ul\cf2 setOnLED}}}
+({\cf18 bool} on)\{\par
+{\bkmkstart AAAAAAAAKZ}{\bkmkend AAAAAAAAKZ}
+00131     {\cf19 if}(on)\par
+{\bkmkstart AAAAAAAALA}{\bkmkend AAAAAAAALA}
+00132         GPIO_setOutputHighOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
+{\bkmkstart AAAAAAAALB}{\bkmkend AAAAAAAALB}
+00133     {\cf19 else}\par
+{\bkmkstart AAAAAAAALC}{\bkmkend AAAAAAAALC}
+00134         GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
+{\bkmkstart AAAAAAAALD}{\bkmkend AAAAAAAALD}
+00135 \}\par
+{\bkmkstart AAAAAAAALE}{\bkmkend AAAAAAAALE}
+00136 \par
+{\bkmkstart AAAAAAAALF}{\bkmkend AAAAAAAALF}
+00137 \par
+{\bkmkstart AAAAAAAALG}{\bkmkend AAAAAAAALG}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 00144}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
+({\cf18 bool} alert)\{\par
+{\bkmkstart AAAAAAAALI}{\bkmkend AAAAAAAALI}
+00145     {\cf19 if}(alert)\par
+{\bkmkstart AAAAAAAALJ}{\bkmkend AAAAAAAALJ}
+00146         GPIO_setOutputHighOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
+{\bkmkstart AAAAAAAALK}{\bkmkend AAAAAAAALK}
+00147 \par
+{\bkmkstart AAAAAAAALL}{\bkmkend AAAAAAAALL}
+00148     {\cf19 else}\par
+{\bkmkstart AAAAAAAALM}{\bkmkend AAAAAAAALM}
+00149         GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
+{\bkmkstart AAAAAAAALN}{\bkmkend AAAAAAAALN}
+00150 \par
+{\bkmkstart AAAAAAAALO}{\bkmkend AAAAAAAALO}
+00151     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALP" }{}}{\fldrslt {\cs37\ul\cf2 togglePiezo}}}
+(alert);\par
+{\bkmkstart AAAAAAAALQ}{\bkmkend AAAAAAAALQ}
+00152 \}\par
+{\bkmkstart AAAAAAAALR}{\bkmkend AAAAAAAALR}
+00153 \par
+{\bkmkstart AAAAAAAALS}{\bkmkend AAAAAAAALS}
+00154 \par
+{\bkmkstart AAAAAAAALT}{\bkmkend AAAAAAAALT}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALP" }{}}{\fldrslt {\cs37\ul\cf2 00158}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALP" }{}}{\fldrslt {\cs37\ul\cf2 togglePiezo}}}
+({\cf18 bool} alert) \{\par
+{\bkmkstart AAAAAAAALU}{\bkmkend AAAAAAAALU}
+00159 \par
+{\bkmkstart AAAAAAAALV}{\bkmkend AAAAAAAALV}
+00160     {\cf19 if}(!alert)\{\par
+{\bkmkstart AAAAAAAALW}{\bkmkend AAAAAAAALW}
+00161         GPIO_setAsOutputPin(GPIO_PORT_P2, GPIO_PIN6 + GPIO_PIN7);\par
+{\bkmkstart AAAAAAAALX}{\bkmkend AAAAAAAALX}
+00162         GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN6);\par
+{\bkmkstart AAAAAAAALY}{\bkmkend AAAAAAAALY}
+00163 \par
+{\bkmkstart AAAAAAAALZ}{\bkmkend AAAAAAAALZ}
+00164         GPIO_setOutputLowOnPin(GPIO_PORT_P2, GPIO_PIN6 + GPIO_PIN7);\par
+{\bkmkstart AAAAAAAAMA}{\bkmkend AAAAAAAAMA}
+00165         GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN6);\par
+{\bkmkstart AAAAAAAAMB}{\bkmkend AAAAAAAAMB}
+00166 \par
+{\bkmkstart AAAAAAAAMC}{\bkmkend AAAAAAAAMC}
+00167         {\cf19 return};\par
+{\bkmkstart AAAAAAAAMD}{\bkmkend AAAAAAAAMD}
+00168     \}\par
+{\bkmkstart AAAAAAAAME}{\bkmkend AAAAAAAAME}
+00169 \par
+{\bkmkstart AAAAAAAAMF}{\bkmkend AAAAAAAAMF}
+00170     {\cf20 // Configure Pins for XIN and XOUT}\par
+{\bkmkstart AAAAAAAAMG}{\bkmkend AAAAAAAAMG}
+00171     {\cf20 //Set P2.6 and P2.7 as Module Function Input.}\par
+{\bkmkstart AAAAAAAAMH}{\bkmkend AAAAAAAAMH}
+00172     GPIO_setAsPeripheralModuleFunctionInputPin(\par
+{\bkmkstart AAAAAAAAMI}{\bkmkend AAAAAAAAMI}
+00173             GPIO_PORT_P2,\par
+{\bkmkstart AAAAAAAAMJ}{\bkmkend AAAAAAAAMJ}
+00174             GPIO_PIN6 + GPIO_PIN7,\par
+{\bkmkstart AAAAAAAAMK}{\bkmkend AAAAAAAAMK}
+00175             GPIO_SECONDARY_MODULE_FUNCTION\par
+{\bkmkstart AAAAAAAAML}{\bkmkend AAAAAAAAML}
+00176     );\par
+{\bkmkstart AAAAAAAAMM}{\bkmkend AAAAAAAAMM}
+00177 \par
+{\bkmkstart AAAAAAAAMN}{\bkmkend AAAAAAAAMN}
+00178 \par
+{\bkmkstart AAAAAAAAMO}{\bkmkend AAAAAAAAMO}
+00179     {\cf20 //Ausgangspin von Timer0_B3, CCR1 (TB0.1 - Pin 1.6)}\par
+{\bkmkstart AAAAAAAAMP}{\bkmkend AAAAAAAAMP}
+00180     {\cf20 //statt als GPIO-Pin zu verwenden, mit Timer0_B3 CCR1 Output verbinden:}\par
+{\bkmkstart AAAAAAAAMQ}{\bkmkend AAAAAAAAMQ}
+00181     {\cf20 //secondary function für das Pin aktivieren}\par
+{\bkmkstart AAAAAAAAMR}{\bkmkend AAAAAAAAMR}
+00182     GPIO_setAsPeripheralModuleFunctionOutputPin(\par
+{\bkmkstart AAAAAAAAMS}{\bkmkend AAAAAAAAMS}
+00183             GPIO_PORT_P1,\par
+{\bkmkstart AAAAAAAAMT}{\bkmkend AAAAAAAAMT}
+00184             GPIO_PIN6,\par
+{\bkmkstart AAAAAAAAMU}{\bkmkend AAAAAAAAMU}
+00185             GPIO_SECONDARY_MODULE_FUNCTION\par
+{\bkmkstart AAAAAAAAMV}{\bkmkend AAAAAAAAMV}
+00186     );\par
+{\bkmkstart AAAAAAAAMW}{\bkmkend AAAAAAAAMW}
+00187 \par
+{\bkmkstart AAAAAAAAMX}{\bkmkend AAAAAAAAMX}
+00188 \}\par
+{\bkmkstart AAAAAAAAMY}{\bkmkend AAAAAAAAMY}
+00189 \par
+{\bkmkstart AAAAAAAAMZ}{\bkmkend AAAAAAAAMZ}
+00190 \par
+{\bkmkstart AAAAAAAANA}{\bkmkend AAAAAAAANA}
+00191 {\cf20 //Watchdog Timer interrupt service routine}\par
+{\bkmkstart AAAAAAAANB}{\bkmkend AAAAAAAANB}
+00192 {\cf21 #pragma vector=WDT_VECTOR}\par
+{\bkmkstart AAAAAAAANC}{\bkmkend AAAAAAAANC}
+00193 __interrupt\par
+{\bkmkstart AAAAAAAAND}{\bkmkend AAAAAAAAND}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANE" }{}}{\fldrslt {\cs37\ul\cf2 00194}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANE" }{}}{\fldrslt {\cs37\ul\cf2 WDT_A_ISR}}}
+ ({\cf18 void})\par
+{\bkmkstart AAAAAAAANF}{\bkmkend AAAAAAAANF}
+00195 \{\par
+{\bkmkstart AAAAAAAANG}{\bkmkend AAAAAAAANG}
+00196     {\cf19 if} ({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIA" }{}}{\fldrslt {\cs37\ul\cf2 idx}}}
+ == 0) \{\par
+{\bkmkstart AAAAAAAANH}{\bkmkend AAAAAAAANH}
+00197         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIA" }{}}{\fldrslt {\cs37\ul\cf2 idx}}}
+++;\par
+{\bkmkstart AAAAAAAANI}{\bkmkend AAAAAAAANI}
+00198     \} {\cf19 else} \{\par
+{\bkmkstart AAAAAAAANJ}{\bkmkend AAAAAAAANJ}
+00199         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIA" }{}}{\fldrslt {\cs37\ul\cf2 idx}}}
+=0;\par
+{\bkmkstart AAAAAAAANK}{\bkmkend AAAAAAAANK}
+00200     \}\par
+{\bkmkstart AAAAAAAANL}{\bkmkend AAAAAAAANL}
+00201     Timer_B_setCompareValue(TIMER_B0_BASE, TIMER_B_CAPTURECOMPARE_REGISTER_0, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHY" }{}}{\fldrslt {\cs37\ul\cf2 cTonleiter}}}
+[{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIA" }{}}{\fldrslt {\cs37\ul\cf2 idx}}}
+]);\par
+{\bkmkstart AAAAAAAANM}{\bkmkend AAAAAAAANM}
+00202     Timer_B_setCompareValue(TIMER_B0_BASE, TIMER_B_CAPTURECOMPARE_REGISTER_1, {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHY" }{}}{\fldrslt {\cs37\ul\cf2 cTonleiter}}}
+[{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIA" }{}}{\fldrslt {\cs37\ul\cf2 idx}}}
+]>>1);\par
+{\bkmkstart AAAAAAAANN}{\bkmkend AAAAAAAANN}
+00203 \}\par
+{\bkmkstart AAAAAAAANO}{\bkmkend AAAAAAAANO}
+00204 \par
 }
 }

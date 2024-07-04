@@ -21,7 +21,7 @@ Zugriff auf Internetseiten am 2015-05-25
 
 Funktionsbeschreibung / bestimmungsgemäßer Gebrauch:
 ----------------------------------------------------
-Über den Taster S1? lässt sich das Gerät nach 2.5 Sekunden gedrückt halten einschalten
+Über den Taster S1 lässt sich das Gerät nach 2.5 Sekunden gedrückt halten einschalten
 Der Gassensor ist über DI/O angebunden und ung gibt einen Interupt an de MC wenn er gas detektiert.
 Anschließend geht die Rote LED auf dem in den Warning Modus und blinkt. Sollte sich die Person nicht mehr bewegen dektetiert dies der über I2C angebundene Beschleunigungssensor
 und der MC gibt über den Piezolautsprecher einen Signalton aus. Zudem geht die LED in den Alarm mode und blinkt schneller.

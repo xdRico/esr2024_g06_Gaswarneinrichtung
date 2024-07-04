@@ -1,0 +1,7 @@
+<map id="IOutputHandler.h" name="IOutputHandler.h">
+<area shape="rect" id="Node000001" title="This header file is an interface for outputting Data." alt="" coords="60,5,178,32"/>
+<area shape="rect" id="Node000002" href="$_output_handler_8c.html" title="This Class implements the IOutputHandler.h header file. It uses the two onboard LEDs of the MSP430FR2..." alt="" coords="5,80,121,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,46,75,81,71,78,98,43"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="The main method gets called at start of the device interrupts: P2: Acknowledge&#45;Button P3: Movement/Ta..." alt="" coords="145,80,205,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,43,167,78,163,81,136,46"/>
+</map>

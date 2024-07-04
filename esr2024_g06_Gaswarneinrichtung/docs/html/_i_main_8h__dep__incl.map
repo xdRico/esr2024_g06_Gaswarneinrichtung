@@ -1,0 +1,20 @@
+<map id="IMain.h" name="IMain.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="220,5,283,32"/>
+<area shape="rect" id="Node000002" href="$_i_acceleration_handler_8h.html" title="This header file is an interface for the use of the acceleration sensor." alt="" coords="19,80,170,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,41,123,82,121,77,209,36"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title="The main method gets called at start of the device interrupts: P2: Acknowledge&#45;Button P3: Movement/Ta..." alt="" coords="177,155,238,181"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="246,48,235,81,214,155,208,154,230,79,240,46"/>
+<area shape="rect" id="Node000005" href="$_i_gas_handler_8h.html" title="This header file is an interface for the use of the gas measuring sensor." alt="" coords="245,80,349,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="270,44,291,78,287,81,265,47"/>
+<area shape="rect" id="Node000007" href="$_i_output_handler_8h.html" title="This header file is an interface for outputting Data." alt="" coords="372,80,491,107"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="298,36,401,77,399,82,296,41"/>
+<area shape="rect" id="Node000003" href="$_acceleration_handler_8c.html" title="This Class implements the IAccelerationHandler.h header file. It uses Pin 9 (P1.3) and 10 (P1...." alt="" coords="5,155,154,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,123,85,155,79,154,86,122"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="128,113,189,152,186,156,125,118"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="271,119,225,156,221,152,268,115"/>
+<area shape="rect" id="Node000006" href="$_gas_handler_8c.html" title="This Class implements the IGasHandler.h header file. It uses Pin 32 (P3.7) for activating the Gas Sen..." alt="" coords="261,155,362,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="305,122,312,154,306,155,300,123"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="379,114,239,159,237,154,378,109"/>
+<area shape="rect" id="Node000008" href="$_output_handler_8c.html" title="This Class implements the IOutputHandler.h header file. It uses the two onboard LEDs of the MSP430FR2..." alt="" coords="386,155,501,181"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="439,122,444,154,439,155,433,123"/>
+</map>

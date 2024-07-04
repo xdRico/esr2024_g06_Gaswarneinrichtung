@@ -150,925 +150,948 @@
 main.c\par \pard\plain 
 {\tc\tcl2 \v main.c}
 {\xe \v main.c}
-{\bkmkstart AAAAAAAANS}
-{\bkmkend AAAAAAAANS}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANT" }{}}{\fldrslt {\cs37\ul\cf2 gehe zur Dokumentation dieser Datei}}}
+{\bkmkstart AAAAAAAASZ}
+{\bkmkend AAAAAAAASZ}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATA" }{}}{\fldrslt {\cs37\ul\cf2 gehe zur Dokumentation dieser Datei}}}
 \par
 {
 \par
-\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid {\bkmkstart AAAAAAAANU}{\bkmkend AAAAAAAANU}
-00001 {\cf21 #include <{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIO" }{}}{\fldrslt {\cs37\ul\cf2 IMain.h}}}
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid {\bkmkstart AAAAAAAATB}{\bkmkend AAAAAAAATB}
+00001 {\cf21 #include <{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAANV" }{}}{\fldrslt {\cs37\ul\cf2 IMain.h}}}
 >}\par
-{\bkmkstart AAAAAAAANV}{\bkmkend AAAAAAAANV}
+{\bkmkstart AAAAAAAATC}{\bkmkend AAAAAAAATC}
 00002 {\cf21 #include <msp430.h>} \par
-{\bkmkstart AAAAAAAANW}{\bkmkend AAAAAAAANW}
+{\bkmkstart AAAAAAAATD}{\bkmkend AAAAAAAATD}
 00003 {\cf21 #include "{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGH" }{}}{\fldrslt {\cs37\ul\cf2 IOutputHandler.h}}}
 "}\par
-{\bkmkstart AAAAAAAANX}{\bkmkend AAAAAAAANX}
+{\bkmkstart AAAAAAAATE}{\bkmkend AAAAAAAATE}
 00004 {\cf21 #include "{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAE" }{}}{\fldrslt {\cs37\ul\cf2 IAccelerationHandler.h}}}
 "}\par
-{\bkmkstart AAAAAAAANY}{\bkmkend AAAAAAAANY}
+{\bkmkstart AAAAAAAATF}{\bkmkend AAAAAAAATF}
 00005 {\cf21 #include "{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACH" }{}}{\fldrslt {\cs37\ul\cf2 IGasHandler.h}}}
 "}\par
-{\bkmkstart AAAAAAAANZ}{\bkmkend AAAAAAAANZ}
+{\bkmkstart AAAAAAAATG}{\bkmkend AAAAAAAATG}
 00006 {\cf21 #include "{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAG" }{}}{\fldrslt {\cs37\ul\cf2 II2CHandler.h}}}
 "}\par
-{\bkmkstart AAAAAAAAOA}{\bkmkend AAAAAAAAOA}
-00007 \par
-{\bkmkstart AAAAAAAAOB}{\bkmkend AAAAAAAAOB}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOC" }{}}{\fldrslt {\cs37\ul\cf2 00008}}}
- {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOC" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAOD}{\bkmkend AAAAAAAAOD}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOE" }{}}{\fldrslt {\cs37\ul\cf2 00009}}}
- {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOE" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAOF}{\bkmkend AAAAAAAAOF}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOG" }{}}{\fldrslt {\cs37\ul\cf2 00010}}}
- {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOG" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAOH}{\bkmkend AAAAAAAAOH}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOI" }{}}{\fldrslt {\cs37\ul\cf2 00011}}}
- {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOI" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAOJ}{\bkmkend AAAAAAAAOJ}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 00012}}}
- {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAOL}{\bkmkend AAAAAAAAOL}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOM" }{}}{\fldrslt {\cs37\ul\cf2 00013}}}
- {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOM" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAON}{\bkmkend AAAAAAAAON}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOO" }{}}{\fldrslt {\cs37\ul\cf2 00014}}}
- {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOO" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAOP}{\bkmkend AAAAAAAAOP}
-00015 \par
-{\bkmkstart AAAAAAAAOQ}{\bkmkend AAAAAAAAOQ}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 00016}}}
- {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
- = 0;\par
-{\bkmkstart AAAAAAAAOS}{\bkmkend AAAAAAAAOS}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 00017}}}
- {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- = 0;\par
-{\bkmkstart AAAAAAAAOU}{\bkmkend AAAAAAAAOU}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOV" }{}}{\fldrslt {\cs37\ul\cf2 00018}}}
- {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOV" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
- = 0;\par
-{\bkmkstart AAAAAAAAOW}{\bkmkend AAAAAAAAOW}
-00019 \par
-{\bkmkstart AAAAAAAAOX}{\bkmkend AAAAAAAAOX}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOY" }{}}{\fldrslt {\cs37\ul\cf2 00020}}}
- {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOY" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
- = 0;\par
-{\bkmkstart AAAAAAAAOZ}{\bkmkend AAAAAAAAOZ}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 00021}}}
- {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- = 0;\par
-{\bkmkstart AAAAAAAAPB}{\bkmkend AAAAAAAAPB}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPC" }{}}{\fldrslt {\cs37\ul\cf2 00022}}}
- {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPC" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastCriticalMeasurement}}}
- = 0;\par
-{\bkmkstart AAAAAAAAPD}{\bkmkend AAAAAAAAPD}
-00023 \par
-{\bkmkstart AAAAAAAAPE}{\bkmkend AAAAAAAAPE}
-00024 {\cf20 //< in s/10}\par
-{\bkmkstart AAAAAAAAPF}{\bkmkend AAAAAAAAPF}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPG" }{}}{\fldrslt {\cs37\ul\cf2 00025}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPG" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
- = 5;\par
-{\bkmkstart AAAAAAAAPH}{\bkmkend AAAAAAAAPH}
-00026 \par
-{\bkmkstart AAAAAAAAPI}{\bkmkend AAAAAAAAPI}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPJ" }{}}{\fldrslt {\cs37\ul\cf2 00027}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPJ" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDWarning}}}
- = 10;\par
-{\bkmkstart AAAAAAAAPK}{\bkmkend AAAAAAAAPK}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPL" }{}}{\fldrslt {\cs37\ul\cf2 00028}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPL" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDWarning}}}
- = 20;\par
-{\bkmkstart AAAAAAAAPM}{\bkmkend AAAAAAAAPM}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPN" }{}}{\fldrslt {\cs37\ul\cf2 00029}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPN" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDAlarm}}}
- = 5;\par
-{\bkmkstart AAAAAAAAPO}{\bkmkend AAAAAAAAPO}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPP" }{}}{\fldrslt {\cs37\ul\cf2 00030}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPP" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDAlarm}}}
- = 5;\par
-{\bkmkstart AAAAAAAAPQ}{\bkmkend AAAAAAAAPQ}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPR" }{}}{\fldrslt {\cs37\ul\cf2 00031}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPR" }{}}{\fldrslt {\cs37\ul\cf2 timeToPressOnBtn}}}
- = 25; {\cf20 //< 2.5s}\par
-{\bkmkstart AAAAAAAAPS}{\bkmkend AAAAAAAAPS}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPT" }{}}{\fldrslt {\cs37\ul\cf2 00032}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPT" }{}}{\fldrslt {\cs37\ul\cf2 timeWaitingAfterCriticalMeasurement}}}
- = 10 * 10;\par
-{\bkmkstart AAAAAAAAPU}{\bkmkend AAAAAAAAPU}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPV" }{}}{\fldrslt {\cs37\ul\cf2 00033}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPV" }{}}{\fldrslt {\cs37\ul\cf2 timeRestingTillAlarm}}}
- = 15 * 10;\par
-{\bkmkstart AAAAAAAAPW}{\bkmkend AAAAAAAAPW}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPX" }{}}{\fldrslt {\cs37\ul\cf2 00034}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPX" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDOn}}}
- = 5;\par
-{\bkmkstart AAAAAAAAPY}{\bkmkend AAAAAAAAPY}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPZ" }{}}{\fldrslt {\cs37\ul\cf2 00035}}}
- {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPZ" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDOn}}}
- = 50;\par
-{\bkmkstart AAAAAAAAQA}{\bkmkend AAAAAAAAQA}
-00036 \par
-{\bkmkstart AAAAAAAAQB}{\bkmkend AAAAAAAAQB}
-00037 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQC" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2Handler}}}
-();\par
-{\bkmkstart AAAAAAAAQD}{\bkmkend AAAAAAAAQD}
-00038 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQE" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3Handler}}}
-();\par
-{\bkmkstart AAAAAAAAQF}{\bkmkend AAAAAAAAQF}
-00039 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQG" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4Handler}}}
-();\par
-{\bkmkstart AAAAAAAAQH}{\bkmkend AAAAAAAAQH}
-00040 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQI" }{}}{\fldrslt {\cs37\ul\cf2 gasMeasurementHandler}}}
-();\par
-{\bkmkstart AAAAAAAAQJ}{\bkmkend AAAAAAAAQJ}
-00041 \par
-{\bkmkstart AAAAAAAAQK}{\bkmkend AAAAAAAAQK}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQL" }{}}{\fldrslt {\cs37\ul\cf2 00051}}}
- {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQL" }{}}{\fldrslt {\cs37\ul\cf2 main}}}
-({\cf18 void})\{\par
-{\bkmkstart AAAAAAAAQM}{\bkmkend AAAAAAAAQM}
-00052 \par
-{\bkmkstart AAAAAAAAQN}{\bkmkend AAAAAAAAQN}
-00053     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQO" }{}}{\fldrslt {\cs37\ul\cf2 preInit}}}
-();\par
-{\bkmkstart AAAAAAAAQP}{\bkmkend AAAAAAAAQP}
-00054 \par
-{\bkmkstart AAAAAAAAQQ}{\bkmkend AAAAAAAAQQ}
-00055     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQR" }{}}{\fldrslt {\cs37\ul\cf2 init}}}
-();\par
-{\bkmkstart AAAAAAAAQS}{\bkmkend AAAAAAAAQS}
-00056 \par
-{\bkmkstart AAAAAAAAQT}{\bkmkend AAAAAAAAQT}
-00057     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQU" }{}}{\fldrslt {\cs37\ul\cf2 postInit}}}
-();\par
-{\bkmkstart AAAAAAAAQV}{\bkmkend AAAAAAAAQV}
-00058 \par
-{\bkmkstart AAAAAAAAQW}{\bkmkend AAAAAAAAQW}
-00059     {\cf19 while}(1)\{\par
-{\bkmkstart AAAAAAAAQX}{\bkmkend AAAAAAAAQX}
-00060         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQY" }{}}{\fldrslt {\cs37\ul\cf2 loop}}}
-();\par
-{\bkmkstart AAAAAAAAQZ}{\bkmkend AAAAAAAAQZ}
-00061     \}\par
-{\bkmkstart AAAAAAAARA}{\bkmkend AAAAAAAARA}
-00062 \}\par
-{\bkmkstart AAAAAAAARB}{\bkmkend AAAAAAAARB}
-00063 \par
-{\bkmkstart AAAAAAAARC}{\bkmkend AAAAAAAARC}
-00064 \par
-{\bkmkstart AAAAAAAARD}{\bkmkend AAAAAAAARD}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALX" }{}}{\fldrslt {\cs37\ul\cf2 00068}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQO" }{}}{\fldrslt {\cs37\ul\cf2 preInit}}}
-()\{\par
-{\bkmkstart AAAAAAAARE}{\bkmkend AAAAAAAARE}
-00069     {\cf20 //< preInit device}\par
-{\bkmkstart AAAAAAAARF}{\bkmkend AAAAAAAARF}
-00070 \par
-{\bkmkstart AAAAAAAARG}{\bkmkend AAAAAAAARG}
-00071 \par
-{\bkmkstart AAAAAAAARH}{\bkmkend AAAAAAAARH}
-00072     WDTCTL = WDTPW | WDTHOLD;   {\cf20 //< stop watchdog timer}\par
-{\bkmkstart AAAAAAAARI}{\bkmkend AAAAAAAARI}
-00073 \par
-{\bkmkstart AAAAAAAARJ}{\bkmkend AAAAAAAARJ}
-00074     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_S1, GPIO_PIN_S1);\par
-{\bkmkstart AAAAAAAARK}{\bkmkend AAAAAAAARK}
-00075     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_S2, GPIO_PIN_S2);\par
-{\bkmkstart AAAAAAAARL}{\bkmkend AAAAAAAARL}
-00076 \par
-{\bkmkstart AAAAAAAARM}{\bkmkend AAAAAAAARM}
-00077     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
-{\bkmkstart AAAAAAAARN}{\bkmkend AAAAAAAARN}
-00078     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
-{\bkmkstart AAAAAAAARO}{\bkmkend AAAAAAAARO}
-00079 \par
-{\bkmkstart AAAAAAAARP}{\bkmkend AAAAAAAARP}
-00080     GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
-{\bkmkstart AAAAAAAARQ}{\bkmkend AAAAAAAARQ}
-00081     GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
-{\bkmkstart AAAAAAAARR}{\bkmkend AAAAAAAARR}
-00082 \par
-{\bkmkstart AAAAAAAARS}{\bkmkend AAAAAAAARS}
-00083     GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P1, GPIO_PIN1, GPIO_PRIMARY_MODULE_FUNCTION);\par
-{\bkmkstart AAAAAAAART}{\bkmkend AAAAAAAART}
-00084 \par
-{\bkmkstart AAAAAAAARU}{\bkmkend AAAAAAAARU}
-00085     {\cf20 //< preInit Modules}\par
-{\bkmkstart AAAAAAAARV}{\bkmkend AAAAAAAARV}
-00086 \par
-{\bkmkstart AAAAAAAARW}{\bkmkend AAAAAAAARW}
-00087     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGL" }{}}{\fldrslt {\cs37\ul\cf2 preInitOutputHandler}}}
-();\par
-{\bkmkstart AAAAAAAARX}{\bkmkend AAAAAAAARX}
-00088     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAK" }{}}{\fldrslt {\cs37\ul\cf2 preInitAccelerationHandler}}}
-();\par
-{\bkmkstart AAAAAAAARY}{\bkmkend AAAAAAAARY}
-00089     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACL" }{}}{\fldrslt {\cs37\ul\cf2 preInitGasHandler}}}
-();\par
-{\bkmkstart AAAAAAAARZ}{\bkmkend AAAAAAAARZ}
-00090 \}\par
-{\bkmkstart AAAAAAAASA}{\bkmkend AAAAAAAASA}
-00091 \par
-{\bkmkstart AAAAAAAASB}{\bkmkend AAAAAAAASB}
-00092 \par
-{\bkmkstart AAAAAAAASC}{\bkmkend AAAAAAAASC}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMB" }{}}{\fldrslt {\cs37\ul\cf2 00096}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQR" }{}}{\fldrslt {\cs37\ul\cf2 init}}}
-()\{\par
-{\bkmkstart AAAAAAAASD}{\bkmkend AAAAAAAASD}
-00097     {\cf20 //< init Device}\par
-{\bkmkstart AAAAAAAASE}{\bkmkend AAAAAAAASE}
-00098 \par
-{\bkmkstart AAAAAAAASF}{\bkmkend AAAAAAAASF}
-00099     {\cf20 //< init Modules}\par
-{\bkmkstart AAAAAAAASG}{\bkmkend AAAAAAAASG}
-00100 \par
-{\bkmkstart AAAAAAAASH}{\bkmkend AAAAAAAASH}
-00101     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAGW" }{}}{\fldrslt {\cs37\ul\cf2 initOutputHandler}}}
-();\par
-{\bkmkstart AAAAAAAASI}{\bkmkend AAAAAAAASI}
-00102     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAV" }{}}{\fldrslt {\cs37\ul\cf2 initAccelerationHandler}}}
-();\par
-{\bkmkstart AAAAAAAASJ}{\bkmkend AAAAAAAASJ}
-00103     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACW" }{}}{\fldrslt {\cs37\ul\cf2 initGasHandler}}}
-();\par
-{\bkmkstart AAAAAAAASK}{\bkmkend AAAAAAAASK}
-00104     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAEM" }{}}{\fldrslt {\cs37\ul\cf2 i2c_init}}}
-();\par
-{\bkmkstart AAAAAAAASL}{\bkmkend AAAAAAAASL}
-00105 \}\par
-{\bkmkstart AAAAAAAASM}{\bkmkend AAAAAAAASM}
-00106 \par
-{\bkmkstart AAAAAAAASN}{\bkmkend AAAAAAAASN}
-00107 \par
-{\bkmkstart AAAAAAAASO}{\bkmkend AAAAAAAASO}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMF" }{}}{\fldrslt {\cs37\ul\cf2 00111}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQU" }{}}{\fldrslt {\cs37\ul\cf2 postInit}}}
-()\{\par
-{\bkmkstart AAAAAAAASP}{\bkmkend AAAAAAAASP}
-00112     {\cf20 //< postInit Device}\par
-{\bkmkstart AAAAAAAASQ}{\bkmkend AAAAAAAASQ}
-00113     GPIO_selectInterruptEdge(GPIO_PORT_S1, GPIO_PIN_S1, GPIO_HIGH_TO_LOW_TRANSITION);\par
-{\bkmkstart AAAAAAAASR}{\bkmkend AAAAAAAASR}
-00114     GPIO_selectInterruptEdge(GPIO_PORT_S2, GPIO_PIN_S2, GPIO_HIGH_TO_LOW_TRANSITION);\par
-{\bkmkstart AAAAAAAASS}{\bkmkend AAAAAAAASS}
-00115 \par
-{\bkmkstart AAAAAAAAST}{\bkmkend AAAAAAAAST}
-00116     GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
-{\bkmkstart AAAAAAAASU}{\bkmkend AAAAAAAASU}
-00117     GPIO_enableInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);\par
-{\bkmkstart AAAAAAAASV}{\bkmkend AAAAAAAASV}
-00118 \par
-{\bkmkstart AAAAAAAASW}{\bkmkend AAAAAAAASW}
-00119     PMM_unlockLPM5();\par
-{\bkmkstart AAAAAAAASX}{\bkmkend AAAAAAAASX}
-00120 \par
-{\bkmkstart AAAAAAAASY}{\bkmkend AAAAAAAASY}
-00121     GPIO_clearInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
-{\bkmkstart AAAAAAAASZ}{\bkmkend AAAAAAAASZ}
-00122     GPIO_clearInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);\par
-{\bkmkstart AAAAAAAATA}{\bkmkend AAAAAAAATA}
-00123 \par
-{\bkmkstart AAAAAAAATB}{\bkmkend AAAAAAAATB}
-00124 \par
-{\bkmkstart AAAAAAAATC}{\bkmkend AAAAAAAATC}
-00125 \par
-{\bkmkstart AAAAAAAATD}{\bkmkend AAAAAAAATD}
-00126     {\cf20 /*}\par
-{\bkmkstart AAAAAAAATE}{\bkmkend AAAAAAAATE}
-00127 {\cf20      * Initialize RTC}\par
-{\bkmkstart AAAAAAAATF}{\bkmkend AAAAAAAATF}
-00128 {\cf20      * RTC count reload compare value at 256.}\par
-{\bkmkstart AAAAAAAATG}{\bkmkend AAAAAAAATG}
-00129 {\cf20      * 1024/32768 * 256 = 8 seconds (1024/32768 * 16 = 0.5 seconds?)}\par
 {\bkmkstart AAAAAAAATH}{\bkmkend AAAAAAAATH}
-00130 {\cf20      * Source = 32kHz crystal, divided by 1024}\par
+00007 \par
 {\bkmkstart AAAAAAAATI}{\bkmkend AAAAAAAATI}
-00131 {\cf20      */}\par
-{\bkmkstart AAAAAAAATJ}{\bkmkend AAAAAAAATJ}
-00132     RTC_init(RTC_BASE, 16-1, RTC_CLOCKPREDIVIDER_1024);\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATJ" }{}}{\fldrslt {\cs37\ul\cf2 00008}}}
+ {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATJ" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAAATK}{\bkmkend AAAAAAAATK}
-00133     RTC_enableInterrupt(RTC_BASE, RTC_OVERFLOW_INTERRUPT);\par
-{\bkmkstart AAAAAAAATL}{\bkmkend AAAAAAAATL}
-00134     RTC_start(RTC_BASE, RTC_CLOCKSOURCE_XT1CLK);\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATL" }{}}{\fldrslt {\cs37\ul\cf2 00009}}}
+ {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATL" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAAATM}{\bkmkend AAAAAAAATM}
-00135 \par
-{\bkmkstart AAAAAAAATN}{\bkmkend AAAAAAAATN}
-00136     {\cf20 /*}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATN" }{}}{\fldrslt {\cs37\ul\cf2 00010}}}
+ {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATN" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAAATO}{\bkmkend AAAAAAAATO}
-00137 {\cf20      * Initialize and enable ICC}\par
-{\bkmkstart AAAAAAAATP}{\bkmkend AAAAAAAATP}
-00138 {\cf20      */}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATP" }{}}{\fldrslt {\cs37\ul\cf2 00011}}}
+ {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAAATQ}{\bkmkend AAAAAAAATQ}
-00139     {\cf20 //< Disable global interrupt during setup}\par
-{\bkmkstart AAAAAAAATR}{\bkmkend AAAAAAAATR}
-00140     __bic_SR_register(GIE);\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 00012}}}
+ {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAAATS}{\bkmkend AAAAAAAATS}
-00141 \par
-{\bkmkstart AAAAAAAATT}{\bkmkend AAAAAAAATT}
-00142     {\cf20 //< NOTE: ICC_LEVEL_0 is the highest priority, ICC_LEVEL3 is the lowest priority}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATT" }{}}{\fldrslt {\cs37\ul\cf2 00013}}}
+ {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATT" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAAATU}{\bkmkend AAAAAAAATU}
-00143     {\cf20 //< Set P2 interrupt medium priority}\par
-{\bkmkstart AAAAAAAATV}{\bkmkend AAAAAAAATV}
-00144     ICC_setInterruptLevel(ICC_ILSR_P2, ICC_LEVEL_2);\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATV" }{}}{\fldrslt {\cs37\ul\cf2 00014}}}
+ {\cf18 bool} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATV" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAAATW}{\bkmkend AAAAAAAATW}
-00145     {\cf20 //< Set P3, P4 interrupt higher priority}\par
+00015 \par
 {\bkmkstart AAAAAAAATX}{\bkmkend AAAAAAAATX}
-00146     ICC_setInterruptLevel(ICC_ILSR_P3, ICC_LEVEL_1);\par
-{\bkmkstart AAAAAAAATY}{\bkmkend AAAAAAAATY}
-00147     ICC_setInterruptLevel(ICC_ILSR_P4, ICC_LEVEL_1);\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 00016}}}
+ {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+ = 0;\par
 {\bkmkstart AAAAAAAATZ}{\bkmkend AAAAAAAATZ}
-00148     {\cf20 //< Set RTC interrupt lower priority}\par
-{\bkmkstart AAAAAAAAUA}{\bkmkend AAAAAAAAUA}
-00149     ICC_setInterruptLevel(ICC_ILSR_RTC_COUNTER, ICC_LEVEL_3);\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 00017}}}
+ {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ = 0;\par
 {\bkmkstart AAAAAAAAUB}{\bkmkend AAAAAAAAUB}
-00150 \par
-{\bkmkstart AAAAAAAAUC}{\bkmkend AAAAAAAAUC}
-00151     {\cf20 //< Enable ICC module}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUC" }{}}{\fldrslt {\cs37\ul\cf2 00018}}}
+ {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUC" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
+ = 0;\par
 {\bkmkstart AAAAAAAAUD}{\bkmkend AAAAAAAAUD}
-00152     ICC_enable();\par
+00019 \par
 {\bkmkstart AAAAAAAAUE}{\bkmkend AAAAAAAAUE}
-00153 \par
-{\bkmkstart AAAAAAAAUF}{\bkmkend AAAAAAAAUF}
-00154 \par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUF" }{}}{\fldrslt {\cs37\ul\cf2 00020}}}
+ {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUF" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
+ = 0;\par
 {\bkmkstart AAAAAAAAUG}{\bkmkend AAAAAAAAUG}
-00155     {\cf20 //< postInit Modules}\par
-{\bkmkstart AAAAAAAAUH}{\bkmkend AAAAAAAAUH}
-00156     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAADD" }{}}{\fldrslt {\cs37\ul\cf2 postInitGasHandler}}}
-();\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 00021}}}
+ {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ = 0;\par
 {\bkmkstart AAAAAAAAUI}{\bkmkend AAAAAAAAUI}
-00157     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAABJ" }{}}{\fldrslt {\cs37\ul\cf2 postInitAccelerationHandler}}}
-();\par
-{\bkmkstart AAAAAAAAUJ}{\bkmkend AAAAAAAAUJ}
-00158 \par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUJ" }{}}{\fldrslt {\cs37\ul\cf2 00022}}}
+ {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUJ" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastCriticalMeasurement}}}
+ = 0;\par
 {\bkmkstart AAAAAAAAUK}{\bkmkend AAAAAAAAUK}
-00159 \}\par
+00023 \par
 {\bkmkstart AAAAAAAAUL}{\bkmkend AAAAAAAAUL}
-00160 \par
+00024 {\cf20 //< in s/10}\par
 {\bkmkstart AAAAAAAAUM}{\bkmkend AAAAAAAAUM}
-00161 \par
-{\bkmkstart AAAAAAAAUN}{\bkmkend AAAAAAAAUN}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAMI" }{}}{\fldrslt {\cs37\ul\cf2 00174}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQY" }{}}{\fldrslt {\cs37\ul\cf2 loop}}}
-()\{\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUN" }{}}{\fldrslt {\cs37\ul\cf2 00025}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUN" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
+ = 5;\par
 {\bkmkstart AAAAAAAAUO}{\bkmkend AAAAAAAAUO}
-00175 \par
+00026 \par
 {\bkmkstart AAAAAAAAUP}{\bkmkend AAAAAAAAUP}
-00176 \par
-{\bkmkstart AAAAAAAAUQ}{\bkmkend AAAAAAAAUQ}
-00177     {\cf20 //< Enter LPM3 and global interrupt}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUQ" }{}}{\fldrslt {\cs37\ul\cf2 00027}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUQ" }{}}{\fldrslt {\cs37\ul\cf2 piezoPeriodLow}}}
+ = 620;\par
 {\bkmkstart AAAAAAAAUR}{\bkmkend AAAAAAAAUR}
-00178     __bis_SR_register(LPM3_bits + GIE);\par
-{\bkmkstart AAAAAAAAUS}{\bkmkend AAAAAAAAUS}
-00179     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
- += {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPG" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
-;\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUS" }{}}{\fldrslt {\cs37\ul\cf2 00028}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUS" }{}}{\fldrslt {\cs37\ul\cf2 piezoPeriodHigh}}}
+ = 440;\par
 {\bkmkstart AAAAAAAAUT}{\bkmkend AAAAAAAAUT}
-00180     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- += {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPG" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
-;\par
-{\bkmkstart AAAAAAAAUU}{\bkmkend AAAAAAAAUU}
-00181     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOV" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
- += {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPG" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
-;\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUU" }{}}{\fldrslt {\cs37\ul\cf2 00029}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUU" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDWarning}}}
+ = 10;\par
 {\bkmkstart AAAAAAAAUV}{\bkmkend AAAAAAAAUV}
-00182 \par
-{\bkmkstart AAAAAAAAUW}{\bkmkend AAAAAAAAUW}
-00183     {\cf20 //< On-Btn}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUW" }{}}{\fldrslt {\cs37\ul\cf2 00030}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUW" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDWarning}}}
+ = 20;\par
 {\bkmkstart AAAAAAAAUX}{\bkmkend AAAAAAAAUX}
-00184     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQG" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4Handler}}}
-();\par
-{\bkmkstart AAAAAAAAUY}{\bkmkend AAAAAAAAUY}
-00185     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
-)\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUY" }{}}{\fldrslt {\cs37\ul\cf2 00031}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUY" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDAlarm}}}
+ = 5;\par
 {\bkmkstart AAAAAAAAUZ}{\bkmkend AAAAAAAAUZ}
-00186         {\cf19 return};\par
-{\bkmkstart AAAAAAAAVA}{\bkmkend AAAAAAAAVA}
-00187     {\cf20 //< Acc-Mvmnt + Gas-msrmnt interrupt}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVA" }{}}{\fldrslt {\cs37\ul\cf2 00032}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVA" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDAlarm}}}
+ = 5;\par
 {\bkmkstart AAAAAAAAVB}{\bkmkend AAAAAAAAVB}
-00188     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQE" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3Handler}}}
-();\par
-{\bkmkstart AAAAAAAAVC}{\bkmkend AAAAAAAAVC}
-00189     {\cf20 //< Gas-Msrmnt}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVC" }{}}{\fldrslt {\cs37\ul\cf2 00033}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVC" }{}}{\fldrslt {\cs37\ul\cf2 timeToPressOnBtn}}}
+ = 25; {\cf20 //< 2.5s}\par
 {\bkmkstart AAAAAAAAVD}{\bkmkend AAAAAAAAVD}
-00190     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQI" }{}}{\fldrslt {\cs37\ul\cf2 gasMeasurementHandler}}}
-();\par
-{\bkmkstart AAAAAAAAVE}{\bkmkend AAAAAAAAVE}
-00191     {\cf20 //< Ack-Btn}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVE" }{}}{\fldrslt {\cs37\ul\cf2 00034}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVE" }{}}{\fldrslt {\cs37\ul\cf2 timeWaitingAfterCriticalMeasurement}}}
+ = 10 * 10;\par
 {\bkmkstart AAAAAAAAVF}{\bkmkend AAAAAAAAVF}
-00192     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQC" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2Handler}}}
-();\par
-{\bkmkstart AAAAAAAAVG}{\bkmkend AAAAAAAAVG}
-00193 \par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVG" }{}}{\fldrslt {\cs37\ul\cf2 00035}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVG" }{}}{\fldrslt {\cs37\ul\cf2 timeRestingTillAlarm}}}
+ = 15 * 10;\par
 {\bkmkstart AAAAAAAAVH}{\bkmkend AAAAAAAAVH}
-00194     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOO" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
-)\{\par
-{\bkmkstart AAAAAAAAVI}{\bkmkend AAAAAAAAVI}
-00195         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPN" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDAlarm}}}
-)\{\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVI" }{}}{\fldrslt {\cs37\ul\cf2 00036}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVI" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDOn}}}
+ = 5;\par
 {\bkmkstart AAAAAAAAVJ}{\bkmkend AAAAAAAAVJ}
-00196             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHL" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
-({\cf17 false});\par
-{\bkmkstart AAAAAAAAVK}{\bkmkend AAAAAAAAVK}
-00197             {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPN" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDAlarm}}}
- + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPP" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDAlarm}}}
-)\{\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVK" }{}}{\fldrslt {\cs37\ul\cf2 00037}}}
+ {\cf17 const} {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVK" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDOn}}}
+ = 50;\par
 {\bkmkstart AAAAAAAAVL}{\bkmkend AAAAAAAAVL}
-00198                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- = 0;\par
+00038 \par
 {\bkmkstart AAAAAAAAVM}{\bkmkend AAAAAAAAVM}
-00199                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHL" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
-({\cf17 true});\par
-{\bkmkstart AAAAAAAAVN}{\bkmkend AAAAAAAAVN}
-00200             \}\par
+00039 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVN" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2Handler}}}
+();\par
 {\bkmkstart AAAAAAAAVO}{\bkmkend AAAAAAAAVO}
-00201         \}\par
-{\bkmkstart AAAAAAAAVP}{\bkmkend AAAAAAAAVP}
-00202     \} {\cf19 else} {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOM" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
-)\{\par
+00040 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3Handler}}}
+();\par
 {\bkmkstart AAAAAAAAVQ}{\bkmkend AAAAAAAAVQ}
-00203         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPJ" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDWarning}}}
-)\{\par
-{\bkmkstart AAAAAAAAVR}{\bkmkend AAAAAAAAVR}
-00204             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHL" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
-({\cf17 false});\par
+00041 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVR" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4Handler}}}
+();\par
 {\bkmkstart AAAAAAAAVS}{\bkmkend AAAAAAAAVS}
-00205             {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPJ" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDWarning}}}
- + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPL" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDWarning}}}
-)\{\par
-{\bkmkstart AAAAAAAAVT}{\bkmkend AAAAAAAAVT}
-00206                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- = 0;\par
+00042 {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVT" }{}}{\fldrslt {\cs37\ul\cf2 gasMeasurementHandler}}}
+();\par
 {\bkmkstart AAAAAAAAVU}{\bkmkend AAAAAAAAVU}
-00207                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHL" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
-({\cf17 true});\par
+00043 \par
 {\bkmkstart AAAAAAAAVV}{\bkmkend AAAAAAAAVV}
-00208             \}\par
+00044 \par
 {\bkmkstart AAAAAAAAVW}{\bkmkend AAAAAAAAVW}
-00209         \}\par
-{\bkmkstart AAAAAAAAVX}{\bkmkend AAAAAAAAVX}
-00210     \} {\cf19 else}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVX" }{}}{\fldrslt {\cs37\ul\cf2 00054}}}
+ {\cf18 int} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVX" }{}}{\fldrslt {\cs37\ul\cf2 main}}}
+({\cf18 void})\{\par
 {\bkmkstart AAAAAAAAVY}{\bkmkend AAAAAAAAVY}
-00211         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHL" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
-({\cf17 false});\par
+00055 \par
 {\bkmkstart AAAAAAAAVZ}{\bkmkend AAAAAAAAVZ}
-00212 \par
-{\bkmkstart AAAAAAAAWA}{\bkmkend AAAAAAAAWA}
-00213     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
-)\{\par
+00056     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWA" }{}}{\fldrslt {\cs37\ul\cf2 preInit}}}
+();\par
 {\bkmkstart AAAAAAAAWB}{\bkmkend AAAAAAAAWB}
-00214         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOV" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
- >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPX" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDOn}}}
-)\{\par
+00057 \par
 {\bkmkstart AAAAAAAAWC}{\bkmkend AAAAAAAAWC}
-00215             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHC" }{}}{\fldrslt {\cs37\ul\cf2 setOnLED}}}
-({\cf17 false});\par
-{\bkmkstart AAAAAAAAWD}{\bkmkend AAAAAAAAWD}
-00216             {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOV" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
- >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPX" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDOn}}}
- + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPZ" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDOn}}}
-)\{\par
+00058     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWD" }{}}{\fldrslt {\cs37\ul\cf2 init}}}
+();\par
 {\bkmkstart AAAAAAAAWE}{\bkmkend AAAAAAAAWE}
-00217                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOV" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
- = 0;\par
+00059 \par
 {\bkmkstart AAAAAAAAWF}{\bkmkend AAAAAAAAWF}
-00218                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAHC" }{}}{\fldrslt {\cs37\ul\cf2 setOnLED}}}
-({\cf17 true});\par
-{\bkmkstart AAAAAAAAWG}{\bkmkend AAAAAAAAWG}
-00219             \}\par
+00060     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWG" }{}}{\fldrslt {\cs37\ul\cf2 postInit}}}
+();\par
 {\bkmkstart AAAAAAAAWH}{\bkmkend AAAAAAAAWH}
-00220         \}\par
+00061 \par
 {\bkmkstart AAAAAAAAWI}{\bkmkend AAAAAAAAWI}
-00221     \}\par
+00062     {\cf19 while}(1)\{\par
 {\bkmkstart AAAAAAAAWJ}{\bkmkend AAAAAAAAWJ}
-00222 \}\par
-{\bkmkstart AAAAAAAAWK}{\bkmkend AAAAAAAAWK}
-00223 \par
+00063         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWK" }{}}{\fldrslt {\cs37\ul\cf2 loop}}}
+();\par
 {\bkmkstart AAAAAAAAWL}{\bkmkend AAAAAAAAWL}
-00224 \par
+00064     \}\par
 {\bkmkstart AAAAAAAAWM}{\bkmkend AAAAAAAAWM}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQC" }{}}{\fldrslt {\cs37\ul\cf2 00230}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQC" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2Handler}}}
-()\{\par
+00065 \}\par
 {\bkmkstart AAAAAAAAWN}{\bkmkend AAAAAAAAWN}
-00231     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOC" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
-)\par
+00066 \par
 {\bkmkstart AAAAAAAAWO}{\bkmkend AAAAAAAAWO}
-00232         {\cf19 return};\par
+00067 \par
 {\bkmkstart AAAAAAAAWP}{\bkmkend AAAAAAAAWP}
-00233     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOO" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
-)\{\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAARE" }{}}{\fldrslt {\cs37\ul\cf2 00071}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWA" }{}}{\fldrslt {\cs37\ul\cf2 preInit}}}
+()\{\par
 {\bkmkstart AAAAAAAAWQ}{\bkmkend AAAAAAAAWQ}
-00234         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOO" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
- = {\cf17 false};\par
+00072     {\cf20 //< preInit device}\par
 {\bkmkstart AAAAAAAAWR}{\bkmkend AAAAAAAAWR}
-00235         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
-;\par
+00073 \par
 {\bkmkstart AAAAAAAAWS}{\bkmkend AAAAAAAAWS}
-00236     \}\par
+00074 \par
 {\bkmkstart AAAAAAAAWT}{\bkmkend AAAAAAAAWT}
-00237     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOC" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
- = {\cf17 false};\par
+00075     WDTCTL = WDTPW | WDTHOLD;   {\cf20 //< stop watchdog timer}\par
 {\bkmkstart AAAAAAAAWU}{\bkmkend AAAAAAAAWU}
-00238 \}\par
+00076 \par
 {\bkmkstart AAAAAAAAWV}{\bkmkend AAAAAAAAWV}
-00239 \par
+00077     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_S1, GPIO_PIN_S1);\par
 {\bkmkstart AAAAAAAAWW}{\bkmkend AAAAAAAAWW}
-00240 \par
+00078     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_S2, GPIO_PIN_S2);\par
 {\bkmkstart AAAAAAAAWX}{\bkmkend AAAAAAAAWX}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQE" }{}}{\fldrslt {\cs37\ul\cf2 00246}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQE" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3Handler}}}
-()\{\par
+00079 \par
 {\bkmkstart AAAAAAAAWY}{\bkmkend AAAAAAAAWY}
-00247     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOM" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
-)\{\par
+00080     GPIO_setAsOutputPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
 {\bkmkstart AAAAAAAAWZ}{\bkmkend AAAAAAAAWZ}
-00248         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOE" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
-)\{\par
+00081     GPIO_setAsOutputPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
 {\bkmkstart AAAAAAAAXA}{\bkmkend AAAAAAAAXA}
-00249             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
-;\par
+00082 \par
 {\bkmkstart AAAAAAAAXB}{\bkmkend AAAAAAAAXB}
-00250             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPC" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastCriticalMeasurement}}}
- = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
-;\par
+00083     GPIO_setOutputLowOnPin(GPIO_PORT_LED1, GPIO_PIN_LED1);\par
 {\bkmkstart AAAAAAAAXC}{\bkmkend AAAAAAAAXC}
-00251             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOE" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
- = {\cf17 false};\par
+00084     GPIO_setOutputLowOnPin(GPIO_PORT_LED2, GPIO_PIN_LED2);\par
 {\bkmkstart AAAAAAAAXD}{\bkmkend AAAAAAAAXD}
-00252             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOM" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
- = {\cf17 true};\par
+00085 \par
 {\bkmkstart AAAAAAAAXE}{\bkmkend AAAAAAAAXE}
-00253             {\cf19 return};\par
+00086     GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P1, GPIO_PIN1, GPIO_PRIMARY_MODULE_FUNCTION);\par
 {\bkmkstart AAAAAAAAXF}{\bkmkend AAAAAAAAXF}
-00254         \}\par
+00087 \par
 {\bkmkstart AAAAAAAAXG}{\bkmkend AAAAAAAAXG}
-00255         {\cf19 return};\par
+00088 \par
 {\bkmkstart AAAAAAAAXH}{\bkmkend AAAAAAAAXH}
-00256     \}\par
+00089 \par
 {\bkmkstart AAAAAAAAXI}{\bkmkend AAAAAAAAXI}
-00257     {\cf19 if}(GPIO_getInputPinValue(GPIO_PORT_P3, GPIO_PIN1) == GPIO_INPUT_PIN_HIGH)\{\par
+00090 \par
 {\bkmkstart AAAAAAAAXJ}{\bkmkend AAAAAAAAXJ}
-00258         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
- >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPC" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastCriticalMeasurement}}}
- + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPT" }{}}{\fldrslt {\cs37\ul\cf2 timeWaitingAfterCriticalMeasurement}}}
-\par
+00091 \par
 {\bkmkstart AAAAAAAAXK}{\bkmkend AAAAAAAAXK}
-00259                 && !{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOO" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
-)\par
+00092     {\cf20 //< preInit Modules}\par
 {\bkmkstart AAAAAAAAXL}{\bkmkend AAAAAAAAXL}
-00260             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOM" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
- = {\cf17 false};\par
+00093 \par
 {\bkmkstart AAAAAAAAXM}{\bkmkend AAAAAAAAXM}
-00261 \par
+00094     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIF" }{}}{\fldrslt {\cs37\ul\cf2 preInitOutputHandler}}}
+();\par
 {\bkmkstart AAAAAAAAXN}{\bkmkend AAAAAAAAXN}
-00262     \}\par
+00095     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAK" }{}}{\fldrslt {\cs37\ul\cf2 preInitAccelerationHandler}}}
+();\par
 {\bkmkstart AAAAAAAAXO}{\bkmkend AAAAAAAAXO}
-00263     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOG" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
-)\{\par
+00096     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACL" }{}}{\fldrslt {\cs37\ul\cf2 preInitGasHandler}}}
+();\par
 {\bkmkstart AAAAAAAAXP}{\bkmkend AAAAAAAAXP}
-00264         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
-;\par
+00097 \}\par
 {\bkmkstart AAAAAAAAXQ}{\bkmkend AAAAAAAAXQ}
-00265         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOG" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
- = {\cf17 false};\par
+00098 \par
 {\bkmkstart AAAAAAAAXR}{\bkmkend AAAAAAAAXR}
-00266         {\cf19 return};\par
+00099 \par
 {\bkmkstart AAAAAAAAXS}{\bkmkend AAAAAAAAXS}
-00267     \}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAARI" }{}}{\fldrslt {\cs37\ul\cf2 00103}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWD" }{}}{\fldrslt {\cs37\ul\cf2 init}}}
+()\{\par
 {\bkmkstart AAAAAAAAXT}{\bkmkend AAAAAAAAXT}
-00268 \par
+00104     {\cf20 //< init Device}\par
 {\bkmkstart AAAAAAAAXU}{\bkmkend AAAAAAAAXU}
-00269     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- == 0)\{\par
+00105 \par
 {\bkmkstart AAAAAAAAXV}{\bkmkend AAAAAAAAXV}
-00270         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
-;\par
+00106     {\cf20 //< init Modules}\par
 {\bkmkstart AAAAAAAAXW}{\bkmkend AAAAAAAAXW}
-00271         {\cf19 return};\par
+00107 \par
 {\bkmkstart AAAAAAAAXX}{\bkmkend AAAAAAAAXX}
-00272     \}\par
+00108     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIP" }{}}{\fldrslt {\cs37\ul\cf2 initOutputHandler}}}
+();\par
 {\bkmkstart AAAAAAAAXY}{\bkmkend AAAAAAAAXY}
-00273     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
- > {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPV" }{}}{\fldrslt {\cs37\ul\cf2 timeRestingTillAlarm}}}
-)\par
+00109     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAAV" }{}}{\fldrslt {\cs37\ul\cf2 initAccelerationHandler}}}
+();\par
 {\bkmkstart AAAAAAAAXZ}{\bkmkend AAAAAAAAXZ}
-00274         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOO" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
- = {\cf17 true};\par
+00110     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACW" }{}}{\fldrslt {\cs37\ul\cf2 initGasHandler}}}
+();\par
 {\bkmkstart AAAAAAAAYA}{\bkmkend AAAAAAAAYA}
-00275 \}\par
+00111     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAEM" }{}}{\fldrslt {\cs37\ul\cf2 i2c_init}}}
+();\par
 {\bkmkstart AAAAAAAAYB}{\bkmkend AAAAAAAAYB}
-00276 \par
+00112 \}\par
 {\bkmkstart AAAAAAAAYC}{\bkmkend AAAAAAAAYC}
-00277 \par
+00113 \par
 {\bkmkstart AAAAAAAAYD}{\bkmkend AAAAAAAAYD}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQG" }{}}{\fldrslt {\cs37\ul\cf2 00283}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQG" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4Handler}}}
-()\{\par
+00114 \par
 {\bkmkstart AAAAAAAAYE}{\bkmkend AAAAAAAAYE}
-00284     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOI" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
-)\{\par
-{\bkmkstart AAAAAAAAYF}{\bkmkend AAAAAAAAYF}
-00285         GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
-{\bkmkstart AAAAAAAAYG}{\bkmkend AAAAAAAAYG}
-00286         {\cf19 return};\par
-{\bkmkstart AAAAAAAAYH}{\bkmkend AAAAAAAAYH}
-00287     \}\par
-{\bkmkstart AAAAAAAAYI}{\bkmkend AAAAAAAAYI}
-00288 \par
-{\bkmkstart AAAAAAAAYJ}{\bkmkend AAAAAAAAYJ}
-00289     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOY" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
- == 0)\{\par
-{\bkmkstart AAAAAAAAYK}{\bkmkend AAAAAAAAYK}
-00290         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOY" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
- = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
-;\par
-{\bkmkstart AAAAAAAAYL}{\bkmkend AAAAAAAAYL}
-00291         {\cf19 return};\par
-{\bkmkstart AAAAAAAAYM}{\bkmkend AAAAAAAAYM}
-00292     \}\par
-{\bkmkstart AAAAAAAAYN}{\bkmkend AAAAAAAAYN}
-00293     {\cf19 if}(GPIO_getInputPinValue(GPIO_PORT_S1, GPIO_PIN_S1) == GPIO_INPUT_PIN_HIGH)\{\par
-{\bkmkstart AAAAAAAAYO}{\bkmkend AAAAAAAAYO}
-00294         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOI" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAYP}{\bkmkend AAAAAAAAYP}
-00295         {\cf19 return};\par
-{\bkmkstart AAAAAAAAYQ}{\bkmkend AAAAAAAAYQ}
-00296     \}\par
-{\bkmkstart AAAAAAAAYR}{\bkmkend AAAAAAAAYR}
-00297     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
- < {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOY" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
- + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPR" }{}}{\fldrslt {\cs37\ul\cf2 timeToPressOnBtn}}}
-) {\cf19 return}; {\cf20 //2.5s}\par
-{\bkmkstart AAAAAAAAYS}{\bkmkend AAAAAAAAYS}
-00298 \par
-{\bkmkstart AAAAAAAAYT}{\bkmkend AAAAAAAAYT}
-00299 \par
-{\bkmkstart AAAAAAAAYU}{\bkmkend AAAAAAAAYU}
-00300     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
- = !{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
-;\par
-{\bkmkstart AAAAAAAAYV}{\bkmkend AAAAAAAAYV}
-00301     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACY" }{}}{\fldrslt {\cs37\ul\cf2 setBurnerActive}}}
-({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
-);\par
-{\bkmkstart AAAAAAAAYW}{\bkmkend AAAAAAAAYW}
-00302     GPIO_disableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
-{\bkmkstart AAAAAAAAYX}{\bkmkend AAAAAAAAYX}
-00303     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOI" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
- = {\cf17 false};\par
-{\bkmkstart AAAAAAAAYY}{\bkmkend AAAAAAAAYY}
-00304     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOY" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
- = 0;\par
-{\bkmkstart AAAAAAAAYZ}{\bkmkend AAAAAAAAYZ}
-00305 \par
-{\bkmkstart AAAAAAAAZA}{\bkmkend AAAAAAAAZA}
-00306 \}\par
-{\bkmkstart AAAAAAAAZB}{\bkmkend AAAAAAAAZB}
-00307 \par
-{\bkmkstart AAAAAAAAZC}{\bkmkend AAAAAAAAZC}
-00308 \par
-{\bkmkstart AAAAAAAAZD}{\bkmkend AAAAAAAAZD}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQI" }{}}{\fldrslt {\cs37\ul\cf2 00314}}}
- {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAQI" }{}}{\fldrslt {\cs37\ul\cf2 gasMeasurementHandler}}}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAARM" }{}}{\fldrslt {\cs37\ul\cf2 00118}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWG" }{}}{\fldrslt {\cs37\ul\cf2 postInit}}}
 ()\{\par
+{\bkmkstart AAAAAAAAYF}{\bkmkend AAAAAAAAYF}
+00119     {\cf20 //< Disable global interrupt during setup}\par
+{\bkmkstart AAAAAAAAYG}{\bkmkend AAAAAAAAYG}
+00120     __bic_SR_register(GIE);\par
+{\bkmkstart AAAAAAAAYH}{\bkmkend AAAAAAAAYH}
+00121 \par
+{\bkmkstart AAAAAAAAYI}{\bkmkend AAAAAAAAYI}
+00122     {\cf20 //< postInit Device}\par
+{\bkmkstart AAAAAAAAYJ}{\bkmkend AAAAAAAAYJ}
+00123     GPIO_selectInterruptEdge(GPIO_PORT_S1, GPIO_PIN_S1, GPIO_HIGH_TO_LOW_TRANSITION);\par
+{\bkmkstart AAAAAAAAYK}{\bkmkend AAAAAAAAYK}
+00124     GPIO_selectInterruptEdge(GPIO_PORT_S2, GPIO_PIN_S2, GPIO_HIGH_TO_LOW_TRANSITION);\par
+{\bkmkstart AAAAAAAAYL}{\bkmkend AAAAAAAAYL}
+00125 \par
+{\bkmkstart AAAAAAAAYM}{\bkmkend AAAAAAAAYM}
+00126     GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
+{\bkmkstart AAAAAAAAYN}{\bkmkend AAAAAAAAYN}
+00127     GPIO_enableInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);\par
+{\bkmkstart AAAAAAAAYO}{\bkmkend AAAAAAAAYO}
+00128 \par
+{\bkmkstart AAAAAAAAYP}{\bkmkend AAAAAAAAYP}
+00129     PMM_unlockLPM5();\par
+{\bkmkstart AAAAAAAAYQ}{\bkmkend AAAAAAAAYQ}
+00130 \par
+{\bkmkstart AAAAAAAAYR}{\bkmkend AAAAAAAAYR}
+00131     GPIO_clearInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
+{\bkmkstart AAAAAAAAYS}{\bkmkend AAAAAAAAYS}
+00132     GPIO_clearInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);\par
+{\bkmkstart AAAAAAAAYT}{\bkmkend AAAAAAAAYT}
+00133 \par
+{\bkmkstart AAAAAAAAYU}{\bkmkend AAAAAAAAYU}
+00134 \par
+{\bkmkstart AAAAAAAAYV}{\bkmkend AAAAAAAAYV}
+00135 \par
+{\bkmkstart AAAAAAAAYW}{\bkmkend AAAAAAAAYW}
+00136     {\cf20 /*}\par
+{\bkmkstart AAAAAAAAYX}{\bkmkend AAAAAAAAYX}
+00137 {\cf20      * Initialize RTC}\par
+{\bkmkstart AAAAAAAAYY}{\bkmkend AAAAAAAAYY}
+00138 {\cf20      * RTC count reload compare value at 256.}\par
+{\bkmkstart AAAAAAAAYZ}{\bkmkend AAAAAAAAYZ}
+00139 {\cf20      * 1024/32768 * 256 = 8 seconds (1024/32768 * 16 = 0.5 seconds?)}\par
+{\bkmkstart AAAAAAAAZA}{\bkmkend AAAAAAAAZA}
+00140 {\cf20      * Source = 32kHz crystal, divided by 1024}\par
+{\bkmkstart AAAAAAAAZB}{\bkmkend AAAAAAAAZB}
+00141 {\cf20      */}\par
+{\bkmkstart AAAAAAAAZC}{\bkmkend AAAAAAAAZC}
+00142     RTC_init(RTC_BASE, 16-1, RTC_CLOCKPREDIVIDER_1024);\par
+{\bkmkstart AAAAAAAAZD}{\bkmkend AAAAAAAAZD}
+00143     RTC_enableInterrupt(RTC_BASE, RTC_OVERFLOW_INTERRUPT);\par
 {\bkmkstart AAAAAAAAZE}{\bkmkend AAAAAAAAZE}
-00315     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOM" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
-)\{\par
+00144     RTC_start(RTC_BASE, RTC_CLOCKSOURCE_XT1CLK);\par
 {\bkmkstart AAAAAAAAZF}{\bkmkend AAAAAAAAZF}
-00316         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- != 0)\{\par
+00145 \par
 {\bkmkstart AAAAAAAAZG}{\bkmkend AAAAAAAAZG}
-00317             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- = 0;\par
+00146 \par
 {\bkmkstart AAAAAAAAZH}{\bkmkend AAAAAAAAZH}
-00318             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOT" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
- = 0;\par
+00147     {\cf20 /*}\par
 {\bkmkstart AAAAAAAAZI}{\bkmkend AAAAAAAAZI}
-00319             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAABT" }{}}{\fldrslt {\cs37\ul\cf2 setAccelerationSensorActive}}}
-({\cf17 false});\par
+00148 {\cf20      * Initialize and enable ICC}\par
 {\bkmkstart AAAAAAAAZJ}{\bkmkend AAAAAAAAZJ}
-00320         \}\par
+00149 {\cf20      */}\par
 {\bkmkstart AAAAAAAAZK}{\bkmkend AAAAAAAAZK}
-00321         {\cf19 return};\par
+00150     {\cf20 //< NOTE: ICC_LEVEL_0 is the highest priority, ICC_LEVEL3 is the lowest priority}\par
 {\bkmkstart AAAAAAAAZL}{\bkmkend AAAAAAAAZL}
-00322     \}\par
+00151     {\cf20 //< Set P2 interrupt medium priority}\par
 {\bkmkstart AAAAAAAAZM}{\bkmkend AAAAAAAAZM}
-00323     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- == 0)\{\par
+00152     ICC_setInterruptLevel(ICC_ILSR_P2, ICC_LEVEL_2);\par
 {\bkmkstart AAAAAAAAZN}{\bkmkend AAAAAAAAZN}
-00324         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAPA" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
- = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOR" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
-;\par
+00153     {\cf20 //< Set P3, P4 interrupt higher priority}\par
 {\bkmkstart AAAAAAAAZO}{\bkmkend AAAAAAAAZO}
-00325         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAABT" }{}}{\fldrslt {\cs37\ul\cf2 setAccelerationSensorActive}}}
-({\cf17 true});\par
+00154     ICC_setInterruptLevel(ICC_ILSR_P3, ICC_LEVEL_1);\par
 {\bkmkstart AAAAAAAAZP}{\bkmkend AAAAAAAAZP}
-00326     \}\par
+00155     ICC_setInterruptLevel(ICC_ILSR_P4, ICC_LEVEL_1);\par
 {\bkmkstart AAAAAAAAZQ}{\bkmkend AAAAAAAAZQ}
-00327 \}\par
+00156     {\cf20 //< Set RTC interrupt lower priority}\par
 {\bkmkstart AAAAAAAAZR}{\bkmkend AAAAAAAAZR}
-00328 \par
+00157     ICC_setInterruptLevel(ICC_ILSR_RTC_COUNTER, ICC_LEVEL_3);\par
 {\bkmkstart AAAAAAAAZS}{\bkmkend AAAAAAAAZS}
-00329 \par
+00158     ICC_setInterruptLevel(TIMERB0_VECTOR, ICC_LEVEL_3);\par
 {\bkmkstart AAAAAAAAZT}{\bkmkend AAAAAAAAZT}
-00330 {\cf20 //< Port 2 interrupt service routine}\par
+00159 \par
 {\bkmkstart AAAAAAAAZU}{\bkmkend AAAAAAAAZU}
-00331 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+00160     {\cf20 //< Enable ICC module}\par
 {\bkmkstart AAAAAAAAZV}{\bkmkend AAAAAAAAZV}
-00332 {\cf21 #pragma vector=PORT2_VECTOR}\par
+00161     ICC_enable();\par
 {\bkmkstart AAAAAAAAZW}{\bkmkend AAAAAAAAZW}
-00333 __interrupt {\cf18 void} Port_2({\cf18 void})\par
+00162 \par
 {\bkmkstart AAAAAAAAZX}{\bkmkend AAAAAAAAZX}
-00334 {\cf21 #elif defined(__GNUC__)}\par
+00163 \par
 {\bkmkstart AAAAAAAAZY}{\bkmkend AAAAAAAAZY}
-00335 {\cf18 void} __attribute__ ((interrupt(PORT2_VECTOR))) Port_2 ({\cf18 void})\par
+00164     {\cf20 //< postInit Modules}\par
 {\bkmkstart AAAAAAAAZZ}{\bkmkend AAAAAAAAZZ}
-00336 {\cf21 #else}\par
+00165     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAIU" }{}}{\fldrslt {\cs37\ul\cf2 postInitOutputHandler}}}
+();\par
 {\bkmkstart AAAAAAABAA}{\bkmkend AAAAAAABAA}
-00337 {\cf21 #error Compiler not supported!}\par
+00166     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAADD" }{}}{\fldrslt {\cs37\ul\cf2 postInitGasHandler}}}
+();\par
 {\bkmkstart AAAAAAABAB}{\bkmkend AAAAAAABAB}
-00338 {\cf21 #endif}\par
+00167     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAABJ" }{}}{\fldrslt {\cs37\ul\cf2 postInitAccelerationHandler}}}
+();\par
 {\bkmkstart AAAAAAABAC}{\bkmkend AAAAAAABAC}
-00339 \{\par
+00168 \}\par
 {\bkmkstart AAAAAAABAD}{\bkmkend AAAAAAABAD}
-00340     {\cf20 //< Clear S2 IFG}\par
+00169 \par
 {\bkmkstart AAAAAAABAE}{\bkmkend AAAAAAABAE}
-00341     GPIO_clearInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);\par
+00170 \par
 {\bkmkstart AAAAAAABAF}{\bkmkend AAAAAAABAF}
-{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAABAG" }{}}{\fldrslt {\cs37\ul\cf2 00342}}}
-     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
-) {\cf19 return};\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAARP" }{}}{\fldrslt {\cs37\ul\cf2 00183}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAWK" }{}}{\fldrslt {\cs37\ul\cf2 loop}}}
+()\{\par
+{\bkmkstart AAAAAAABAG}{\bkmkend AAAAAAABAG}
+00184 \par
 {\bkmkstart AAAAAAABAH}{\bkmkend AAAAAAABAH}
-00343     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOC" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
- = {\cf17 true};\par
+00185 \par
 {\bkmkstart AAAAAAABAI}{\bkmkend AAAAAAABAI}
-00344 \}\par
+00186     {\cf20 //< Enter LPM3 and global interrupt}\par
 {\bkmkstart AAAAAAABAJ}{\bkmkend AAAAAAABAJ}
-00345 \par
+00187     __bis_SR_register(LPM3_bits + GIE);\par
 {\bkmkstart AAAAAAABAK}{\bkmkend AAAAAAABAK}
-00346 \par
+00188     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+ += {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUN" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
+;\par
 {\bkmkstart AAAAAAABAL}{\bkmkend AAAAAAABAL}
-00347 {\cf20 //< Port 3 interrupt service routine}\par
+00189     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ += {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUN" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
+;\par
 {\bkmkstart AAAAAAABAM}{\bkmkend AAAAAAABAM}
-00348 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+00190     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUC" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
+ += {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUN" }{}}{\fldrslt {\cs37\ul\cf2 intClockTime}}}
+;\par
 {\bkmkstart AAAAAAABAN}{\bkmkend AAAAAAABAN}
-00349 {\cf21 #pragma vector=PORT3_VECTOR}\par
+00191 \par
 {\bkmkstart AAAAAAABAO}{\bkmkend AAAAAAABAO}
-00350 __interrupt {\cf18 void} Port_3({\cf18 void})\par
+00192     {\cf20 //< On-Btn}\par
 {\bkmkstart AAAAAAABAP}{\bkmkend AAAAAAABAP}
-00351 {\cf21 #elif defined(__GNUC__)}\par
+00193     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVR" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4Handler}}}
+();\par
 {\bkmkstart AAAAAAABAQ}{\bkmkend AAAAAAABAQ}
-00352 {\cf18 void} __attribute__ ((interrupt(PORT3_VECTOR))) Port_3 ({\cf18 void})\par
+00194     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+)\par
 {\bkmkstart AAAAAAABAR}{\bkmkend AAAAAAABAR}
-00353 {\cf21 #else}\par
+00195         {\cf19 return};\par
 {\bkmkstart AAAAAAABAS}{\bkmkend AAAAAAABAS}
-00354 {\cf21 #error Compiler not supported!}\par
+00196     {\cf20 //< Acc-Mvmnt + Gas-msrmnt interrupt}\par
 {\bkmkstart AAAAAAABAT}{\bkmkend AAAAAAABAT}
-00355 {\cf21 #endif}\par
+00197     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3Handler}}}
+();\par
 {\bkmkstart AAAAAAABAU}{\bkmkend AAAAAAABAU}
-00356 \{\par
+00198     {\cf20 //< Gas-Msrmnt}\par
 {\bkmkstart AAAAAAABAV}{\bkmkend AAAAAAABAV}
-00357     {\cf19 if}(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN5) & GPIO_PIN5)\{\par
+00199     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVT" }{}}{\fldrslt {\cs37\ul\cf2 gasMeasurementHandler}}}
+();\par
 {\bkmkstart AAAAAAABAW}{\bkmkend AAAAAAABAW}
-00358         {\cf20 //< Clear P3.5 IFG}\par
+00200     {\cf20 //< Ack-Btn}\par
 {\bkmkstart AAAAAAABAX}{\bkmkend AAAAAAABAX}
-00359         GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);\par
+00201     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVN" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2Handler}}}
+();\par
 {\bkmkstart AAAAAAABAY}{\bkmkend AAAAAAABAY}
-00360         {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
-) {\cf19 return};\par
+00202 \par
 {\bkmkstart AAAAAAABAZ}{\bkmkend AAAAAAABAZ}
-00361         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOG" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
- = {\cf17 true};\par
+00203     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATV" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
+)\{\par
 {\bkmkstart AAAAAAABBA}{\bkmkend AAAAAAABBA}
-00362     \}\par
+00204         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUY" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDAlarm}}}
+)\{\par
 {\bkmkstart AAAAAAABBB}{\bkmkend AAAAAAABBB}
-00363     {\cf19 if}(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN1) & GPIO_PIN1)\{\par
+00205             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
+({\cf17 false});\par
 {\bkmkstart AAAAAAABBC}{\bkmkend AAAAAAABBC}
-00364         {\cf20 //< Clear P3.1 IFG}\par
+00206             {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUY" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDAlarm}}}
+ + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVA" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDAlarm}}}
+)\{\par
 {\bkmkstart AAAAAAABBD}{\bkmkend AAAAAAABBD}
-00365         GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN1);\par
+00207                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ = 0;\par
 {\bkmkstart AAAAAAABBE}{\bkmkend AAAAAAABBE}
-00366         {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOK" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
-) {\cf19 return};\par
+00208                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
+({\cf17 true});\par
 {\bkmkstart AAAAAAABBF}{\bkmkend AAAAAAABBF}
-00367         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOE" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
- = {\cf17 true};\par
+00209             \}\par
 {\bkmkstart AAAAAAABBG}{\bkmkend AAAAAAABBG}
-00368     \}\par
+00210         \}\par
 {\bkmkstart AAAAAAABBH}{\bkmkend AAAAAAABBH}
-00369 \}\par
+00211     \} {\cf19 else} {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATT" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
+)\{\par
 {\bkmkstart AAAAAAABBI}{\bkmkend AAAAAAABBI}
-00370 \par
+00212         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUU" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDWarning}}}
+)\{\par
 {\bkmkstart AAAAAAABBJ}{\bkmkend AAAAAAABBJ}
-00371 \par
+00213             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
+({\cf17 false});\par
 {\bkmkstart AAAAAAABBK}{\bkmkend AAAAAAABBK}
-00372 {\cf20 //< Port 4 interrupt service routine}\par
+00214             {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUU" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDWarning}}}
+ + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUW" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDWarning}}}
+)\{\par
 {\bkmkstart AAAAAAABBL}{\bkmkend AAAAAAABBL}
-00373 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+00215                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ = 0;\par
 {\bkmkstart AAAAAAABBM}{\bkmkend AAAAAAABBM}
-00374 {\cf21 #pragma vector=PORT4_VECTOR}\par
+00216                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
+({\cf17 true});\par
 {\bkmkstart AAAAAAABBN}{\bkmkend AAAAAAABBN}
-00375 __interrupt {\cf18 void} Port_4({\cf18 void})\par
+00217             \}\par
 {\bkmkstart AAAAAAABBO}{\bkmkend AAAAAAABBO}
-00376 {\cf21 #elif defined(__GNUC__)}\par
+00218         \}\par
 {\bkmkstart AAAAAAABBP}{\bkmkend AAAAAAABBP}
-00377 {\cf18 void} __attribute__ ((interrupt(PORT4_VECTOR))) Port_4 ({\cf18 void})\par
+00219     \} {\cf19 else}\par
 {\bkmkstart AAAAAAABBQ}{\bkmkend AAAAAAABBQ}
-00378 {\cf21 #else}\par
+00220         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAALH" }{}}{\fldrslt {\cs37\ul\cf2 setAlertLED}}}
+({\cf17 false});\par
 {\bkmkstart AAAAAAABBR}{\bkmkend AAAAAAABBR}
-00379 {\cf21 #error Compiler not supported!}\par
+00221 \par
 {\bkmkstart AAAAAAABBS}{\bkmkend AAAAAAABBS}
-00380 {\cf21 #endif}\par
+00222     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+)\{\par
 {\bkmkstart AAAAAAABBT}{\bkmkend AAAAAAABBT}
-00381 \{\par
+00223         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUC" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
+ >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVI" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDOn}}}
+)\{\par
 {\bkmkstart AAAAAAABBU}{\bkmkend AAAAAAABBU}
-00382 \par
+00224             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKY" }{}}{\fldrslt {\cs37\ul\cf2 setOnLED}}}
+({\cf17 false});\par
 {\bkmkstart AAAAAAABBV}{\bkmkend AAAAAAABBV}
-00383     {\cf20 //< Clear S1 IFG}\par
+00225             {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUC" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
+ >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVI" }{}}{\fldrslt {\cs37\ul\cf2 timeToBlinkLEDOn}}}
+ + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVK" }{}}{\fldrslt {\cs37\ul\cf2 timeToWaitLEDOn}}}
+)\{\par
 {\bkmkstart AAAAAAABBW}{\bkmkend AAAAAAABBW}
-00384     GPIO_clearInterrupt(GPIO_PORT_S1,GPIO_PIN_S1);\par
+00226                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUC" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDOn}}}
+ = 0;\par
 {\bkmkstart AAAAAAABBX}{\bkmkend AAAAAAABBX}
-00385     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAOI" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
- = {\cf17 true};\par
+00227                 {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAKY" }{}}{\fldrslt {\cs37\ul\cf2 setOnLED}}}
+({\cf17 true});\par
 {\bkmkstart AAAAAAABBY}{\bkmkend AAAAAAABBY}
-00386     __bic_SR_register_on_exit(LPM3_bits);   {\cf20 //< Exit LPM3}\par
+00228             \}\par
 {\bkmkstart AAAAAAABBZ}{\bkmkend AAAAAAABBZ}
-00387 \par
+00229         \}\par
 {\bkmkstart AAAAAAABCA}{\bkmkend AAAAAAABCA}
-00388 \}\par
+00230     \}\par
 {\bkmkstart AAAAAAABCB}{\bkmkend AAAAAAABCB}
-00389 \par
+00231 \}\par
 {\bkmkstart AAAAAAABCC}{\bkmkend AAAAAAABCC}
-00390 \par
+00232 \par
 {\bkmkstart AAAAAAABCD}{\bkmkend AAAAAAABCD}
-00391 {\cf20 //< RTC interrupt service routine}\par
+00233 \par
 {\bkmkstart AAAAAAABCE}{\bkmkend AAAAAAABCE}
-00392 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVN" }{}}{\fldrslt {\cs37\ul\cf2 00239}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVN" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2Handler}}}
+()\{\par
 {\bkmkstart AAAAAAABCF}{\bkmkend AAAAAAABCF}
-00393 {\cf21 #pragma vector=RTC_VECTOR}\par
+00240     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATJ" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
+)\par
 {\bkmkstart AAAAAAABCG}{\bkmkend AAAAAAABCG}
-00394 __interrupt {\cf18 void} RTC_ISR({\cf18 void})\par
+00241         {\cf19 return};\par
 {\bkmkstart AAAAAAABCH}{\bkmkend AAAAAAABCH}
-00395 {\cf21 #elif defined(__GNUC__)}\par
+00242     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATV" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
+)\{\par
 {\bkmkstart AAAAAAABCI}{\bkmkend AAAAAAABCI}
-00396 {\cf18 void} __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR ({\cf18 void})\par
+00243         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATV" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAABCJ}{\bkmkend AAAAAAABCJ}
-00397 {\cf21 #else}\par
+00244         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+;\par
 {\bkmkstart AAAAAAABCK}{\bkmkend AAAAAAABCK}
-00398 {\cf21 #error Compiler not supported!}\par
+00245     \}\par
 {\bkmkstart AAAAAAABCL}{\bkmkend AAAAAAABCL}
-00399 {\cf21 #endif}\par
+00246     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATJ" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAABCM}{\bkmkend AAAAAAABCM}
-00400 \{\par
+00247 \}\par
 {\bkmkstart AAAAAAABCN}{\bkmkend AAAAAAABCN}
-00401     {\cf19 switch}(__even_in_range(RTCIV,RTCIV_RTCIF))\par
+00248 \par
 {\bkmkstart AAAAAAABCO}{\bkmkend AAAAAAABCO}
-00402     \{\par
+00249 \par
 {\bkmkstart AAAAAAABCP}{\bkmkend AAAAAAABCP}
-00403         {\cf19 case}  RTCIV_NONE:\par
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVP" }{}}{\fldrslt {\cs37\ul\cf2 00255}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3Handler}}}
+()\{\par
 {\bkmkstart AAAAAAABCQ}{\bkmkend AAAAAAABCQ}
-00404             {\cf19 break};          {\cf20 //< No interrupt}\par
+00256     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATT" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
+)\{\par
 {\bkmkstart AAAAAAABCR}{\bkmkend AAAAAAABCR}
-00405         {\cf19 case}  RTCIV_RTCIF:                  {\cf20 //< RTC Overflow}\par
+00257         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATL" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
+)\{\par
 {\bkmkstart AAAAAAABCS}{\bkmkend AAAAAAABCS}
-00406             {\cf20 //< Enable global interrupt}\par
+00258             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+;\par
 {\bkmkstart AAAAAAABCT}{\bkmkend AAAAAAABCT}
-00407             __bis_SR_register(GIE);\par
+00259             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUJ" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastCriticalMeasurement}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+;\par
 {\bkmkstart AAAAAAABCU}{\bkmkend AAAAAAABCU}
-00408             __bic_SR_register_on_exit(LPM3_bits);   {\cf20 //<  Exit LPM3}\par
+00260             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATL" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
+ = {\cf17 false};\par
 {\bkmkstart AAAAAAABCV}{\bkmkend AAAAAAABCV}
-00409             {\cf19 break};\par
+00261             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATT" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
+ = {\cf17 true};\par
 {\bkmkstart AAAAAAABCW}{\bkmkend AAAAAAABCW}
-00410         {\cf19 default}:\par
+00262             {\cf19 return};\par
 {\bkmkstart AAAAAAABCX}{\bkmkend AAAAAAABCX}
-00411             {\cf19 break};\par
+00263         \}\par
 {\bkmkstart AAAAAAABCY}{\bkmkend AAAAAAABCY}
-00412     \}\par
+00264         {\cf19 return};\par
 {\bkmkstart AAAAAAABCZ}{\bkmkend AAAAAAABCZ}
-00413 \}\par
+00265     \}\par
 {\bkmkstart AAAAAAABDA}{\bkmkend AAAAAAABDA}
-00414 \par
+00266     {\cf19 if}(GPIO_getInputPinValue(GPIO_PORT_P3, GPIO_PIN1) == GPIO_INPUT_PIN_HIGH)\{\par
+{\bkmkstart AAAAAAABDB}{\bkmkend AAAAAAABDB}
+00267         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+ >= {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUJ" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastCriticalMeasurement}}}
+ + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVE" }{}}{\fldrslt {\cs37\ul\cf2 timeWaitingAfterCriticalMeasurement}}}
+\par
+{\bkmkstart AAAAAAABDC}{\bkmkend AAAAAAABDC}
+00268                 && !{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATV" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
+)\par
+{\bkmkstart AAAAAAABDD}{\bkmkend AAAAAAABDD}
+00269             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATT" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
+ = {\cf17 false};\par
+{\bkmkstart AAAAAAABDE}{\bkmkend AAAAAAABDE}
+00270 \par
+{\bkmkstart AAAAAAABDF}{\bkmkend AAAAAAABDF}
+00271     \}\par
+{\bkmkstart AAAAAAABDG}{\bkmkend AAAAAAABDG}
+00272     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATN" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
+)\{\par
+{\bkmkstart AAAAAAABDH}{\bkmkend AAAAAAABDH}
+00273         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+;\par
+{\bkmkstart AAAAAAABDI}{\bkmkend AAAAAAABDI}
+00274         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATN" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
+ = {\cf17 false};\par
+{\bkmkstart AAAAAAABDJ}{\bkmkend AAAAAAABDJ}
+00275         {\cf19 return};\par
+{\bkmkstart AAAAAAABDK}{\bkmkend AAAAAAABDK}
+00276     \}\par
+{\bkmkstart AAAAAAABDL}{\bkmkend AAAAAAABDL}
+00277 \par
+{\bkmkstart AAAAAAABDM}{\bkmkend AAAAAAABDM}
+00278     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ == 0)\{\par
+{\bkmkstart AAAAAAABDN}{\bkmkend AAAAAAABDN}
+00279         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+;\par
+{\bkmkstart AAAAAAABDO}{\bkmkend AAAAAAABDO}
+00280         {\cf19 return};\par
+{\bkmkstart AAAAAAABDP}{\bkmkend AAAAAAABDP}
+00281     \}\par
+{\bkmkstart AAAAAAABDQ}{\bkmkend AAAAAAABDQ}
+00282     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+ > {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVG" }{}}{\fldrslt {\cs37\ul\cf2 timeRestingTillAlarm}}}
+)\par
+{\bkmkstart AAAAAAABDR}{\bkmkend AAAAAAABDR}
+00283         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATV" }{}}{\fldrslt {\cs37\ul\cf2 alarmState}}}
+ = {\cf17 true};\par
+{\bkmkstart AAAAAAABDS}{\bkmkend AAAAAAABDS}
+00284 \}\par
+{\bkmkstart AAAAAAABDT}{\bkmkend AAAAAAABDT}
+00285 \par
+{\bkmkstart AAAAAAABDU}{\bkmkend AAAAAAABDU}
+00286 \par
+{\bkmkstart AAAAAAABDV}{\bkmkend AAAAAAABDV}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVR" }{}}{\fldrslt {\cs37\ul\cf2 00292}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVR" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4Handler}}}
+()\{\par
+{\bkmkstart AAAAAAABDW}{\bkmkend AAAAAAABDW}
+00293     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
+)\{\par
+{\bkmkstart AAAAAAABDX}{\bkmkend AAAAAAABDX}
+00294         GPIO_enableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
+{\bkmkstart AAAAAAABDY}{\bkmkend AAAAAAABDY}
+00295         {\cf19 return};\par
+{\bkmkstart AAAAAAABDZ}{\bkmkend AAAAAAABDZ}
+00296     \}\par
+{\bkmkstart AAAAAAABEA}{\bkmkend AAAAAAABEA}
+00297 \par
+{\bkmkstart AAAAAAABEB}{\bkmkend AAAAAAABEB}
+00298     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUF" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
+ == 0)\{\par
+{\bkmkstart AAAAAAABEC}{\bkmkend AAAAAAABEC}
+00299         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUF" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+;\par
+{\bkmkstart AAAAAAABED}{\bkmkend AAAAAAABED}
+00300         {\cf19 return};\par
+{\bkmkstart AAAAAAABEE}{\bkmkend AAAAAAABEE}
+00301     \}\par
+{\bkmkstart AAAAAAABEF}{\bkmkend AAAAAAABEF}
+00302     {\cf19 if}(GPIO_getInputPinValue(GPIO_PORT_S1, GPIO_PIN_S1) == GPIO_INPUT_PIN_HIGH)\{\par
+{\bkmkstart AAAAAAABEG}{\bkmkend AAAAAAABEG}
+00303         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
+ = {\cf17 false};\par
+{\bkmkstart AAAAAAABEH}{\bkmkend AAAAAAABEH}
+00304         {\cf19 return};\par
+{\bkmkstart AAAAAAABEI}{\bkmkend AAAAAAABEI}
+00305     \}\par
+{\bkmkstart AAAAAAABEJ}{\bkmkend AAAAAAABEJ}
+00306     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+ < {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUF" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
+ + {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVC" }{}}{\fldrslt {\cs37\ul\cf2 timeToPressOnBtn}}}
+) {\cf19 return}; {\cf20 //2.5s}\par
+{\bkmkstart AAAAAAABEK}{\bkmkend AAAAAAABEK}
+00307 \par
+{\bkmkstart AAAAAAABEL}{\bkmkend AAAAAAABEL}
+00308 \par
+{\bkmkstart AAAAAAABEM}{\bkmkend AAAAAAABEM}
+00309     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+ = !{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+;\par
+{\bkmkstart AAAAAAABEN}{\bkmkend AAAAAAABEN}
+00310     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAACY" }{}}{\fldrslt {\cs37\ul\cf2 setBurnerActive}}}
+({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+);\par
+{\bkmkstart AAAAAAABEO}{\bkmkend AAAAAAABEO}
+00311     GPIO_disableInterrupt(GPIO_PORT_S1, GPIO_PIN_S1);\par
+{\bkmkstart AAAAAAABEP}{\bkmkend AAAAAAABEP}
+00312     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
+ = {\cf17 false};\par
+{\bkmkstart AAAAAAABEQ}{\bkmkend AAAAAAABEQ}
+00313     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUF" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenOnBtnPressed}}}
+ = 0;\par
+{\bkmkstart AAAAAAABER}{\bkmkend AAAAAAABER}
+00314 \par
+{\bkmkstart AAAAAAABES}{\bkmkend AAAAAAABES}
+00315 \}\par
+{\bkmkstart AAAAAAABET}{\bkmkend AAAAAAABET}
+00316 \par
+{\bkmkstart AAAAAAABEU}{\bkmkend AAAAAAABEU}
+00317 \par
+{\bkmkstart AAAAAAABEV}{\bkmkend AAAAAAABEV}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVT" }{}}{\fldrslt {\cs37\ul\cf2 00323}}}
+ {\cf18 void} {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAVT" }{}}{\fldrslt {\cs37\ul\cf2 gasMeasurementHandler}}}
+()\{\par
+{\bkmkstart AAAAAAABEW}{\bkmkend AAAAAAABEW}
+00324     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATT" }{}}{\fldrslt {\cs37\ul\cf2 warningState}}}
+)\{\par
+{\bkmkstart AAAAAAABEX}{\bkmkend AAAAAAABEX}
+00325         {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ != 0)\{\par
+{\bkmkstart AAAAAAABEY}{\bkmkend AAAAAAABEY}
+00326             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ = 0;\par
+{\bkmkstart AAAAAAABEZ}{\bkmkend AAAAAAABEZ}
+00327             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUA" }{}}{\fldrslt {\cs37\ul\cf2 clkLEDAlert}}}
+ = 0;\par
+{\bkmkstart AAAAAAABFA}{\bkmkend AAAAAAABFA}
+00328             {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAABT" }{}}{\fldrslt {\cs37\ul\cf2 setAccelerationSensorActive}}}
+({\cf17 false});\par
+{\bkmkstart AAAAAAABFB}{\bkmkend AAAAAAABFB}
+00329         \}\par
+{\bkmkstart AAAAAAABFC}{\bkmkend AAAAAAABFC}
+00330         {\cf19 return};\par
+{\bkmkstart AAAAAAABFD}{\bkmkend AAAAAAABFD}
+00331     \}\par
+{\bkmkstart AAAAAAABFE}{\bkmkend AAAAAAABFE}
+00332     {\cf19 if}({\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ == 0)\{\par
+{\bkmkstart AAAAAAABFF}{\bkmkend AAAAAAABFF}
+00333         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAAUH" }{}}{\fldrslt {\cs37\ul\cf2 timeWhenLastMoved}}}
+ = {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATY" }{}}{\fldrslt {\cs37\ul\cf2 clk}}}
+;\par
+{\bkmkstart AAAAAAABFG}{\bkmkend AAAAAAABFG}
+00334         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAABT" }{}}{\fldrslt {\cs37\ul\cf2 setAccelerationSensorActive}}}
+({\cf17 true});\par
+{\bkmkstart AAAAAAABFH}{\bkmkend AAAAAAABFH}
+00335     \}\par
+{\bkmkstart AAAAAAABFI}{\bkmkend AAAAAAABFI}
+00336 \}\par
+{\bkmkstart AAAAAAABFJ}{\bkmkend AAAAAAABFJ}
+00337 \par
+{\bkmkstart AAAAAAABFK}{\bkmkend AAAAAAABFK}
+00338 \par
+{\bkmkstart AAAAAAABFL}{\bkmkend AAAAAAABFL}
+00339 {\cf20 //< Port 2 interrupt service routine}\par
+{\bkmkstart AAAAAAABFM}{\bkmkend AAAAAAABFM}
+00340 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+{\bkmkstart AAAAAAABFN}{\bkmkend AAAAAAABFN}
+00341 {\cf21 #pragma vector=PORT2_VECTOR}\par
+{\bkmkstart AAAAAAABFO}{\bkmkend AAAAAAABFO}
+00342 __interrupt {\cf18 void} Port_2({\cf18 void})\par
+{\bkmkstart AAAAAAABFP}{\bkmkend AAAAAAABFP}
+00343 {\cf21 #elif defined(__GNUC__)}\par
+{\bkmkstart AAAAAAABFQ}{\bkmkend AAAAAAABFQ}
+00344 {\cf18 void} __attribute__ ((interrupt(PORT2_VECTOR))) Port_2 ({\cf18 void})\par
+{\bkmkstart AAAAAAABFR}{\bkmkend AAAAAAABFR}
+00345 {\cf21 #else}\par
+{\bkmkstart AAAAAAABFS}{\bkmkend AAAAAAABFS}
+00346 {\cf21 #error Compiler not supported!}\par
+{\bkmkstart AAAAAAABFT}{\bkmkend AAAAAAABFT}
+00347 {\cf21 #endif}\par
+{\bkmkstart AAAAAAABFU}{\bkmkend AAAAAAABFU}
+00348 \{\par
+{\bkmkstart AAAAAAABFV}{\bkmkend AAAAAAABFV}
+00349     {\cf20 //< Clear S2 IFG}\par
+{\bkmkstart AAAAAAABFW}{\bkmkend AAAAAAABFW}
+00350     GPIO_clearInterrupt(GPIO_PORT_S2, GPIO_PIN_S2);\par
+{\bkmkstart AAAAAAABFX}{\bkmkend AAAAAAABFX}
+{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAABFY" }{}}{\fldrslt {\cs37\ul\cf2 00351}}}
+     {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+) {\cf19 return};\par
+{\bkmkstart AAAAAAABFZ}{\bkmkend AAAAAAABFZ}
+00352     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATJ" }{}}{\fldrslt {\cs37\ul\cf2 interruptP2}}}
+ = {\cf17 true};\par
+{\bkmkstart AAAAAAABGA}{\bkmkend AAAAAAABGA}
+00353 \}\par
+{\bkmkstart AAAAAAABGB}{\bkmkend AAAAAAABGB}
+00354 \par
+{\bkmkstart AAAAAAABGC}{\bkmkend AAAAAAABGC}
+00355 \par
+{\bkmkstart AAAAAAABGD}{\bkmkend AAAAAAABGD}
+00356 {\cf20 //< Port 3 interrupt service routine}\par
+{\bkmkstart AAAAAAABGE}{\bkmkend AAAAAAABGE}
+00357 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+{\bkmkstart AAAAAAABGF}{\bkmkend AAAAAAABGF}
+00358 {\cf21 #pragma vector=PORT3_VECTOR}\par
+{\bkmkstart AAAAAAABGG}{\bkmkend AAAAAAABGG}
+00359 __interrupt {\cf18 void} Port_3({\cf18 void})\par
+{\bkmkstart AAAAAAABGH}{\bkmkend AAAAAAABGH}
+00360 {\cf21 #elif defined(__GNUC__)}\par
+{\bkmkstart AAAAAAABGI}{\bkmkend AAAAAAABGI}
+00361 {\cf18 void} __attribute__ ((interrupt(PORT3_VECTOR))) Port_3 ({\cf18 void})\par
+{\bkmkstart AAAAAAABGJ}{\bkmkend AAAAAAABGJ}
+00362 {\cf21 #else}\par
+{\bkmkstart AAAAAAABGK}{\bkmkend AAAAAAABGK}
+00363 {\cf21 #error Compiler not supported!}\par
+{\bkmkstart AAAAAAABGL}{\bkmkend AAAAAAABGL}
+00364 {\cf21 #endif}\par
+{\bkmkstart AAAAAAABGM}{\bkmkend AAAAAAABGM}
+00365 \{\par
+{\bkmkstart AAAAAAABGN}{\bkmkend AAAAAAABGN}
+00366     {\cf19 if}(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN5) & GPIO_PIN5)\{\par
+{\bkmkstart AAAAAAABGO}{\bkmkend AAAAAAABGO}
+00367         {\cf20 //< Clear P3.5 IFG}\par
+{\bkmkstart AAAAAAABGP}{\bkmkend AAAAAAABGP}
+00368         GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN5);\par
+{\bkmkstart AAAAAAABGQ}{\bkmkend AAAAAAABGQ}
+00369         {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+) {\cf19 return};\par
+{\bkmkstart AAAAAAABGR}{\bkmkend AAAAAAABGR}
+00370         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATN" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p5}}}
+ = {\cf17 true};\par
+{\bkmkstart AAAAAAABGS}{\bkmkend AAAAAAABGS}
+00371     \}\par
+{\bkmkstart AAAAAAABGT}{\bkmkend AAAAAAABGT}
+00372     {\cf19 if}(GPIO_getInterruptStatus(GPIO_PORT_P3, GPIO_PIN1) & GPIO_PIN1)\{\par
+{\bkmkstart AAAAAAABGU}{\bkmkend AAAAAAABGU}
+00373         {\cf20 //< Clear P3.1 IFG}\par
+{\bkmkstart AAAAAAABGV}{\bkmkend AAAAAAABGV}
+00374         GPIO_clearInterrupt(GPIO_PORT_P3, GPIO_PIN1);\par
+{\bkmkstart AAAAAAABGW}{\bkmkend AAAAAAABGW}
+00375         {\cf19 if}(!{\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATR" }{}}{\fldrslt {\cs37\ul\cf2 onState}}}
+) {\cf19 return};\par
+{\bkmkstart AAAAAAABGX}{\bkmkend AAAAAAABGX}
+00376         {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATL" }{}}{\fldrslt {\cs37\ul\cf2 interruptP3p1}}}
+ = {\cf17 true};\par
+{\bkmkstart AAAAAAABGY}{\bkmkend AAAAAAABGY}
+00377     \}\par
+{\bkmkstart AAAAAAABGZ}{\bkmkend AAAAAAABGZ}
+00378 \}\par
+{\bkmkstart AAAAAAABHA}{\bkmkend AAAAAAABHA}
+00379 \par
+{\bkmkstart AAAAAAABHB}{\bkmkend AAAAAAABHB}
+00380 \par
+{\bkmkstart AAAAAAABHC}{\bkmkend AAAAAAABHC}
+00381 {\cf20 //< Port 4 interrupt service routine}\par
+{\bkmkstart AAAAAAABHD}{\bkmkend AAAAAAABHD}
+00382 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+{\bkmkstart AAAAAAABHE}{\bkmkend AAAAAAABHE}
+00383 {\cf21 #pragma vector=PORT4_VECTOR}\par
+{\bkmkstart AAAAAAABHF}{\bkmkend AAAAAAABHF}
+00384 __interrupt {\cf18 void} Port_4({\cf18 void})\par
+{\bkmkstart AAAAAAABHG}{\bkmkend AAAAAAABHG}
+00385 {\cf21 #elif defined(__GNUC__)}\par
+{\bkmkstart AAAAAAABHH}{\bkmkend AAAAAAABHH}
+00386 {\cf18 void} __attribute__ ((interrupt(PORT4_VECTOR))) Port_4 ({\cf18 void})\par
+{\bkmkstart AAAAAAABHI}{\bkmkend AAAAAAABHI}
+00387 {\cf21 #else}\par
+{\bkmkstart AAAAAAABHJ}{\bkmkend AAAAAAABHJ}
+00388 {\cf21 #error Compiler not supported!}\par
+{\bkmkstart AAAAAAABHK}{\bkmkend AAAAAAABHK}
+00389 {\cf21 #endif}\par
+{\bkmkstart AAAAAAABHL}{\bkmkend AAAAAAABHL}
+00390 \{\par
+{\bkmkstart AAAAAAABHM}{\bkmkend AAAAAAABHM}
+00391 \par
+{\bkmkstart AAAAAAABHN}{\bkmkend AAAAAAABHN}
+00392     {\cf20 //< Clear S1 IFG}\par
+{\bkmkstart AAAAAAABHO}{\bkmkend AAAAAAABHO}
+00393     GPIO_clearInterrupt(GPIO_PORT_S1,GPIO_PIN_S1);\par
+{\bkmkstart AAAAAAABHP}{\bkmkend AAAAAAABHP}
+00394     {\field {\*\fldinst { HYPERLINK  \\l "AAAAAAAATP" }{}}{\fldrslt {\cs37\ul\cf2 interruptP4}}}
+ = {\cf17 true};\par
+{\bkmkstart AAAAAAABHQ}{\bkmkend AAAAAAABHQ}
+00395     __bic_SR_register_on_exit(LPM3_bits);   {\cf20 //< Exit LPM3}\par
+{\bkmkstart AAAAAAABHR}{\bkmkend AAAAAAABHR}
+00396 \par
+{\bkmkstart AAAAAAABHS}{\bkmkend AAAAAAABHS}
+00397 \}\par
+{\bkmkstart AAAAAAABHT}{\bkmkend AAAAAAABHT}
+00398 \par
+{\bkmkstart AAAAAAABHU}{\bkmkend AAAAAAABHU}
+00399 \par
+{\bkmkstart AAAAAAABHV}{\bkmkend AAAAAAABHV}
+00400 {\cf20 //< RTC interrupt service routine}\par
+{\bkmkstart AAAAAAABHW}{\bkmkend AAAAAAABHW}
+00401 {\cf21 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)}\par
+{\bkmkstart AAAAAAABHX}{\bkmkend AAAAAAABHX}
+00402 {\cf21 #pragma vector=RTC_VECTOR}\par
+{\bkmkstart AAAAAAABHY}{\bkmkend AAAAAAABHY}
+00403 __interrupt {\cf18 void} RTC_ISR({\cf18 void})\par
+{\bkmkstart AAAAAAABHZ}{\bkmkend AAAAAAABHZ}
+00404 {\cf21 #elif defined(__GNUC__)}\par
+{\bkmkstart AAAAAAABIA}{\bkmkend AAAAAAABIA}
+00405 {\cf18 void} __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR ({\cf18 void})\par
+{\bkmkstart AAAAAAABIB}{\bkmkend AAAAAAABIB}
+00406 {\cf21 #else}\par
+{\bkmkstart AAAAAAABIC}{\bkmkend AAAAAAABIC}
+00407 {\cf21 #error Compiler not supported!}\par
+{\bkmkstart AAAAAAABID}{\bkmkend AAAAAAABID}
+00408 {\cf21 #endif}\par
+{\bkmkstart AAAAAAABIE}{\bkmkend AAAAAAABIE}
+00409 \{\par
+{\bkmkstart AAAAAAABIF}{\bkmkend AAAAAAABIF}
+00410     {\cf19 switch}(__even_in_range(RTCIV,RTCIV_RTCIF))\par
+{\bkmkstart AAAAAAABIG}{\bkmkend AAAAAAABIG}
+00411     \{\par
+{\bkmkstart AAAAAAABIH}{\bkmkend AAAAAAABIH}
+00412         {\cf19 case}  RTCIV_NONE:\par
+{\bkmkstart AAAAAAABII}{\bkmkend AAAAAAABII}
+00413             {\cf19 break};          {\cf20 //< No interrupt}\par
+{\bkmkstart AAAAAAABIJ}{\bkmkend AAAAAAABIJ}
+00414         {\cf19 case}  RTCIV_RTCIF:                  {\cf20 //< RTC Overflow}\par
+{\bkmkstart AAAAAAABIK}{\bkmkend AAAAAAABIK}
+00415             {\cf20 //< Enable global interrupt}\par
+{\bkmkstart AAAAAAABIL}{\bkmkend AAAAAAABIL}
+00416             __bis_SR_register(GIE);\par
+{\bkmkstart AAAAAAABIM}{\bkmkend AAAAAAABIM}
+00417             __bic_SR_register_on_exit(LPM3_bits);   {\cf20 //<  Exit LPM3}\par
+{\bkmkstart AAAAAAABIN}{\bkmkend AAAAAAABIN}
+00418             {\cf19 break};\par
+{\bkmkstart AAAAAAABIO}{\bkmkend AAAAAAABIO}
+00419         {\cf19 default}:\par
+{\bkmkstart AAAAAAABIP}{\bkmkend AAAAAAABIP}
+00420             {\cf19 break};\par
+{\bkmkstart AAAAAAABIQ}{\bkmkend AAAAAAABIQ}
+00421     \}\par
+{\bkmkstart AAAAAAABIR}{\bkmkend AAAAAAABIR}
+00422 \}\par
+{\bkmkstart AAAAAAABIS}{\bkmkend AAAAAAABIS}
+00423 \par
 }
 }
